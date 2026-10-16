@@ -24,16 +24,16 @@ Thumbs.db
 # Raw or derived datasets
 data/raw/
 data/interim/
-datasets/
-SelfDS*/
-test_data/
+/datasets/
+/SelfDS*/
+/test_data/
 
 # Trained models and generated outputs
-models/
-results/
-artifacts/
-runs/
-outputs/
+/models/
+/results/
+/artifacts/
+/runs/
+/outputs/
 *.faiss
 *.pkl
 *.pt
