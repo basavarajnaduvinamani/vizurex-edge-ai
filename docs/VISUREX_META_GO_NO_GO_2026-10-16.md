@@ -108,57 +108,74 @@ These are engineering estimates, not vendor quotations.
 |---|---:|---:|---|
 | Phone-only inference, local logs | **₹0 server inference** | **₹0 server inference** | Lowest cost and strongest privacy; phone performance must be validated. |
 | Phone inference + small backend for users, model versions and selected logs | ₹0–₹1,500 during prototype | Roughly ₹5,000–₹20,000 | Useful for fleet management; range depends on retention and support level. |
-| Hybrid: local inference, cloud review for 5% uncertain cases | Usually below ₹100 in model calls, plus backend | Roughly ₹500–₹8,000 in model calls, plus backend | Good fallback without uploading every frame. |
-| Cloud vision for every inspection | Roughly ₹100–₹1,500 | Roughly ₹10,000–₹1.5 lakh | Easy to prototype but weaker privacy and dependent on connectivity. |
+| Hybrid: local inference, Decisions/Jev review for 5% uncertain cases | Usually below ₹10 in model calls, plus backend | Roughly ₹100–₹1,000 in model calls, plus backend | Good fallback without uploading every frame. |
+| OpenAI Decisions for every inspection | Roughly ₹10–₹50, plus backend | Roughly ₹1,000–₹5,000, plus backend | Very cheap typed decisions, but images leave the phone. |
+| Jev vision for every inspection | Similar low token cost; benchmark the actual host | Likely low thousands of rupees or less, plus backend | Fast typed decisions; vision support and provider terms must be confirmed. |
 | Dedicated cloud GPU running continuously | Unnecessary for the prototype | Commonly tens of thousands of rupees per month | Only justified by sustained volume or server-side models. |
 
-The cloud-AI ranges are deliberately broad because image cost changes with the
-chosen model, resolution, detail level and response length. OpenAI bills vision
-inputs as tokens and provides an official image-cost calculator. The Responses
-API itself is not a separate “decision API”; model input and output usage is what
-is billed. [OpenAI vision guide](https://developers.openai.com/api/docs/guides/images-vision),
-[image cost calculator](https://developers.openai.com/api/docs/guides/image-cost-calculator),
-[API pricing](https://developers.openai.com/api/docs/pricing)
+The cloud ranges are budget estimates because image token counts depend on
+resolution and detail. OpenAI's **Decisions API** is a real beta endpoint. It
+accepts text and images, returns a predicate probability, a fixed choice or a
+rubric score, and is documented as roughly 10× faster than the Responses API.
+It currently uses `gpt-6-luna` and costs $0.10 per million input tokens, with no
+output-token charge. Under the planning load above, the model charge is small;
+the backend, networking, logging and operational support may cost more than the
+decisions themselves. [OpenAI Decisions API](https://developers.openai.com/api/docs/guides/decisions),
+[API reference](https://developers.openai.com/api/reference/resources/decisions/methods/create)
 
 Continuous streaming should be avoided. A 2 Mbps stream used for eight hours a
 day is about 158 GB per operator per month, before protocol overhead. Event-based
 still images reduce bandwidth by orders of magnitude and make the inspection
 record easier to review.
 
-## JEPA and OpenAI vision: where they fit
+## Jev and OpenAI Decisions: where they fit
 
-I have interpreted “Jeff model” as **JEPA**, most likely Meta's V-JEPA. V-JEPA 2
-is a self-supervised video world model for learning representations, motion and
-prediction. It is not a ready-made industrial defect decision API. It could
-later help with temporal consistency, machine-state changes or choosing a useful
-frame from a short clip, but replacing PatchCore with V-JEPA now would add a new
-research problem before the basic product loop is complete.
-[Meta V-JEPA 2](https://ai.meta.com/research/vjepa/)
+Jev is TypeSafe AI's fast **System One** decision model. Instead of generating
+an explanation, it answers constrained questions such as yes/no (`noul`), one
+choice from supplied labels, or a score, together with probabilities. Jev 1.14
+documentation also describes experimental PNG/JPEG input and bounding-box
+output. Published Jev access routes and versions do not all have identical
+vision support or pricing, so the exact provider endpoint must be fixed before
+we report cost or latency. A widely available Jev 1.13 listing prices text input
+at $0.042 per million tokens with free output.
+[Jev API documentation](https://jevmodel.org/docs/),
+[Cloudflare Jev listing](https://developers.cloudflare.com/ai/models/typesafe/jev/)
+
+OpenAI's Decisions API solves a similar problem using `gpt-6-luna`. Unlike my
+earlier interpretation, it is not the normal Responses API with structured JSON
+added afterward. It has its own `POST /v1/decisions` endpoint, accepts images
+directly, and can return a damage probability, a defect-type choice and a
+severity score in one request.
 
 | Component | Best role in this project | Recommendation now |
 |---|---|---|
-| PatchCore / VisureX | Fast part-specific anomaly score from normal training images | **Primary detector** |
+| PatchCore / VisureX | Fast part-specific anomaly score from normal training images | **Primary local baseline** |
 | Small frame-quality model | Reject blur, glare, bad angle and excessive distance | **Build into the first mobile prototype** |
-| V-JEPA | Video representation, temporal change and frame selection | Later research ablation |
-| OpenAI vision model | Describe an uncertain image or produce a human-readable explanation | Optional cloud second opinion only |
+| Jev vision | Fast cloud yes/no, defect class or severity decision | Challenger after confirming the exact vision endpoint |
+| OpenAI Decisions | Fast image predicates, choices and scores | **Benchmark now as the cloud challenger** |
 
-A general vision-language model should not be the sole pass/fail judge for a
-manufacturing defect. It may be faster to demonstrate because no training is
-needed, but it can miss tiny tolerances, vary between prompts and return a
-confident explanation without measurement evidence. The safer design is:
+These APIs could make the first general demo much faster because they need no
+part-specific PatchCore training. That does not make them automatically more
+accurate. Small scratches, tolerances and rare surface defects may not be
+represented well in a general model. Their probabilities also need calibration
+on labelled industrial images. The right experiment is to give PatchCore, Jev
+and OpenAI Decisions the same test images and compare AUROC, precision, recall,
+latency and cost. Until that comparison is complete, the safer path is:
 
-**local detector → confidence check → recapture or optional VLM explanation → human review for critical cases.**
+**local PatchCore → confidence check → Jev/OpenAI decision for uncertain cases → human review for critical cases.**
 
 ## Immediate execution plan
 
 1. Run the three-category single-backbone gate. Multi-backbone work can wait.
-2. Build the Android app against Meta's Mock Device Kit: connect, capture, send
+2. On the same images, run Jev vision and OpenAI Decisions using fixed questions:
+   defect present, defect type and severity. Record accuracy, latency and cost.
+3. Build the Android app against Meta's Mock Device Kit: connect, capture, send
    a frame into a placeholder detector and return an audio response.
-3. Export the current detector to an Android-compatible runtime and measure
+4. Export the current detector to an Android-compatible runtime and measure
    latency, memory and battery use on the paired phone.
-4. Test with real glasses using one controlled component and fixed capture
+5. Test with real glasses using one controlled component and fixed capture
    instructions. Collect failures caused by blur, angle, lighting and glare.
-5. Run the complete 15-category benchmark and backbone ablations on GPU for the
+6. Run the complete 15-category benchmark and backbone ablations on GPU for the
    thesis/paper, without blocking the integration prototype.
 
 This keeps the project safe without making it slow: the glasses interface can
