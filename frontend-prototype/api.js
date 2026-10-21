@@ -1,15 +1,15 @@
 /**
  * VisureX Edge AI - Inspection API Client & Adapter
  * File: api.js
- * 
+ *
  * Compliant with API Contract v0.1.0 (docs/API_CONTRACT.md & docs/ANTIGRAVITY_PHASE2_CONNECT.md).
- * 
+ *
  * Provides:
  * 1. HttpInspectionClient: Production client connecting to the real local backend
  *    at POST /api/inspect with strict response schema validation.
  * 2. MockInspectionClient: Explicit UI-only demonstration fixture mode for testing
  *    the frontend without a running backend.
- * 
+ *
  * Crucial Integration Rules:
  * - Real endpoints: POST /api/inspect, GET /api/health, GET /api/models.
  * - Send FormData with 'category' and 'image'. Do NOT set manual Content-Type header.
