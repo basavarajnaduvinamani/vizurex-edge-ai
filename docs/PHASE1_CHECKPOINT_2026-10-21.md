@@ -1,5 +1,8 @@
 # Phase 1 checkpoint — 21 October 2026
 
+Historical starting checkpoint. The execution blocker below was subsequently
+resolved; see `results/PHASE1_RESULTS_2026-10-21.md` for the completed gate.
+
 ## Scope and boundaries
 
 - Work in `development`; preserve the existing uncommitted report edit.

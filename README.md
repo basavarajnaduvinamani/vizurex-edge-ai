@@ -4,11 +4,12 @@ Trustworthy industrial visual inspection using anomaly detection, mobile edge in
 
 ## Current status
 
-The inherited VisureX prototype has completed technical intake. A leakage-free
-MVTec AD `bottle` smoke test now runs end to end on CPU. The next milestone is a
-matched 15-category PatchCore baseline before mobile or smart-glasses
-integration begins. See
-[`docs/results/MVTEC_BOTTLE_SMOKE_2026-10-16.md`](docs/results/MVTEC_BOTTLE_SMOKE_2026-10-16.md).
+Phase 1 now has fresh CPU results on MVTec AD bottle, grid and transistor,
+including dataset checks and saved-model inference verification. The decision
+is a controlled go-ahead for a laptop-backed integration prototype, not an
+industrial reliability claim. See
+[`docs/results/PHASE1_RESULTS_2026-10-21.md`](docs/results/PHASE1_RESULTS_2026-10-21.md).
+The full 15-category benchmark remains later research work.
 
 ## Development sequence
 

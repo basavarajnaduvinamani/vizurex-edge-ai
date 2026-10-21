@@ -28,6 +28,10 @@ def main() -> int:
     args = parser.parse_args()
 
     category = args.dataset_root / args.category
+    for required in ('train/good', 'test/good', 'ground_truth'):
+        if not (category / required).is_dir():
+            print(f'missing_required_directory={required}')
+            return 1
     train = image_files(category / "train" / "good")
     test_good = image_files(category / "test" / "good")
     test_anomaly = [
@@ -37,6 +41,12 @@ def main() -> int:
         for path in image_files(defect_dir)
     ]
     masks = image_files(category / "ground_truth")
+    if not train or not test_good or not test_anomaly:
+        print('empty_required_image_group')
+        return 1
+    missing_masks = [str(path.relative_to(category)) for path in test_anomaly
+                     if not (category / 'ground_truth' / path.parent.name /
+                             (path.stem + '_mask.png')).is_file()]
 
     unreadable: list[str] = []
     for path in train + test_good + test_anomaly + masks:
@@ -60,9 +70,10 @@ def main() -> int:
     print(f"ground_truth_masks={len(masks)}")
     print(f"unreadable={len(unreadable)}")
     print(f"exact_train_test_overlap={len(overlap)}")
+    print(f"missing_matching_masks={len(missing_masks)}")
 
-    if unreadable or overlap:
-        for item in unreadable + overlap:
+    if unreadable or overlap or missing_masks:
+        for item in unreadable + overlap + missing_masks:
             print(item)
         return 1
     if len(masks) != len(test_anomaly):
