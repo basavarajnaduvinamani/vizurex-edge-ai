@@ -1,6 +1,14 @@
 # Project status
 
-## Current gate: MVTec AD benchmark
+## Current update — 21 October 2026
+
+The three-category feasibility gate is complete. Fresh training, evaluation
+and saved-model score/decision checks passed on bottle, grid and transistor.
+See `results/PHASE1_RESULTS_2026-10-21.md` for measured results and limitations.
+Next: laptop-backed inspection service and Android integration prototype.
+The earlier intake notes below are historical, not the current integration gate.
+
+## Historical intake and full-benchmark plan
 
 The upstream implementation and datasets have been inventoried and audited. The inherited prototype is technically substantive, but its current performance figures are not yet suitable as a trustworthy baseline.
 

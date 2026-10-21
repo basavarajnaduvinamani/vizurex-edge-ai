@@ -8,7 +8,7 @@ package_path = Path(__file__).parent
 version_path = Path(__file__).parent.joinpath(f"src/patchcore/VERSION")
 version = version_path.read_text().strip()
 install_requires = (
-    Path(__file__).parent.joinpath("requirements.txt").read_text().splitlines()
+    Path(__file__).parent.joinpath("requirements-smoke.txt").read_text().splitlines()
 )
 data_files = [
     str(version_path.relative_to(package_path)),

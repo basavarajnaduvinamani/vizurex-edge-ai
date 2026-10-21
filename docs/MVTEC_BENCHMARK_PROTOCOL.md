@@ -1,5 +1,10 @@
 # MVTec AD benchmark protocol
 
+This document describes the later full research benchmark. The smaller
+three-category Phase 1 feasibility gate completed on 21 October 2026 and allows
+controlled integration work; see `results/PHASE1_RESULTS_2026-10-21.md`.
+Do not interpret the full benchmark below as a prerequisite for prototype work.
+
 ## Objective
 
 Determine whether the inherited VisureX pipeline is correct, reproducible, and materially better than its standard PatchCore foundation when evaluated on the official MVTec AD protocol.
