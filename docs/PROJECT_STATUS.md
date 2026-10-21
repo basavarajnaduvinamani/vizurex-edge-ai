@@ -1,6 +1,6 @@
 # Project status
 
-## Current gate: clean baseline
+## Current gate: MVTec AD benchmark
 
 The upstream implementation and datasets have been inventoried and audited. The inherited prototype is technically substantive, but its current performance figures are not yet suitable as a trustworthy baseline.
 
@@ -12,6 +12,6 @@ Verified intake findings:
 - The existing validation loader reads from `test/good`.
 - Existing execution scripts contain machine-specific paths.
 
-The development repository will first reproduce inference, repair data splitting and calibration, and regenerate per-view metrics. Smart-glasses work begins only after that decision gate passes.
+The immediate milestone is now a controlled MVTec AD benchmark of standard PatchCore versus the inherited VisureX pipeline and its individual additions. See `docs/MVTEC_BENCHMARK_PROTOCOL.md`. Smart-glasses work begins only after that decision gate passes.
 
 Upstream snapshot audited: `87721a681dcbee6cf1786f571b40c2906ec5ef18`.
