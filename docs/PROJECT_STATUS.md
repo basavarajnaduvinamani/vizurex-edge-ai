@@ -1,5 +1,12 @@
 # Project status
 
+## Latest milestone — Phase 2 complete
+
+The local web inspection prototype is verified against the real Phase 1
+models, with 13 backend tests, 17 frontend checks and browser upload/result
+verification. See `results/PHASE2_COMPLETE_2026-10-21.md`.
+Next: Android companion application using the laptop inspection backend.
+
 ## Current update — 21 October 2026
 
 The three-category feasibility gate is complete. Fresh training, evaluation

@@ -1,0 +1,1 @@
+"""Local VisureX inspection service."""

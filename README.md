@@ -4,6 +4,12 @@ Trustworthy industrial visual inspection using anomaly detection, mobile edge in
 
 ## Current status
 
+Phase 2 is complete as a local web inspection prototype: real model inference,
+fixed-scale heatmaps, upload validation, metadata logs and explicit Live/Demo
+modes. See [Phase 2 verification](docs/results/PHASE2_COMPLETE_2026-10-21.md).
+Start with `backend/README.md`. Next is the Android companion prototype;
+phone-local inference and real glasses capture are not yet validated.
+
 Phase 1 now has fresh CPU results on MVTec AD bottle, grid and transistor,
 including dataset checks and saved-model inference verification. The decision
 is a controlled go-ahead for a laptop-backed integration prototype, not an
