@@ -1,9 +1,9 @@
 /**
  * VisureX Industrial Inspection Prototype - Application Controller
  * File: app.js
- * 
+ *
  * Compliant with API Contract v0.1.0 and ANTIGRAVITY_PHASE2_CONNECT.md.
- * 
+ *
  * Controls UI interactions, file validation (PNG/JPEG <= 10 MiB, <= 16 MP),
  * live backend communication (POST /api/inspect) with fallback to UI demo fixtures,
  * centre-crop (224x224) viewer alignment, stale result clearing, and safe DOM rendering.
