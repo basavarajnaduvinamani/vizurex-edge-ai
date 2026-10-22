@@ -1,5 +1,26 @@
 # Project status
 
+Latest follow-up on 22 October: optional authenticated private-Wi-Fi support
+and experimental Android-local ONNX inference are implemented. Three portable
+graphs match all 261 reference decisions on the laptop. Android hardware
+qualification, capture reliability and industrial validation remain pending.
+See `WIFI_AND_OFFLINE_TESTING.md` and `SOFTWARE_CHECKPOINT_2026-10-22.md`.
+
+## Software expansion — 22 October 2026
+
+- Offline bundles reproduced all 261 held-out Phase 1 scores and decisions
+  across bottle, grid and transistor (score tolerance 0.0002 against rounded CSV).
+- Capture checks can return RETAKE without claiming a defect verdict. This
+  optional policy is heuristic and remains experimental.
+- Android companion source supports camera/gallery, USB-backed inspection,
+  result overlays and offline speech. Physical tablet validation is pending.
+- Dataset intake checks reject exact repeats and physical-part/session leakage.
+- CI source checks, a clean-environment bootstrap, synthetic capture experiment
+  and handover/research protocols are provided.
+
+See `SOFTWARE_HANDOVER.md` for use and limitations. This does not close the
+real-device, factory-evaluation, mobile-inference or publication gates.
+
 ## Latest milestone — Phase 2 complete
 
 The local web inspection prototype is verified against the real Phase 1

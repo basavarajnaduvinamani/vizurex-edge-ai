@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VisureX Industrial Inspection Prototype</title>
-  <link rel="stylesheet" href="styles.css?v=phase2-final-2">
+  <link rel="stylesheet" href="styles.css?v=phase3-1">
 </head>
 <body>
   <div class="app-container">
@@ -44,6 +44,12 @@
           <span id="activeModeLabel" class="badge badge-baseline">Live Mode</span>
         </div>
         <div class="panel-body">
+          <div class="control-group">
+            <label for="sessionAccessKey" class="control-label">Wi-Fi session access key (only if enabled)</label>
+            <input id="sessionAccessKey" type="password" class="select-input" autocomplete="off" placeholder="Leave blank for local USB testing">
+            <button id="applyAccessKey" type="button" class="mode-btn">Apply key</button>
+            <p class="control-hint">Kept in this tab's memory only. Use trusted Wi-Fi and non-sensitive test images.</p>
+          </div>
           <!-- Step 1: Model Category Selection -->
           <fieldset class="control-group">
             <legend class="control-label">
@@ -113,6 +119,14 @@
           </div>
 
           <!-- Step 3: Run Inspection Button -->
+          <div class="control-group">
+            <label class="control-label" for="qualityModeSelect">Capture policy</label>
+            <select id="qualityModeSelect" class="select-input">
+              <option value="benchmark">Benchmark baseline (no capture gate)</option>
+              <option value="quality_gated">Experimental capture checks (may request retake)</option>
+            </select>
+            <p class="control-hint">Capture checks are heuristics, not confidence scores or factory validation.</p>
+          </div>
           <div class="control-group">
             <button type="button" id="btnRunInspection" class="btn-primary" disabled>
               <span id="btnIcon" aria-hidden="true">&#9654;</span>
@@ -317,6 +331,6 @@
     </footer>
   </div>
 
-  <script type="module" src="app.js?v=phase2-final-2"></script>
+  <script type="module" src="app.js?v=phase3-2"></script>
 </body>
 </html>

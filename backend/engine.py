@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from patchcore.common import FaissNN
 from patchcore.patchcore import PatchCore
+from .bundles import validate_bundle
 
 CATEGORIES = ('bottle', 'grid', 'transistor')
 MODEL_ROOT = ROOT / 'artifacts/phase1-20261021/runs'
@@ -58,9 +59,10 @@ def render_maps(image, raw_map, upper):
 
 
 class Registry:
-    def __init__(self, model_root=MODEL_ROOT, calibration_root=CALIBRATION_ROOT):
+    def __init__(self, model_root=MODEL_ROOT, calibration_root=CALIBRATION_ROOT, bundle_root=None):
         self.model_root = Path(model_root)
         self.calibration_root = Path(calibration_root)
+        self.bundle_root = Path(bundle_root) if bundle_root is not None else None
         self.lock = threading.Lock()
         self.cache = {}
         torch.set_num_threads(4)
@@ -68,20 +70,24 @@ class Registry:
     def folder(self, category):
         if category not in CATEGORIES:
             raise ValueError('Unsupported category')
+        if self.bundle_root is not None:
+            return self.bundle_root / 'models' / category
         return self.model_root / category / 'evaluation/models' / ('mvtec_' + category)
 
     def available(self):
         return [{'category': category,
                  'artifacts_present': all((self.folder(category) / name).is_file() for name in
                     ('patchcore_params.pkl', 'nnscorer_search_index.faiss', 'score_stats.npy')),
-                 'heatmap_calibration_present': (self.calibration_root / f'{category}.json').is_file(),
+                 'heatmap_calibration_present': ((self.folder(category) / 'heatmap.json') if self.bundle_root else (self.calibration_root / f'{category}.json')).is_file(),
                  'loaded': category in self.cache} for category in CATEGORIES]
 
     def _load(self, category):
         if category not in self.cache:
             folder = self.folder(category)
+            manifest = validate_bundle(self.bundle_root, category) if self.bundle_root else None
             identity = model_identity(folder)
-            calibration = json.loads((self.calibration_root / f'{category}.json').read_text())
+            calibration_path = folder / 'heatmap.json' if manifest else self.calibration_root / f'{category}.json'
+            calibration = json.loads(calibration_path.read_text())
             if calibration['model_sha256'] != identity:
                 raise ValueError('Heatmap calibration does not match model')
             upper = float(calibration['upper'])
@@ -90,7 +96,8 @@ class Registry:
             detector = PatchCore(torch.device('cpu'))
             # These artifacts are trusted, locally generated Phase 1 outputs.
             # No upload or request can supply a pickle or model path.
-            detector.load_from_path(str(folder), torch.device('cpu'), FaissNN(False, 4))
+            detector.load_from_path(str(folder), torch.device('cpu'), FaissNN(False, 4),
+                backbone_weights_path=str(self.bundle_root / manifest['weights_file']) if manifest else None)
             if tuple(detector.input_shape) != (3, IMAGE_SIZE, IMAGE_SIZE):
                 raise ValueError('Unexpected model shape')
             stats = np.load(folder / 'score_stats.npy', allow_pickle=True).item()

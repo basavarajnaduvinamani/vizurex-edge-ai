@@ -17,6 +17,8 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from .engine import CATEGORIES, ROOT, Registry
+from .quality import assess_capture
+from .network import NetworkPolicy, ApiAccess
 
 MAX_FILE_BYTES = 10 * 1024 * 1024
 MAX_PIXELS = 16_000_000
@@ -29,14 +31,15 @@ LOG_LOCK = threading.Lock()
 
 class UploadLimit:
     """Bound the entire multipart body before allowing the parser to see it."""
-    def __init__(self, app):
+    def __init__(self, app, allowed_origins=None):
         self.app = app
+        self.allowed_origins = ALLOWED_ORIGINS if allowed_origins is None else allowed_origins
 
     async def __call__(self, scope, receive, send):
         if scope['type'] != 'http' or scope['method'] != 'POST' or scope['path'] != '/api/inspect':
             return await self.app(scope, receive, send)
         origin = dict(scope.get('headers', [])).get(b'origin')
-        if origin and origin.decode() not in ALLOWED_ORIGINS:
+        if origin and origin.decode('latin-1') not in self.allowed_origins:
             return await JSONResponse({'detail': 'Origin is not allowed'}, 403)(scope, receive, send)
         chunks, size = [], 0
         while True:
@@ -81,14 +84,19 @@ def decode_image(content):
         raise HTTPException(400, 'Invalid or damaged image')
 
 
-def create_app(registry=None, log_path=None):
+def create_app(registry=None, log_path=None, network_policy=None):
+    policy = network_policy or NetworkPolicy(os.environ.get('VISUREX_LAN_IP'), os.environ.get('VISUREX_ACCESS_KEY', ''))
+    origins = set(ALLOWED_ORIGINS)
+    if policy.lan_ip:
+        origins.add(f'http://{policy.lan_ip}:8000')
     app = FastAPI(title='VisureX Local Inspection', version='0.1.0', docs_url='/api/docs')
-    app.state.registry = registry if registry is not None else Registry()
+    app.state.registry = registry if registry is not None else Registry(bundle_root=os.environ.get('VISUREX_BUNDLE_ROOT'))
     app.state.log_path = Path(log_path) if log_path else ROOT / 'artifacts/inspections/inspections.jsonl'
-    app.add_middleware(UploadLimit)
-    app.add_middleware(TrustedHostMiddleware, allowed_hosts=['localhost', '127.0.0.1', '[::1]'])
-    app.add_middleware(CORSMiddleware, allow_origins=sorted(ALLOWED_ORIGINS),
-                       allow_methods=['GET', 'POST'], allow_headers=['Content-Type'])
+    app.add_middleware(UploadLimit, allowed_origins=origins)
+    app.add_middleware(ApiAccess, policy=policy)
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=policy.hosts)
+    app.add_middleware(CORSMiddleware, allow_origins=sorted(origins),
+                       allow_methods=['GET', 'POST'], allow_headers=['Content-Type', 'X-Visurex-Key'])
 
     @app.get('/api/health')
     def health():
@@ -101,18 +109,27 @@ def create_app(registry=None, log_path=None):
                 'warning': 'Select the model matching the product. This is not a universal detector.'}
 
     @app.post('/api/inspect')
-    def inspect(category: str = Form(...), image: UploadFile = File(...)):
+    def inspect(category: str = Form(...), image: UploadFile = File(...),
+                quality_mode: str = Form('benchmark')):
         started = time.perf_counter()
         if category not in CATEGORIES:
             raise HTTPException(400, 'Unsupported category; choose bottle, grid or transistor')
+        if quality_mode not in ('benchmark', 'quality_gated'):
+            raise HTTPException(400, 'quality_mode must be benchmark or quality_gated')
         content = image.file.read(MAX_FILE_BYTES + 1)
         if not content:
             raise HTTPException(400, 'Image is empty')
         if len(content) > MAX_FILE_BYTES:
             raise HTTPException(413, 'Upload exceeds 10 MiB limit')
         decoded = decode_image(content)
+        quality = assess_capture(decoded) if quality_mode == 'quality_gated' else None
         try:
-            result = app.state.registry.inspect(category, decoded)
+            if quality is not None and not quality['passed']:
+                result = {'category': category, 'decision': 'RETAKE',
+                          'model_version': 'not-run-capture-heuristic-v1', 'cold_start': False,
+                          'model_inference_ms': 0.0}
+            else:
+                result = app.state.registry.inspect(category, decoded)
         except (FileNotFoundError, ValueError, RuntimeError):
             raise HTTPException(503, 'Model unavailable or incompatible. Check local artifacts and heatmap calibration.')
         result['inspection_id'] = str(uuid.uuid4())
@@ -122,9 +139,13 @@ def create_app(registry=None, log_path=None):
         result['warnings'] = ['Research prototype; not validated for safety-critical inspection.',
                               'Anomaly scores and heatmap colours are not confidence probabilities.',
                               'Benchmark-category models do not establish factory or glasses reliability.']
+        result['quality_mode'] = quality_mode
+        if quality is not None:
+            result['quality'] = quality
         # No image bytes, filenames or client identifiers are retained by default.
         record = {k: result[k] for k in ('inspection_id', 'timestamp', 'category', 'decision',
-                                         'anomaly_score', 'threshold', 'model_version', 'timing')}
+                                         'anomaly_score', 'threshold', 'model_version', 'timing',
+                                         'quality_mode', 'quality') if k in result}
         if os.environ.get('VISUREX_SAVE_IMAGES', '0') == '1':
             raise HTTPException(503, 'Image retention is not implemented; remove VISUREX_SAVE_IMAGES=1')
         try:
