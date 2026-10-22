@@ -5,11 +5,11 @@
  * Compliant with API Contract v0.1.0 and ANTIGRAVITY_PHASE2_CONNECT.md.
  *
  * Controls UI interactions, file validation (PNG/JPEG <= 10 MiB, <= 16 MP),
- * live backend communication (POST /api/inspect) with fallback to UI demo fixtures,
+ * live backend communication (POST /api/inspect) and explicit UI demo fixtures,
  * centre-crop (224x224) viewer alignment, stale result clearing, and safe DOM rendering.
  */
 
-import { api, CATEGORY_SPECS } from "./api.js?v=phase2-final-2";
+import { api, CATEGORY_SPECS } from "./api.js?v=phase3-2";
 
 // Validation Constants per backend specification
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10 MiB limit
@@ -188,8 +188,8 @@ async function checkBackendConnectivity() {
     if (state.executionMode === "live") {
       elements.connectionBadge.className = "badge badge-live";
       elements.connectionDot.className = "pulse-dot green";
-      elements.connectionText.textContent = "Backend Online (127.0.0.1:8000)";
-      elements.footerBackendStatus.textContent = "Backend: 127.0.0.1:8000 (Connected)";
+      elements.connectionText.textContent = "Backend Online";
+      elements.footerBackendStatus.textContent = `Backend: ${api.getBaseUrl() || 'same-origin'} (Connected)`;
     }
     return true;
   } else {
@@ -198,9 +198,9 @@ async function checkBackendConnectivity() {
       elements.connectionBadge.className = "badge badge-offline";
       elements.connectionDot.className = "pulse-dot red";
       elements.connectionText.textContent = "Backend Offline (Port 8000)";
-      elements.footerBackendStatus.textContent = "Backend: 127.0.0.1:8000 (Offline)";
+      elements.footerBackendStatus.textContent = `Backend: ${api.getBaseUrl() || 'same-origin'} (Offline)`;
       showNotification(
-        "Local backend service is unreachable at 127.0.0.1:8000. Start it from 'development' using:\n.\\.venv-phase1\\Scripts\\python.exe -m uvicorn backend.app:app --host 127.0.0.1 --port 8000\nor switch to Demo Mode.",
+        "Backend unreachable. Check the laptop service and USB/Wi-Fi connection. Demo Mode shows simulated results only.",
         false
       );
     }
@@ -524,6 +524,9 @@ async function runInspection() {
   elements.categoryRadios.forEach((r) => (r.disabled = true));
   elements.btnModeLive.disabled = true;
   elements.btnModeDemo.disabled = true;
+  document.getElementById('qualityModeSelect').disabled = true;
+  document.getElementById('sessionAccessKey').disabled = true;
+  document.getElementById('applyAccessKey').disabled = true;
   elements.btnLabel.textContent = "Evaluating...";
   elements.btnIcon.textContent = "⏳";
 
@@ -544,11 +547,19 @@ async function runInspection() {
     const result = await api.inspect({
       file: inspectedFile,
       category: inspectedCategory,
-      simulationType: simulationType
+      simulationType: simulationType,
+      qualityMode: document.getElementById('qualityModeSelect').value
     });
 
     if (inspectedVersion === state.selectionVersion && inspectedFile === state.selectedFile && inspectedCategory === state.selectedCategory) {
-      renderInspectionResult(result);
+      if (result.decision === 'RETAKE') {
+        elements.stateLoading.classList.add('is-hidden');
+        elements.stateResult.classList.add('is-hidden');
+        elements.stateEmpty.classList.remove('is-hidden');
+        showNotification('RETAKE — ' + result.quality.reasons.join(' ') + ' No defect decision was made.', true);
+      } else {
+        renderInspectionResult(result);
+      }
     }
   } catch (err) {
     // Show exact real error without falling back silently to mock results
@@ -564,6 +575,9 @@ async function runInspection() {
     elements.categoryRadios.forEach((r) => (r.disabled = false));
     elements.btnModeLive.disabled = false;
     elements.btnModeDemo.disabled = false;
+    document.getElementById('qualityModeSelect').disabled = false;
+    document.getElementById('sessionAccessKey').disabled = false;
+    document.getElementById('applyAccessKey').disabled = false;
     elements.btnLabel.textContent = "Run Inspection";
     elements.btnIcon.textContent = "▶";
   }
@@ -573,6 +587,17 @@ async function runInspection() {
  * Initialize event listeners and startup health check.
  */
 function init() {
+  document.getElementById('qualityModeSelect').addEventListener('change', () => {
+    if (!state.isInspecting) clearInspectionResult();
+  });
+  document.getElementById('applyAccessKey').addEventListener('click', async () => {
+    if (state.isInspecting) return;
+    api.setAccessKey(document.getElementById('sessionAccessKey').value.trim());
+    document.getElementById('sessionAccessKey').value = '';
+    clearInspectionResult();
+    const models = await api.getBackendModels();
+    showNotification(models ? 'Connection accepted for this tab.' : 'Access not accepted. Check the session key and backend.', !models);
+  });
   // 1. Mode selector buttons
   elements.btnModeLive.addEventListener("click", () => setExecutionMode("live"));
   elements.btnModeDemo.addEventListener("click", () => setExecutionMode("demo"));

@@ -139,6 +139,7 @@ export class HttpInspectionClient {
     this.baseUrl = baseUrl.replace(/\/+$/, "");
     this.name = "HttpInspectionClient";
     this.timeoutMs = 30000;
+    this.accessKey = '';
   }
 
   /**
@@ -149,6 +150,7 @@ export class HttpInspectionClient {
       const endpoint = `${this.baseUrl}/api/health`;
       const response = await fetch(endpoint, {
         method: "GET",
+        headers: this.accessKey ? { 'X-Visurex-Key': this.accessKey } : {},
         signal: AbortSignal.timeout ? AbortSignal.timeout(4000) : undefined
       });
       if (!response.ok) return null;
@@ -166,6 +168,7 @@ export class HttpInspectionClient {
       const endpoint = `${this.baseUrl}/api/models`;
       const response = await fetch(endpoint, {
         method: "GET",
+        headers: this.accessKey ? { 'X-Visurex-Key': this.accessKey } : {},
         signal: AbortSignal.timeout ? AbortSignal.timeout(4000) : undefined
       });
       if (!response.ok) return null;
@@ -180,7 +183,7 @@ export class HttpInspectionClient {
    * Sends FormData with 'category' and 'image'.
    * Does NOT set manual Content-Type header.
    */
-  async inspectImage({ file, category, signal }) {
+  async inspectImage({ file, category, signal, qualityMode = 'benchmark' }) {
     if (!file) {
       throw new Error("No image file provided for inspection.");
     }
@@ -192,6 +195,7 @@ export class HttpInspectionClient {
     const formData = new FormData();
     formData.append("category", category);
     formData.append("image", file);
+    formData.append("quality_mode", qualityMode);
 
     const startTime = performance.now();
     let response;
@@ -199,6 +203,7 @@ export class HttpInspectionClient {
     try {
       response = await fetch(endpoint, {
         method: "POST",
+        headers: this.accessKey ? { 'X-Visurex-Key': this.accessKey } : {},
         body: formData,
         signal: signal || (AbortSignal.timeout ? AbortSignal.timeout(this.timeoutMs) : undefined)
       });
@@ -236,7 +241,9 @@ export class HttpInspectionClient {
       }
 
       // Friendly context mapping for status codes
-      if (response.status === 403) {
+      if (response.status === 401) {
+        errorDetail = 'Session access key missing or rejected. Enter the key shown on your laptop and apply it.';
+      } else if (response.status === 403) {
         errorDetail = `CORS Origin Rejected (403): ${errorDetail}. Ensure frontend runs on an allowed origin (ports 8000, 8080, 5500, 5173).`;
       } else if (response.status === 413) {
         errorDetail = `Upload Limit Exceeded (413): ${errorDetail}. Max file size is 10 MiB, max resolution 16 megapixels.`;
@@ -264,6 +271,15 @@ export class HttpInspectionClient {
     // Strict validation of actual response contract
     if (!data || typeof data !== "object") {
       throw new Error("Malformed response: Backend payload is not an object.");
+    }
+    if (data.decision === 'RETAKE') {
+      if (data.category !== category || typeof data.inspection_id !== 'string' || !data.inspection_id.trim() ||
+          !Number.isFinite(Date.parse(data.timestamp)) || typeof data.model_version !== 'string' ||
+          !data.quality || data.quality.passed !== false || !Array.isArray(data.quality.reasons) ||
+          !data.quality.reasons.length || !data.quality.reasons.every(r => typeof r === 'string' && r.trim())) {
+        throw new Error('Malformed response: Invalid RETAKE capture result.');
+      }
+      return { decision: 'RETAKE', inspectionId: data.inspection_id, quality: data.quality, isMock: false };
     }
     if (typeof data.decision !== "string" || !["GOOD", "ANOMALY"].includes(data.decision)) {
       throw new Error(`Malformed response: Missing or invalid 'decision' field: ${JSON.stringify(data.decision)}`);
@@ -473,6 +489,10 @@ class InspectionApi {
 
   setBaseUrl(url) {
     this.httpClient = new HttpInspectionClient(url);
+  }
+
+  setAccessKey(key) {
+    this.httpClient.accessKey = key;
   }
 
   async checkBackendHealth() {

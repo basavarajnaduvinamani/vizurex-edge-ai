@@ -11,6 +11,11 @@ htmlcov/
 # Environments and local configuration
 .venv/
 .venv-phase1/
+.venv-clean/
+android-companion/.gradle/
+android-companion/**/build/
+android-companion/local.properties
+android-companion/.toolchain/
 venv/
 .env
 .env.*

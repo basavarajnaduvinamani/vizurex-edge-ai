@@ -49,5 +49,8 @@ _BACKBONES = {
 }
 
 
-def load(name):
-    return eval(_BACKBONES[name])
+def load(name, pretrained=True):
+    expression = _BACKBONES[name]
+    if not pretrained:
+        expression = expression.replace('pretrained=True', 'pretrained=False')
+    return eval(expression)

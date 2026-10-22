@@ -4,6 +4,20 @@ Trustworthy industrial visual inspection using anomaly detection, mobile edge in
 
 ## Current status
 
+Private Wi-Fi support and an experimental on-device Android ONNX mode are now
+implemented. The portable graphs match all 261 reference decisions on the laptop;
+physical Android inference, memory use and image-level preprocessing agreement
+still need testing. See [phone testing](docs/WIFI_AND_OFFLINE_TESTING.md).
+
+The 22 October software expansion adds verified offline model bundles,
+experimental capture checks with a separate RETAKE outcome, an Android
+phone/tablet companion, dataset-group validation and CI checks. See
+[software handover](docs/SOFTWARE_HANDOVER.md) and the
+[research/field protocol](docs/RESEARCH_AND_FIELD_PROTOCOL.md).
+The companion defaults to laptop inference through USB; experimental local CPU
+inference is a separate option. Physical-device testing and Meta integration
+remain separate gates.
+
 Phase 2 is complete as a local web inspection prototype: real model inference,
 fixed-scale heatmaps, upload validation, metadata logs and explicit Live/Demo
 modes. See [Phase 2 verification](docs/results/PHASE2_COMPLETE_2026-10-21.md).

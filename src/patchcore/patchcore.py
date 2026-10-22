@@ -288,19 +288,31 @@ class PatchCore(torch.nn.Module):
         device: torch.device,
         nn_method: patchcore.common.FaissNN(False, 4), # type: ignore
         prepend: str = "",
+        backbone_weights_path=None,
     ) -> None:
         LOGGER.info("Loading and initializing PatchCore.")
         with open(self._params_file(load_path, prepend), "rb") as load_file:
             patchcore_params = pickle.load(load_file)
         patchcore_params["backbone"] = patchcore.backbones.load(
-            patchcore_params["backbone.name"]
+            patchcore_params["backbone.name"], pretrained=backbone_weights_path is None
         )
+        if backbone_weights_path is not None:
+            state = torch.load(backbone_weights_path, map_location=device, weights_only=True)
+            patchcore_params["backbone"].load_state_dict(state, strict=True)
+            # Bundles contain the initialized inference backbone. The feature
+            # shape probe inside load() must not update its BatchNorm buffers
+            # a second time. Legacy pretrained construction remains unchanged.
+            patchcore_params["backbone"].eval()
         patchcore_params["backbone"].name = patchcore_params["backbone.name"]
         del patchcore_params["backbone.name"]
 
         # Extract normalisation bounds before passing remaining params to load()
         score_min = patchcore_params.pop("score_min", None)
         score_max = patchcore_params.pop("score_max", None)
+        # Historical artifacts store this name, while load() accepts the
+        # singular 'anomaly_score_num_nn'. Restore it rather than defaulting.
+        if "anomaly_scorer_num_nn" in patchcore_params:
+            patchcore_params["anomaly_score_num_nn"] = patchcore_params.pop("anomaly_scorer_num_nn")
 
         self.load(**patchcore_params, device=device, nn_method=nn_method)
 

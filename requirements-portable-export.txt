@@ -1,0 +1,8 @@
+# Optional export tools, separate from the application runtime lock.
+onnx==1.18.0
+onnxruntime==1.22.0
+protobuf==7.36.2
+coloredlogs==15.0.1
+flatbuffers==25.12.19
+humanfriendly==10.0
+pyreadline3==3.5.6; sys_platform == 'win32'

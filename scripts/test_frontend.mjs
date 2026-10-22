@@ -17,6 +17,16 @@ const originalFetch = globalThis.fetch;
 globalThis.fetch = async () => new Response(JSON.stringify(payload), { status: 200 });
 assert.equal((await client.inspectImage(params)).isMock, false);
 let checks = 1;
+client.accessKey = 'test-only-key';
+globalThis.fetch = async (url, options) => {
+  assert.equal(options.headers['X-Visurex-Key'], 'test-only-key');
+  assert.ok(!url.includes('test-only-key'));
+  return new Response(JSON.stringify(payload), {status: 200});
+};
+await client.inspectImage(params); checks++;
+await client.getModels(); checks++;
+client.accessKey = '';
+globalThis.fetch = async () => new Response(JSON.stringify(payload), {status: 200});
 for (const field of ['inspection_id', 'timestamp', 'model_version', 'decision', 'anomaly_score', 'threshold', 'category', 'cold_start']) {
   payload = structuredClone(valid); delete payload[field];
   await assert.rejects(client.inspectImage(params), /Malformed/); checks++;
@@ -31,6 +41,12 @@ for (const mutate of [
 }
 globalThis.fetch = async () => new Response(JSON.stringify({ detail: 'Model offline' }), { status: 503 });
 await assert.rejects(client.inspectImage(params), /Model offline/); checks++;
+payload = { ...valid, decision: 'RETAKE', quality: { passed: false, reasons: ['Too dark'] } };
+delete payload.anomaly_score; delete payload.images;
+globalThis.fetch = async () => new Response(JSON.stringify(payload), { status: 200 });
+assert.equal((await client.inspectImage(params)).decision, 'RETAKE'); checks++;
+payload.quality.reasons = [];
+await assert.rejects(client.inspectImage(params), /Malformed/); checks++;
 globalThis.fetch = originalFetch;
 
 const elements = new Map();
@@ -59,4 +75,9 @@ assert.equal(element('btnRunInspection').disabled, true); checks++;
 images[1].onload();
 assert.equal(element('btnRunInspection').disabled, false); checks++;
 assert.equal(vm.runInContext('state.selectedFile.name', context), 'b.png'); checks++;
+context.api.inspect = async () => ({decision: 'RETAKE', quality: {reasons: ['Too dark']}});
+vm.runInContext("state.selectedCategory='bottle'; state.executionMode='live';", context);
+await vm.runInContext('runInspection()', context);
+assert.match(element('notificationMessage').textContent, /RETAKE.*No defect decision/); checks++;
+assert.equal(vm.runInContext('state.isInspecting', context), false); checks++;
 console.log(`${checks} frontend regression checks passed.`);
