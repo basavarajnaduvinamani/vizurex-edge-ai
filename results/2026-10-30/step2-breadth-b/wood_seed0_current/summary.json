@@ -1,0 +1,25 @@
+{
+  "category": "wood",
+  "seed": 0,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9921052631578947,
+    "f1": 0.959349593495935,
+    "missed_defects": 1,
+    "false_alarms": 4,
+    "tp": 59,
+    "tn": 15,
+    "threshold": 0.9999999999999998,
+    "test_images": 79
+  },
+  "train_images": 197,
+  "validation_images": 50,
+  "fit_seconds": 92.19960650000576,
+  "worker_pid": 32076,
+  "worker_peak_working_set_bytes": 1610203136,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\wood_seed0_current\\maps.npz",
+  "maps_sha256": "e96c117146e6a245a994c8bdff32438343db9bd4ce6d45041637137caffbabc0",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\wood_seed0_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

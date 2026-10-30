@@ -1,0 +1,8 @@
+[
+  {
+    "run": "hazelnut_seed0_current",
+    "returncode": 15,
+    "blocked": "Worker exceeded configured RSS safety cap; use larger-memory compute without changing the benchmark protocol.",
+    "log": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\results\\2026-10-30\\step2-breadth-a\\hazelnut_seed0_current\\worker.log"
+  }
+]

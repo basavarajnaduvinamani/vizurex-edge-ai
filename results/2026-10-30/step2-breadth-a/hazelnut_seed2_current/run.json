@@ -1,0 +1,58 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_benchmark.py",
+    "--category",
+    "hazelnut",
+    "--seed",
+    "2",
+    "--engine",
+    "current",
+    "--stage",
+    "step2-breadth-a"
+  ],
+  "seed": 2,
+  "worker_pid": 29840,
+  "execution_commit": "ebc87219c26744ab17d5a0a66c033de9f2346b22",
+  "branch": "upgrade/2026-10-30",
+  "source_sha256": {
+    "scripts\\upgrade_benchmark.py": "1b5991a5700e9f9607bfe9f64ae612a55bd60d81e4fcdff9b537351eed757aea",
+    "scripts\\upgrade_metrics.py": "eaf514e2b4252c87471afedaa19294db2791f323c582ad2a7a3c2a74c8d50b2b"
+  },
+  "config": {
+    "category": "hazelnut",
+    "seed": 2,
+    "engine": "current",
+    "stage": "step2-breadth-a",
+    "geometry": false
+  },
+  "started_at": "2026-10-30T16:22:53.045753+05:30",
+  "official_reference_commit": "fcaa92f124fb1ad74a7acf56726decd4b27cbcad",
+  "dataset_loader_sha256": "0a450396c560da7dba3821b7092c30f7274e3a9f1e2e51ad8fe9b75154f354b7",
+  "package_files": {
+    "patchcore.py": "17958dd7762ffa4ddc72519545fa731a14cabf5b721569f86d1b33987eec6690",
+    "common.py": "a6f625252b184cbfa983395f4014a4168672bb955c0730cc6208d14117befc40",
+    "sampler.py": "04b1e7b2fa64ce17a7718f7d20e026b7384c7486ef99807dd8451ec9340ea799",
+    "backbones.py": "f1790d8551b0f2bc409eafd686ac84d8981cfba03062932dcf9e5e47a86859ce"
+  },
+  "settings": {
+    "backbone": "wide_resnet50_2 IMAGENET1K_V1",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "resize": 256,
+    "center_crop": 224,
+    "embedding_pretrain": 1024,
+    "embedding_target": 384,
+    "patchsize": 3,
+    "coreset": 0.01,
+    "nearest_neighbours": 1,
+    "batch_size": 1,
+    "torch_threads": 4,
+    "train_val_split": 0.8,
+    "split_rule": "sorted filenames, first floor(n*.8) train",
+    "normalisation": "validation min / validation raw p99; floor at zero, no upper clip",
+    "threshold": "99th percentile of normalised held-out normal validation scores"
+  }
+}
