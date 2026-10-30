@@ -1,11 +1,14 @@
 """Known-image contract checks using recorded historical expectations, not fixtures."""
 import hashlib
+import base64
+import io
 import json
 from pathlib import Path
 import subprocess
 import sys
 import time
 import httpx
+from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -24,23 +27,33 @@ def main():
             response=client.post('/api/inspect',data={'category':category,'quality_mode':'benchmark'},
                                  files={'image':(image.name,image.read_bytes(),'image/png')})
             response.raise_for_status();body=response.json()
+            png=base64.b64decode(body['images']['overlay'].split(',',1)[1],validate=True)
+            with Image.open(io.BytesIO(png)) as overlay:
+                overlay_size=list(overlay.size);overlay_format=overlay.format;overlay.verify()
             row=dict(category=category,image=relative,image_sha256=hashlib.sha256(image.read_bytes()).hexdigest(),
                 expected=expected,actual=body['decision'],passed=body['decision']==expected,
                 score=body['anomaly_score'],threshold=body['threshold'],
                 actual_png_overlay=body['images']['overlay'].startswith('data:image/png;base64,'),
+                decoded_overlay_png=overlay_format=='PNG' and overlay_size==[224,224],
+                overlay_sha256=hashlib.sha256(png).hexdigest(),overlay_size=overlay_size,
                 inspection_id=body['inspection_id'],http_roundtrip_seconds=time.perf_counter()-tick)
             rows.append(row)
+        recent=client.get('/api/inspections/recent');recent.raise_for_status()
+        recent_payload=recent.json()
+        recent_ids={r.get('inspection_id') for r in recent_payload['records']}
+        for row in rows:row['visible_in_recent_log_api']=row['inspection_id'] in recent_ids
     log=ROOT/'artifacts/inspections/inspections.jsonl'
     entries=[json.loads(line) for line in log.read_text().splitlines() if line.strip()]
     ids={row['inspection_id'] for row in entries}
     for row in rows:row['metadata_log_present']=row['inspection_id'] in ids
     result=dict(command=[sys.executable,*sys.argv],seed=0,
         execution_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
-        server='http://127.0.0.1:8000',checks=rows,
+        server='http://127.0.0.1:8000',checks=rows,health=health.json(),
         log_location=str(log.relative_to(ROOT)),log_sha256=hashlib.sha256(log.read_bytes()).hexdigest())
     (output/'acceptance.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps(result),flush=True)
-    if not all(r['passed'] and r['actual_png_overlay'] and r['metadata_log_present'] for r in rows):
+    if not all(r['passed'] and r['actual_png_overlay'] and r['decoded_overlay_png'] and
+               r['visible_in_recent_log_api'] and r['metadata_log_present'] for r in rows):
         raise AssertionError('Known-image acceptance check failed')
 
 
