@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "scripts/test_upgrade_metrics.py",
+    "-q",
+    "--junitxml=results/2026-10-30/metric-tests-resume-pr.xml"
+  ],
+  "started_at": "2026-10-30T21:31:51.992954+05:30",
+  "execution_commit": "657a1393808959ecc9560fa91e4f8efc3c49e076",
+  "returncode": 0,
+  "finished_at": "2026-10-30T21:32:05.985981+05:30"
+}

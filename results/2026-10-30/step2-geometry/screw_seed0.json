@@ -1,0 +1,28 @@
+{
+  "category": "screw",
+  "seed": 0,
+  "metrics": {
+    "image_auroc": 0.7868415658946505,
+    "f1": 0.5595238095238095,
+    "missed_defects": 72,
+    "false_alarms": 2,
+    "tp": 47,
+    "tn": 39,
+    "threshold": 1.0,
+    "test_images": 160
+  },
+  "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed0_current\\summary.json",
+  "calibration_file": "screw_calibration.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_geometry_breadth.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "scope": "full inherited radial branch incl industrial preprocessing; validation-only threshold; no test tuning"
+}

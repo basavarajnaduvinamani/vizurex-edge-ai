@@ -1,0 +1,28 @@
+{
+  "category": "cable",
+  "seed": 2,
+  "metrics": {
+    "image_auroc": 0.9434032983508246,
+    "f1": 0.8711656441717791,
+    "missed_defects": 21,
+    "false_alarms": 0,
+    "tp": 71,
+    "tn": 58,
+    "threshold": 1.0,
+    "test_images": 150
+  },
+  "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed2_current\\summary.json",
+  "calibration_file": "cable_calibration.json",
+  "execution_commit": "af5a3e02fa6e14196ec14161ea0a511081c85689",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_geometry_breadth.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "scope": "full inherited radial branch incl industrial preprocessing; validation-only threshold; no test tuning"
+}

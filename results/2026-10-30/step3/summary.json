@@ -1,0 +1,1538 @@
+[
+  {
+    "run": "bottle_seed0_current",
+    "category": "bottle",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9848826451719309,
+      "aupro_fpr_0_3": 0.9468233330699612,
+      "connected_regions": 68,
+      "foreground_pixels": 313110,
+      "background_pixels": 3851498,
+      "mask_shape": [
+        83,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+    "run_provenance": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "bottle_seed0_official",
+    "category": "bottle",
+    "seed": 0,
+    "engine": "official",
+    "metrics": {
+      "pixel_auroc": 0.9848826451719309,
+      "aupro_fpr_0_3": 0.9468233330699612,
+      "connected_regions": 68,
+      "foreground_pixels": 313110,
+      "background_pixels": 3851498,
+      "mask_shape": [
+        83,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+    "run_provenance": "results\\2026-10-30\\step1\\bottle_seed0_official\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "grid_seed0_current",
+    "category": "grid",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9760315958919559,
+      "aupro_fpr_0_3": 0.9136699640030392,
+      "connected_regions": 159,
+      "foreground_pixels": 32633,
+      "background_pixels": 3881095,
+      "mask_shape": [
+        78,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+    "run_provenance": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "grid_seed0_official",
+    "category": "grid",
+    "seed": 0,
+    "engine": "official",
+    "metrics": {
+      "pixel_auroc": 0.9760315958919559,
+      "aupro_fpr_0_3": 0.9136699640030392,
+      "connected_regions": 159,
+      "foreground_pixels": 32633,
+      "background_pixels": 3881095,
+      "mask_shape": [
+        78,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+    "run_provenance": "results\\2026-10-30\\step1\\grid_seed0_official\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "transistor_seed0_current",
+    "category": "transistor",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9498504868109606,
+      "aupro_fpr_0_3": 0.8962649134871326,
+      "connected_regions": 44,
+      "foreground_pixels": 311588,
+      "background_pixels": 4706012,
+      "mask_shape": [
+        100,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+    "run_provenance": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "transistor_seed0_official",
+    "category": "transistor",
+    "seed": 0,
+    "engine": "official",
+    "metrics": {
+      "pixel_auroc": 0.9498504868109606,
+      "aupro_fpr_0_3": 0.8962649134871326,
+      "connected_regions": 44,
+      "foreground_pixels": 311588,
+      "background_pixels": 4706012,
+      "mask_shape": [
+        100,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+    "run_provenance": "results\\2026-10-30\\step1\\transistor_seed0_official\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "bottle_seed1_current",
+    "category": "bottle",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.98471814932605,
+      "aupro_fpr_0_3": 0.9454729378184886,
+      "connected_regions": 68,
+      "foreground_pixels": 313110,
+      "background_pixels": 3851498,
+      "mask_shape": [
+        83,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "660b6a703f45500a67343895be878f830fab1691edc0d48018463bcda6d7a53c",
+    "run_provenance": "results\\2026-10-30\\step2-existing\\bottle_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "bottle_seed2_current",
+    "category": "bottle",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9850611679427735,
+      "aupro_fpr_0_3": 0.9462564900007508,
+      "connected_regions": 68,
+      "foreground_pixels": 313110,
+      "background_pixels": 3851498,
+      "mask_shape": [
+        83,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "deb03ce640390a1d414e20afe95832b30d8bc815a6b2eea072a10991bd471832",
+    "run_provenance": "results\\2026-10-30\\step2-existing\\bottle_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "grid_seed1_current",
+    "category": "grid",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9789279620376475,
+      "aupro_fpr_0_3": 0.913783228527391,
+      "connected_regions": 159,
+      "foreground_pixels": 32633,
+      "background_pixels": 3881095,
+      "mask_shape": [
+        78,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "a3eb9e012efceb7582ef7fa8c4155900349abdbd69f0362aefae3d7e6e093ffb",
+    "run_provenance": "results\\2026-10-30\\step2-existing\\grid_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "grid_seed2_current",
+    "category": "grid",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9820101995052893,
+      "aupro_fpr_0_3": 0.9239617470308236,
+      "connected_regions": 159,
+      "foreground_pixels": 32633,
+      "background_pixels": 3881095,
+      "mask_shape": [
+        78,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "4bb0941e7e4191077761d2b3284460010c30d1f4eff5ad98c085bf286a33444b",
+    "run_provenance": "results\\2026-10-30\\step2-existing\\grid_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "transistor_seed1_current",
+    "category": "transistor",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9427110613711441,
+      "aupro_fpr_0_3": 0.8909866308861233,
+      "connected_regions": 44,
+      "foreground_pixels": 311588,
+      "background_pixels": 4706012,
+      "mask_shape": [
+        100,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "22cb673e24aafc927959365855c616926bf0d61a80593131029261edd6053f5f",
+    "run_provenance": "results\\2026-10-30\\step2-existing\\transistor_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "transistor_seed2_current",
+    "category": "transistor",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9454668759771109,
+      "aupro_fpr_0_3": 0.8931853032001479,
+      "connected_regions": 44,
+      "foreground_pixels": 311588,
+      "background_pixels": 4706012,
+      "mask_shape": [
+        100,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "23601069f4a3bb783fb7349fb1b85d53f4092f1293126537302cdfb5b406af5b",
+    "run_provenance": "results\\2026-10-30\\step2-existing\\transistor_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "cable_seed0_current",
+    "category": "cable",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9788819482503271,
+      "aupro_fpr_0_3": 0.9149050875591482,
+      "connected_regions": 146,
+      "foreground_pixels": 282192,
+      "background_pixels": 7244208,
+      "mask_shape": [
+        150,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "7a36096fa43b7a5cfddb3db843eca032dffb8a804c8ce2f453ce0d579b6ed2cc",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\cable_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "cable_seed1_current",
+    "category": "cable",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9786940306204578,
+      "aupro_fpr_0_3": 0.9128493743629844,
+      "connected_regions": 146,
+      "foreground_pixels": 282192,
+      "background_pixels": 7244208,
+      "mask_shape": [
+        150,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "876d5553259a43f01dca3c15b709a5476f71f5a071e68ef2cc15f68dfa4e4f62",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\cable_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "cable_seed2_current",
+    "category": "cable",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9801889828646425,
+      "aupro_fpr_0_3": 0.9202579775896647,
+      "connected_regions": 146,
+      "foreground_pixels": 282192,
+      "background_pixels": 7244208,
+      "mask_shape": [
+        150,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "24418f693b4e86b7d50f599fea9aaf2ececacdbccd28a19b410e6260e4dacedb",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\cable_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "capsule_seed0_current",
+    "category": "capsule",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9873617365344997,
+      "aupro_fpr_0_3": 0.9214319277764298,
+      "connected_regions": 120,
+      "foreground_pixels": 79114,
+      "background_pixels": 6544118,
+      "mask_shape": [
+        132,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "ee8d1ee0f4004f032c16f252888940d031a53863a018e3073edea57627dc62e6",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\capsule_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "capsule_seed1_current",
+    "category": "capsule",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9869127422552304,
+      "aupro_fpr_0_3": 0.9356215696835811,
+      "connected_regions": 120,
+      "foreground_pixels": 79114,
+      "background_pixels": 6544118,
+      "mask_shape": [
+        132,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "eab663e9eabccc1785d987479fa15ac1cb07b63cabd7c4b65295fead3904a369",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\capsule_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "capsule_seed2_current",
+    "category": "capsule",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9873540757312881,
+      "aupro_fpr_0_3": 0.9331892778122297,
+      "connected_regions": 120,
+      "foreground_pixels": 79114,
+      "background_pixels": 6544118,
+      "mask_shape": [
+        132,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "eaf11a2ea6f401d92e2170ae52f624e441ddf52dc4e86d8f71a8de376f7a4bda",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\capsule_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "carpet_seed0_current",
+    "category": "carpet",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9895395276193706,
+      "aupro_fpr_0_3": 0.9470699354590401,
+      "connected_regions": 97,
+      "foreground_pixels": 120011,
+      "background_pixels": 5750581,
+      "mask_shape": [
+        117,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "247deac6cea5d6f27321fb45e973134225e73d5dd095c651e71a7837d40714d3",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\carpet_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "carpet_seed1_current",
+    "category": "carpet",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9895073387162742,
+      "aupro_fpr_0_3": 0.9465749475905529,
+      "connected_regions": 97,
+      "foreground_pixels": 120011,
+      "background_pixels": 5750581,
+      "mask_shape": [
+        117,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "748b8d0c94fc1a1a6082a8fd1baede658c0e7ea7895643ac964f362b1f79d112",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\carpet_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "carpet_seed2_current",
+    "category": "carpet",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9896124832709944,
+      "aupro_fpr_0_3": 0.9480439545939344,
+      "connected_regions": 97,
+      "foreground_pixels": 120011,
+      "background_pixels": 5750581,
+      "mask_shape": [
+        117,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "b11b4dccd7b28a9153ba33e5101989f85d375ad40408854c8999933562afc9dd",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\carpet_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "hazelnut_seed1_current",
+    "category": "hazelnut",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9847680540114625,
+      "aupro_fpr_0_3": 0.9441095916194391,
+      "connected_regions": 134,
+      "foreground_pixels": 153565,
+      "background_pixels": 5365795,
+      "mask_shape": [
+        110,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "2f5e4ba58ed9cd001f4c0446a2e3e2bd94b41d4c287d360e572046ad74e8e1c5",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "hazelnut_seed2_current",
+    "category": "hazelnut",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9852635947315748,
+      "aupro_fpr_0_3": 0.9463303944799755,
+      "connected_regions": 134,
+      "foreground_pixels": 153565,
+      "background_pixels": 5365795,
+      "mask_shape": [
+        110,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "a8d1e6bc2f95e8bde423e42150797de8379c0d10626aa233f0ff60079439599e",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "leather_seed0_current",
+    "category": "leather",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9916944355502075,
+      "aupro_fpr_0_3": 0.9669994166346504,
+      "connected_regions": 99,
+      "foreground_pixels": 51298,
+      "background_pixels": 6170526,
+      "mask_shape": [
+        124,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "33bd0c29c519176e4317cbc39ccc4598758d71856deab64374932b284e643834",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\leather_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "leather_seed1_current",
+    "category": "leather",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9917861967883665,
+      "aupro_fpr_0_3": 0.9676218813388839,
+      "connected_regions": 99,
+      "foreground_pixels": 51298,
+      "background_pixels": 6170526,
+      "mask_shape": [
+        124,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "fa9166087f183609fcdc9797e32711f0f4beaa9b384045cd6e581569ff191e63",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\leather_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "leather_seed2_current",
+    "category": "leather",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.991963167879248,
+      "aupro_fpr_0_3": 0.9681847641758317,
+      "connected_regions": 99,
+      "foreground_pixels": 51298,
+      "background_pixels": 6170526,
+      "mask_shape": [
+        124,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "f919df2120172a03e8091bca71dbec289f7e170c351f24b2930d03c2f4538673",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\leather_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "metal_nut_seed0_current",
+    "category": "metal_nut",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9789758953549084,
+      "aupro_fpr_0_3": 0.9219897438778474,
+      "connected_regions": 131,
+      "foreground_pixels": 879129,
+      "background_pixels": 4891111,
+      "mask_shape": [
+        115,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "18a8173a3d118b69cee687343d756707d66b94eee903bc4948d6cea0631944ec",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "metal_nut_seed1_current",
+    "category": "metal_nut",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9795870409222032,
+      "aupro_fpr_0_3": 0.9272124946954707,
+      "connected_regions": 131,
+      "foreground_pixels": 879129,
+      "background_pixels": 4891111,
+      "mask_shape": [
+        115,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "f9255e7edd44e705ea027ddd29fc37700ce3b92c0f8f23cba3c85bb9f440430c",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "metal_nut_seed2_current",
+    "category": "metal_nut",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9791571982698946,
+      "aupro_fpr_0_3": 0.9263044463901173,
+      "connected_regions": 131,
+      "foreground_pixels": 879129,
+      "background_pixels": 4891111,
+      "mask_shape": [
+        115,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "203d13152ee26d82259e39f070fef7ec5cfbbd1d7cd1288b33b1cb4ca7a266c2",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "pill_seed0_current",
+    "category": "pill",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9659602736578143,
+      "aupro_fpr_0_3": 0.9392725781713714,
+      "connected_regions": 232,
+      "foreground_pixels": 367336,
+      "background_pixels": 8012056,
+      "mask_shape": [
+        167,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "0f955fbe99e8043200ae29510e3d53d044ea94557d3611d37525842ab1322d84",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\pill_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "pill_seed1_current",
+    "category": "pill",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.968081703244066,
+      "aupro_fpr_0_3": 0.9400530841593021,
+      "connected_regions": 232,
+      "foreground_pixels": 367336,
+      "background_pixels": 8012056,
+      "mask_shape": [
+        167,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "835df4a6a2c18dd945ed4f6d935e458c9339b52b601d7c59df049fdad1e108cb",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\pill_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "pill_seed2_current",
+    "category": "pill",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9676492000184767,
+      "aupro_fpr_0_3": 0.9407970164600421,
+      "connected_regions": 232,
+      "foreground_pixels": 367336,
+      "background_pixels": 8012056,
+      "mask_shape": [
+        167,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "cc8d46b057495359f11e7084f3367f21be01a0a0d11eb3fdf6ed61dee3f8e1a0",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\pill_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "screw_seed0_current",
+    "category": "screw",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9869109554671551,
+      "aupro_fpr_0_3": 0.9406041582051616,
+      "connected_regions": 136,
+      "foreground_pixels": 25743,
+      "background_pixels": 8002417,
+      "mask_shape": [
+        160,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "2751dd71915f41a8640a01a770922eee0315100cff29b9715b79911e1ac606c5",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\screw_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "screw_seed1_current",
+    "category": "screw",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9858657694279597,
+      "aupro_fpr_0_3": 0.9365827618243111,
+      "connected_regions": 136,
+      "foreground_pixels": 25743,
+      "background_pixels": 8002417,
+      "mask_shape": [
+        160,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "100ef5b433a2a30ec0a9823814a9d051e3d8f5f8b798e1811349173ed2a75c14",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\screw_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "screw_seed2_current",
+    "category": "screw",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9830119633747804,
+      "aupro_fpr_0_3": 0.9286308968373896,
+      "connected_regions": 136,
+      "foreground_pixels": 25743,
+      "background_pixels": 8002417,
+      "mask_shape": [
+        160,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "252e499895325ee4992c16da508fe2f7782b2f888af29a5fcecd955983776c46",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\screw_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "tile_seed0_current",
+    "category": "tile",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9568712832864923,
+      "aupro_fpr_0_3": 0.8080541385775337,
+      "connected_regions": 96,
+      "foreground_pixels": 486130,
+      "background_pixels": 5384462,
+      "mask_shape": [
+        117,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "9b7a3db48fdf4450f7a7cc6292e783abc1fb37f49a4e888af210fa55d91a1c28",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\tile_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "tile_seed1_current",
+    "category": "tile",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9568231030358033,
+      "aupro_fpr_0_3": 0.8137487178702867,
+      "connected_regions": 96,
+      "foreground_pixels": 486130,
+      "background_pixels": 5384462,
+      "mask_shape": [
+        117,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "7c69f3ddb10b1a7f0bc2ed05eb749f5f7bdb549bfc9589ff910a52ef5f433bdd",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\tile_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "tile_seed2_current",
+    "category": "tile",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9580714261786014,
+      "aupro_fpr_0_3": 0.8144441095851594,
+      "connected_regions": 96,
+      "foreground_pixels": 486130,
+      "background_pixels": 5384462,
+      "mask_shape": [
+        117,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "4cdbb4cead3cab6257cfee67b9e5df43a5c25215c73bbe1da1c11a454838e999",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\tile_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "toothbrush_seed0_current",
+    "category": "toothbrush",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9841780277767376,
+      "aupro_fpr_0_3": 0.84240442283666,
+      "connected_regions": 71,
+      "foreground_pixels": 40874,
+      "background_pixels": 2066518,
+      "mask_shape": [
+        42,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "30763f0ac3fa36a611035b2f88c1ffc2d140ce67670b6568723486b95269e1e5",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "toothbrush_seed1_current",
+    "category": "toothbrush",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9848473979615352,
+      "aupro_fpr_0_3": 0.8506078104822622,
+      "connected_regions": 71,
+      "foreground_pixels": 40874,
+      "background_pixels": 2066518,
+      "mask_shape": [
+        42,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "35a7d276c323d24b15446947542ca253d4b73c34b9ad1de5e826699b53511f3e",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "toothbrush_seed2_current",
+    "category": "toothbrush",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9854290213212855,
+      "aupro_fpr_0_3": 0.8629007410296047,
+      "connected_regions": 71,
+      "foreground_pixels": 40874,
+      "background_pixels": 2066518,
+      "mask_shape": [
+        42,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "b91d00cb53bac5add7484ce27b3e93bb43dadd80db4c9bcfc7435b7cb7dc062e",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "wood_seed0_current",
+    "category": "wood",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9478699612656963,
+      "aupro_fpr_0_3": 0.8775388592528792,
+      "connected_regions": 166,
+      "foreground_pixels": 180765,
+      "background_pixels": 3783139,
+      "mask_shape": [
+        79,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "e96c117146e6a245a994c8bdff32438343db9bd4ce6d45041637137caffbabc0",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\wood_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "wood_seed1_current",
+    "category": "wood",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9495101859611146,
+      "aupro_fpr_0_3": 0.8783140478531443,
+      "connected_regions": 166,
+      "foreground_pixels": 180765,
+      "background_pixels": 3783139,
+      "mask_shape": [
+        79,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "4a56df1c9dce8027b2c1c49fb4fd7c209f4a54dd76e0f884c2a91b82267bb2e3",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\wood_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "wood_seed2_current",
+    "category": "wood",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9471189151613512,
+      "aupro_fpr_0_3": 0.8803199830501767,
+      "connected_regions": 166,
+      "foreground_pixels": 180765,
+      "background_pixels": 3783139,
+      "mask_shape": [
+        79,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "97c41d7ff67a8cbf891917a094f7904b51953409fd437b290a58d4034a14d366",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\wood_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "zipper_seed0_current",
+    "category": "zipper",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9875174581124956,
+      "aupro_fpr_0_3": 0.9508041815461237,
+      "connected_regions": 177,
+      "foreground_pixels": 195850,
+      "background_pixels": 7380726,
+      "mask_shape": [
+        151,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "93adea6101edd60bba4a886410b233ad116277e2b7282dd3ea05fe806b6a0a71",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\zipper_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "zipper_seed1_current",
+    "category": "zipper",
+    "seed": 1,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9878201977218095,
+      "aupro_fpr_0_3": 0.9511549937419221,
+      "connected_regions": 177,
+      "foreground_pixels": 195850,
+      "background_pixels": 7380726,
+      "mask_shape": [
+        151,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "ca348c3230a864ae1e8b0c0f6ff1492c6749aba270b976c2b13e7efd29ea454c",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\zipper_seed1_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "zipper_seed2_current",
+    "category": "zipper",
+    "seed": 2,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9877495188168685,
+      "aupro_fpr_0_3": 0.9516195440083025,
+      "connected_regions": 177,
+      "foreground_pixels": 195850,
+      "background_pixels": 7380726,
+      "mask_shape": [
+        151,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "9da1c750d81aa7c023443b7e5d6518f13fb92242f64b16ea8275ea1ed0fef148",
+    "run_provenance": "results\\2026-10-30\\step2-breadth-b\\zipper_seed2_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  },
+  {
+    "run": "hazelnut_seed0_current",
+    "category": "hazelnut",
+    "seed": 0,
+    "engine": "current",
+    "metrics": {
+      "pixel_auroc": 0.9849719225693581,
+      "aupro_fpr_0_3": 0.9465229018176934,
+      "connected_regions": 134,
+      "foreground_pixels": 153565,
+      "background_pixels": 5365795,
+      "mask_shape": [
+        110,
+        224,
+        224
+      ],
+      "connectivity": 8,
+      "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+    },
+    "map_sha256": "f3ab3b0cf4380c050022aa5a95711a664173319d840926ce668b898c78b6be36",
+    "run_provenance": "results\\2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\summary.json",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "command": [
+      "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+      "--stages",
+      "step1",
+      "step2-existing",
+      "step2-breadth-a",
+      "step2-breadth-b",
+      "step2-resource-retry-hazelnut"
+    ]
+  }
+]

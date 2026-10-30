@@ -1,0 +1,32 @@
+{
+  "run": "metal_nut_seed0_current",
+  "category": "metal_nut",
+  "seed": 0,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9789758953549084,
+    "aupro_fpr_0_3": 0.9219897438778474,
+    "connected_regions": 131,
+    "foreground_pixels": 879129,
+    "background_pixels": 4891111,
+    "mask_shape": [
+      115,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "18a8173a3d118b69cee687343d756707d66b94eee903bc4948d6cea0631944ec",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed0_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

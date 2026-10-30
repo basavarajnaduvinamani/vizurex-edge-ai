@@ -1,0 +1,28 @@
+{
+  "category": "bottle",
+  "seed": 1,
+  "metrics": {
+    "image_auroc": 1.0,
+    "f1": 0.9921259842519685,
+    "missed_defects": 0,
+    "false_alarms": 1,
+    "tp": 63,
+    "tn": 19,
+    "threshold": 1.0,
+    "test_images": 83
+  },
+  "source": "results\\2026-10-30\\step2-existing\\bottle_seed1_current\\summary.json",
+  "calibration_file": "bottle_calibration.json",
+  "execution_commit": "7ad5ea7f5dcbd02a73c361aafd320087a336c747",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_geometry_breadth.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "scope": "full inherited radial branch incl industrial preprocessing; validation-only threshold; no test tuning"
+}
