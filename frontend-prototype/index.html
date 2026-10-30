@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VisureX Industrial Inspection Prototype</title>
-  <link rel="stylesheet" href="styles.css?v=phase3-1">
+  <link rel="stylesheet" href="styles.css?v=phase3-3">
 </head>
 <body>
   <div class="app-container">
@@ -143,8 +143,16 @@
               <option value="auto">Auto (Infers from file name / default anomaly)</option>
               <option value="anomaly">Force ANOMALY Result (Defective part)</option>
               <option value="good">Force GOOD Result (Normal part)</option>
+              <option value="retake">Force RETAKE Result (Rejected capture)</option>
               <option value="error">Simulate Server Fault (500 Error)</option>
             </select>
+            <span class="demo-controls-label">Simulated walkthrough (no upload needed)</span>
+            <div class="demo-example-buttons" role="group" aria-label="Show a simulated example result">
+              <button type="button" id="btnExampleAnomaly" class="mode-btn">ANOMALY example</button>
+              <button type="button" id="btnExampleGood" class="mode-btn">GOOD example</button>
+              <button type="button" id="btnExampleRetake" class="mode-btn">RETAKE example</button>
+            </div>
+            <p class="control-hint">Examples use synthetic UI fixtures, not model outputs. Use Live Backend for real inference.</p>
           </div>
         </div>
       </section>
@@ -176,8 +184,35 @@
             </p>
           </div>
 
+          <!-- State 2b: RETAKE (capture rejected before the detector ran) -->
+          <div id="stateRetake" class="state-container is-hidden">
+            <div id="retakeSimulatedRibbon" class="simulated-ribbon is-hidden" role="note">
+              <strong>SIMULATED EXAMPLE</strong> &mdash; synthetic UI fixture, not a capture-check output.
+            </div>
+            <div class="result-header-card is-retake">
+              <div class="status-badge-lg is-retake">
+                <span class="status-icon" aria-hidden="true">&#8635;</span>
+                <span id="retakeStatusText">RETAKE &mdash; no defect decision</span>
+              </div>
+              <div class="inspection-id-meta">
+                <div>Inspection ID: <strong id="retakeInspectionId" class="text-mono">N/A</strong></div>
+              </div>
+            </div>
+            <p class="retake-explainer">
+              The experimental capture checks rejected this image before the detector ran.
+              No anomaly score or heatmap is produced for a rejected capture, and a rejected
+              defect is not counted as a detection. Capture a new image and inspect again.
+            </p>
+            <strong class="retake-reasons-title">Reasons reported by the capture checks:</strong>
+            <ul id="retakeReasons" class="retake-reasons"></ul>
+            <p class="control-hint">Capture checks are engineering heuristics, not calibrated confidence. A blurred image can still pass them.</p>
+          </div>
+
           <!-- State 3: Active Result Presentation -->
           <div id="stateResult" class="state-container is-hidden">
+            <div id="simulatedRibbon" class="simulated-ribbon is-hidden" role="note">
+              <strong>SIMULATED EXAMPLE</strong> &mdash; synthetic UI fixture, not a model output. Score, heatmap and timings are illustrative only.
+            </div>
             <!-- Verdict Banner -->
             <div id="resultHeaderCard" class="result-header-card is-good">
               <div id="statusBadge" class="status-badge-lg is-good">
@@ -224,6 +259,8 @@
                 </div>
               </div>
             </div>
+
+            <p id="decisionRule" class="decision-rule"></p>
 
             <!-- Essential Metric Clarification Footnote -->
             <div class="score-clarification-note">
@@ -331,6 +368,6 @@
     </footer>
   </div>
 
-  <script type="module" src="app.js?v=phase3-2"></script>
+  <script type="module" src="app.js?v=phase3-3"></script>
 </body>
 </html>
