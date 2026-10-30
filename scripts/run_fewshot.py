@@ -86,8 +86,12 @@ def write_reports(output: Path, payload: dict) -> None:
     from visurex_fewshot import report
 
     summary = report.summarize(payload["runs"])
-    (output / "results.md").write_text(
-        report.markdown_table(summary, payload.get("timings", []), "results.json"), encoding="utf-8")
+    markdown=report.markdown_table(summary, payload.get("timings", []), "results.json")
+    if payload.get('category_wall_seconds'):
+        markdown+='\n## End-to-end category wall time\n\n| Category | Wall seconds |\n|---|---:|\n'
+        for category,seconds in payload['category_wall_seconds'].items():
+            markdown+=f'| {category} | {seconds} |\n'
+    (output / "results.md").write_text(markdown, encoding="utf-8")
     if summary:
         report.plot(summary, output / "fewshot_auroc.png")
 
@@ -249,7 +253,10 @@ def main(argv=None) -> int:
             continue
         begin = time.perf_counter()
         run_category(category, args, payload, save)
-        print(f"{category} finished in {time.perf_counter() - begin:.1f} s", flush=True)
+        elapsed=time.perf_counter()-begin
+        payload.setdefault('category_wall_seconds',{})[category]=elapsed
+        save()
+        print(f"{category} finished in {elapsed} s", flush=True)
     write_reports(output, payload)
     return 1 if failed else 0
 
