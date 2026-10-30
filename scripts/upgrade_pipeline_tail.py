@@ -11,7 +11,7 @@ OUT = ROOT / 'results/2026-10-30'
 REPORT = ROOT / '07_build_walmart.md'
 
 
-def run(name, script, *args):
+def run(name, script, *args, allow_failure=False):
     command = [sys.executable, str(ROOT / 'scripts' / script), *args]
     metadata = dict(command=command, started_at=datetime.now().astimezone().isoformat(),
                     execution_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip())
@@ -23,7 +23,7 @@ def run(name, script, *args):
         result = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
     metadata.update(returncode=result.returncode, finished_at=datetime.now().astimezone().isoformat())
     record.write_text(json.dumps(metadata, indent=2), encoding='utf-8')
-    if result.returncode:
+    if result.returncode and not allow_failure:
         raise RuntimeError('Inspect execution log: ' + name)
     return 'results/2026-10-30/' + record.name
 
@@ -39,6 +39,22 @@ def main():
     args = p.parse_args()
     if '## Step 2' in REPORT.read_text(encoding='utf-8'):
         raise ValueError('Step 2 already recorded; do not duplicate completed evidence')
+    retry_seeds={}
+    for stage in args.stages:
+        failed=OUT/stage/'failures.json'
+        for item in json.loads(failed.read_text()) if failed.exists() else []:
+            if not item.get('blocked'):continue
+            category,seed,engine=item['run'].rsplit('_',2)
+            if engine=='current':retry_seeds.setdefault(category,set()).add(int(seed.removeprefix('seed')))
+    # One retry for memory-terminated runs, with exactly the same seed/config/cap.
+    # No completed metric is discarded or used to select which runs to retry.
+    retry_executions=[]
+    for category,seeds in sorted(retry_seeds.items()):
+        stage='step2-resource-retry-'+category
+        retry_executions.append(run(stage,'upgrade_execute.py','--stage',stage,
+            '--categories',category,'--seeds',*[str(x) for x in sorted(seeds)],
+            '--engines','current',allow_failure=True))
+        args.stages.append(stage)
     integrity_execution = run('step2-split-audit', 'upgrade_split_audit.py', '--stages', *args.stages)
     geometry_execution = run('step2-geometry', 'upgrade_geometry_breadth.py', '--stages', *args.stages)
     summary_execution = run('step2-summary', 'upgrade_summarise.py', '--stages', *args.stages,
@@ -50,6 +66,8 @@ def main():
              'commands: ' + summary_execution + '; ' + geometry_execution + ' [' + summary_execution + ']',
              'files changed: scripts/upgrade_geometry_breadth.py; scripts/upgrade_summarise.py; results/2026-10-30/step2-* [scripts/upgrade_geometry_breadth.py]',
              'std definition: ' + result['std_definition'] + ' [' + path + ']']
+    for execution in retry_executions:
+        lines.append('resource retry: one retry of a memory-terminated seed, unchanged protocol and memory cap; completed metrics were not selected for rerun. ['+execution+']')
     integrity=json.loads((OUT/'step2-split-audit.json').read_text())
     lines += ['split audit execution: '+integrity_execution+' ['+integrity_execution+']',
               f'exact-overlap split pairs: {integrity["exact_overlap_pairs"]} [results/2026-10-30/step2-split-audit.json]',
