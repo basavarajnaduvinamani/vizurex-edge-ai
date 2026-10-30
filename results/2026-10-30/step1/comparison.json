@@ -1,0 +1,333 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "scripts\\upgrade_summarise.py",
+    "--stages",
+    "step1",
+    "--output",
+    "results/2026-10-30/step1/comparison.json"
+  ],
+  "execution_commit": "d4d839838cb19616602a5ed6c6de247483dc41a7",
+  "runs": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 1.0,
+        "test_images": 83
+      },
+      "train_images": 167,
+      "validation_images": 42,
+      "fit_seconds": 65.55904079999891,
+      "worker_pid": 26452,
+      "worker_peak_working_set_bytes": 1486938112,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\bottle_seed0_current\\maps.npz",
+      "maps_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\bottle_seed0_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 83,
+        "max_score_delta": 0.0001297125392536458,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "geometry_ablation": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 1.0,
+        "test_images": 83
+      },
+      "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json"
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "engine": "official",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 1.0,
+        "test_images": 83
+      },
+      "train_images": 167,
+      "validation_images": 42,
+      "fit_seconds": 72.82247119999738,
+      "worker_pid": 25988,
+      "worker_peak_working_set_bytes": 1326460928,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\bottle_seed0_official\\maps.npz",
+      "maps_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\bottle_seed0_official\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 83,
+        "max_score_delta": 0.0001297125392536458,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\bottle_seed0_official\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9883040935672514,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0000000000000002,
+        "test_images": 78
+      },
+      "train_images": 211,
+      "validation_images": 53,
+      "fit_seconds": 96.19670640000186,
+      "worker_pid": 27272,
+      "worker_peak_working_set_bytes": 1666740224,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\grid_seed0_current\\maps.npz",
+      "maps_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+      "zero_mask_defect_images": 1,
+      "provenance_file": "results\\2026-10-30\\step1\\grid_seed0_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 78,
+        "max_score_delta": 5.727437919755829e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "geometry_ablation": {
+        "image_auroc": 0.9857978279030911,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0,
+        "test_images": 78
+      },
+      "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 0,
+      "engine": "official",
+      "metrics": {
+        "image_auroc": 0.9883040935672514,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0000000000000002,
+        "test_images": 78
+      },
+      "train_images": 211,
+      "validation_images": 53,
+      "fit_seconds": 97.25201689999813,
+      "worker_pid": 24844,
+      "worker_peak_working_set_bytes": 1669660672,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\grid_seed0_official\\maps.npz",
+      "maps_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+      "zero_mask_defect_images": 1,
+      "provenance_file": "results\\2026-10-30\\step1\\grid_seed0_official\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 78,
+        "max_score_delta": 5.727437919755829e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\grid_seed0_official\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9512195121951219,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 39,
+        "tn": 57,
+        "threshold": 0.9999999999999999,
+        "test_images": 100
+      },
+      "train_images": 170,
+      "validation_images": 43,
+      "fit_seconds": 76.5316872000003,
+      "worker_pid": 30592,
+      "worker_peak_working_set_bytes": 1497800704,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\transistor_seed0_current\\maps.npz",
+      "maps_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\transistor_seed0_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 100,
+        "max_score_delta": 4.91132504677437e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "geometry_ablation": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9512195121951219,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 39,
+        "tn": 57,
+        "threshold": 1.0,
+        "test_images": 100
+      },
+      "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 0,
+      "engine": "official",
+      "metrics": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9512195121951219,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 39,
+        "tn": 57,
+        "threshold": 0.9999999999999999,
+        "test_images": 100
+      },
+      "train_images": 170,
+      "validation_images": 43,
+      "fit_seconds": 111.32001339999988,
+      "worker_pid": 19512,
+      "worker_peak_working_set_bytes": 1498017792,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\transistor_seed0_official\\maps.npz",
+      "maps_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\transistor_seed0_official\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 100,
+        "max_score_delta": 4.91132504677437e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\transistor_seed0_official\\summary.json"
+    }
+  ],
+  "aggregates": {
+    "bottle": {
+      "seeds": [
+        0
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 1.0,
+          "std_sample": null
+        },
+        "f1": {
+          "mean": 0.9921259842519685,
+          "std_sample": null
+        },
+        "missed_defects": {
+          "mean": 0.0,
+          "std_sample": null
+        },
+        "false_alarms": {
+          "mean": 1.0,
+          "std_sample": null
+        }
+      }
+    },
+    "grid": {
+      "seeds": [
+        0
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9883040935672514,
+          "std_sample": null
+        },
+        "f1": {
+          "mean": 0.954954954954955,
+          "std_sample": null
+        },
+        "missed_defects": {
+          "mean": 4.0,
+          "std_sample": null
+        },
+        "false_alarms": {
+          "mean": 1.0,
+          "std_sample": null
+        }
+      }
+    },
+    "transistor": {
+      "seeds": [
+        0
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9983333333333333,
+          "std_sample": null
+        },
+        "f1": {
+          "mean": 0.9512195121951219,
+          "std_sample": null
+        },
+        "missed_defects": {
+          "mean": 1.0,
+          "std_sample": null
+        },
+        "false_alarms": {
+          "mean": 3.0,
+          "std_sample": null
+        }
+      }
+    }
+  },
+  "official_current_comparisons": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "matched_predictions": 83,
+      "total": 83,
+      "max_score_delta": 0.0,
+      "official": "results\\2026-10-30\\step1\\bottle_seed0_official\\summary.json",
+      "current": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 0,
+      "matched_predictions": 78,
+      "total": 78,
+      "max_score_delta": 0.0,
+      "official": "results\\2026-10-30\\step1\\grid_seed0_official\\summary.json",
+      "current": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 0,
+      "matched_predictions": 100,
+      "total": 100,
+      "max_score_delta": 0.0,
+      "official": "results\\2026-10-30\\step1\\transistor_seed0_official\\summary.json",
+      "current": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json"
+    }
+  ],
+  "std_definition": "sample standard deviation, ddof=1, same fixed split, seed changes sampling only; null for one seed"
+}
