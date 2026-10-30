@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/2026-10-30'
 REPORT = ROOT / '07_build_walmart.md'
+ATTEMPT = 'initial'
 
 
 def run(name, script, *args, allow_failure=False):
@@ -16,11 +17,11 @@ def run(name, script, *args, allow_failure=False):
                else [sys.executable, str(ROOT / 'scripts' / script), *args])
     metadata = dict(command=command, started_at=datetime.now().astimezone().isoformat(),
                     execution_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip())
-    record = OUT / (name + '-execution.json')
+    record = OUT / (name + '-' + ATTEMPT + '-execution.json')
     if record.exists():
         raise FileExistsError('Preserve earlier execution evidence: ' + str(record))
     record.write_text(json.dumps(metadata, indent=2), encoding='utf-8')
-    with (OUT / (name + '-execution.log')).open('w', encoding='utf-8') as log:
+    with (OUT / (name + '-' + ATTEMPT + '-execution.log')).open('w', encoding='utf-8') as log:
         result = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
     metadata.update(returncode=result.returncode, finished_at=datetime.now().astimezone().isoformat())
     record.write_text(json.dumps(metadata, indent=2), encoding='utf-8')
@@ -35,13 +36,17 @@ def append(lines):
 
 
 def main():
+    global ATTEMPT
     p = argparse.ArgumentParser()
     p.add_argument('--stages', nargs='+', required=True)
+    p.add_argument('--attempt',default='initial')
     args = p.parse_args()
+    if not args.attempt.replace('-','').isalnum():raise ValueError('Use an alphanumeric attempt label')
+    ATTEMPT=args.attempt
     if '## Step 2' in REPORT.read_text(encoding='utf-8'):
         raise ValueError('Step 2 already recorded; do not duplicate completed evidence')
     metric_validation=run('metric-validation','module:pytest','scripts/test_upgrade_metrics.py','-q',
-                          '--junitxml=results/2026-10-30/metric-tests-v3.xml')
+                          '--junitxml=results/2026-10-30/metric-tests-'+ATTEMPT+'.xml')
     retry_seeds={}
     for stage in args.stages:
         failed=OUT/stage/'failures.json'
