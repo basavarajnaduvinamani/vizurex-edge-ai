@@ -37,6 +37,9 @@ data/interim/
 # Trained models and generated outputs
 /models/
 /results/
+!/results/
+/results/*
+!/results/2026-10-30/
 /artifacts/
 /runs/
 /outputs/
