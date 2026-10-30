@@ -53,6 +53,8 @@ def main():
     integrity=json.loads((OUT/'step2-split-audit.json').read_text())
     lines += ['split audit execution: '+integrity_execution+' ['+integrity_execution+']',
               f'exact-overlap split pairs: {integrity["exact_overlap_pairs"]} [results/2026-10-30/step2-split-audit.json]',
+              f'pinned mirror SHA-256 verification: {integrity["verified_files"]} files matched; mismatches: {integrity["hash_mismatches"]} [results/2026-10-30/step2-split-audit.json]',
+              'data source: pinned foersben/mvtec-ad Hugging Face mirror, revision and individual LFS hashes retained; official archive byte equivalence UNKNOWN. [results/2026-10-30/step2-intake/source.json]',
               'split independence limitation: '+integrity['limitation']+' [results/2026-10-30/step2-split-audit.json]']
     for variant, aggregates, source in [
         ('core', result['aggregates'], path),
