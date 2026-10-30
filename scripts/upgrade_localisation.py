@@ -16,7 +16,10 @@ def main():
     out=ROOT/'results/2026-10-30/step3'
     out.mkdir(parents=True,exist_ok=True)
     for stage in args.stages:
+        failures=ROOT/'results/2026-10-30'/stage/'failures.json'
+        excluded={r['run'] for r in json.loads(failures.read_text())} if failures.exists() else set()
         for summary_path in sorted((ROOT/'results/2026-10-30'/stage).glob('*/summary.json')):
+            if summary_path.parent.name in excluded:continue
             summary=json.loads(summary_path.read_text())
             maps_path=ROOT/summary['maps_path']
             if hashlib.sha256(maps_path.read_bytes()).hexdigest()!=summary['maps_sha256']:
