@@ -1,0 +1,291 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "scripts/upgrade_profile.py"
+  ],
+  "seed": 0,
+  "execution_commit": "4fb68695e1a4f5a7f9c28f1edd0712478bd8e8cd",
+  "pid": 26368,
+  "startup_seconds": 25.610909700000775,
+  "startup_scope": "worker script first instruction through imports and HTTP server readiness; excludes OS process creation",
+  "host": "127.0.0.1",
+  "port": 8001,
+  "torch_threads": 4,
+  "torch_interop_threads": 8,
+  "started_at": "2026-10-30T22:59:22.542471+05:30",
+  "source_sha256": {
+    "scripts\\upgrade_profile.py": "65e50427d1a39642011d012e571c8b453049d3d46aca99be009939a638ab65af",
+    "backend\\app.py": "d265bbab31b8bfdd57f58999deab62d9191ae91bf80722caf594cc140eaf30d8",
+    "backend\\engine.py": "e56837d3971f0c32d58cd2ba80bebf3f2c24bd47eff2b6917f1f4a32022a289f"
+  },
+  "deployed_bundle_manifests": {
+    "bottle": {
+      "format_version": 1,
+      "category": "bottle",
+      "preprocessing": {
+        "resize_short_edge": 256,
+        "center_crop": 224,
+        "colour": "RGB",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "backbone_weights": "Wide_ResNet50_2_Weights.IMAGENET1K_V1"
+      },
+      "source_model_sha256": "879319acd4153d12d16d3ca082de0257b59bb93a0691460b455934cefa612cb7",
+      "threshold": 1.0000000047683713,
+      "weights_file": "weights/wideresnet50.pt",
+      "packages": {
+        "torch": "2.7.0",
+        "torchvision": "0.22.0",
+        "numpy": "2.2.5",
+        "faiss-cpu": "1.15.1",
+        "timm": "1.0.30"
+      },
+      "files": {
+        "models/bottle/patchcore_params.pkl": {
+          "bytes": 270,
+          "sha256": "6d8c7d6efe8414d149340a70309a91d1e3bfe3b178a80f601c65d63ebbddf73e"
+        },
+        "models/bottle/nnscorer_search_index.faiss": {
+          "bytes": 2010669,
+          "sha256": "7b910f890064922ab2a1c62d7bec3c8ef836a2abfa8430bea6b72d179fa8c373"
+        },
+        "models/bottle/score_stats.npy": {
+          "bytes": 446,
+          "sha256": "d515a1628a1996a7d74258d1ee8f11b63766f3d0b1efabdc7e61f49d27030ce5"
+        },
+        "models/bottle/heatmap.json": {
+          "bytes": 3881,
+          "sha256": "15944b115fc57e0389d010e80e674cb3969ff16fa1dee70def51c77fd9914f52"
+        },
+        "weights/wideresnet50.pt": {
+          "bytes": 275908573,
+          "sha256": "0b8d1539034dc0719d4baae46d382c597d751d88f12c8b35f18f81206716c6da"
+        }
+      },
+      "trust": "Locally generated trusted artifacts; checksums are not publisher signatures."
+    },
+    "grid": {
+      "format_version": 1,
+      "category": "grid",
+      "preprocessing": {
+        "resize_short_edge": 256,
+        "center_crop": 224,
+        "colour": "RGB",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "backbone_weights": "Wide_ResNet50_2_Weights.IMAGENET1K_V1"
+      },
+      "source_model_sha256": "3d45b7bc76153aa9a02cc56dcf6112309b5c74e1c3bd757ae559ab53341a0969",
+      "threshold": 0.9999999475479113,
+      "weights_file": "weights/wideresnet50.pt",
+      "packages": {
+        "torch": "2.7.0",
+        "torchvision": "0.22.0",
+        "numpy": "2.2.5",
+        "faiss-cpu": "1.15.1",
+        "timm": "1.0.30"
+      },
+      "files": {
+        "models/grid/patchcore_params.pkl": {
+          "bytes": 270,
+          "sha256": "9129e8567712306127a1348d7c343ca01394c868ad91f5f9975813203a13c2af"
+        },
+        "models/grid/nnscorer_search_index.faiss": {
+          "bytes": 2540589,
+          "sha256": "42e67672debf7040bc539fbeb934ce7e799421d421c12d2be0cd3d31ba5c41f3"
+        },
+        "models/grid/score_stats.npy": {
+          "bytes": 446,
+          "sha256": "6bde2de90f00e61a4af337d97e3f091fbf99ef77a6e9cf115a7cfcfb0396db4d"
+        },
+        "models/grid/heatmap.json": {
+          "bytes": 4801,
+          "sha256": "f8b90baca37ba207350fc2650cf858c0dafc0afc148cea1e42ec7da2c96d0d89"
+        },
+        "weights/wideresnet50.pt": {
+          "bytes": 275908573,
+          "sha256": "0b8d1539034dc0719d4baae46d382c597d751d88f12c8b35f18f81206716c6da"
+        }
+      },
+      "trust": "Locally generated trusted artifacts; checksums are not publisher signatures."
+    },
+    "transistor": {
+      "format_version": 1,
+      "category": "transistor",
+      "preprocessing": {
+        "resize_short_edge": 256,
+        "center_crop": 224,
+        "colour": "RGB",
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "backbone_weights": "Wide_ResNet50_2_Weights.IMAGENET1K_V1"
+      },
+      "source_model_sha256": "489aa2a545abb4a9324629250730ae4139d8f0cbb7432a7d4d5b94eb667ca6b6",
+      "threshold": 0.9999999845027921,
+      "weights_file": "weights/wideresnet50.pt",
+      "packages": {
+        "torch": "2.7.0",
+        "torchvision": "0.22.0",
+        "numpy": "2.2.5",
+        "faiss-cpu": "1.15.1",
+        "timm": "1.0.30"
+      },
+      "files": {
+        "models/transistor/patchcore_params.pkl": {
+          "bytes": 270,
+          "sha256": "7634b1633f839cdb4432d18ccefbe7768758bc63f419e8760997bea6a5471a23"
+        },
+        "models/transistor/nnscorer_search_index.faiss": {
+          "bytes": 2045997,
+          "sha256": "06ee272fcd80f64163bd5f14a01c5437148f2c08353c82a1369bc1ced8185320"
+        },
+        "models/transistor/score_stats.npy": {
+          "bytes": 446,
+          "sha256": "dade08bb0f01d612a2d0f8a7dfe6203b9a29545d3e6e519e9b5d3ce8f795a866"
+        },
+        "models/transistor/heatmap.json": {
+          "bytes": 3968,
+          "sha256": "5208eb27ff61014829fba8af4313006744301d46cf214ab2e751cb7e8a6b484a"
+        },
+        "weights/wideresnet50.pt": {
+          "bytes": 275908573,
+          "sha256": "0b8d1539034dc0719d4baae46d382c597d751d88f12c8b35f18f81206716c6da"
+        }
+      },
+      "trust": "Locally generated trusted artifacts; checksums are not publisher signatures."
+    }
+  },
+  "summary": {
+    "bottle": {
+      "cold": {
+        "category": "bottle",
+        "image": "good\\000.png",
+        "input_sha256": "9e7bfe658efe9b6db2607a96405b4ac6880936eaf93b89c85bcd311122ceb57b",
+        "model_version": "phase1-bottle-879319acd415",
+        "anomaly_score": 0.40324947237968445,
+        "threshold": 1.0000000047683713,
+        "cold_start": true,
+        "decision": "GOOD",
+        "preprocessing_seconds_separate_probe": 0.08158820000244305,
+        "http_roundtrip_seconds": 2.3252178999973694,
+        "server_processing_ms": 2257.4371000009705,
+        "model_inference_ms": 399.04059999389574,
+        "worker_rss_bytes": 1010864128,
+        "worker_peak_working_set_bytes": 1017663488
+      },
+      "warm_requests": 29,
+      "preprocessing_seconds_separate_probe": {
+        "p50": 0.028277599994908087,
+        "p95": 0.029140420000476296
+      },
+      "http_roundtrip_seconds": {
+        "p50": 0.34687960000155726,
+        "p95": 0.3740136999971582
+      },
+      "server_processing_ms": {
+        "p50": 337.54330000374466,
+        "p95": 361.3452000019606
+      },
+      "model_inference_ms": {
+        "p50": 281.11559999524616,
+        "p95": 298.0956999992486
+      }
+    },
+    "grid": {
+      "cold": {
+        "category": "grid",
+        "image": "good\\000.png",
+        "input_sha256": "4b5d0ff80b6b5a8444d795c4823b46d32df1900e83e107205ed7b1b3538b62ce",
+        "model_version": "phase1-grid-3d45b7bc7615",
+        "anomaly_score": 0.2490738034248352,
+        "threshold": 0.9999999475479113,
+        "cold_start": true,
+        "decision": "GOOD",
+        "preprocessing_seconds_separate_probe": 0.02402839999558637,
+        "http_roundtrip_seconds": 1.9707302000024356,
+        "server_processing_ms": 1960.306999993918,
+        "model_inference_ms": 311.47530000453116,
+        "worker_rss_bytes": 1274261504,
+        "worker_peak_working_set_bytes": 1383071744
+      },
+      "warm_requests": 29,
+      "preprocessing_seconds_separate_probe": {
+        "p50": 0.021733100002165884,
+        "p95": 0.022985340000013822
+      },
+      "http_roundtrip_seconds": {
+        "p50": 0.34675549999519717,
+        "p95": 0.36739321999921226
+      },
+      "server_processing_ms": {
+        "p50": 336.7422000010265,
+        "p95": 356.6770199991879
+      },
+      "model_inference_ms": {
+        "p50": 285.65920000255574,
+        "p95": 301.2094999983674
+      }
+    },
+    "transistor": {
+      "cold": {
+        "category": "transistor",
+        "image": "good\\000.png",
+        "input_sha256": "b343892f2c2c79017885445e1594c52cba12d939e7c50d3cae083ff2ca33478b",
+        "model_version": "phase1-transistor-489aa2a545ab",
+        "anomaly_score": 0.1299353688955307,
+        "threshold": 0.9999999845027921,
+        "cold_start": true,
+        "decision": "GOOD",
+        "preprocessing_seconds_separate_probe": 0.048342499998398125,
+        "http_roundtrip_seconds": 1.9418217999991612,
+        "server_processing_ms": 1926.0254999971949,
+        "model_inference_ms": 299.55709999921964,
+        "worker_rss_bytes": 1745113088,
+        "worker_peak_working_set_bytes": 1756016640
+      },
+      "warm_requests": 29,
+      "preprocessing_seconds_separate_probe": {
+        "p50": 0.04963609999686014,
+        "p95": 0.054995760001474985
+      },
+      "http_roundtrip_seconds": {
+        "p50": 0.40799710000283085,
+        "p95": 0.4388216799983638
+      },
+      "server_processing_ms": {
+        "p50": 384.1766999976244,
+        "p95": 414.9720800007344
+      },
+      "model_inference_ms": {
+        "p50": 295.5551999984891,
+        "p95": 314.55261999944923
+      }
+    }
+  },
+  "worker_peak_working_set_bytes": 1771556864,
+  "limitations": "Serving and load-generator threads share this measured worker; peak includes both and loaded category models. Warm component preprocessing probe is separate from HTTP request, not a decomposed sum. Laptop loopback only; no phone/glasses latency claim."
+}
