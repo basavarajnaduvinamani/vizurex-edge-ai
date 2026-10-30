@@ -12,7 +12,8 @@ REPORT = ROOT / '07_build_walmart.md'
 
 
 def run(name, script, *args, allow_failure=False):
-    command = [sys.executable, str(ROOT / 'scripts' / script), *args]
+    command = ([sys.executable,'-m',script.split(':',1)[1],*args] if script.startswith('module:')
+               else [sys.executable, str(ROOT / 'scripts' / script), *args])
     metadata = dict(command=command, started_at=datetime.now().astimezone().isoformat(),
                     execution_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip())
     record = OUT / (name + '-execution.json')
@@ -39,6 +40,8 @@ def main():
     args = p.parse_args()
     if '## Step 2' in REPORT.read_text(encoding='utf-8'):
         raise ValueError('Step 2 already recorded; do not duplicate completed evidence')
+    metric_validation=run('metric-validation','module:pytest','scripts/test_upgrade_metrics.py','-q',
+                          '--junitxml=results/2026-10-30/metric-tests-v3.xml')
     retry_seeds={}
     for stage in args.stages:
         failed=OUT/stage/'failures.json'
@@ -66,6 +69,7 @@ def main():
              'commands: ' + summary_execution + '; ' + geometry_execution + ' [' + summary_execution + ']',
              'files changed: scripts/upgrade_geometry_breadth.py; scripts/upgrade_summarise.py; results/2026-10-30/step2-* [scripts/upgrade_geometry_breadth.py]',
              'std definition: ' + result['std_definition'] + ' [' + path + ']']
+    lines.append('metric validation: independently specified metric fixtures and failed-worker exclusion test executed before aggregate reporting. ['+metric_validation+']')
     for execution in retry_executions:
         lines.append('resource retry: one retry of a memory-terminated seed, unchanged protocol and memory cap; completed metrics were not selected for rerun. ['+execution+']')
     integrity=json.loads((OUT/'step2-split-audit.json').read_text())
