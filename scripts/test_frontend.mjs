@@ -55,7 +55,8 @@ assert.match(mockRetake.quality.reasons[0], /^Simulated/); checks++;
 const elements = new Map();
 const element = id => {
   if (!elements.has(id)) elements.set(id, { disabled: false, style: {}, value: '',
-    classList: { add() {}, remove() {}, toggle() {} }, setAttribute() {}, addEventListener() {},
+    classList: { add() {}, remove() {}, toggle() {} }, setAttribute() {}, listeners: {},
+    addEventListener(type, callback) { this.listeners[type] = callback; },
     textContent: '', appendChild() {} });
   return elements.get(id);
 };
@@ -97,4 +98,16 @@ assert.match(element('decisionRule').textContent, /1\.4200 ≥ threshold 1\.0000
 context.api.inspect = async () => ({ decision: 'RETAKE', isMock: true, inspectionId: 'INSP-DEMO-Y', quality: { reasons: ['Simulated: too dark.'] } });
 await vm.runInContext("showDemoExample('retake')", context);
 assert.match(element('notificationMessage').textContent, /^SIMULATED RETAKE.*No defect decision/); checks++;
+element('sessionAccessKey').value = 'test-only-history-key';
+context.fetch = async (url, options) => {
+  assert.equal(url, '/api/inspections/recent');
+  assert.equal(options.headers['X-Visurex-Key'], 'test-only-history-key');
+  return new Response(JSON.stringify({records: [{inspection_id: 'actual-log-fixture'}]}));
+};
+await element('refreshInspectionLog').listeners.click();
+assert.match(element('recentInspectionLog').textContent, /actual-log-fixture/); checks++;
+context.fetch = async () => new Response('', {status: 503});
+await element('refreshInspectionLog').listeners.click();
+assert.match(element('recentInspectionLog').textContent, /Log unavailable.*503/); checks++;
+assert.doesNotMatch(element('recentInspectionLog').textContent, /actual-log-fixture/); checks++;
 console.log(`${checks} frontend regression checks passed.`);

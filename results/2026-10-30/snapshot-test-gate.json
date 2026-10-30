@@ -1,0 +1,13 @@
+{
+  "command": "python -m pytest backend/test_api.py backend/test_network.py backend/test_quality.py backend/test_bundles.py backend/test_model_restore.py backend/test_portable.py scripts/test_capture_manifest.py scripts/test_dataset_validator.py scripts/test_upgrade_metrics.py -q",
+  "verified_at": "2026-10-30T21:23:46.805632+05:30",
+  "python": {
+    "passed": 37,
+    "failed": 0,
+    "errors": 0
+  },
+  "frontend_output": "26 frontend regression checks passed.\n",
+  "pip_check": "No broken requirements found.\n",
+  "temp_policy": "PYTEST_DEBUG_TEMPROOT=artifacts/pytest-sync; resolves denied system temp directory without changing tests",
+  "logs": "artifacts/finish-sync"
+}

@@ -8,6 +8,7 @@ import threading
 import time
 import uuid
 import warnings
+from collections import deque
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -107,6 +108,26 @@ def create_app(registry=None, log_path=None, network_policy=None):
         return {'models': app.state.registry.available(), 'max_upload_bytes': MAX_FILE_BYTES,
                 'supported_formats': ['PNG', 'JPEG'], 'max_pixels': MAX_PIXELS,
                 'warning': 'Select the model matching the product. This is not a universal detector.'}
+
+    @app.get('/api/inspections/recent')
+    def recent_inspections():
+        """Bounded metadata only; protected by the same host/session policy."""
+        allowed = {'inspection_id', 'timestamp', 'category', 'decision', 'anomaly_score',
+                   'threshold', 'model_version', 'timing', 'quality_mode'}
+        records = []
+        with LOG_LOCK:
+            if app.state.log_path.is_file():
+                with app.state.log_path.open(encoding='utf-8') as stream:
+                    lines = deque(stream, maxlen=10)
+                for line in lines:
+                    try:
+                        value = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    if not isinstance(value, dict):
+                        continue
+                    records.append({k: v for k, v in value.items() if k in allowed})
+        return {'records': records, 'scope': 'local metadata; images and filenames excluded'}
 
     @app.post('/api/inspect')
     def inspect(category: str = Form(...), image: UploadFile = File(...),

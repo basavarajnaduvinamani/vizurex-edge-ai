@@ -1,0 +1,25 @@
+{
+  "category": "toothbrush",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 1.0,
+    "f1": 1.0,
+    "missed_defects": 0,
+    "false_alarms": 0,
+    "tp": 30,
+    "tn": 12,
+    "threshold": 0.9999999999999999,
+    "test_images": 42
+  },
+  "train_images": 48,
+  "validation_images": 12,
+  "fit_seconds": 19.210257599996112,
+  "worker_pid": 3468,
+  "worker_peak_working_set_bytes": 1000124416,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\maps.npz",
+  "maps_sha256": "b91d00cb53bac5add7484ce27b3e93bb43dadd80db4c9bcfc7435b7cb7dc062e",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

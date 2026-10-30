@@ -1,0 +1,13 @@
+[
+  "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+  "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_benchmark.py",
+  "--category",
+  "grid",
+  "--seed",
+  "0",
+  "--engine",
+  "current",
+  "--stage",
+  "step1",
+  "--geometry"
+]
