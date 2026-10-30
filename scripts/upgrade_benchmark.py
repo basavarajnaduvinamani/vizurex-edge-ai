@@ -30,7 +30,7 @@ def dump(path, value):
 
 
 def provenance(args):
-    return dict(command=[sys.executable, *sys.argv], seed=args.seed,
+    return dict(command=[sys.executable, *sys.argv], seed=args.seed, worker_pid=os.getpid(),
                 execution_commit=git('rev-parse', 'HEAD'), branch=git('branch', '--show-current'),
                 source_sha256={str(p.relative_to(ROOT)): sha(p) for p in
                     [Path(__file__), ROOT / 'scripts/upgrade_metrics.py']},
