@@ -39,6 +39,7 @@ def main():
     args = p.parse_args()
     if '## Step 2' in REPORT.read_text(encoding='utf-8'):
         raise ValueError('Step 2 already recorded; do not duplicate completed evidence')
+    integrity_execution = run('step2-split-audit', 'upgrade_split_audit.py', '--stages', *args.stages)
     geometry_execution = run('step2-geometry', 'upgrade_geometry_breadth.py', '--stages', *args.stages)
     summary_execution = run('step2-summary', 'upgrade_summarise.py', '--stages', *args.stages,
                             '--output', 'results/2026-10-30/step2-summary.json')
@@ -49,6 +50,10 @@ def main():
              'commands: ' + summary_execution + '; ' + geometry_execution + ' [' + summary_execution + ']',
              'files changed: scripts/upgrade_geometry_breadth.py; scripts/upgrade_summarise.py; results/2026-10-30/step2-* [scripts/upgrade_geometry_breadth.py]',
              'std definition: ' + result['std_definition'] + ' [' + path + ']']
+    integrity=json.loads((OUT/'step2-split-audit.json').read_text())
+    lines += ['split audit execution: '+integrity_execution+' ['+integrity_execution+']',
+              f'exact-overlap split pairs: {integrity["exact_overlap_pairs"]} [results/2026-10-30/step2-split-audit.json]',
+              'split independence limitation: '+integrity['limitation']+' [results/2026-10-30/step2-split-audit.json]']
     for variant, aggregates, source in [
         ('core', result['aggregates'], path),
         ('core + inherited radial branch', json.loads((OUT / 'step2-geometry/aggregate.json').read_text()),
