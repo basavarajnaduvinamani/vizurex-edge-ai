@@ -1,0 +1,28 @@
+{
+  "category": "hazelnut",
+  "seed": 0,
+  "metrics": {
+    "image_auroc": 1.0,
+    "f1": 0.9929078014184397,
+    "missed_defects": 0,
+    "false_alarms": 1,
+    "tp": 70,
+    "tn": 39,
+    "threshold": 1.0,
+    "test_images": 110
+  },
+  "source": "results\\2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\summary.json",
+  "calibration_file": "hazelnut_calibration.json",
+  "execution_commit": "8618f4405700df2c886a9e9c8ce06eb73f068051",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_geometry_breadth.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "scope": "full inherited radial branch incl industrial preprocessing; validation-only threshold; no test tuning"
+}

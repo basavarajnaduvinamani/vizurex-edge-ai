@@ -1,0 +1,32 @@
+{
+  "run": "hazelnut_seed0_current",
+  "category": "hazelnut",
+  "seed": 0,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9849719225693581,
+    "aupro_fpr_0_3": 0.9465229018176934,
+    "connected_regions": 134,
+    "foreground_pixels": 153565,
+    "background_pixels": 5365795,
+    "mask_shape": [
+      110,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "f3ab3b0cf4380c050022aa5a95711a664173319d840926ce668b898c78b6be36",
+  "run_provenance": "results\\2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

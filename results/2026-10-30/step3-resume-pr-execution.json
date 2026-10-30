@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "started_at": "2026-10-30T21:52:51.069219+05:30",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "returncode": 0,
+  "finished_at": "2026-10-30T21:55:25.282709+05:30"
+}

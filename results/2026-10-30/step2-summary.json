@@ -1,0 +1,1765 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_summarise.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut",
+    "--output",
+    "results/2026-10-30/step2-summary.json"
+  ],
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "runs": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 1.0,
+        "test_images": 83
+      },
+      "train_images": 167,
+      "validation_images": 42,
+      "fit_seconds": 65.55904079999891,
+      "worker_pid": 26452,
+      "worker_peak_working_set_bytes": 1486938112,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\bottle_seed0_current\\maps.npz",
+      "maps_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\bottle_seed0_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 83,
+        "max_score_delta": 0.0001297125392536458,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "geometry_ablation": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 1.0,
+        "test_images": 83
+      },
+      "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json"
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "engine": "official",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 1.0,
+        "test_images": 83
+      },
+      "train_images": 167,
+      "validation_images": 42,
+      "fit_seconds": 72.82247119999738,
+      "worker_pid": 25988,
+      "worker_peak_working_set_bytes": 1326460928,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\bottle_seed0_official\\maps.npz",
+      "maps_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\bottle_seed0_official\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 83,
+        "max_score_delta": 0.0001297125392536458,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\bottle_seed0_official\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9883040935672514,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0000000000000002,
+        "test_images": 78
+      },
+      "train_images": 211,
+      "validation_images": 53,
+      "fit_seconds": 96.19670640000186,
+      "worker_pid": 27272,
+      "worker_peak_working_set_bytes": 1666740224,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\grid_seed0_current\\maps.npz",
+      "maps_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+      "zero_mask_defect_images": 1,
+      "provenance_file": "results\\2026-10-30\\step1\\grid_seed0_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 78,
+        "max_score_delta": 5.727437919755829e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "geometry_ablation": {
+        "image_auroc": 0.9857978279030911,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0,
+        "test_images": 78
+      },
+      "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 0,
+      "engine": "official",
+      "metrics": {
+        "image_auroc": 0.9883040935672514,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0000000000000002,
+        "test_images": 78
+      },
+      "train_images": 211,
+      "validation_images": 53,
+      "fit_seconds": 97.25201689999813,
+      "worker_pid": 24844,
+      "worker_peak_working_set_bytes": 1669660672,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\grid_seed0_official\\maps.npz",
+      "maps_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+      "zero_mask_defect_images": 1,
+      "provenance_file": "results\\2026-10-30\\step1\\grid_seed0_official\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 78,
+        "max_score_delta": 5.727437919755829e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\grid_seed0_official\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9512195121951219,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 39,
+        "tn": 57,
+        "threshold": 0.9999999999999999,
+        "test_images": 100
+      },
+      "train_images": 170,
+      "validation_images": 43,
+      "fit_seconds": 76.5316872000003,
+      "worker_pid": 30592,
+      "worker_peak_working_set_bytes": 1497800704,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\transistor_seed0_current\\maps.npz",
+      "maps_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\transistor_seed0_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 100,
+        "max_score_delta": 4.91132504677437e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "geometry_ablation": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9512195121951219,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 39,
+        "tn": 57,
+        "threshold": 1.0,
+        "test_images": 100
+      },
+      "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 0,
+      "engine": "official",
+      "metrics": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9512195121951219,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 39,
+        "tn": 57,
+        "threshold": 0.9999999999999999,
+        "test_images": 100
+      },
+      "train_images": 170,
+      "validation_images": 43,
+      "fit_seconds": 111.32001339999988,
+      "worker_pid": 19512,
+      "worker_peak_working_set_bytes": 1498017792,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\transistor_seed0_official\\maps.npz",
+      "maps_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step1\\transistor_seed0_official\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 100,
+        "max_score_delta": 4.91132504677437e-05,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step1\\transistor_seed0_official\\summary.json"
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9921259842519685,
+        "missed_defects": 0,
+        "false_alarms": 1,
+        "tp": 63,
+        "tn": 19,
+        "threshold": 0.9999999999999999,
+        "test_images": 83
+      },
+      "train_images": 167,
+      "validation_images": 42,
+      "fit_seconds": 73.92006300000139,
+      "worker_pid": 22180,
+      "worker_peak_working_set_bytes": 1487093760,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\bottle_seed1_current\\maps.npz",
+      "maps_sha256": "660b6a703f45500a67343895be878f830fab1691edc0d48018463bcda6d7a53c",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-existing\\bottle_seed1_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 83,
+        "max_score_delta": 1.6298162756459886,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-existing\\bottle_seed1_current\\summary.json"
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9767441860465116,
+        "missed_defects": 0,
+        "false_alarms": 3,
+        "tp": 63,
+        "tn": 17,
+        "threshold": 1.0000000000000002,
+        "test_images": 83
+      },
+      "train_images": 167,
+      "validation_images": 42,
+      "fit_seconds": 110.07849139999962,
+      "worker_pid": 29060,
+      "worker_peak_working_set_bytes": 1486872576,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\bottle_seed2_current\\maps.npz",
+      "maps_sha256": "deb03ce640390a1d414e20afe95832b30d8bc815a6b2eea072a10991bd471832",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-existing\\bottle_seed2_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 81,
+        "max_score_delta": 3.327527240995142,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-existing\\bottle_seed2_current\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9791144527986633,
+        "f1": 0.9454545454545454,
+        "missed_defects": 5,
+        "false_alarms": 1,
+        "tp": 52,
+        "tn": 20,
+        "threshold": 1.0,
+        "test_images": 78
+      },
+      "train_images": 211,
+      "validation_images": 53,
+      "fit_seconds": 114.07357530000081,
+      "worker_pid": 32008,
+      "worker_peak_working_set_bytes": 1667194880,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\grid_seed1_current\\maps.npz",
+      "maps_sha256": "a3eb9e012efceb7582ef7fa8c4155900349abdbd69f0362aefae3d7e6e093ffb",
+      "zero_mask_defect_images": 1,
+      "provenance_file": "results\\2026-10-30\\step2-existing\\grid_seed1_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 77,
+        "max_score_delta": 1.3005700409108503,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-existing\\grid_seed1_current\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9891395154553049,
+        "f1": 0.954954954954955,
+        "missed_defects": 4,
+        "false_alarms": 1,
+        "tp": 53,
+        "tn": 20,
+        "threshold": 1.0,
+        "test_images": 78
+      },
+      "train_images": 211,
+      "validation_images": 53,
+      "fit_seconds": 107.00035610000123,
+      "worker_pid": 12784,
+      "worker_peak_working_set_bytes": 1669066752,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\grid_seed2_current\\maps.npz",
+      "maps_sha256": "4bb0941e7e4191077761d2b3284460010c30d1f4eff5ad98c085bf286a33444b",
+      "zero_mask_defect_images": 1,
+      "provenance_file": "results\\2026-10-30\\step2-existing\\grid_seed2_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 78,
+        "max_score_delta": 2.53632170822826,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-existing\\grid_seed2_current\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.961038961038961,
+        "missed_defects": 3,
+        "false_alarms": 0,
+        "tp": 37,
+        "tn": 60,
+        "threshold": 1.0,
+        "test_images": 100
+      },
+      "train_images": 170,
+      "validation_images": 43,
+      "fit_seconds": 62.80893680000008,
+      "worker_pid": 25484,
+      "worker_peak_working_set_bytes": 1497788416,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\transistor_seed1_current\\maps.npz",
+      "maps_sha256": "22cb673e24aafc927959365855c616926bf0d61a80593131029261edd6053f5f",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-existing\\transistor_seed1_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 95,
+        "max_score_delta": 1.7328445239745136,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-existing\\transistor_seed1_current\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9983333333333333,
+        "f1": 0.9487179487179487,
+        "missed_defects": 3,
+        "false_alarms": 1,
+        "tp": 37,
+        "tn": 59,
+        "threshold": 1.0,
+        "test_images": 100
+      },
+      "train_images": 170,
+      "validation_images": 43,
+      "fit_seconds": 41.953112399998645,
+      "worker_pid": 27564,
+      "worker_peak_working_set_bytes": 1499074560,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\transistor_seed2_current\\maps.npz",
+      "maps_sha256": "23601069f4a3bb783fb7349fb1b85d53f4092f1293126537302cdfb5b406af5b",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-existing\\transistor_seed2_current\\run.json",
+      "historical_phase1_comparison": {
+        "matching_decisions": 94,
+        "max_score_delta": 1.5765184024469674,
+        "note": "historical CSV rounded; old values are not new session results"
+      },
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-existing\\transistor_seed2_current\\summary.json"
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9763868065967016,
+        "f1": 0.9069767441860465,
+        "missed_defects": 14,
+        "false_alarms": 2,
+        "tp": 78,
+        "tn": 56,
+        "threshold": 1.0,
+        "test_images": 150
+      },
+      "train_images": 179,
+      "validation_images": 45,
+      "fit_seconds": 72.25597100000232,
+      "worker_pid": 29640,
+      "worker_peak_working_set_bytes": 1536360448,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\cable_seed0_current\\maps.npz",
+      "maps_sha256": "7a36096fa43b7a5cfddb3db843eca032dffb8a804c8ce2f453ce0d579b6ed2cc",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\cable_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed0_current\\summary.json"
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.985007496251874,
+        "f1": 0.9058823529411765,
+        "missed_defects": 15,
+        "false_alarms": 1,
+        "tp": 77,
+        "tn": 57,
+        "threshold": 1.0000000000000002,
+        "test_images": 150
+      },
+      "train_images": 179,
+      "validation_images": 45,
+      "fit_seconds": 71.21539330000087,
+      "worker_pid": 30276,
+      "worker_peak_working_set_bytes": 1536139264,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\cable_seed1_current\\maps.npz",
+      "maps_sha256": "876d5553259a43f01dca3c15b709a5476f71f5a071e68ef2cc15f68dfa4e4f62",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\cable_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed1_current\\summary.json"
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.989880059970015,
+        "f1": 0.8711656441717791,
+        "missed_defects": 21,
+        "false_alarms": 0,
+        "tp": 71,
+        "tn": 58,
+        "threshold": 0.9999999999999999,
+        "test_images": 150
+      },
+      "train_images": 179,
+      "validation_images": 45,
+      "fit_seconds": 74.25719749999917,
+      "worker_pid": 30524,
+      "worker_peak_working_set_bytes": 1351319552,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\cable_seed2_current\\maps.npz",
+      "maps_sha256": "24418f693b4e86b7d50f599fea9aaf2ececacdbccd28a19b410e6260e4dacedb",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\cable_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed2_current\\summary.json"
+    },
+    {
+      "category": "capsule",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9633027522935781,
+        "f1": 0.8601036269430051,
+        "missed_defects": 26,
+        "false_alarms": 1,
+        "tp": 83,
+        "tn": 22,
+        "threshold": 0.9999999999999999,
+        "test_images": 132
+      },
+      "train_images": 175,
+      "validation_images": 44,
+      "fit_seconds": 69.65951389999827,
+      "worker_pid": 21604,
+      "worker_peak_working_set_bytes": 1522257920,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\capsule_seed0_current\\maps.npz",
+      "maps_sha256": "ee8d1ee0f4004f032c16f252888940d031a53863a018e3073edea57627dc62e6",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\capsule_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed0_current\\summary.json"
+    },
+    {
+      "category": "capsule",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9648982848025529,
+        "f1": 0.8888888888888888,
+        "missed_defects": 21,
+        "false_alarms": 1,
+        "tp": 88,
+        "tn": 22,
+        "threshold": 1.0,
+        "test_images": 132
+      },
+      "train_images": 175,
+      "validation_images": 44,
+      "fit_seconds": 68.76843980000194,
+      "worker_pid": 31784,
+      "worker_peak_working_set_bytes": 1521778688,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\capsule_seed1_current\\maps.npz",
+      "maps_sha256": "eab663e9eabccc1785d987479fa15ac1cb07b63cabd7c4b65295fead3904a369",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\capsule_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed1_current\\summary.json"
+    },
+    {
+      "category": "capsule",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9776625448743519,
+        "f1": 0.8297872340425532,
+        "missed_defects": 31,
+        "false_alarms": 1,
+        "tp": 78,
+        "tn": 22,
+        "threshold": 1.0,
+        "test_images": 132
+      },
+      "train_images": 175,
+      "validation_images": 44,
+      "fit_seconds": 47.84356409999964,
+      "worker_pid": 28076,
+      "worker_peak_working_set_bytes": 1523494912,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\capsule_seed2_current\\maps.npz",
+      "maps_sha256": "eaf11a2ea6f401d92e2170ae52f624e441ddf52dc4e86d8f71a8de376f7a4bda",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\capsule_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed2_current\\summary.json"
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.987158908507223,
+        "f1": 0.9508196721311475,
+        "missed_defects": 2,
+        "false_alarms": 7,
+        "tp": 87,
+        "tn": 21,
+        "threshold": 0.9999999999999997,
+        "test_images": 117
+      },
+      "train_images": 224,
+      "validation_images": 56,
+      "fit_seconds": 66.32092209999973,
+      "worker_pid": 4908,
+      "worker_peak_working_set_bytes": 1722441728,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\carpet_seed0_current\\maps.npz",
+      "maps_sha256": "247deac6cea5d6f27321fb45e973134225e73d5dd095c651e71a7837d40714d3",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\carpet_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\carpet_seed0_current\\summary.json"
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9847512038523274,
+        "f1": 0.93048128342246,
+        "missed_defects": 2,
+        "false_alarms": 11,
+        "tp": 87,
+        "tn": 17,
+        "threshold": 1.0,
+        "test_images": 117
+      },
+      "train_images": 224,
+      "validation_images": 56,
+      "fit_seconds": 128.3036744000019,
+      "worker_pid": 31772,
+      "worker_peak_working_set_bytes": 1721999360,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\carpet_seed1_current\\maps.npz",
+      "maps_sha256": "748b8d0c94fc1a1a6082a8fd1baede658c0e7ea7895643ac964f362b1f79d112",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\carpet_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\carpet_seed1_current\\summary.json"
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9871589085072231,
+        "f1": 0.9354838709677419,
+        "missed_defects": 2,
+        "false_alarms": 10,
+        "tp": 87,
+        "tn": 18,
+        "threshold": 0.9999999999999999,
+        "test_images": 117
+      },
+      "train_images": 224,
+      "validation_images": 56,
+      "fit_seconds": 98.48245569999926,
+      "worker_pid": 29356,
+      "worker_peak_working_set_bytes": 1722654720,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\carpet_seed2_current\\maps.npz",
+      "maps_sha256": "b11b4dccd7b28a9153ba33e5101989f85d375ad40408854c8999933562afc9dd",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\carpet_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\carpet_seed2_current\\summary.json"
+    },
+    {
+      "category": "hazelnut",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 1.0,
+        "missed_defects": 0,
+        "false_alarms": 0,
+        "tp": 70,
+        "tn": 40,
+        "threshold": 0.9999999999999997,
+        "test_images": 110
+      },
+      "train_images": 312,
+      "validation_images": 79,
+      "fit_seconds": 150.62035079999987,
+      "worker_pid": 22844,
+      "worker_peak_working_set_bytes": 2086817792,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\hazelnut_seed1_current\\maps.npz",
+      "maps_sha256": "2f5e4ba58ed9cd001f4c0446a2e3e2bd94b41d4c287d360e572046ad74e8e1c5",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed1_current\\summary.json"
+    },
+    {
+      "category": "hazelnut",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9992857142857142,
+        "f1": 0.9859154929577465,
+        "missed_defects": 0,
+        "false_alarms": 2,
+        "tp": 70,
+        "tn": 38,
+        "threshold": 0.9999999999999998,
+        "test_images": 110
+      },
+      "train_images": 312,
+      "validation_images": 79,
+      "fit_seconds": 147.39395629999854,
+      "worker_pid": 29840,
+      "worker_peak_working_set_bytes": 2089480192,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\maps.npz",
+      "maps_sha256": "a8d1e6bc2f95e8bde423e42150797de8379c0d10626aa233f0ff60079439599e",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\summary.json"
+    },
+    {
+      "category": "leather",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.8932038834951457,
+        "missed_defects": 0,
+        "false_alarms": 22,
+        "tp": 92,
+        "tn": 10,
+        "threshold": 0.9999999999999998,
+        "test_images": 124
+      },
+      "train_images": 196,
+      "validation_images": 49,
+      "fit_seconds": 78.97032160000163,
+      "worker_pid": 6720,
+      "worker_peak_working_set_bytes": 1607995392,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\leather_seed0_current\\maps.npz",
+      "maps_sha256": "33bd0c29c519176e4317cbc39ccc4598758d71856deab64374932b284e643834",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\leather_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\leather_seed0_current\\summary.json"
+    },
+    {
+      "category": "leather",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9108910891089109,
+        "missed_defects": 0,
+        "false_alarms": 18,
+        "tp": 92,
+        "tn": 14,
+        "threshold": 1.0,
+        "test_images": 124
+      },
+      "train_images": 196,
+      "validation_images": 49,
+      "fit_seconds": 82.51273339999898,
+      "worker_pid": 27596,
+      "worker_peak_working_set_bytes": 1607536640,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\leather_seed1_current\\maps.npz",
+      "maps_sha256": "fa9166087f183609fcdc9797e32711f0f4beaa9b384045cd6e581569ff191e63",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\leather_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\leather_seed1_current\\summary.json"
+    },
+    {
+      "category": "leather",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9019607843137255,
+        "missed_defects": 0,
+        "false_alarms": 20,
+        "tp": 92,
+        "tn": 12,
+        "threshold": 0.9999999999999997,
+        "test_images": 124
+      },
+      "train_images": 196,
+      "validation_images": 49,
+      "fit_seconds": 76.75738590000037,
+      "worker_pid": 11156,
+      "worker_peak_working_set_bytes": 1608204288,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\leather_seed2_current\\maps.npz",
+      "maps_sha256": "f919df2120172a03e8091bca71dbec289f7e170c351f24b2930d03c2f4538673",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\leather_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\leather_seed2_current\\summary.json"
+    },
+    {
+      "category": "metal_nut",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 0.9891304347826086,
+        "missed_defects": 2,
+        "false_alarms": 0,
+        "tp": 91,
+        "tn": 22,
+        "threshold": 0.9999999999999999,
+        "test_images": 115
+      },
+      "train_images": 176,
+      "validation_images": 44,
+      "fit_seconds": 64.19068809999953,
+      "worker_pid": 28276,
+      "worker_peak_working_set_bytes": 1523384320,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\metal_nut_seed0_current\\maps.npz",
+      "maps_sha256": "18a8173a3d118b69cee687343d756707d66b94eee903bc4948d6cea0631944ec",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed0_current\\summary.json"
+    },
+    {
+      "category": "metal_nut",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9975562072336266,
+        "f1": 0.9837837837837838,
+        "missed_defects": 2,
+        "false_alarms": 1,
+        "tp": 91,
+        "tn": 21,
+        "threshold": 1.0,
+        "test_images": 115
+      },
+      "train_images": 176,
+      "validation_images": 44,
+      "fit_seconds": 64.73558459999913,
+      "worker_pid": 29008,
+      "worker_peak_working_set_bytes": 1524269056,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\metal_nut_seed1_current\\maps.npz",
+      "maps_sha256": "f9255e7edd44e705ea027ddd29fc37700ce3b92c0f8f23cba3c85bb9f440430c",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed1_current\\summary.json"
+    },
+    {
+      "category": "metal_nut",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9995112414467253,
+        "f1": 0.989247311827957,
+        "missed_defects": 1,
+        "false_alarms": 1,
+        "tp": 92,
+        "tn": 21,
+        "threshold": 0.9999999999999996,
+        "test_images": 115
+      },
+      "train_images": 176,
+      "validation_images": 44,
+      "fit_seconds": 65.26685319999888,
+      "worker_pid": 11312,
+      "worker_peak_working_set_bytes": 1524658176,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\maps.npz",
+      "maps_sha256": "203d13152ee26d82259e39f070fef7ec5cfbbd1d7cd1288b33b1cb4ca7a266c2",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\summary.json"
+    },
+    {
+      "category": "pill",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9615384615384615,
+        "f1": 0.8582995951417004,
+        "missed_defects": 35,
+        "false_alarms": 0,
+        "tp": 106,
+        "tn": 26,
+        "threshold": 0.9999999999999999,
+        "test_images": 167
+      },
+      "train_images": 213,
+      "validation_images": 54,
+      "fit_seconds": 1409.960764899999,
+      "worker_pid": 15008,
+      "worker_peak_working_set_bytes": 1681805312,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\pill_seed0_current\\maps.npz",
+      "maps_sha256": "0f955fbe99e8043200ae29510e3d53d044ea94557d3611d37525842ab1322d84",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\pill_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\pill_seed0_current\\summary.json"
+    },
+    {
+      "category": "pill",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9680851063829786,
+        "f1": 0.8853754940711462,
+        "missed_defects": 29,
+        "false_alarms": 0,
+        "tp": 112,
+        "tn": 26,
+        "threshold": 0.9999999999999999,
+        "test_images": 167
+      },
+      "train_images": 213,
+      "validation_images": 54,
+      "fit_seconds": 93.01888820000022,
+      "worker_pid": 20168,
+      "worker_peak_working_set_bytes": 1681588224,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\pill_seed1_current\\maps.npz",
+      "maps_sha256": "835df4a6a2c18dd945ed4f6d935e458c9339b52b601d7c59df049fdad1e108cb",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\pill_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\pill_seed1_current\\summary.json"
+    },
+    {
+      "category": "pill",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9574468085106382,
+        "f1": 0.8629032258064516,
+        "missed_defects": 34,
+        "false_alarms": 0,
+        "tp": 107,
+        "tn": 26,
+        "threshold": 1.0000000000000002,
+        "test_images": 167
+      },
+      "train_images": 213,
+      "validation_images": 54,
+      "fit_seconds": 85.90445980000004,
+      "worker_pid": 14816,
+      "worker_peak_working_set_bytes": 1681408000,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\pill_seed2_current\\maps.npz",
+      "maps_sha256": "cc8d46b057495359f11e7084f3367f21be01a0a0d11eb3fdf6ed61dee3f8e1a0",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\pill_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\pill_seed2_current\\summary.json"
+    },
+    {
+      "category": "screw",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9555236728837877,
+        "f1": 0.5308641975308642,
+        "missed_defects": 76,
+        "false_alarms": 0,
+        "tp": 43,
+        "tn": 41,
+        "threshold": 1.0,
+        "test_images": 160
+      },
+      "train_images": 256,
+      "validation_images": 64,
+      "fit_seconds": 116.40370260000054,
+      "worker_pid": 22376,
+      "worker_peak_working_set_bytes": 1855627264,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\screw_seed0_current\\maps.npz",
+      "maps_sha256": "2751dd71915f41a8640a01a770922eee0315100cff29b9715b79911e1ac606c5",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\screw_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed0_current\\summary.json"
+    },
+    {
+      "category": "screw",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9575732732117237,
+        "f1": 0.743455497382199,
+        "missed_defects": 48,
+        "false_alarms": 1,
+        "tp": 71,
+        "tn": 40,
+        "threshold": 1.0,
+        "test_images": 160
+      },
+      "train_images": 256,
+      "validation_images": 64,
+      "fit_seconds": 103.26457459999801,
+      "worker_pid": 25896,
+      "worker_peak_working_set_bytes": 1855942656,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\screw_seed1_current\\maps.npz",
+      "maps_sha256": "100ef5b433a2a30ec0a9823814a9d051e3d8f5f8b798e1811349173ed2a75c14",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\screw_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed1_current\\summary.json"
+    },
+    {
+      "category": "screw",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9450707112113138,
+        "f1": 0.5308641975308642,
+        "missed_defects": 76,
+        "false_alarms": 0,
+        "tp": 43,
+        "tn": 41,
+        "threshold": 1.0000000000000002,
+        "test_images": 160
+      },
+      "train_images": 256,
+      "validation_images": 64,
+      "fit_seconds": 107.13041480000538,
+      "worker_pid": 29076,
+      "worker_peak_working_set_bytes": 1856462848,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\screw_seed2_current\\maps.npz",
+      "maps_sha256": "252e499895325ee4992c16da508fe2f7782b2f888af29a5fcecd955983776c46",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\screw_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed2_current\\summary.json"
+    },
+    {
+      "category": "tile",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.990981240981241,
+        "f1": 0.9818181818181818,
+        "missed_defects": 3,
+        "false_alarms": 0,
+        "tp": 81,
+        "tn": 33,
+        "threshold": 0.9999999999999998,
+        "test_images": 117
+      },
+      "train_images": 184,
+      "validation_images": 46,
+      "fit_seconds": 71.95256559999689,
+      "worker_pid": 25924,
+      "worker_peak_working_set_bytes": 1558962176,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\tile_seed0_current\\maps.npz",
+      "maps_sha256": "9b7a3db48fdf4450f7a7cc6292e783abc1fb37f49a4e888af210fa55d91a1c28",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\tile_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\tile_seed0_current\\summary.json"
+    },
+    {
+      "category": "tile",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9852092352092353,
+        "f1": 0.9433962264150944,
+        "missed_defects": 9,
+        "false_alarms": 0,
+        "tp": 75,
+        "tn": 33,
+        "threshold": 0.9999999999999998,
+        "test_images": 117
+      },
+      "train_images": 184,
+      "validation_images": 46,
+      "fit_seconds": 69.81220449999819,
+      "worker_pid": 29940,
+      "worker_peak_working_set_bytes": 1553489920,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\tile_seed1_current\\maps.npz",
+      "maps_sha256": "7c69f3ddb10b1a7f0bc2ed05eb749f5f7bdb549bfc9589ff910a52ef5f433bdd",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\tile_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\tile_seed1_current\\summary.json"
+    },
+    {
+      "category": "tile",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.990981240981241,
+        "f1": 0.975609756097561,
+        "missed_defects": 4,
+        "false_alarms": 0,
+        "tp": 80,
+        "tn": 33,
+        "threshold": 1.0,
+        "test_images": 117
+      },
+      "train_images": 184,
+      "validation_images": 46,
+      "fit_seconds": 70.9897531999959,
+      "worker_pid": 29344,
+      "worker_peak_working_set_bytes": 1559359488,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\tile_seed2_current\\maps.npz",
+      "maps_sha256": "4cdbb4cead3cab6257cfee67b9e5df43a5c25215c73bbe1da1c11a454838e999",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\tile_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\tile_seed2_current\\summary.json"
+    },
+    {
+      "category": "toothbrush",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9944444444444445,
+        "f1": 0.9508196721311475,
+        "missed_defects": 1,
+        "false_alarms": 2,
+        "tp": 29,
+        "tn": 10,
+        "threshold": 1.0000000000000002,
+        "test_images": 42
+      },
+      "train_images": 48,
+      "validation_images": 12,
+      "fit_seconds": 17.03873520000343,
+      "worker_pid": 7880,
+      "worker_peak_working_set_bytes": 1000304640,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\toothbrush_seed0_current\\maps.npz",
+      "maps_sha256": "30763f0ac3fa36a611035b2f88c1ffc2d140ce67670b6568723486b95269e1e5",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed0_current\\summary.json"
+    },
+    {
+      "category": "toothbrush",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9916666666666667,
+        "f1": 0.9508196721311475,
+        "missed_defects": 1,
+        "false_alarms": 2,
+        "tp": 29,
+        "tn": 10,
+        "threshold": 1.0000000000000007,
+        "test_images": 42
+      },
+      "train_images": 48,
+      "validation_images": 12,
+      "fit_seconds": 17.236151600001904,
+      "worker_pid": 12804,
+      "worker_peak_working_set_bytes": 999993344,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\toothbrush_seed1_current\\maps.npz",
+      "maps_sha256": "35a7d276c323d24b15446947542ca253d4b73c34b9ad1de5e826699b53511f3e",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed1_current\\summary.json"
+    },
+    {
+      "category": "toothbrush",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 1.0,
+        "missed_defects": 0,
+        "false_alarms": 0,
+        "tp": 30,
+        "tn": 12,
+        "threshold": 0.9999999999999999,
+        "test_images": 42
+      },
+      "train_images": 48,
+      "validation_images": 12,
+      "fit_seconds": 19.210257599996112,
+      "worker_pid": 3468,
+      "worker_peak_working_set_bytes": 1000124416,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\maps.npz",
+      "maps_sha256": "b91d00cb53bac5add7484ce27b3e93bb43dadd80db4c9bcfc7435b7cb7dc062e",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\summary.json"
+    },
+    {
+      "category": "wood",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9921052631578947,
+        "f1": 0.959349593495935,
+        "missed_defects": 1,
+        "false_alarms": 4,
+        "tp": 59,
+        "tn": 15,
+        "threshold": 0.9999999999999998,
+        "test_images": 79
+      },
+      "train_images": 197,
+      "validation_images": 50,
+      "fit_seconds": 92.19960650000576,
+      "worker_pid": 32076,
+      "worker_peak_working_set_bytes": 1610203136,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\wood_seed0_current\\maps.npz",
+      "maps_sha256": "e96c117146e6a245a994c8bdff32438343db9bd4ce6d45041637137caffbabc0",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\wood_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\wood_seed0_current\\summary.json"
+    },
+    {
+      "category": "wood",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9912280701754386,
+        "f1": 0.959349593495935,
+        "missed_defects": 1,
+        "false_alarms": 4,
+        "tp": 59,
+        "tn": 15,
+        "threshold": 1.0000000000000002,
+        "test_images": 79
+      },
+      "train_images": 197,
+      "validation_images": 50,
+      "fit_seconds": 86.99887480000325,
+      "worker_pid": 22048,
+      "worker_peak_working_set_bytes": 1609994240,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\wood_seed1_current\\maps.npz",
+      "maps_sha256": "4a56df1c9dce8027b2c1c49fb4fd7c209f4a54dd76e0f884c2a91b82267bb2e3",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\wood_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\wood_seed1_current\\summary.json"
+    },
+    {
+      "category": "wood",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9912280701754386,
+        "f1": 0.9516129032258065,
+        "missed_defects": 1,
+        "false_alarms": 5,
+        "tp": 59,
+        "tn": 14,
+        "threshold": 1.0000000000000004,
+        "test_images": 79
+      },
+      "train_images": 197,
+      "validation_images": 50,
+      "fit_seconds": 91.95233810000354,
+      "worker_pid": 21708,
+      "worker_peak_working_set_bytes": 1611247616,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\wood_seed2_current\\maps.npz",
+      "maps_sha256": "97c41d7ff67a8cbf891917a094f7904b51953409fd437b290a58d4034a14d366",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\wood_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\wood_seed2_current\\summary.json"
+    },
+    {
+      "category": "zipper",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9947478991596639,
+        "f1": 0.9790794979079498,
+        "missed_defects": 2,
+        "false_alarms": 3,
+        "tp": 117,
+        "tn": 29,
+        "threshold": 1.0,
+        "test_images": 151
+      },
+      "train_images": 192,
+      "validation_images": 48,
+      "fit_seconds": 82.5821539000026,
+      "worker_pid": 3216,
+      "worker_peak_working_set_bytes": 1592315904,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\zipper_seed0_current\\maps.npz",
+      "maps_sha256": "93adea6101edd60bba4a886410b233ad116277e2b7282dd3ea05fe806b6a0a71",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\zipper_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\zipper_seed0_current\\summary.json"
+    },
+    {
+      "category": "zipper",
+      "seed": 1,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9942226890756303,
+        "f1": 0.9711934156378601,
+        "missed_defects": 1,
+        "false_alarms": 6,
+        "tp": 118,
+        "tn": 26,
+        "threshold": 1.0,
+        "test_images": 151
+      },
+      "train_images": 192,
+      "validation_images": 48,
+      "fit_seconds": 87.4244716999965,
+      "worker_pid": 26324,
+      "worker_peak_working_set_bytes": 1592516608,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\zipper_seed1_current\\maps.npz",
+      "maps_sha256": "ca348c3230a864ae1e8b0c0f6ff1492c6749aba270b976c2b13e7efd29ea454c",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\zipper_seed1_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\zipper_seed1_current\\summary.json"
+    },
+    {
+      "category": "zipper",
+      "seed": 2,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 0.9960609243697479,
+        "f1": 0.9833333333333333,
+        "missed_defects": 1,
+        "false_alarms": 3,
+        "tp": 118,
+        "tn": 29,
+        "threshold": 1.0,
+        "test_images": 151
+      },
+      "train_images": 192,
+      "validation_images": 48,
+      "fit_seconds": 87.94883560000017,
+      "worker_pid": 3152,
+      "worker_peak_working_set_bytes": 1553334272,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\zipper_seed2_current\\maps.npz",
+      "maps_sha256": "9da1c750d81aa7c023443b7e5d6518f13fb92242f64b16ea8275ea1ed0fef148",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-breadth-b\\zipper_seed2_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-breadth-b\\zipper_seed2_current\\summary.json"
+    },
+    {
+      "category": "hazelnut",
+      "seed": 0,
+      "engine": "current",
+      "metrics": {
+        "image_auroc": 1.0,
+        "f1": 1.0,
+        "missed_defects": 0,
+        "false_alarms": 0,
+        "tp": 70,
+        "tn": 40,
+        "threshold": 1.0000000000000002,
+        "test_images": 110
+      },
+      "train_images": 312,
+      "validation_images": 79,
+      "fit_seconds": 161.1727347000051,
+      "worker_pid": 26692,
+      "worker_peak_working_set_bytes": 1681264640,
+      "maps_path": "artifacts\\upgrade-2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\maps.npz",
+      "maps_sha256": "f3ab3b0cf4380c050022aa5a95711a664173319d840926ce668b898c78b6be36",
+      "zero_mask_defect_images": 0,
+      "provenance_file": "results\\2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\run.json",
+      "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting.",
+      "source": "results\\2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\summary.json"
+    }
+  ],
+  "aggregates": {
+    "bottle": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 1.0,
+          "std_sample": 0.0
+        },
+        "f1": {
+          "mean": 0.9869987181834828,
+          "std_sample": 0.00888068533454106
+        },
+        "missed_defects": {
+          "mean": 0.0,
+          "std_sample": 0.0
+        },
+        "false_alarms": {
+          "mean": 1.6666666666666667,
+          "std_sample": 1.1547005383792517
+        }
+      }
+    },
+    "cable": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9837581209395303,
+          "std_sample": 0.00683283803791873
+        },
+        "f1": {
+          "mean": 0.894674913766334,
+          "std_sample": 0.020366976719712472
+        },
+        "missed_defects": {
+          "mean": 16.666666666666668,
+          "std_sample": 3.7859388972001824
+        },
+        "false_alarms": {
+          "mean": 1.0,
+          "std_sample": 1.0
+        }
+      }
+    },
+    "capsule": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.968621193990161,
+          "std_sample": 0.007870574969790576
+        },
+        "f1": {
+          "mean": 0.859593249958149,
+          "std_sample": 0.02955413278872942
+        },
+        "missed_defects": {
+          "mean": 26.0,
+          "std_sample": 5.0
+        },
+        "false_alarms": {
+          "mean": 1.0,
+          "std_sample": 0.0
+        }
+      }
+    },
+    "carpet": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9863563402889245,
+          "std_sample": 0.0013900889306331175
+        },
+        "f1": {
+          "mean": 0.9389282755071164,
+          "std_sample": 0.010597662751265734
+        },
+        "missed_defects": {
+          "mean": 2.0,
+          "std_sample": 0.0
+        },
+        "false_alarms": {
+          "mean": 9.333333333333334,
+          "std_sample": 2.0816659994661326
+        }
+      }
+    },
+    "grid": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9855193539404065,
+          "std_sample": 0.005562513048019528
+        },
+        "f1": {
+          "mean": 0.9517881517881518,
+          "std_sample": 0.005485063982473123
+        },
+        "missed_defects": {
+          "mean": 4.333333333333333,
+          "std_sample": 0.5773502691896258
+        },
+        "false_alarms": {
+          "mean": 1.0,
+          "std_sample": 0.0
+        }
+      }
+    },
+    "hazelnut": {
+      "seeds": [
+        1,
+        2,
+        0
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9997619047619047,
+          "std_sample": 0.0004123930494211983
+        },
+        "f1": {
+          "mean": 0.9953051643192489,
+          "std_sample": 0.00813169393224824
+        },
+        "missed_defects": {
+          "mean": 0.0,
+          "std_sample": 0.0
+        },
+        "false_alarms": {
+          "mean": 0.6666666666666666,
+          "std_sample": 1.1547005383792517
+        }
+      }
+    },
+    "leather": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 1.0,
+          "std_sample": 0.0
+        },
+        "f1": {
+          "mean": 0.9020185856392606,
+          "std_sample": 0.008843744475663428
+        },
+        "missed_defects": {
+          "mean": 0.0,
+          "std_sample": 0.0
+        },
+        "false_alarms": {
+          "mean": 20.0,
+          "std_sample": 2.0
+        }
+      }
+    },
+    "metal_nut": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9990224828934506,
+          "std_sample": 0.001293133583120522
+        },
+        "f1": {
+          "mean": 0.9873871767981165,
+          "std_sample": 0.0031211770172065506
+        },
+        "missed_defects": {
+          "mean": 1.6666666666666667,
+          "std_sample": 0.5773502691896257
+        },
+        "false_alarms": {
+          "mean": 0.6666666666666666,
+          "std_sample": 0.5773502691896258
+        }
+      }
+    },
+    "pill": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.962356792144026,
+          "std_sample": 0.005366152638544989
+        },
+        "f1": {
+          "mean": 0.868859438339766,
+          "std_sample": 0.014487354020520822
+        },
+        "missed_defects": {
+          "mean": 32.666666666666664,
+          "std_sample": 3.2145502536643185
+        },
+        "false_alarms": {
+          "mean": 0.0,
+          "std_sample": 0.0
+        }
+      }
+    },
+    "screw": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9527225524356084,
+          "std_sample": 0.0067054620249039866
+        },
+        "f1": {
+          "mean": 0.6017279641479759,
+          "std_sample": 0.12273964419654056
+        },
+        "missed_defects": {
+          "mean": 66.66666666666667,
+          "std_sample": 16.165807537309522
+        },
+        "false_alarms": {
+          "mean": 0.3333333333333333,
+          "std_sample": 0.5773502691896258
+        }
+      }
+    },
+    "tile": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9890572390572391,
+          "std_sample": 0.003332469086231536
+        },
+        "f1": {
+          "mean": 0.966941388110279,
+          "std_sample": 0.020625642218399184
+        },
+        "missed_defects": {
+          "mean": 5.333333333333333,
+          "std_sample": 3.2145502536643185
+        },
+        "false_alarms": {
+          "mean": 0.0,
+          "std_sample": 0.0
+        }
+      }
+    },
+    "toothbrush": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9953703703703703,
+          "std_sample": 0.0042431256434776144
+        },
+        "f1": {
+          "mean": 0.9672131147540983,
+          "std_sample": 0.02839427553391605
+        },
+        "missed_defects": {
+          "mean": 0.6666666666666666,
+          "std_sample": 0.5773502691896258
+        },
+        "false_alarms": {
+          "mean": 1.3333333333333333,
+          "std_sample": 1.1547005383792517
+        }
+      }
+    },
+    "transistor": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9983333333333334,
+          "std_sample": 1.3597399555105182e-16
+        },
+        "f1": {
+          "mean": 0.9536588073173439,
+          "std_sample": 0.0065126382268329945
+        },
+        "missed_defects": {
+          "mean": 2.3333333333333335,
+          "std_sample": 1.1547005383792515
+        },
+        "false_alarms": {
+          "mean": 1.3333333333333333,
+          "std_sample": 1.5275252316519465
+        }
+      }
+    },
+    "wood": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9915204678362572,
+          "std_sample": 0.0005064476045523048
+        },
+        "f1": {
+          "mean": 0.9567706967392254,
+          "std_sample": 0.004466780210095428
+        },
+        "missed_defects": {
+          "mean": 1.0,
+          "std_sample": 0.0
+        },
+        "false_alarms": {
+          "mean": 4.333333333333333,
+          "std_sample": 0.5773502691896258
+        }
+      }
+    },
+    "zipper": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "image_auroc": {
+          "mean": 0.9950105042016807,
+          "std_sample": 0.0009468359441869686
+        },
+        "f1": {
+          "mean": 0.9778687489597143,
+          "std_sample": 0.0061598567495482846
+        },
+        "missed_defects": {
+          "mean": 1.3333333333333333,
+          "std_sample": 0.5773502691896257
+        },
+        "false_alarms": {
+          "mean": 4.0,
+          "std_sample": 1.7320508075688772
+        }
+      }
+    }
+  },
+  "official_current_comparisons": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "matched_predictions": 83,
+      "total": 83,
+      "max_score_delta": 0.0,
+      "official": "results\\2026-10-30\\step1\\bottle_seed0_official\\summary.json",
+      "current": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json"
+    },
+    {
+      "category": "grid",
+      "seed": 0,
+      "matched_predictions": 78,
+      "total": 78,
+      "max_score_delta": 0.0,
+      "official": "results\\2026-10-30\\step1\\grid_seed0_official\\summary.json",
+      "current": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json"
+    },
+    {
+      "category": "transistor",
+      "seed": 0,
+      "matched_predictions": 100,
+      "total": 100,
+      "max_score_delta": 0.0,
+      "official": "results\\2026-10-30\\step1\\transistor_seed0_official\\summary.json",
+      "current": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json"
+    }
+  ],
+  "std_definition": "sample standard deviation, ddof=1, same fixed split, seed changes sampling only; null for one seed"
+}

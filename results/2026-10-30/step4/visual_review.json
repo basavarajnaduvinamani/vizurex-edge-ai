@@ -1,0 +1,109 @@
+{
+  "reviewed_at": "2026-10-30T22:35:39.487584+05:30",
+  "source": "results\\2026-10-30\\step4\\cases.json",
+  "source_sha256": "49be023c5c4a9190418f0a6941cda5b58c4f9406d78a1a9a2eaabf509cec8251",
+  "cases": [
+    {
+      "category": "bottle",
+      "image": "good/001.png",
+      "observation": "Normal-labelled bottle shows bright ring/reflection variation. The score exceeds the frozen threshold; a causal role for reflections is unverified.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\bottle_good_001.png",
+      "crop_sha256": "36dd9cf06eab6f80fc52e5206facc73a852c0edc5257b1c8197ba8bdc1f0d7ad",
+      "annotation_retention": null
+    },
+    {
+      "category": "grid",
+      "image": "glue/000.png",
+      "observation": "GT-marked glue is near the upper edge and is partially removed by the centre crop. The retained region is subtle. Partial removal is measured; its causal contribution to this miss is unverified.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\grid_glue_000.png",
+      "crop_sha256": "8595bff823633a8488f4f5aac29bbf74af8fbb80254e6544d4a950c59da5a4ca",
+      "annotation_retention": 0.5628415300546448
+    },
+    {
+      "category": "grid",
+      "image": "glue/006.png",
+      "observation": "GT-marked local texture/glue change remains inside the crop. It is visually subtle at model resolution and the score stays below threshold. Resolution, representation and cutoff contributions are not disentangled.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\grid_glue_006.png",
+      "crop_sha256": "c7c20efbedb4ad093877d64638d488c23c24e6d157e0066e17bd954c8c5ddc5a",
+      "annotation_retention": 1.0
+    },
+    {
+      "category": "grid",
+      "image": "glue/008.png",
+      "observation": "The GT-marked glue lies above the model crop. No annotated defect pixels remain in the model input; this directly establishes a crop-visibility failure.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\grid_glue_008.png",
+      "crop_sha256": "fea2285bd5459743bdb4713c7203907d84d4db1974ed5050c82b085c7d396630",
+      "annotation_retention": 0.0
+    },
+    {
+      "category": "grid",
+      "image": "good/018.png",
+      "observation": "Regular normal-labelled mesh with an oblique orientation remains visible. The frozen threshold is exceeded; normal-coverage or orientation effects are hypotheses, not demonstrated causes.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\grid_good_018.png",
+      "crop_sha256": "4951ba07fc1a392fb84185413d3853980ff3b72341f1b92d1d0d4437433d4fd8",
+      "annotation_retention": null
+    },
+    {
+      "category": "grid",
+      "image": "thread/003.png",
+      "observation": "Thin GT-marked strand spans the mesh and is partly truncated at the crop boundary. Most of the annotation remains; the reason its score stays below threshold is unverified.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\grid_thread_003.png",
+      "crop_sha256": "aec2818a6183a48fb914cb2077004216739dc35102c0bf4142ae891145ccb3a3",
+      "annotation_retention": 0.8953792502179599
+    },
+    {
+      "category": "transistor",
+      "image": "bent_lead/001.png",
+      "observation": "Small GT-marked change at the right lead tip remains in the crop. Its below-threshold score is confirmed; representation versus calibration causes remain unresolved.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_bent_lead_001.png",
+      "crop_sha256": "0819df5a068e641b50cdfc6426dc3abb9848ef88945c93a3cb602c5678b3c56b",
+      "annotation_retention": 1.0
+    },
+    {
+      "category": "transistor",
+      "image": "good/018.png",
+      "observation": "Normal-labelled part shows visible bent/curved lead appearance, retained in the crop. The score exceeds threshold; attributing the alarm to a specific lead would require a localisation or counterfactual check.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_good_018.png",
+      "crop_sha256": "f8ba5a49b1d42f7f02771c6b9ff89af2d59c4f0e41967e1da1471cdd035cd7d4",
+      "annotation_retention": null
+    },
+    {
+      "category": "transistor",
+      "image": "good/044.png",
+      "observation": "Normal-labelled part has visible lead/pose variation. The crop retains the part and the score exceeds threshold. The specific source of that score is not established.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_good_044.png",
+      "crop_sha256": "0b74e73079b27c8b2c0ea0290f741c8fc8a5e78556b351ebca2d42a8c7cba662",
+      "annotation_retention": null
+    },
+    {
+      "category": "transistor",
+      "image": "good/045.png",
+      "observation": "Normal-labelled part has visible curved leads and surrounding background. The score exceeds threshold. Background versus part appearance has not been experimentally separated.",
+      "source_crop": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_good_045.png",
+      "crop_sha256": "bb4e12684c9dd62a2fd341750f4c47defc50614546a7317232684397985be45d",
+      "annotation_retention": null
+    }
+  ],
+  "figures": [
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\error-images\\review_sheet_1.png",
+      "sha256": "cec1ee7c8c269009ed43ce05acde2721eaadfd73d66deebfb13269c8df08868b"
+    },
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\error-images\\review_sheet_2.png",
+      "sha256": "49bbbd91c0c463c0586e63fe1393e80379e190831f6a61d95e336e84b90d8fe5"
+    },
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\error-images\\gt_review.png",
+      "sha256": "9dbcd2157e1a34c5a2ba23742418c8ef078438a389b601ccf60749891e4bee71"
+    }
+  ],
+  "counts": {
+    "reviewed_cases": 10,
+    "complete_annotation_crop_removal": 1,
+    "partial_annotation_crop_removal": 2,
+    "retained_annotation_misses": 2,
+    "normal_labelled_false_alarms": 5
+  },
+  "policy": "Retrospective visual review of all original/crop pairs and GT-marked misses. No detector, thresholds, shot budgets or test splits changed. Causal diagnosis beyond directly measured crop removal remains UNKNOWN."
+}
