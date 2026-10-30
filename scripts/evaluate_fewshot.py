@@ -61,10 +61,19 @@ def evaluate(payload):
             reason='Protocol runs full once; seed spread is unavailable, not an observed zero standard deviation.')
     overall_practical='met' if any(r['verdict']=='met' for r in practical.values()) else (
         'inconclusive' if any(r['verdict']=='inconclusive' for r in practical.values()) else 'not met')
+    macro={}
+    for method in ['patchcore_wrn50','dinov2_vits14']:
+        macro[method]={}
+        for k in ['1','2','4','8','16','full']:
+            values=[rows.get((category,method,k)) for category in CATEGORIES]
+            if all(row is not None for row in values):
+                macro[method][k]=dict(image_auroc=sum(row['image_auroc_mean'] for row in values)/len(values),
+                    categories=CATEGORIES,seeds={row['category']:row['seeds'] for row in values})
     return dict(h1=dict(verdict=h1_verdict,supported_categories=supported,categories=h1),
         practical=dict(verdict=overall_practical,methods=practical,
             interpretation='One shared k must meet the criterion in all primary categories; primary methods evaluated separately.'),
         h2=dict(verdict='inconclusive',categories=h2),
+        macro_auroc=macro,macro_definition='Unweighted mean of category mean AUROCs; scores were not pooled across categories.',
         standard_deviation='Population standard deviation (ddof=0), matching the pre-existing report.summarize implementation.',
         calibration_limitation='k references exclude extra held-out normal calibration images. No factory onboarding or worker-time experiment was performed.')
 
