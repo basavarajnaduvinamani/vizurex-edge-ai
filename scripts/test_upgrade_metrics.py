@@ -67,3 +67,24 @@ def test_vectorised_radial_profile_matches_nested_reference():
                     profile[b]+=gray[yi,xi];count[b]+=1
         profile[count>0]/=count[count>0]
         assert np.array_equal(profile,radial_profile(gray,cy,cx,radius))
+
+
+def test_failed_worker_partial_summary_is_not_counted(tmp_path,monkeypatch):
+    import json
+    import sys
+    import upgrade_summarise as summary
+    root=tmp_path/'results/2026-10-30/fixture'
+    (root/'good').mkdir(parents=True);(root/'failed').mkdir()
+    row=dict(category='bottle',engine='current',seed=0,metrics=dict(
+        image_auroc=0.75,f1=0.5,missed_defects=1,false_alarms=2))
+    (root/'good/summary.json').write_text(json.dumps(row))
+    (root/'failed/summary.json').write_text(json.dumps({**row,'seed':1}))
+    (root/'failures.json').write_text(json.dumps([dict(run='failed',returncode=1)]))
+    monkeypatch.setattr(summary,'ROOT',tmp_path)
+    monkeypatch.setattr(summary.subprocess,'check_output',lambda *args,**kwargs:'test-only-commit')
+    monkeypatch.setattr(sys,'argv',['upgrade_summarise.py','--stages','fixture','--output','output.json'])
+    summary.main()
+    actual=json.loads((tmp_path/'output.json').read_text())
+    assert len(actual['runs'])==1
+    assert actual['aggregates']['bottle']['seeds']==[0]
+    assert actual['aggregates']['bottle']['metrics']['f1']['std_sample'] is None
