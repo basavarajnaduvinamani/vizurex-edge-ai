@@ -39,10 +39,17 @@ def main():
     for cmd in [['git','status','--short'],['git','stash','list']]:
         subprocess.run(cmd,cwd=ROOT,stdout=subprocess.DEVNULL,check=True)
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    cache=ROOT/'artifacts/finish-fewshot/cache'
+    paths={key:str(cache/name) for key,name in {
+        'HF_HOME':'huggingface','TORCH_HOME':'torch','PIP_CACHE_DIR':'pip',
+        'MPLCONFIGDIR':'matplotlib','TEMP':'tmp','TMP':'tmp'}.items()}
+    for value in paths.values():Path(value).mkdir(parents=True,exist_ok=True)
     data=dict(command=command,cwd=str(ROOT),execution_commit=commit,hardware=hardware(),
+              project_cache_paths=paths,
               start_utc=datetime.now(timezone.utc).isoformat(),exit_status=None)
     target.write_text(json.dumps(data,indent=2),encoding='utf-8')
     environment=os.environ.copy()
+    environment.update(paths)
     temp=ROOT/'artifacts/pytest-finish';temp.mkdir(parents=True,exist_ok=True)
     environment['PYTEST_DEBUG_TEMPROOT']=str(temp)
     begin=time.perf_counter()
