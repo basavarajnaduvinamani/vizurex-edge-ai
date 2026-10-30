@@ -197,6 +197,14 @@ class ExperimentScriptTests(unittest.TestCase):
             run = payload['runs'][0]
             self.assertEqual(run['validation_count'], 2)
             self.assertEqual(run['test_count'], 6)
+            import csv,hashlib
+            predictions=output/run['predictions_path']
+            self.assertEqual(hashlib.sha256(predictions.read_bytes()).hexdigest(),run['predictions_sha256'])
+            rows=list(csv.DictReader(predictions.open()))
+            self.assertEqual(len(rows),run['test_count'])
+            self.assertEqual(sum(int(r['label'])==1 and int(r['predicted'])==0 for r in rows),run['fn'])
+            self.assertEqual(sum(int(r['label'])==0 and int(r['predicted'])==1 for r in rows),run['fp'])
+            self.assertTrue((output/run['calibration_path']).is_file())
             self.assertIsNotNone(run['pixel_aupro'])
             pool = {f'{i:03d}.png' for i in range(8)}
             for record in payload['runs']:

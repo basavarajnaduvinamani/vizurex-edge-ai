@@ -17,6 +17,8 @@ Example (owner's machine or Colab, MVTec AD extracted under data/raw/mvtec_ad):
 from __future__ import annotations
 
 import argparse
+import csv
+import hashlib
 import importlib.metadata
 import json
 import platform
@@ -152,6 +154,27 @@ def run_category(category, args, payload, save):
                           "test_count": len(test_scores),
                           "nn_ms_per_image_median": float(np.median(nn_seconds) * 1000)}
                 record.update(metrics.image_metrics(test_scores, test.labels, threshold))
+                # Private sidecars make aggregate metrics independently auditable;
+                # they contain no image pixels and do not alter any scoring rule.
+                evidence=Path(args.output)/'predictions'
+                evidence.mkdir(parents=True,exist_ok=True)
+                key=f'{category}__{method}__k{k}__seed{seed}'
+                predictions=evidence/(key+'.csv')
+                with predictions.open('w',newline='',encoding='utf-8') as stream:
+                    writer=csv.DictWriter(stream,fieldnames=['image','label','score','threshold','predicted'])
+                    writer.writeheader()
+                    for entry,label,score in zip(splits['test'].data_to_iterate,test.labels,test_scores):
+                        image=Path(entry[2]).resolve().relative_to(args.data_root.resolve()/category/'test').as_posix()
+                        writer.writerow(dict(image=image,label=int(label),score=float(score),
+                                             threshold=threshold,predicted=int(score>=threshold)))
+                calibration=evidence/(key+'_calibration.json')
+                calibration.write_text(json.dumps(dict(threshold=threshold,validation_scores=val_scores.tolist(),
+                    validation_images=[Path(entry[2]).name for entry in splits['val'].data_to_iterate],
+                    policy='Normal validation only, computed before test scoring'),indent=2),encoding='utf-8')
+                record.update(predictions_path=predictions.relative_to(args.output).as_posix(),
+                    predictions_sha256=hashlib.sha256(predictions.read_bytes()).hexdigest(),
+                    calibration_path=calibration.relative_to(args.output).as_posix(),
+                    calibration_sha256=hashlib.sha256(calibration.read_bytes()).hexdigest())
                 record["pixel_auroc"] = record["pixel_aupro"] = None
                 if args.pixel_metrics and test.masks is not None and test.masks.any():
                     maps = np.stack(test_maps)
