@@ -1,0 +1,25 @@
+{
+  "category": "screw",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9450707112113138,
+    "f1": 0.5308641975308642,
+    "missed_defects": 76,
+    "false_alarms": 0,
+    "tp": 43,
+    "tn": 41,
+    "threshold": 1.0000000000000002,
+    "test_images": 160
+  },
+  "train_images": 256,
+  "validation_images": 64,
+  "fit_seconds": 107.13041480000538,
+  "worker_pid": 29076,
+  "worker_peak_working_set_bytes": 1856462848,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\screw_seed2_current\\maps.npz",
+  "maps_sha256": "252e499895325ee4992c16da508fe2f7782b2f888af29a5fcecd955983776c46",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\screw_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

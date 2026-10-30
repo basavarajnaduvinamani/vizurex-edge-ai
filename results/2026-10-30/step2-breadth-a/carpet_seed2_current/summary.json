@@ -1,0 +1,25 @@
+{
+  "category": "carpet",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9871589085072231,
+    "f1": 0.9354838709677419,
+    "missed_defects": 2,
+    "false_alarms": 10,
+    "tp": 87,
+    "tn": 18,
+    "threshold": 0.9999999999999999,
+    "test_images": 117
+  },
+  "train_images": 224,
+  "validation_images": 56,
+  "fit_seconds": 98.48245569999926,
+  "worker_pid": 29356,
+  "worker_peak_working_set_bytes": 1722654720,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\carpet_seed2_current\\maps.npz",
+  "maps_sha256": "b11b4dccd7b28a9153ba33e5101989f85d375ad40408854c8999933562afc9dd",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-a\\carpet_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}
