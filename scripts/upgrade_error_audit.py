@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
-from PIL import Image
+from PIL import Image, ImageDraw
 import numpy as np
 from torchvision import transforms
 
@@ -61,6 +61,23 @@ def main():
         historical_missed_defects=sum(r['historical_error']=='missed_defect' for r in rows),
         historical_false_alarms=sum(r['historical_error']=='false_alarm' for r in rows),
         policy='Retrospective error analysis only; no thresholds or models changed. This test set is not a development set.')
+    sheets=[]
+    for page, start in enumerate(range(0,len(rows),5)):
+        canvas=Image.new('RGB',(650,290*min(5,len(rows)-start)), 'white')
+        draw=ImageDraw.Draw(canvas)
+        for slot,row in enumerate(rows[start:start+5]):
+            y=slot*290
+            draw.text((5,y+3),row['category']+' / '+row['image']+' / '+row['historical_error'],fill='black')
+            source=ROOT/'data/raw/mvtec_ad'/row['category']/'test'/row['image']
+            with Image.open(source) as im:
+                thumbnail=im.convert('RGB');thumbnail.thumbnail((290,240));canvas.paste(thumbnail,(5,y+35))
+            with Image.open(ROOT/row['crop_path']) as im:
+                canvas.paste(im.convert('RGB'),(325,y+35))
+            draw.text((5,y+20),'Original image (thumbnail)',fill='black')
+            draw.text((325,y+20),'Actual model crop (224 x 224)',fill='black')
+        target=private/f'review_sheet_{page+1}.png';canvas.save(target)
+        sheets.append(dict(path=str(target.relative_to(ROOT)),sha256=hashlib.sha256(target.read_bytes()).hexdigest()))
+    result['visual_review_sheets']=sheets
     (out/'cases.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps(result),flush=True)
 
