@@ -1,0 +1,30 @@
+{
+  "category": "bottle",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 1.0,
+    "f1": 0.9767441860465116,
+    "missed_defects": 0,
+    "false_alarms": 3,
+    "tp": 63,
+    "tn": 17,
+    "threshold": 1.0000000000000002,
+    "test_images": 83
+  },
+  "train_images": 167,
+  "validation_images": 42,
+  "fit_seconds": 110.07849139999962,
+  "worker_pid": 29060,
+  "worker_peak_working_set_bytes": 1486872576,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\bottle_seed2_current\\maps.npz",
+  "maps_sha256": "deb03ce640390a1d414e20afe95832b30d8bc815a6b2eea072a10991bd471832",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-existing\\bottle_seed2_current\\run.json",
+  "historical_phase1_comparison": {
+    "matching_decisions": 81,
+    "max_score_delta": 3.327527240995142,
+    "note": "historical CSV rounded; old values are not new session results"
+  },
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}
