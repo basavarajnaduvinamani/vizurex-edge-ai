@@ -30,7 +30,7 @@ def main():
     result=dict(command=[sys.executable,*sys.argv],execution_commit=git('rev-parse','HEAD'),
         branch=git('branch','--show-current'),base_commit=BASE,
         inherited_snapshot=git('rev-parse','HEAD',cwd=UPSTREAM),
-        inherited_status=git('status','--short',cwd=UPSTREAM),inherited_remotes=git('remote','-v',cwd=UPSTREAM),
+        inherited_status=git('--no-optional-locks','status','--short',cwd=UPSTREAM),inherited_remotes=git('remote','-v',cwd=UPSTREAM),
         upgrade_changed_paths=git('diff','--name-status',BASE,'HEAD').splitlines(),files=rows,
         policy='PatchCore is an established inherited method. Ledger separates supplied source, project extensions and this-session upgrades. It does not establish a novel algorithm, sole human authorship, hardware validation or deployment.')
     target=ROOT/'results/2026-10-30/step8-contributions.json'

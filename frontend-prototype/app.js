@@ -11,6 +11,22 @@
 
 import { api, CATEGORY_SPECS } from "./api.js?v=phase3-2";
 
+document.getElementById('refreshInspectionLog').addEventListener('click', async () => {
+  const output = document.getElementById('recentInspectionLog');
+  output.textContent = 'Reading local metadata…';
+  try {
+    const key = document.getElementById('sessionAccessKey')?.value || '';
+    const response = await fetch('/api/inspections/recent', {
+      headers: key ? {'X-Visurex-Key': key} : {}
+    });
+    if (!response.ok) throw new Error(`Backend returned HTTP ${response.status}`);
+    const result = await response.json();
+    output.textContent = JSON.stringify(result, null, 2);
+  } catch (error) {
+    output.textContent = `Log unavailable: ${error.message}`;
+  }
+});
+
 // Validation Constants per backend specification
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10 MiB limit
 const MAX_PIXEL_COUNT = 16_000_000;          // 16 Megapixels limit

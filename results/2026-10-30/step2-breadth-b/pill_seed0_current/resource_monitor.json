@@ -1,0 +1,6 @@
+{
+  "observed_worker_rss_peak_bytes": 1367519232,
+  "configured_rss_cap_bytes": 2000000000,
+  "sampling_seconds": 0.25,
+  "blocked": null
+}

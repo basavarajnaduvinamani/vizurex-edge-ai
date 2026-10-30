@@ -44,6 +44,26 @@ class ApiTests(unittest.TestCase):
     def test_health(self):
         self.assertEqual(self.client.get('/api/health').status_code, 200)
 
+    def test_recent_metadata_is_bounded_and_excludes_images_and_filenames(self):
+        self.assertEqual(self.client.get('/api/inspections/recent').json()['records'], [])
+        self.request()
+        records = self.client.get('/api/inspections/recent').json()['records']
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]['category'], 'bottle')
+        self.assertNotIn('images', records[0])
+        self.assertNotIn('private-filename', json.dumps(records))
+        self.log.write_text('\n'.join(json.dumps({'inspection_id': str(i), 'filename': 'secret.png'})
+                                       for i in range(12)), encoding='utf-8')
+        records = self.client.get('/api/inspections/recent').json()['records']
+        self.assertEqual(len(records), 10)
+        self.assertEqual(records[0]['inspection_id'], '2')
+        self.assertNotIn('filename', records[0])
+
+    def test_recent_metadata_skips_truncated_and_non_object_records(self):
+        self.log.write_text('{"broken":\n[]\nnull\n{"inspection_id":"valid"}\n', encoding='utf-8')
+        self.assertEqual(self.client.get('/api/inspections/recent').json()['records'],
+                         [{'inspection_id': 'valid'}])
+
     def test_real_contract_and_no_image_retention(self):
         response = self.request()
         self.assertEqual(response.status_code, 200, response.text)

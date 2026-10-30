@@ -1,0 +1,25 @@
+{
+  "category": "metal_nut",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9995112414467253,
+    "f1": 0.989247311827957,
+    "missed_defects": 1,
+    "false_alarms": 1,
+    "tp": 92,
+    "tn": 21,
+    "threshold": 0.9999999999999996,
+    "test_images": 115
+  },
+  "train_images": 176,
+  "validation_images": 44,
+  "fit_seconds": 65.26685319999888,
+  "worker_pid": 11312,
+  "worker_peak_working_set_bytes": 1524658176,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\maps.npz",
+  "maps_sha256": "203d13152ee26d82259e39f070fef7ec5cfbbd1d7cd1288b33b1cb4ca7a266c2",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

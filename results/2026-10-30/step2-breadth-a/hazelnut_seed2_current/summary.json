@@ -1,0 +1,25 @@
+{
+  "category": "hazelnut",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9992857142857142,
+    "f1": 0.9859154929577465,
+    "missed_defects": 0,
+    "false_alarms": 2,
+    "tp": 70,
+    "tn": 38,
+    "threshold": 0.9999999999999998,
+    "test_images": 110
+  },
+  "train_images": 312,
+  "validation_images": 79,
+  "fit_seconds": 147.39395629999854,
+  "worker_pid": 29840,
+  "worker_peak_working_set_bytes": 2089480192,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\maps.npz",
+  "maps_sha256": "a8d1e6bc2f95e8bde423e42150797de8379c0d10626aa233f0ff60079439599e",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

@@ -25,6 +25,8 @@ class NetworkTests(TestCase):
                 self.assertEqual(client.get('/api/models').status_code, 401)
                 self.assertEqual(client.get('/api/models', headers={'X-Visurex-Key': 'wrong'}).status_code, 401)
                 self.assertEqual(client.get('/api/models', headers={'X-Visurex-Key': TEST_KEY}).status_code, 200)
+                self.assertEqual(client.get('/api/inspections/recent').status_code, 401)
+                self.assertEqual(client.get('/api/inspections/recent', headers={'X-Visurex-Key': TEST_KEY}).status_code, 200)
                 response = client.post('/api/inspect', data={'category': 'bottle'},
                     headers={'Origin': 'http://192.168.1.4:8000', 'X-Visurex-Key': TEST_KEY},
                     files={'image': ('capture.png', image_bytes(), 'image/png')})
