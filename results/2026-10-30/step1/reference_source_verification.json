@@ -1,0 +1,27 @@
+[
+  {
+    "file": "__init__.py",
+    "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "matches_committed_source_after_newline_normalisation": true
+  },
+  {
+    "file": "patchcore.py",
+    "working_sha256": "280f72ed95f962b3e8a3207c7a18ad5b4c5406756f9b417a112880fc26e5d2d2",
+    "matches_committed_source_after_newline_normalisation": true
+  },
+  {
+    "file": "common.py",
+    "working_sha256": "8fd1dbf86c7634c005161edeea435b8c6777476d74db98a86bc80b63f3a47551",
+    "matches_committed_source_after_newline_normalisation": true
+  },
+  {
+    "file": "sampler.py",
+    "working_sha256": "04b1e7b2fa64ce17a7718f7d20e026b7384c7486ef99807dd8451ec9340ea799",
+    "matches_committed_source_after_newline_normalisation": true
+  },
+  {
+    "file": "backbones.py",
+    "working_sha256": "8a428376704566249cb87d64502a1bfd4b33f2f5e59d46e9b39bb34fadc92219",
+    "matches_committed_source_after_newline_normalisation": true
+  }
+]

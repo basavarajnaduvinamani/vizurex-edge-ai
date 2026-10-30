@@ -28,3 +28,27 @@ def test_image_threshold():
     result = image_metrics([0, 1, 1, 0], [0, 2, 0.5, 1.1], 1)
     assert result['missed_defects'] == 1
     assert result['false_alarms'] == 1
+
+
+def test_exact_pro_matches_independent_small_threshold_sweep():
+    from scipy.ndimage import label
+    masks = np.zeros((2, 5, 5), dtype=bool)
+    masks[0, 0, 0] = True
+    masks[0, 3:5, 3:5] = True
+    masks[1, 1:3, 1:3] = True
+    maps = np.random.default_rng(31).integers(0, 9, size=masks.shape).astype('float32')
+    regions = []
+    for image, mask in enumerate(masks):
+        components, count = label(mask, np.ones((3, 3)))
+        regions.extend((image, components == k) for k in range(1, count+1))
+    points = [(0.0, 0.0)]
+    for threshold in sorted(np.unique(maps), reverse=True):
+        pred = maps >= threshold
+        fpr = np.mean(pred[~masks])
+        pro = np.mean([pred[image][region].mean() for image, region in regions])
+        points.append((fpr, pro))
+    x, y = np.array(points).T
+    cutoff = x < 0.3
+    expected = np.trapezoid(np.r_[y[cutoff], np.interp(0.3, x, y)],
+                            np.r_[x[cutoff], 0.3]) / 0.3
+    assert np.isclose(pixel_metrics(masks, maps)['aupro_fpr_0_3'], expected)
