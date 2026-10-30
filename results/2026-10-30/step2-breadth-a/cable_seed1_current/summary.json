@@ -1,0 +1,25 @@
+{
+  "category": "cable",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.985007496251874,
+    "f1": 0.9058823529411765,
+    "missed_defects": 15,
+    "false_alarms": 1,
+    "tp": 77,
+    "tn": 57,
+    "threshold": 1.0000000000000002,
+    "test_images": 150
+  },
+  "train_images": 179,
+  "validation_images": 45,
+  "fit_seconds": 71.21539330000087,
+  "worker_pid": 30276,
+  "worker_peak_working_set_bytes": 1536139264,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\cable_seed1_current\\maps.npz",
+  "maps_sha256": "876d5553259a43f01dca3c15b709a5476f71f5a071e68ef2cc15f68dfa4e4f62",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-a\\cable_seed1_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}
