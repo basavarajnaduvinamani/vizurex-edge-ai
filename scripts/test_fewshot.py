@@ -229,5 +229,34 @@ class ExperimentScriptTests(unittest.TestCase):
             self.assertEqual(payload['runs'], [])
 
 
+class SuccessCriterionTests(unittest.TestCase):
+    def synthetic_records(self):
+        rows=[]
+        for category in ('bottle','grid','transistor'):
+            for method in ('patchcore_wrn50','dinov2_vits14'):
+                for k in ('1','2','4','8','16','full'):
+                    for seed in ([0] if k=='full' else [0,1,2]):
+                        rows.append(dict(category=category,method=method,k=k,seed=seed,
+                            image_auroc=0.99 if method=='dinov2_vits14' else 0.97,
+                            defect_recall=1.0,false_alarm_rate=0.05,pixel_aupro=None,
+                            nn_ms_per_image_median=1.0))
+        return rows
+
+    def test_criteria_use_measured_spread_and_do_not_invent_full_shot_spread(self):
+        from evaluate_fewshot import evaluate
+        result=evaluate({'runs':self.synthetic_records()})
+        self.assertEqual(result['h1']['verdict'],'met')
+        self.assertEqual(result['practical']['verdict'],'met')
+        self.assertEqual(result['h2']['verdict'],'inconclusive')
+
+    def test_auroc_alone_does_not_pass_false_alarm_criterion(self):
+        from evaluate_fewshot import evaluate
+        rows=self.synthetic_records()
+        for row in rows:
+            if row['category']=='grid':row['false_alarm_rate']=0.25
+        result=evaluate({'runs':rows})
+        self.assertEqual(result['practical']['verdict'],'not met')
+
+
 if __name__ == '__main__':
     unittest.main()
