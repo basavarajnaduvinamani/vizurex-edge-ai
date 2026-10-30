@@ -2,6 +2,7 @@
 import time
 BOOT=time.perf_counter()
 import io
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -36,7 +37,12 @@ def main():
         execution_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         pid=os.getpid(),startup_seconds=ready,
         startup_scope='worker script first instruction through imports and HTTP server readiness; excludes OS process creation',
-        host='127.0.0.1',port=8001,torch_threads=4,records=[])
+        host='127.0.0.1',port=8001,torch_threads=4,records=[],
+        started_at=__import__('datetime').datetime.now().astimezone().isoformat(),
+        source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in [Path(__file__),ROOT/'backend/app.py',ROOT/'backend/engine.py']},
+        deployed_bundle_manifests={category:json.loads((ROOT/'artifacts/model-bundles/models'/category/'manifest.json').read_text())
+            for category in ['bottle','grid','transistor']})
     try:
         for category in ['bottle','grid','transistor']:
             base=ROOT/'data/raw/mvtec_ad'/category/'test'
@@ -54,6 +60,8 @@ def main():
                 response.raise_for_status();payload=response.json()
                 elapsed=time.perf_counter()-tick
                 result['records'].append(dict(category=category,image=str(path.relative_to(base)),
+                    input_sha256=hashlib.sha256(content).hexdigest(),model_version=payload['model_version'],
+                    anomaly_score=payload.get('anomaly_score'),threshold=payload.get('threshold'),
                     cold_start=payload['cold_start'],decision=payload['decision'],
                     preprocessing_seconds_separate_probe=preprocessing,http_roundtrip_seconds=elapsed,
                     server_processing_ms=payload['timing']['server_processing_ms'],
