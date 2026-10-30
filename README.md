@@ -16,6 +16,8 @@ capture and spoken feedback on smart glasses, each step behind a measured go/no-
 > no physical tablet, Android-local or Meta glasses run has been measured yet, and
 > synthetic blur makes it flag every image (see below).
 
+> New research results: [few-shot benchmark report](docs/results/FEWSHOT_2026-10-30.md). Outcomes are mixed; the registered broad-success criteria were not met. Additional baseline evidence is in [the build report](07_build_walmart.md).
+
 ## Demo
 
 ![Demo Mode: simulated ANOMALY example with heatmap, decision and score vs threshold](docs/images/demo-anomaly-desktop.png)
@@ -58,7 +60,7 @@ the experimental RETAKE capture checks exist and why they are not yet a reliable
 | 4. Device qualification | Physical tablet: USB/Wi-Fi, latency, memory, Android-local ONNX | Measured on the actual device | **Not started** |
 | 5. Real capture study | Consented WCT parts, grouped splits, frozen thresholds | Recall / false alarms / retake burden on untouched captures | **Not started** ([protocol](docs/RESEARCH_AND_FIELD_PROTOCOL.md)) |
 | 6. Smart glasses | Supported Meta SDK capture and audio | Official SDK access + hardware test | **Not started** |
-| R. Few-shot research | DINOv2 vs PatchCore with k = 1–16 normal images | Pre-registered success criteria | Harness + protocol only, **no results yet** ([protocol](docs/FEWSHOT_PROTOCOL.md)) |
+| R. Few-shot research | DINOv2 vs PatchCore with k = 1–16 normal images | Pre-registered success criteria | Measured comparison complete; mixed results ([report](docs/results/FEWSHOT_2026-10-30.md), [protocol](docs/FEWSHOT_PROTOCOL.md)) |
 
 ## Architecture
 

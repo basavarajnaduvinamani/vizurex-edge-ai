@@ -72,7 +72,7 @@ def main():
         comparison_md+=f'| {row["category"]} | {row["matched_baseline_image_auroc"]} | {row["fewshot_harness_image_auroc"]} | {row["matched_baseline_fn"]} / {row["matched_baseline_fp"]} | {row["harness_fn"]} / {row["harness_fp"]} |\n'
     (destination/'baseline-comparison.md').write_text(comparison_md,encoding='utf-8')
     criterion_md='| Registered criterion | Verdict | Evidence |\n|---|---|---|\n'
-    criterion_md+=f'| H1 | {criteria["h1"]["verdict"]} | {criteria["h1"]["supported_categories"]} primary categories meet every registered low-shot comparison |\n'
+    criterion_md+=f'| H1 | {criteria["h1"]["verdict"]} | Primary categories meeting every registered low-shot comparison: {criteria["h1"]["supported_categories"]} |\n'
     criterion_md+=f'| Practical few-shot use | {criteria["practical"]["verdict"]} | See per-method qualifying budgets in primary/criteria.json |\n'
     criterion_md+=f'| H2 | {criteria["h2"]["verdict"]} | Full-shot seed spread is unmeasured; descriptive AUROC differences are retained in criteria.json |\n'
     (destination/'criteria.md').write_text(criterion_md,encoding='utf-8')

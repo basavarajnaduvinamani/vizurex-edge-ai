@@ -1,0 +1,35 @@
+[
+  {
+    "category": "bottle",
+    "matched_baseline_image_auroc": 1.0,
+    "fewshot_harness_image_auroc": 1.0,
+    "difference": 0.0,
+    "matched_baseline_fn": 0,
+    "harness_fn": 0,
+    "matched_baseline_fp": 1,
+    "harness_fp": 1,
+    "baseline_source": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json"
+  },
+  {
+    "category": "grid",
+    "matched_baseline_image_auroc": 0.9883040935672514,
+    "fewshot_harness_image_auroc": 0.9849624060150376,
+    "difference": -0.003341687552213757,
+    "matched_baseline_fn": 4,
+    "harness_fn": 3,
+    "matched_baseline_fp": 1,
+    "harness_fp": 1,
+    "baseline_source": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json"
+  },
+  {
+    "category": "transistor",
+    "matched_baseline_image_auroc": 0.9983333333333333,
+    "fewshot_harness_image_auroc": 1.0,
+    "difference": 0.0016666666666667052,
+    "matched_baseline_fn": 1,
+    "harness_fn": 1,
+    "matched_baseline_fp": 3,
+    "harness_fp": 0,
+    "baseline_source": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json"
+  }
+]
