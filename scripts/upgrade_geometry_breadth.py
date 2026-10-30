@@ -34,7 +34,10 @@ def main():
     original=geo._geo_radial_profile
     categories={}
     for stage in args.stages:
+        failures=ROOT/'results/2026-10-30'/stage/'failures.json'
+        excluded={r['run'] for r in json.loads(failures.read_text())} if failures.exists() else set()
         for path in (ROOT/'results/2026-10-30'/stage).glob('*/summary.json'):
+            if path.parent.name in excluded:continue
             row=json.loads(path.read_text())
             if row['engine']=='current':categories.setdefault(row['category'],[]).append(path)
     out=ROOT/'results/2026-10-30/step2-geometry';out.mkdir(parents=True,exist_ok=True)

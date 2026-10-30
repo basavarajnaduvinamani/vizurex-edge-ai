@@ -15,7 +15,10 @@ def main():
     p.add_argument('--output',required=True)
     args=p.parse_args();rows=[];comparisons=[]
     for stage in args.stages:
+        failures=ROOT/'results/2026-10-30'/stage/'failures.json'
+        excluded={r['run'] for r in json.loads(failures.read_text())} if failures.exists() else set()
         for path in sorted((ROOT/'results/2026-10-30'/stage).glob('*/summary.json')):
+            if path.parent.name in excluded:continue
             s=json.loads(path.read_text());s['source']=str(path.relative_to(ROOT));rows.append(s)
             geo=path.parent/'geometry.json'
             if geo.exists():
@@ -28,6 +31,7 @@ def main():
     aggregates={}
     for category in sorted({r['category'] for r in rows}):
         current=[r for r in rows if r['category']==category and r['engine']=='current']
+        if not current:continue
         seeds=[r['seed'] for r in current]
         if len(seeds)!=len(set(seeds)):raise ValueError('Duplicate category/seed would double-count evidence')
         aggregates[category]=dict(seeds=seeds,
