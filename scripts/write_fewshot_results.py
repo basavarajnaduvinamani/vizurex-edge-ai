@@ -44,13 +44,19 @@ def main():
     document=destination.with_suffix('.md')
     if destination.exists() or document.exists():raise FileExistsError('Preserve existing published evidence')
     destination.mkdir(parents=True)
-    for name,source in [('primary',main_dir),('masked',masked_dir)]:
+    for name,source in [('primary',main_dir),('masked',masked_dir),('sanity',ROOT/'artifacts/fewshot-smoke')]:
         target=destination/name;target.mkdir()
         for filename in ['results.json','results.md','fewshot_auroc.png','environment.json']:
             shutil.copy2(source/filename,target/filename)
     shutil.copy2(main_dir/'criteria.json',destination/'primary/criteria.json')
     (destination/'executions.json').write_text(json.dumps(executions,indent=2),encoding='utf-8')
     (destination/'model-intake.json').write_text(json.dumps(intake,indent=2),encoding='utf-8')
+    shutil.copy2(ROOT/'artifacts/finish-fewshot/clean-test-summary.json',destination/'test-summary.json')
+    distinct_test_counts={row['category']:row['test'] for row in primary['timings']}
+    study=dict(primary_configurations=len(primary['runs']),masked_configurations=len(masked['runs']),
+        distinct_test_images=sum(distinct_test_counts.values()),distinct_test_images_by_category=distinct_test_counts,
+        policy='The same official held-out images are evaluated repeatedly across configurations; configurations are not independent test-image samples.')
+    (destination/'study-summary.json').write_text(json.dumps(study,indent=2),encoding='utf-8')
     comparison=[]
     for row in primary['runs']:
         if row['method']!='patchcore_wrn50' or row['k']!='full':continue
