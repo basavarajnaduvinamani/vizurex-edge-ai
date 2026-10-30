@@ -1,0 +1,27 @@
+{
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "packages": {
+    "torch": "2.7.0+cu126",
+    "torchvision": "0.22.0+cu126",
+    "timm": "1.0.30",
+    "numpy": "2.2.5",
+    "faiss-cpu": "1.15.1",
+    "scikit-learn": "1.7.1",
+    "scipy": "1.15.2",
+    "Pillow": "11.1.0"
+  },
+  "torch_threads": 4,
+  "argv": [
+    "scripts/run_fewshot.py",
+    "--data-root",
+    "data/raw/mvtec_ad",
+    "--categories",
+    "bottle",
+    "grid",
+    "transistor",
+    "--output",
+    "artifacts/fewshot-run1"
+  ]
+}
