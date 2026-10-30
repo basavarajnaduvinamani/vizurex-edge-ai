@@ -52,3 +52,18 @@ def test_exact_pro_matches_independent_small_threshold_sweep():
     expected = np.trapezoid(np.r_[y[cutoff], np.interp(0.3, x, y)],
                             np.r_[x[cutoff], 0.3]) / 0.3
     assert np.isclose(pixel_metrics(masks, maps)['aupro_fpr_0_3'], expected)
+
+
+def test_vectorised_radial_profile_matches_nested_reference():
+    from upgrade_geometry_breadth import radial_profile
+    gray=np.random.default_rng(17).integers(0,256,(65,65)).astype(np.float32)/3
+    for cy,cx,radius in [(32.5,32.5,25.5),(5.0,5.0,40.0)]:
+        profile=np.zeros(200);count=np.zeros(200)
+        for angle in np.linspace(0,2*np.pi,360,endpoint=False):
+            ca,sa=np.cos(angle),np.sin(angle)
+            for b in range(200):
+                r=b/200*radius;yi=int(round(cy+r*sa));xi=int(round(cx+r*ca))
+                if 0<=yi<65 and 0<=xi<65:
+                    profile[b]+=gray[yi,xi];count[b]+=1
+        profile[count>0]/=count[count>0]
+        assert np.array_equal(profile,radial_profile(gray,cy,cx,radius))
