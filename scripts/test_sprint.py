@@ -13,6 +13,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SprintRecoveryTests(unittest.TestCase):
+    def test_public_demo_allows_only_generated_samples(self):
+        from fastapi.testclient import TestClient
+        from deploy.public_demo.app import create_app
+        class Stub:
+            def inspect(self,name):return {'sample':name,'scope':'UNIT TEST STUB'}
+        with TestClient(create_app(Stub)) as client:
+            self.assertEqual(client.post('/inspect/normal').json()['scope'],'UNIT TEST STUB')
+            self.assertEqual(client.post('/inspect/unknown').status_code,422)
+            self.assertEqual(client.post('/inspect/normal',content=b'x').status_code,413)
+            self.assertEqual(client.get('/sample/normal').headers['content-type'],'image/png')
+            for _ in range(19):self.assertEqual(client.post('/inspect/normal').status_code,200)
+            self.assertEqual(client.post('/inspect/normal').status_code,429)
+
     def test_router_uses_only_normal_score_vectors(self):
         from sprint_router import choose,dispersion
         method,_=choose(dict(patchcore_wrn50=[1,1,10],dinov2_vits14=[1,1,1]))
