@@ -1,0 +1,135 @@
+{
+  "status": "PREPARED_AND_LOCALLY_TESTED_NOT_DEPLOYED",
+  "smoke": {
+    "results": {
+      "normal": {
+        "decision": "GOOD",
+        "score": 0.05514240264892578,
+        "threshold": 0.06378932237625122,
+        "model": "synthetic-reference WRN patch-NN",
+        "sample": "normal",
+        "scope": "Generated samples and a separate synthetic bank; not the industrial model or a benchmark result."
+      },
+      "scratch": {
+        "decision": "ANOMALY",
+        "score": 1.0108609199523926,
+        "threshold": 0.06378932237625122,
+        "model": "synthetic-reference WRN patch-NN",
+        "sample": "scratch",
+        "scope": "Generated samples and a separate synthetic bank; not the industrial model or a benchmark result."
+      }
+    },
+    "checks": {
+      "health": true,
+      "png": true,
+      "unknown_sample_rejected": true,
+      "bodies_rejected": true,
+      "no_upload_route": true
+    },
+    "passed": true,
+    "scope": "Actual pretrained encoder with generated references. Functional test only, not industrial accuracy or public hosting."
+  },
+  "package_files": [
+    {
+      "path": "app.py",
+      "sha256": "279c99f1828a039232bd2957c5b33519e172ec6562ae9009e04d839b13c715ee"
+    },
+    {
+      "path": "index.html",
+      "sha256": "a0c259059790e22d1cfb1ea209995d21c116707939a8b177f8f71b837e7b3d01"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "655017dd18dbcf4ca6c18382177a11c93fd1486a441d4d84079d31c471ace254"
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "f9a7d37a2970c55febc0f2958e821956581507ed5f006fa350b49baa7afed2dd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f75092424096e45dee761ac48cf98e27bdc3afbd5c548eff898abdc8363db65f"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "88046bf22d5b4f4b8cc85079ae6aae5424a3a1999db952ed152828ff325b2c6d"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "3b921bdc93d93a9db034684b0b3154f1d4bab94b275be2fe37ccbf6d7f285b66"
+    },
+    {
+      "path": "src/patchcore/backbones.py",
+      "sha256": "f1790d8551b0f2bc409eafd686ac84d8981cfba03062932dcf9e5e47a86859ce"
+    },
+    {
+      "path": "src/patchcore/common.py",
+      "sha256": "a6f625252b184cbfa983395f4014a4168672bb955c0730cc6208d14117befc40"
+    },
+    {
+      "path": "src/patchcore/metrics.py",
+      "sha256": "490ed515d0c61cc7843a6f50de2639db333d14df9ead51eb3315dbe30de98093"
+    },
+    {
+      "path": "src/patchcore/patchcore.py",
+      "sha256": "17958dd7762ffa4ddc72519545fa731a14cabf5b721569f86d1b33987eec6690"
+    },
+    {
+      "path": "src/patchcore/sampler.py",
+      "sha256": "04b1e7b2fa64ce17a7718f7d20e026b7384c7486ef99807dd8451ec9340ea799"
+    },
+    {
+      "path": "src/patchcore/utils.py",
+      "sha256": "639631e10195a81cab3e5aa64f1c993b5928ed5d3965da99960abc1eef894129"
+    },
+    {
+      "path": "src/patchcore/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/patchcore/datasets/mvtec.py",
+      "sha256": "0a450396c560da7dba3821b7092c30f7274e3a9f1e2e51ad8fe9b75154f354b7"
+    },
+    {
+      "path": "src/patchcore/datasets/selfds.py",
+      "sha256": "69289565de4fc90135efbef72cd8dedebc5b454d7fec3f5f465f80d5fc1f29df"
+    },
+    {
+      "path": "src/patchcore/datasets/__init__.py",
+      "sha256": "125e20268a10c8a45c97da2d2585175ee4996a561dceedd9edcdf7c141a98b9e"
+    },
+    {
+      "path": "src/patchcore/networks/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/visurex_fewshot/backbones.py",
+      "sha256": "617aaf26447eeaf010d28632da9e2f533cf2d98cdddb8ae9fb7f5e32c919d18c"
+    },
+    {
+      "path": "src/visurex_fewshot/data.py",
+      "sha256": "59ef722630561b0cf9be3639f5e606cf4d9c1ca18f1a849df51b17e0e2f3153e"
+    },
+    {
+      "path": "src/visurex_fewshot/detector.py",
+      "sha256": "d135b182e94cd3d5fd948c2d2fd1337e5ae3a1a0639c7c805798c64dffb60aaf"
+    },
+    {
+      "path": "src/visurex_fewshot/metrics.py",
+      "sha256": "400debb02c511bb21200e7575eb92b3e058b76bb34b4cd30c4d64f15d4ecd25a"
+    },
+    {
+      "path": "src/visurex_fewshot/report.py",
+      "sha256": "834baf0c4e65cb853af02657774b3d3906bcfb3f1f37fb34ac9bd41895a299f1"
+    },
+    {
+      "path": "src/visurex_fewshot/__init__.py",
+      "sha256": "43b859eb324050807108d754d93e4a02c513bf21b8850055a8c6835f111454b3"
+    }
+  ],
+  "docker_cli_available": false,
+  "container_build_executed": false,
+  "official_hosting_source": "https://huggingface.co/docs/hub/spaces-overview",
+  "checked_date": "2026-10-31",
+  "hosting_gate": "Docker compute Space creation requires a paid plan per official documentation; free CPU is not promised. Owner must explicitly say deploy; no hosting account, billing or public repo was changed."
+}
