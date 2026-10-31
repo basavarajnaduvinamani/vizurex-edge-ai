@@ -1,0 +1,56 @@
+C:\Users\Viraj\OneDrive\Desktop\vizurex-edge-ai\development\.venv-clean\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Viraj\OneDrive\Desktop\vizurex-edge-ai\development\.venv-clean\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=Wide_ResNet50_2_Weights.IMAGENET1K_V1`. You can also use `weights=Wide_ResNet50_2_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+Computing support features...:   0%|          | 0/48 [00:00<?, ?it/s][A
+Computing support features...:   2%|2         | 1/48 [00:00<00:16,  2.77it/s][A
+Computing support features...:   4%|4         | 2/48 [00:00<00:15,  2.93it/s][A
+Computing support features...:   6%|6         | 3/48 [00:01<00:14,  3.01it/s][A
+Computing support features...:   8%|8         | 4/48 [00:01<00:14,  3.01it/s][A
+Computing support features...:  10%|#         | 5/48 [00:01<00:14,  3.03it/s][A
+Computing support features...:  12%|#2        | 6/48 [00:02<00:13,  3.03it/s][A
+Computing support features...:  15%|#4        | 7/48 [00:02<00:13,  3.02it/s][A
+Computing support features...:  17%|#6        | 8/48 [00:02<00:13,  3.00it/s][A
+Computing support features...:  19%|#8        | 9/48 [00:03<00:12,  3.00it/s][A
+Computing support features...:  21%|##        | 10/48 [00:03<00:12,  3.02it/s][A
+Computing support features...:  23%|##2       | 11/48 [00:03<00:12,  3.02it/s][A
+Computing support features...:  25%|##5       | 12/48 [00:03<00:11,  3.03it/s][A
+Computing support features...:  27%|##7       | 13/48 [00:04<00:11,  3.03it/s][A
+Computing support features...:  29%|##9       | 14/48 [00:04<00:11,  3.02it/s][A
+Computing support features...:  31%|###1      | 15/48 [00:04<00:10,  3.05it/s][A
+Computing support features...:  33%|###3      | 16/48 [00:05<00:10,  3.02it/s][A
+Computing support features...:  35%|###5      | 17/48 [00:05<00:10,  2.99it/s][A
+Computing support features...:  38%|###7      | 18/48 [00:05<00:09,  3.01it/s][A
+Computing support features...:  40%|###9      | 19/48 [00:06<00:09,  2.99it/s][A
+Computing support features...:  42%|####1     | 20/48 [00:06<00:09,  3.00it/s][A
+Computing support features...:  44%|####3     | 21/48 [00:06<00:08,  3.02it/s][A
+Computing support features...:  46%|####5     | 22/48 [00:07<00:08,  3.05it/s][A
+Computing support features...:  48%|####7     | 23/48 [00:07<00:08,  3.02it/s][A
+Computing support features...:  50%|#####     | 24/48 [00:07<00:08,  2.99it/s][A
+Computing support features...:  52%|#####2    | 25/48 [00:08<00:07,  3.03it/s][A
+Computing support features...:  54%|#####4    | 26/48 [00:08<00:07,  3.08it/s][A
+Computing support features...:  56%|#####6    | 27/48 [00:08<00:06,  3.12it/s][A
+Computing support features...:  58%|#####8    | 28/48 [00:09<00:06,  3.13it/s][A
+Computing support features...:  60%|######    | 29/48 [00:09<00:06,  3.11it/s][A
+Computing support features...:  62%|######2   | 30/48 [00:09<00:05,  3.12it/s][A
+Computing support features...:  65%|######4   | 31/48 [00:10<00:05,  3.12it/s][A
+Computing support features...:  67%|######6   | 32/48 [00:10<00:05,  3.10it/s][A
+Computing support features...:  69%|######8   | 33/48 [00:10<00:04,  3.08it/s][A
+Computing support features...:  71%|#######   | 34/48 [00:11<00:04,  3.12it/s][A
+Computing support features...:  73%|#######2  | 35/48 [00:11<00:04,  3.07it/s][A
+Computing support features...:  75%|#######5  | 36/48 [00:11<00:03,  3.05it/s][A
+Computing support features...:  77%|#######7  | 37/48 [00:12<00:03,  3.08it/s][A
+Computing support features...:  79%|#######9  | 38/48 [00:12<00:03,  3.00it/s][A
+Computing support features...:  81%|########1 | 39/48 [00:12<00:03,  3.00it/s][A
+Computing support features...:  83%|########3 | 40/48 [00:13<00:02,  2.98it/s][A
+Computing support features...:  85%|########5 | 41/48 [00:13<00:02,  2.60it/s][A
+Computing support features...:  88%|########7 | 42/48 [00:14<00:02,  2.68it/s][A
+Computing support features...:  90%|########9 | 43/48 [00:14<00:01,  2.74it/s][A
+Computing support features...:  92%|#########1| 44/48 [00:14<00:01,  2.84it/s][A
+Computing support features...:  94%|#########3| 45/48 [00:15<00:01,  2.92it/s][A
+Computing support features...:  96%|#########5| 46/48 [00:15<00:00,  2.93it/s][A
+Computing support features...:  98%|#########7| 47/48 [00:15<00:00,  3.00it/s][A
+Computing support features...: 100%|##########| 48/48 [00:15<00:00,  3.03it/s][A
+                                                                              [ASubsampling...:   0%|          | 0/376 [00:00<?, ?it/s]Subsampling...:   6%|5         | 21/376 [00:00<00:01, 203.32it/s]Subsampling...:  12%|#1        | 45/376 [00:00<00:01, 208.97it/s]Subsampling...:  19%|#8        | 70/376 [00:00<00:01, 222.44it/s]Subsampling...:  25%|##4       | 93/376 [00:00<00:01, 216.31it/s]Subsampling...:  31%|###       | 115/376 [00:00<00:01, 213.74it/s]Subsampling...:  37%|###6      | 139/376 [00:00<00:01, 220.16it/s]Subsampling...:  43%|####3     | 163/376 [00:00<00:00, 222.13it/s]Subsampling...:  50%|#####     | 189/376 [00:00<00:00, 228.83it/s]Subsampling...:  56%|#####6    | 212/376 [00:00<00:00, 223.26it/s]Subsampling...:  63%|######3   | 238/376 [00:01<00:00, 225.43it/s]Subsampling...:  69%|######9   | 261/376 [00:01<00:00, 221.21it/s]Subsampling...:  76%|#######5  | 284/376 [00:01<00:00, 220.35it/s]Subsampling...:  82%|########1 | 308/376 [00:01<00:00, 219.72it/s]Subsampling...:  88%|########7 | 330/376 [00:01<00:00, 187.75it/s]Subsampling...:  93%|#########3| 350/376 [00:01<00:00, 179.62it/s]Subsampling...: 100%|#########9| 375/376 [00:01<00:00, 190.10it/s]Subsampling...: 100%|##########| 376/376 [00:01<00:00, 208.60it/s]
+{"category": "toothbrush", "seed": 2, "engine": "current", "metrics": {"image_auroc": 1.0, "f1": 1.0, "missed_defects": 0, "false_alarms": 0, "tp": 30, "tn": 12, "threshold": 0.9999999999999999, "test_images": 42}, "train_images": 48, "validation_images": 12, "fit_seconds": 19.210257599996112, "worker_pid": 3468, "worker_peak_working_set_bytes": 1000124416, "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\maps.npz", "maps_sha256": "b91d00cb53bac5add7484ce27b3e93bb43dadd80db4c9bcfc7435b7cb7dc062e", "zero_mask_defect_images": 0, "provenance_file": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\run.json", "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."}

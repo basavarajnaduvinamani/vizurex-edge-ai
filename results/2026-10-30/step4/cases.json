@@ -1,0 +1,264 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_error_audit.py"
+  ],
+  "seed": 0,
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "cases": [
+    {
+      "category": "bottle",
+      "image": "good/001.png",
+      "historical_error": "false_alarm",
+      "new_label": "0",
+      "new_predicted": "1",
+      "new_score": "1.3404231008866994",
+      "frozen_threshold": 1.0,
+      "original_image_size": [
+        900,
+        900
+      ],
+      "image_sha256": "a45aba86ef3e1ef8dbd95ca56abeb63f576fcd2bbd040ba748a1410bb70d6d78",
+      "resized_mask_pixels": null,
+      "cropped_mask_pixels": null,
+      "annotated_mask_retention": null,
+      "classification": "normal_sample_above_validation_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\bottle_good_001.png",
+      "crop_sha256": "36dd9cf06eab6f80fc52e5206facc73a852c0edc5257b1c8197ba8bdc1f0d7ad",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\bottle\\evaluation\\mvtec_bottle_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\bottle_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "grid",
+      "image": "glue/000.png",
+      "historical_error": "missed_defect",
+      "new_label": "1",
+      "new_predicted": "0",
+      "new_score": "0.7153734343668453",
+      "frozen_threshold": 1.0000000000000002,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "cf8ca000f9d176bbf3b8cddf6cc78f4b10db02e2d0ea8537378f705e322fd370",
+      "resized_mask_pixels": 366,
+      "cropped_mask_pixels": 206,
+      "annotated_mask_retention": 0.5628415300546448,
+      "classification": "visible_annotated_defect_below_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\grid_glue_000.png",
+      "crop_sha256": "8595bff823633a8488f4f5aac29bbf74af8fbb80254e6544d4a950c59da5a4ca",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\grid\\evaluation\\mvtec_grid_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\grid_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "grid",
+      "image": "glue/006.png",
+      "historical_error": "missed_defect",
+      "new_label": "1",
+      "new_predicted": "0",
+      "new_score": "0.9041961823574274",
+      "frozen_threshold": 1.0000000000000002,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "cfd1894d7c07c752cd34c95707b12f28ea74a99699dc43094e09f8d18b786d6b",
+      "resized_mask_pixels": 300,
+      "cropped_mask_pixels": 300,
+      "annotated_mask_retention": 1.0,
+      "classification": "visible_annotated_defect_below_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\grid_glue_006.png",
+      "crop_sha256": "c7c20efbedb4ad093877d64638d488c23c24e6d157e0066e17bd954c8c5ddc5a",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\grid\\evaluation\\mvtec_grid_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\grid_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "grid",
+      "image": "glue/008.png",
+      "historical_error": "missed_defect",
+      "new_label": "1",
+      "new_predicted": "0",
+      "new_score": "0.4114646836153074",
+      "frozen_threshold": 1.0000000000000002,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "f38f3c95343197328df609d0fa54c93417cb6882fb7c48e674007fd561678383",
+      "resized_mask_pixels": 147,
+      "cropped_mask_pixels": 0,
+      "annotated_mask_retention": 0.0,
+      "classification": "annotated_defect_outside_model_crop",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\grid_glue_008.png",
+      "crop_sha256": "fea2285bd5459743bdb4713c7203907d84d4db1974ed5050c82b085c7d396630",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\grid\\evaluation\\mvtec_grid_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\grid_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "grid",
+      "image": "good/018.png",
+      "historical_error": "false_alarm",
+      "new_label": "0",
+      "new_predicted": "1",
+      "new_score": "1.0445447614057377",
+      "frozen_threshold": 1.0000000000000002,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "4435fb5b88868adb2236571bdb06c3a1c61be28894bf912994f5e1a31d113c06",
+      "resized_mask_pixels": null,
+      "cropped_mask_pixels": null,
+      "annotated_mask_retention": null,
+      "classification": "normal_sample_above_validation_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\grid_good_018.png",
+      "crop_sha256": "4951ba07fc1a392fb84185413d3853980ff3b72341f1b92d1d0d4437433d4fd8",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\grid\\evaluation\\mvtec_grid_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\grid_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "grid",
+      "image": "thread/003.png",
+      "historical_error": "missed_defect",
+      "new_label": "1",
+      "new_predicted": "0",
+      "new_score": "0.5683386906621263",
+      "frozen_threshold": 1.0000000000000002,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "712bc945e0395c740443cfc49f68f4d087a98727335d730d4ad71f7bf4d6765b",
+      "resized_mask_pixels": 1147,
+      "cropped_mask_pixels": 1027,
+      "annotated_mask_retention": 0.8953792502179599,
+      "classification": "visible_annotated_defect_below_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\grid_thread_003.png",
+      "crop_sha256": "aec2818a6183a48fb914cb2077004216739dc35102c0bf4142ae891145ccb3a3",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\grid\\evaluation\\mvtec_grid_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\grid_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "transistor",
+      "image": "bent_lead/001.png",
+      "historical_error": "missed_defect",
+      "new_label": "1",
+      "new_predicted": "0",
+      "new_score": "0.9462715541897003",
+      "frozen_threshold": 0.9999999999999999,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "d323ab217af2705401d821d0902e0a6e6a970352811b059af4d41bc91b98f581",
+      "resized_mask_pixels": 153,
+      "cropped_mask_pixels": 153,
+      "annotated_mask_retention": 1.0,
+      "classification": "visible_annotated_defect_below_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_bent_lead_001.png",
+      "crop_sha256": "0819df5a068e641b50cdfc6426dc3abb9848ef88945c93a3cb602c5678b3c56b",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\transistor\\evaluation\\mvtec_transistor_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\transistor_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "transistor",
+      "image": "good/018.png",
+      "historical_error": "false_alarm",
+      "new_label": "0",
+      "new_predicted": "1",
+      "new_score": "1.015661638907627",
+      "frozen_threshold": 0.9999999999999999,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "9b80184db8f6978ac804bce0876278ac4d0140d2b320a0dcd78039728655bc40",
+      "resized_mask_pixels": null,
+      "cropped_mask_pixels": null,
+      "annotated_mask_retention": null,
+      "classification": "normal_sample_above_validation_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_good_018.png",
+      "crop_sha256": "f8ba5a49b1d42f7f02771c6b9ff89af2d59c4f0e41967e1da1471cdd035cd7d4",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\transistor\\evaluation\\mvtec_transistor_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\transistor_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "transistor",
+      "image": "good/044.png",
+      "historical_error": "false_alarm",
+      "new_label": "0",
+      "new_predicted": "1",
+      "new_score": "1.0137484030557513",
+      "frozen_threshold": 0.9999999999999999,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "0cb2a5976a6ff5d0a66915b680b43b74d37ea8e4166fb10756c023ca7b4cb8fb",
+      "resized_mask_pixels": null,
+      "cropped_mask_pixels": null,
+      "annotated_mask_retention": null,
+      "classification": "normal_sample_above_validation_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_good_044.png",
+      "crop_sha256": "0b74e73079b27c8b2c0ea0290f741c8fc8a5e78556b351ebca2d42a8c7cba662",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\transistor\\evaluation\\mvtec_transistor_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\transistor_seed0_current\\predictions.csv"
+    },
+    {
+      "category": "transistor",
+      "image": "good/045.png",
+      "historical_error": "false_alarm",
+      "new_label": "0",
+      "new_predicted": "1",
+      "new_score": "1.129832420142202",
+      "frozen_threshold": 0.9999999999999999,
+      "original_image_size": [
+        1024,
+        1024
+      ],
+      "image_sha256": "20044aa1fd2c5a0f7a779901b2d73480e8eee7d5cd46197d4a11124f135cb803",
+      "resized_mask_pixels": null,
+      "cropped_mask_pixels": null,
+      "annotated_mask_retention": null,
+      "classification": "normal_sample_above_validation_threshold",
+      "root_cause": "UNKNOWN except directly measured crop removal",
+      "visual_review": "PENDING",
+      "crop_path": "artifacts\\upgrade-2026-10-30\\error-images\\transistor_good_045.png",
+      "crop_sha256": "bb4e12684c9dd62a2fd341750f4c47defc50614546a7317232684397985be45d",
+      "historical_source": "artifacts\\phase1-20261021\\runs\\transistor\\evaluation\\mvtec_transistor_predictions.csv",
+      "new_source": "results\\2026-10-30\\step1\\transistor_seed0_current\\predictions.csv"
+    }
+  ],
+  "total_cases": 10,
+  "historical_missed_defects": 5,
+  "historical_false_alarms": 5,
+  "policy": "Retrospective error analysis only; no thresholds or models changed. This test set is not a development set.",
+  "visual_review_sheets": [
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\error-images\\review_sheet_1.png",
+      "sha256": "cec1ee7c8c269009ed43ce05acde2721eaadfd73d66deebfb13269c8df08868b"
+    },
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\error-images\\review_sheet_2.png",
+      "sha256": "49bbbd91c0c463c0586e63fe1393e80379e190831f6a61d95e336e84b90d8fe5"
+    }
+  ]
+}

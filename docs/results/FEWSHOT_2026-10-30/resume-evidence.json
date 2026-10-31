@@ -1,0 +1,5 @@
+{
+  "source": "primary/criteria.json",
+  "pre_doc": "Benchmarked training-free DINOv2 k-shot anomaly detection against PatchCore on three MVTec AD categories (k=1-16, three seeds): macro AUROC 0.9506 at k=8 versus 0.8937 for PatchCore.",
+  "apm": "Not supported: the practical-use criterion was not met across the primary categories, and no factory onboarding study was performed."
+}

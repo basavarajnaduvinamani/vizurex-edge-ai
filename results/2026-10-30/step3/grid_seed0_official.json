@@ -1,0 +1,32 @@
+{
+  "run": "grid_seed0_official",
+  "category": "grid",
+  "seed": 0,
+  "engine": "official",
+  "metrics": {
+    "pixel_auroc": 0.9760315958919559,
+    "aupro_fpr_0_3": 0.9136699640030392,
+    "connected_regions": 159,
+    "foreground_pixels": 32633,
+    "background_pixels": 3881095,
+    "mask_shape": [
+      78,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "24172209992419bd61ab0d4d692a6a15bc58010ac121af3b9de5122389c4fbe7",
+  "run_provenance": "results\\2026-10-30\\step1\\grid_seed0_official\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

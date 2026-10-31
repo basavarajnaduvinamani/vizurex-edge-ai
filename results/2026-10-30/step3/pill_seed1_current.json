@@ -1,0 +1,32 @@
+{
+  "run": "pill_seed1_current",
+  "category": "pill",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.968081703244066,
+    "aupro_fpr_0_3": 0.9400530841593021,
+    "connected_regions": 232,
+    "foreground_pixels": 367336,
+    "background_pixels": 8012056,
+    "mask_shape": [
+      167,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "835df4a6a2c18dd945ed4f6d935e458c9339b52b601d7c59df049fdad1e108cb",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-b\\pill_seed1_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

@@ -9,7 +9,23 @@
  * centre-crop (224x224) viewer alignment, stale result clearing, and safe DOM rendering.
  */
 
-import { api, CATEGORY_SPECS } from "./api.js?v=phase3-2";
+import { api, CATEGORY_SPECS } from "./api.js?v=phase3-3";
+
+document.getElementById('refreshInspectionLog').addEventListener('click', async () => {
+  const output = document.getElementById('recentInspectionLog');
+  output.textContent = 'Reading local metadata…';
+  try {
+    const key = document.getElementById('sessionAccessKey')?.value || '';
+    const response = await fetch('/api/inspections/recent', {
+      headers: key ? {'X-Visurex-Key': key} : {}
+    });
+    if (!response.ok) throw new Error(`Backend returned HTTP ${response.status}`);
+    const result = await response.json();
+    output.textContent = JSON.stringify(result, null, 2);
+  } catch (error) {
+    output.textContent = `Log unavailable: ${error.message}`;
+  }
+});
 
 // Validation Constants per backend specification
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10 MiB limit
@@ -79,6 +95,17 @@ const elements = {
   stateLoading: document.getElementById("stateLoading"),
   loadingSubtext: document.getElementById("loadingSubtext"),
   stateResult: document.getElementById("stateResult"),
+  stateRetake: document.getElementById("stateRetake"),
+  retakeInspectionId: document.getElementById("retakeInspectionId"),
+  retakeReasons: document.getElementById("retakeReasons"),
+  retakeSimulatedRibbon: document.getElementById("retakeSimulatedRibbon"),
+  simulatedRibbon: document.getElementById("simulatedRibbon"),
+  decisionRule: document.getElementById("decisionRule"),
+
+  // Demo walkthrough buttons (Demo Mode only)
+  btnExampleAnomaly: document.getElementById("btnExampleAnomaly"),
+  btnExampleGood: document.getElementById("btnExampleGood"),
+  btnExampleRetake: document.getElementById("btnExampleRetake"),
 
   // Result Presentation
   resultHeaderCard: document.getElementById("resultHeaderCard"),
@@ -169,6 +196,7 @@ function cleanupPreviewUrl() {
 function clearInspectionResult() {
   state.currentResult = null;
   elements.stateResult.classList.add("is-hidden");
+  elements.stateRetake.classList.add("is-hidden");
   elements.stateLoading.classList.add("is-hidden");
   elements.stateEmpty.classList.remove("is-hidden");
 
@@ -238,6 +266,11 @@ function setExecutionMode(mode) {
 
   // Stale result safety: switching execution mode invalidates prior result
   clearInspectionResult();
+
+  // Demo Mode opens on a complete, clearly labelled simulated example.
+  if (mode === "demo" && !state.selectedFile) {
+    showDemoExample("anomaly");
+  }
 }
 
 /**
@@ -414,14 +447,14 @@ function renderInspectionResult(result) {
     elements.resultHeaderCard.className = "result-header-card is-anomaly";
     elements.statusBadge.className = "status-badge-lg is-anomaly";
     elements.statusIcon.textContent = "✕";
-    elements.statusText.textContent = "ANOMALY DETECTED";
+    elements.statusText.textContent = result.isMock ? "ANOMALY (SIMULATED)" : "ANOMALY DETECTED";
     elements.metricScoreValue.className = "metric-value highlight-anomaly";
     elements.scoreGaugeFill.className = "score-gauge-fill is-anomaly";
   } else {
     elements.resultHeaderCard.className = "result-header-card is-good";
     elements.statusBadge.className = "status-badge-lg is-good";
     elements.statusIcon.textContent = "✓";
-    elements.statusText.textContent = "PASS — NORMAL (GOOD)";
+    elements.statusText.textContent = result.isMock ? "GOOD (SIMULATED)" : "PASS — NORMAL (GOOD)";
     elements.metricScoreValue.className = "metric-value highlight-good";
     elements.scoreGaugeFill.className = "score-gauge-fill is-good";
   }
@@ -449,6 +482,9 @@ function renderInspectionResult(result) {
 
   elements.scoreGaugeFill.style.width = `${scorePercent.toFixed(1)}%`;
   elements.scoreGaugeMarker.style.left = `${thresholdPercent.toFixed(1)}%`;
+  const comparison = result.anomalyScore >= result.threshold ? "≥" : "<";
+  elements.decisionRule.textContent = `Decision rule: score ${result.anomalyScore.toFixed(4)} ${comparison} threshold ${result.threshold.toFixed(4)} → ${result.decision}`;
+  elements.simulatedRibbon.classList.toggle("is-hidden", !result.isMock);
 
   // 5. Image & Heatmap viewer:
   // Crucial: Use result.images.processed (224x224 crop) aligned 1:1 with heatmap
@@ -501,7 +537,52 @@ function renderInspectionResult(result) {
   // Switch states
   elements.stateEmpty.classList.add("is-hidden");
   elements.stateLoading.classList.add("is-hidden");
+  elements.stateRetake.classList.add("is-hidden");
   elements.stateResult.classList.remove("is-hidden");
+}
+
+/**
+ * Render a RETAKE outcome: the capture was rejected before the detector ran,
+ * so there is deliberately no score, threshold comparison or heatmap.
+ */
+function renderRetakeResult(result) {
+  state.currentResult = result;
+  elements.retakeInspectionId.textContent = result.inspectionId || "N/A";
+  elements.retakeReasons.innerHTML = "";
+  result.quality.reasons.forEach((reason) => {
+    const li = document.createElement("li");
+    li.textContent = reason;
+    elements.retakeReasons.appendChild(li);
+  });
+  elements.retakeSimulatedRibbon.classList.toggle("is-hidden", !result.isMock);
+  elements.stateEmpty.classList.add("is-hidden");
+  elements.stateLoading.classList.add("is-hidden");
+  elements.stateResult.classList.add("is-hidden");
+  elements.stateRetake.classList.remove("is-hidden");
+  showNotification((result.isMock ? "SIMULATED " : "") + "RETAKE — " + result.quality.reasons.join(" ") + " No defect decision was made.", true);
+}
+
+/**
+ * Demo Mode only: show a complete simulated example without an upload, so the
+ * whole flow (decision, score vs threshold, heatmap, RETAKE) can be reviewed.
+ */
+async function showDemoExample(kind) {
+  if (state.executionMode !== "demo" || state.isInspecting) return;
+  const category = state.selectedCategory;
+  const version = state.selectionVersion;
+  hideNotification();
+  try {
+    const result = await api.inspect({ file: null, category, simulationType: kind });
+    // Discard if the user changed mode, category or image meanwhile.
+    if (state.executionMode !== "demo" || category !== state.selectedCategory || version !== state.selectionVersion) return;
+    if (result.decision === "RETAKE") {
+      renderRetakeResult(result);
+    } else {
+      renderInspectionResult(result);
+    }
+  } catch (err) {
+    showNotification(err.message || "Could not build the simulated example.", true);
+  }
 }
 
 /**
@@ -524,6 +605,7 @@ async function runInspection() {
   elements.categoryRadios.forEach((r) => (r.disabled = true));
   elements.btnModeLive.disabled = true;
   elements.btnModeDemo.disabled = true;
+  [elements.btnExampleAnomaly, elements.btnExampleGood, elements.btnExampleRetake].forEach((b) => (b.disabled = true));
   document.getElementById('qualityModeSelect').disabled = true;
   document.getElementById('sessionAccessKey').disabled = true;
   document.getElementById('applyAccessKey').disabled = true;
@@ -553,10 +635,7 @@ async function runInspection() {
 
     if (inspectedVersion === state.selectionVersion && inspectedFile === state.selectedFile && inspectedCategory === state.selectedCategory) {
       if (result.decision === 'RETAKE') {
-        elements.stateLoading.classList.add('is-hidden');
-        elements.stateResult.classList.add('is-hidden');
-        elements.stateEmpty.classList.remove('is-hidden');
-        showNotification('RETAKE — ' + result.quality.reasons.join(' ') + ' No defect decision was made.', true);
+        renderRetakeResult(result);
       } else {
         renderInspectionResult(result);
       }
@@ -575,6 +654,7 @@ async function runInspection() {
     elements.categoryRadios.forEach((r) => (r.disabled = false));
     elements.btnModeLive.disabled = false;
     elements.btnModeDemo.disabled = false;
+    [elements.btnExampleAnomaly, elements.btnExampleGood, elements.btnExampleRetake].forEach((b) => (b.disabled = false));
     document.getElementById('qualityModeSelect').disabled = false;
     document.getElementById('sessionAccessKey').disabled = false;
     document.getElementById('applyAccessKey').disabled = false;
@@ -686,9 +766,16 @@ function init() {
     }
   });
 
-  // Set initial category and default to Live Mode
+  // 11. Demo walkthrough examples
+  elements.btnExampleAnomaly.addEventListener("click", () => showDemoExample("anomaly"));
+  elements.btnExampleGood.addEventListener("click", () => showDemoExample("good"));
+  elements.btnExampleRetake.addEventListener("click", () => showDemoExample("retake"));
+
+  // Set initial category and default to Live Mode. `?mode=demo` opens the
+  // simulated walkthrough directly (for sharing a demo without a backend).
   setCategory("bottle");
-  setExecutionMode("live");
+  const params = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+  setExecutionMode(params && params.get("mode") === "demo" ? "demo" : "live");
 }
 
 // Start application when DOM is ready

@@ -1,0 +1,28 @@
+{
+  "category": "transistor",
+  "seed": 1,
+  "metrics": {
+    "image_auroc": 0.9970833333333333,
+    "f1": 0.9873417721518988,
+    "missed_defects": 1,
+    "false_alarms": 0,
+    "tp": 39,
+    "tn": 60,
+    "threshold": 1.0,
+    "test_images": 100
+  },
+  "source": "results\\2026-10-30\\step2-existing\\transistor_seed1_current\\summary.json",
+  "calibration_file": "transistor_calibration.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_geometry_breadth.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "scope": "full inherited radial branch incl industrial preprocessing; validation-only threshold; no test tuning"
+}

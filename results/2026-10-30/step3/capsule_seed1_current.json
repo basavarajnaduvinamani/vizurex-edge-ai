@@ -1,0 +1,32 @@
+{
+  "run": "capsule_seed1_current",
+  "category": "capsule",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9869127422552304,
+    "aupro_fpr_0_3": 0.9356215696835811,
+    "connected_regions": 120,
+    "foreground_pixels": 79114,
+    "background_pixels": 6544118,
+    "mask_shape": [
+      132,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "eab663e9eabccc1785d987479fa15ac1cb07b63cabd7c4b65295fead3904a369",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-a\\capsule_seed1_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

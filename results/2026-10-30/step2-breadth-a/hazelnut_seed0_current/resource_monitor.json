@@ -1,0 +1,6 @@
+{
+  "observed_worker_rss_peak_bytes": 2010488832,
+  "configured_rss_cap_bytes": 2000000000,
+  "sampling_seconds": 0.25,
+  "blocked": "Worker exceeded configured RSS safety cap; use larger-memory compute without changing the benchmark protocol."
+}

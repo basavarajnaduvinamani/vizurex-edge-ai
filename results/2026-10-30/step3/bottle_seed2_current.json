@@ -1,0 +1,32 @@
+{
+  "run": "bottle_seed2_current",
+  "category": "bottle",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9850611679427735,
+    "aupro_fpr_0_3": 0.9462564900007508,
+    "connected_regions": 68,
+    "foreground_pixels": 313110,
+    "background_pixels": 3851498,
+    "mask_shape": [
+      83,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "deb03ce640390a1d414e20afe95832b30d8bc815a6b2eea072a10991bd471832",
+  "run_provenance": "results\\2026-10-30\\step2-existing\\bottle_seed2_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

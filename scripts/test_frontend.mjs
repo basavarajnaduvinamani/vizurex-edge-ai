@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
 const apiSource = await fs.readFile(new URL('../frontend-prototype/api.js', import.meta.url), 'utf8');
-const { HttpInspectionClient } = await import('data:text/javascript;base64,' + Buffer.from(apiSource).toString('base64'));
+const { HttpInspectionClient, MockInspectionClient } = await import('data:text/javascript;base64,' + Buffer.from(apiSource).toString('base64'));
 const valid = {
   inspection_id: 'test-id', timestamp: new Date().toISOString(), category: 'bottle',
   model_version: 'test-only', cold_start: false, decision: 'GOOD', anomaly_score: 0.3, threshold: 1,
@@ -48,11 +48,15 @@ assert.equal((await client.inspectImage(params)).decision, 'RETAKE'); checks++;
 payload.quality.reasons = [];
 await assert.rejects(client.inspectImage(params), /Malformed/); checks++;
 globalThis.fetch = originalFetch;
+const mockRetake = await new MockInspectionClient().inspectImage({ file: null, category: 'bottle', simulationType: 'retake' });
+assert.equal(mockRetake.decision, 'RETAKE'); assert.equal(mockRetake.isMock, true);
+assert.match(mockRetake.quality.reasons[0], /^Simulated/); checks++;
 
 const elements = new Map();
 const element = id => {
   if (!elements.has(id)) elements.set(id, { disabled: false, style: {}, value: '',
-    classList: { add() {}, remove() {}, toggle() {} }, setAttribute() {}, addEventListener() {},
+    classList: { add() {}, remove() {}, toggle() {} }, setAttribute() {}, listeners: {},
+    addEventListener(type, callback) { this.listeners[type] = callback; },
     textContent: '', appendChild() {} });
   return elements.get(id);
 };
@@ -80,4 +84,30 @@ vm.runInContext("state.selectedCategory='bottle'; state.executionMode='live';", 
 await vm.runInContext('runInspection()', context);
 assert.match(element('notificationMessage').textContent, /RETAKE.*No defect decision/); checks++;
 assert.equal(vm.runInContext('state.isInspecting', context), false); checks++;
+context.api.inspect = async () => ({ decision: 'ANOMALY', isMock: true, anomalyScore: 1.42, threshold: 1,
+  inspectionId: 'INSP-DEMO-X', timestamp: new Date().toISOString(), warnings: [],
+  timing: { modelInferenceMs: 1, serverProcessingMs: 1, clientRoundTripMs: 1 }, images: { processed: 'p', heatmap: 'h' } });
+vm.runInContext("state.executionMode='live'; state.selectedFile=null;", context);
+element('statusText').textContent = '';
+await vm.runInContext("showDemoExample('anomaly')", context);
+assert.equal(element('statusText').textContent, '', 'examples must not render in Live mode'); checks++;
+vm.runInContext("state.executionMode='demo';", context);
+await vm.runInContext("showDemoExample('anomaly')", context);
+assert.equal(element('statusText').textContent, 'ANOMALY (SIMULATED)'); checks++;
+assert.match(element('decisionRule').textContent, /1\.4200 ≥ threshold 1\.0000 → ANOMALY/); checks++;
+context.api.inspect = async () => ({ decision: 'RETAKE', isMock: true, inspectionId: 'INSP-DEMO-Y', quality: { reasons: ['Simulated: too dark.'] } });
+await vm.runInContext("showDemoExample('retake')", context);
+assert.match(element('notificationMessage').textContent, /^SIMULATED RETAKE.*No defect decision/); checks++;
+element('sessionAccessKey').value = 'test-only-history-key';
+context.fetch = async (url, options) => {
+  assert.equal(url, '/api/inspections/recent');
+  assert.equal(options.headers['X-Visurex-Key'], 'test-only-history-key');
+  return new Response(JSON.stringify({records: [{inspection_id: 'actual-log-fixture'}]}));
+};
+await element('refreshInspectionLog').listeners.click();
+assert.match(element('recentInspectionLog').textContent, /actual-log-fixture/); checks++;
+context.fetch = async () => new Response('', {status: 503});
+await element('refreshInspectionLog').listeners.click();
+assert.match(element('recentInspectionLog').textContent, /Log unavailable.*503/); checks++;
+assert.doesNotMatch(element('recentInspectionLog').textContent, /actual-log-fixture/); checks++;
 console.log(`${checks} frontend regression checks passed.`);

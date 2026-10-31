@@ -1,0 +1,25 @@
+{
+  "category": "leather",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 1.0,
+    "f1": 0.9019607843137255,
+    "missed_defects": 0,
+    "false_alarms": 20,
+    "tp": 92,
+    "tn": 12,
+    "threshold": 0.9999999999999997,
+    "test_images": 124
+  },
+  "train_images": 196,
+  "validation_images": 49,
+  "fit_seconds": 76.75738590000037,
+  "worker_pid": 11156,
+  "worker_peak_working_set_bytes": 1608204288,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\leather_seed2_current\\maps.npz",
+  "maps_sha256": "f919df2120172a03e8091bca71dbec289f7e170c351f24b2930d03c2f4538673",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\leather_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

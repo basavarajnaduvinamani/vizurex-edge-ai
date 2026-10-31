@@ -1,0 +1,3 @@
+START hazelnut_seed0_current
+DONE hazelnut_seed0_current {"image_auroc": 1.0, "f1": 1.0, "missed_defects": 0, "false_alarms": 0, "tp": 70, "tn": 40, "threshold": 1.0000000000000002, "test_images": 110}
+{"completed": 1, "failures": []}

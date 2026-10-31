@@ -1,0 +1,41 @@
+{
+  "category": "bottle",
+  "seed": 0,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 1.0,
+    "f1": 0.9921259842519685,
+    "missed_defects": 0,
+    "false_alarms": 1,
+    "tp": 63,
+    "tn": 19,
+    "threshold": 1.0,
+    "test_images": 83
+  },
+  "train_images": 167,
+  "validation_images": 42,
+  "fit_seconds": 65.55904079999891,
+  "worker_pid": 26452,
+  "worker_peak_working_set_bytes": 1486938112,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step1\\bottle_seed0_current\\maps.npz",
+  "maps_sha256": "31542be02780e30d1dd26290e6d7869287239dc60a60ad3f51035fcc4ce0afc4",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step1\\bottle_seed0_current\\run.json",
+  "historical_phase1_comparison": {
+    "matching_decisions": 83,
+    "max_score_delta": 0.0001297125392536458,
+    "note": "historical CSV rounded; old values are not new session results"
+  },
+  "geometry_ablation": {
+    "image_auroc": 1.0,
+    "f1": 0.9921259842519685,
+    "missed_defects": 0,
+    "false_alarms": 1,
+    "tp": 63,
+    "tn": 19,
+    "threshold": 1.0,
+    "test_images": 83
+  },
+  "geometry_policy": "Inherited radial profile and industrial preprocessing; training mean/std; validation p99 threshold; OR via max of threshold-scaled scores. Not meaningful spatial geometry for every MVTec category.",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

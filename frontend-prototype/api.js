@@ -67,7 +67,8 @@ function generateDemoFixtures(isAnomaly) {
   canvas.height = 224;
   const ctx = canvas.getContext("2d");
 
-  // 1. Processed crop fixture (simulated 224x224 grayscale part)
+  // 1. Processed crop fixture (simulated 224x224 top view of a round part).
+  // Drawn shapes only; no benchmark image is embedded in the frontend.
   ctx.fillStyle = "#1e293b";
   ctx.fillRect(0, 0, 224, 224);
   ctx.fillStyle = "#475569";
@@ -78,6 +79,17 @@ function generateDemoFixtures(isAnomaly) {
   ctx.beginPath();
   ctx.arc(112, 112, 35, 0, Math.PI * 2);
   ctx.fill();
+  if (isAnomaly) {
+    // Simulated chip on the rim, where the simulated heatmap peaks.
+    ctx.strokeStyle = "#e2e8f0";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(124, 84);
+    ctx.lineTo(136, 96);
+    ctx.lineTo(131, 103);
+    ctx.lineTo(146, 108);
+    ctx.stroke();
+  }
   const processedDataUri = canvas.toDataURL("image/png");
 
   // 2. Heatmap fixture (224x224 thermal map)
@@ -397,6 +409,21 @@ export class MockInspectionClient {
       throw error;
     }
 
+    if (simulationType === "retake") {
+      return {
+        decision: "RETAKE",
+        inspectionId: `INSP-DEMO-${Date.now().toString(36).toUpperCase()}`,
+        category: category,
+        modelVersion: `demo-fixture-${category}-v1.0 (Simulated)`,
+        quality: {
+          passed: false,
+          reasons: ["Simulated: image too dark for a reliable decision (mean brightness below the fixed capture-check limit)."]
+        },
+        isMock: true,
+        demoNotice: "Demo mode — simulated results"
+      };
+    }
+
     let isAnomaly = false;
     if (simulationType === "anomaly") {
       isAnomaly = true;
@@ -411,11 +438,11 @@ export class MockInspectionClient {
       }
     }
 
-    // Operating threshold is approximately 1.0 (UI fixture)
+    // Operating threshold is approximately 1.0 (UI fixture). Fixed example
+    // scores keep the simulated walkthrough reproducible; they are not
+    // measurements and are not taken from any benchmark run.
     const threshold = 1.0000;
-    const score = isAnomaly
-      ? parseFloat((1.15 + Math.random() * 0.45).toFixed(4))
-      : parseFloat((0.25 + Math.random() * 0.35).toFixed(4));
+    const score = isAnomaly ? 1.4200 : 0.4200;
 
     const decision = isAnomaly ? "ANOMALY" : "GOOD";
     const fixtures = generateDemoFixtures(isAnomaly);

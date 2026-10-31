@@ -1,0 +1,606 @@
+{
+  "h1": {
+    "verdict": "not met",
+    "supported_categories": 1,
+    "categories": {
+      "bottle": {
+        "points": {
+          "1": {
+            "dinov2_mean": 0.9915343915343916,
+            "patchcore_mean": 0.9955026455026456,
+            "difference": -0.003968253968253954,
+            "larger_seed_std": 0.003906037846622579,
+            "verdict": "not met"
+          },
+          "2": {
+            "dinov2_mean": 0.9978835978835979,
+            "patchcore_mean": 0.9973544973544973,
+            "difference": 0.0005291005291006012,
+            "larger_seed_std": 0.0019797129030549887,
+            "verdict": "not met"
+          },
+          "4": {
+            "dinov2_mean": 0.9978835978835979,
+            "patchcore_mean": 0.9981481481481481,
+            "difference": -0.0002645502645501896,
+            "larger_seed_std": 0.0029930445764510365,
+            "verdict": "not met"
+          },
+          "8": {
+            "dinov2_mean": 0.9984126984126984,
+            "patchcore_mean": 0.9989417989417989,
+            "difference": -0.0005291005291004902,
+            "larger_seed_std": 0.0017144816662454595,
+            "verdict": "not met"
+          }
+        },
+        "verdict": "not met"
+      },
+      "grid": {
+        "points": {
+          "1": {
+            "dinov2_mean": 0.9855193539404065,
+            "patchcore_mean": 0.6154274575327207,
+            "difference": 0.3700918964076858,
+            "larger_seed_std": 0.08318031715813105,
+            "verdict": "met"
+          },
+          "2": {
+            "dinov2_mean": 0.9871901977165134,
+            "patchcore_mean": 0.6449456975772766,
+            "difference": 0.3422445001392368,
+            "larger_seed_std": 0.06111726368645569,
+            "verdict": "met"
+          },
+          "4": {
+            "dinov2_mean": 0.9866332497911445,
+            "patchcore_mean": 0.693121693121693,
+            "difference": 0.2935115566694515,
+            "larger_seed_std": 0.05628343896242758,
+            "verdict": "met"
+          },
+          "8": {
+            "dinov2_mean": 0.9880256196045668,
+            "patchcore_mean": 0.7786131996658313,
+            "difference": 0.2094124199387355,
+            "larger_seed_std": 0.03263496238032514,
+            "verdict": "met"
+          }
+        },
+        "verdict": "met"
+      },
+      "transistor": {
+        "points": {
+          "1": {
+            "dinov2_mean": 0.7898611111111111,
+            "patchcore_mean": 0.7947222222222222,
+            "difference": -0.004861111111111094,
+            "larger_seed_std": 0.03437492985402491,
+            "verdict": "not met"
+          },
+          "2": {
+            "dinov2_mean": 0.7627777777777777,
+            "patchcore_mean": 0.887638888888889,
+            "difference": -0.12486111111111131,
+            "larger_seed_std": 0.07156997137395776,
+            "verdict": "not met"
+          },
+          "4": {
+            "dinov2_mean": 0.8394444444444445,
+            "patchcore_mean": 0.9211111111111111,
+            "difference": -0.08166666666666655,
+            "larger_seed_std": 0.05703143761596063,
+            "verdict": "not met"
+          },
+          "8": {
+            "dinov2_mean": 0.8654166666666666,
+            "patchcore_mean": 0.9036111111111111,
+            "difference": -0.03819444444444453,
+            "larger_seed_std": 0.08077771091239784,
+            "verdict": "not met"
+          }
+        },
+        "verdict": "not met"
+      }
+    }
+  },
+  "practical": {
+    "verdict": "not met",
+    "methods": {
+      "patchcore_wrn50": {
+        "qualifying_k": [],
+        "points": {
+          "1": {
+            "bottle": {
+              "image_auroc_mean": 0.9955026455026456,
+              "false_alarm_rate_mean": 0.0,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.6154274575327207,
+              "false_alarm_rate_mean": 0.06349206349206349,
+              "verdict": "not met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.7947222222222222,
+              "false_alarm_rate_mean": 0.0,
+              "verdict": "not met"
+            }
+          },
+          "2": {
+            "bottle": {
+              "image_auroc_mean": 0.9973544973544973,
+              "false_alarm_rate_mean": 0.0,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.6449456975772766,
+              "false_alarm_rate_mean": 0.031746031746031744,
+              "verdict": "not met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.887638888888889,
+              "false_alarm_rate_mean": 0.06111111111111111,
+              "verdict": "not met"
+            }
+          },
+          "4": {
+            "bottle": {
+              "image_auroc_mean": 0.9981481481481481,
+              "false_alarm_rate_mean": 0.0,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.693121693121693,
+              "false_alarm_rate_mean": 0.015873015873015872,
+              "verdict": "not met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.9211111111111111,
+              "false_alarm_rate_mean": 0.02777777777777778,
+              "verdict": "not met"
+            }
+          },
+          "8": {
+            "bottle": {
+              "image_auroc_mean": 0.9989417989417989,
+              "false_alarm_rate_mean": 0.0,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.7786131996658313,
+              "false_alarm_rate_mean": 0.0,
+              "verdict": "not met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.9036111111111111,
+              "false_alarm_rate_mean": 0.03333333333333333,
+              "verdict": "not met"
+            }
+          }
+        },
+        "verdict": "not met"
+      },
+      "dinov2_vits14": {
+        "qualifying_k": [],
+        "points": {
+          "1": {
+            "bottle": {
+              "image_auroc_mean": 0.9915343915343916,
+              "false_alarm_rate_mean": 0.05000000000000001,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.9855193539404065,
+              "false_alarm_rate_mean": 0.031746031746031744,
+              "verdict": "met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.7898611111111111,
+              "false_alarm_rate_mean": 0.05555555555555555,
+              "verdict": "not met"
+            }
+          },
+          "2": {
+            "bottle": {
+              "image_auroc_mean": 0.9978835978835979,
+              "false_alarm_rate_mean": 0.016666666666666666,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.9871901977165134,
+              "false_alarm_rate_mean": 0.047619047619047616,
+              "verdict": "met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.7627777777777777,
+              "false_alarm_rate_mean": 0.08333333333333333,
+              "verdict": "not met"
+            }
+          },
+          "4": {
+            "bottle": {
+              "image_auroc_mean": 0.9978835978835979,
+              "false_alarm_rate_mean": 0.05000000000000001,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.9866332497911445,
+              "false_alarm_rate_mean": 0.031746031746031744,
+              "verdict": "met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.8394444444444445,
+              "false_alarm_rate_mean": 0.06666666666666667,
+              "verdict": "not met"
+            }
+          },
+          "8": {
+            "bottle": {
+              "image_auroc_mean": 0.9984126984126984,
+              "false_alarm_rate_mean": 0.016666666666666666,
+              "verdict": "met"
+            },
+            "grid": {
+              "image_auroc_mean": 0.9880256196045668,
+              "false_alarm_rate_mean": 0.09523809523809523,
+              "verdict": "met"
+            },
+            "transistor": {
+              "image_auroc_mean": 0.8654166666666666,
+              "false_alarm_rate_mean": 0.049999999999999996,
+              "verdict": "not met"
+            }
+          }
+        },
+        "verdict": "not met"
+      }
+    },
+    "interpretation": "One shared k must meet the criterion in all primary categories; primary methods evaluated separately."
+  },
+  "h2": {
+    "verdict": "inconclusive",
+    "categories": {
+      "bottle": {
+        "dinov2_mean": 1.0,
+        "patchcore_mean": 1.0,
+        "absolute_difference": 0.0,
+        "within_descriptive_0_01": true,
+        "full_shot_seeds": [
+          0
+        ],
+        "verdict": "inconclusive",
+        "reason": "Protocol runs full once; seed spread is unavailable, not an observed zero standard deviation."
+      },
+      "grid": {
+        "dinov2_mean": 0.9924812030075187,
+        "patchcore_mean": 0.9849624060150376,
+        "absolute_difference": 0.007518796992481147,
+        "within_descriptive_0_01": true,
+        "full_shot_seeds": [
+          0
+        ],
+        "verdict": "inconclusive",
+        "reason": "Protocol runs full once; seed spread is unavailable, not an observed zero standard deviation."
+      },
+      "transistor": {
+        "dinov2_mean": 0.9550000000000001,
+        "patchcore_mean": 1.0,
+        "absolute_difference": 0.04499999999999993,
+        "within_descriptive_0_01": false,
+        "full_shot_seeds": [
+          0
+        ],
+        "verdict": "inconclusive",
+        "reason": "Protocol runs full once; seed spread is unavailable, not an observed zero standard deviation."
+      }
+    }
+  },
+  "macro_auroc": {
+    "patchcore_wrn50": {
+      "1": {
+        "image_auroc": 0.8018841084191961,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "2": {
+        "image_auroc": 0.843313027940221,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "4": {
+        "image_auroc": 0.8707936507936508,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "8": {
+        "image_auroc": 0.8937220365729138,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "16": {
+        "image_auroc": 0.9450765803397382,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "full": {
+        "image_auroc": 0.9949874686716792,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0
+          ],
+          "grid": [
+            0
+          ],
+          "transistor": [
+            0
+          ]
+        }
+      }
+    },
+    "dinov2_vits14": {
+      "1": {
+        "image_auroc": 0.9223049521953031,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "2": {
+        "image_auroc": 0.9159505244592964,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "4": {
+        "image_auroc": 0.9413204307063957,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "8": {
+        "image_auroc": 0.9506183282279772,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "16": {
+        "image_auroc": 0.9584671168662396,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0,
+            1,
+            2
+          ],
+          "grid": [
+            0,
+            1,
+            2
+          ],
+          "transistor": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "full": {
+        "image_auroc": 0.9824937343358396,
+        "categories": [
+          "bottle",
+          "grid",
+          "transistor"
+        ],
+        "seeds": {
+          "bottle": [
+            0
+          ],
+          "grid": [
+            0
+          ],
+          "transistor": [
+            0
+          ]
+        }
+      }
+    }
+  },
+  "macro_definition": "Unweighted mean of category mean AUROCs; scores were not pooled across categories.",
+  "standard_deviation": "Population standard deviation (ddof=0), matching the pre-existing report.summarize implementation.",
+  "calibration_limitation": "k references exclude extra held-out normal calibration images. No factory onboarding or worker-time experiment was performed.",
+  "source": "artifacts\\fewshot-run1\\results.json",
+  "source_sha256": "34bb0c1df10f31c0a17ff549f7fa615e54509725a1e2063e1874b5c3d5d4847b",
+  "protocol_sha256": "c26fca4c2e7f5310bb8f27c4751cb40addb4f4d8cab960d92946e811c4b79015",
+  "command": [
+    "scripts/evaluate_fewshot.py",
+    "--results",
+    "artifacts/fewshot-run1/results.json",
+    "--output",
+    "artifacts/fewshot-run1/criteria.json"
+  ]
+}

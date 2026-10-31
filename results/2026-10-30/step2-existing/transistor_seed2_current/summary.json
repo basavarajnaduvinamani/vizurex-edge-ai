@@ -1,0 +1,30 @@
+{
+  "category": "transistor",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9983333333333333,
+    "f1": 0.9487179487179487,
+    "missed_defects": 3,
+    "false_alarms": 1,
+    "tp": 37,
+    "tn": 59,
+    "threshold": 1.0,
+    "test_images": 100
+  },
+  "train_images": 170,
+  "validation_images": 43,
+  "fit_seconds": 41.953112399998645,
+  "worker_pid": 27564,
+  "worker_peak_working_set_bytes": 1499074560,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\transistor_seed2_current\\maps.npz",
+  "maps_sha256": "23601069f4a3bb783fb7349fb1b85d53f4092f1293126537302cdfb5b406af5b",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-existing\\transistor_seed2_current\\run.json",
+  "historical_phase1_comparison": {
+    "matching_decisions": 94,
+    "max_score_delta": 1.5765184024469674,
+    "note": "historical CSV rounded; old values are not new session results"
+  },
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}
