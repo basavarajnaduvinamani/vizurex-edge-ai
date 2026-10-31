@@ -22,6 +22,7 @@ import hashlib
 import importlib.metadata
 import json
 import platform
+import shutil
 import subprocess
 import sys
 import time
@@ -104,6 +105,12 @@ def run_category(category, args, payload, save):
     pool_names = [row[2] for row in splits["train"].data_to_iterate]
     cache = {}
     for method in args.methods:
+        requested = [(str(k), seed) for k in args.shots
+                     for seed in (args.seeds if k != 'full' or args.full_shot_all_seeds else args.seeds[:1])]
+        done = {(str(r['k']), r['seed']) for r in payload['runs']
+                if r['category'] == category and r['method'] == method}
+        if all(key in done for key in requested):
+            continue
         backbone_key, settings = METHODS[method]
         if backbone_key not in cache:
             torch.manual_seed(0)
@@ -128,7 +135,9 @@ def run_category(category, args, payload, save):
         for k in args.shots:
             # A full reference set is the same images for every seed; only a
             # stochastic coreset could differ, so run it once with seed 0.
-            for seed in ([args.seeds[0]] if k == "full" else args.seeds):
+            for seed in (args.seeds if k != 'full' or args.full_shot_all_seeds else args.seeds[:1]):
+                if (str(k), seed) in done:
+                    continue
                 if k != "full" and int(k) > len(train.names):
                     print(f"skip {category} {method} k={k}: only {len(train.names)} pool images", flush=True)
                     continue
@@ -206,11 +215,61 @@ def parse_args(argv=None):
                         help="PatchCore greedy coreset fraction at k=full (Phase 1 used 0.01); 0 disables")
     parser.add_argument("--no-pixel-metrics", dest="pixel_metrics", action="store_false")
     parser.add_argument("--report-only", action="store_true", help="Regenerate results.md and plot from results.json")
+    parser.add_argument('--full-shot-all-seeds', action='store_true',
+                        help='Protocol v2: repeat full-shot with every requested seed')
+    parser.add_argument('--reuse-results', type=Path, nargs='*', default=[],
+                        help='Import verified completed records into this fresh output folder')
     args = parser.parse_args(argv)
     for k in args.shots:
         if k != "full" and (not k.isdigit() or int(k) < 1):
             parser.error(f"invalid shot count: {k}")
     return args
+
+
+def import_verified_records(args, categories, payload):
+    """Reuse only identical recipes with complete, hash-verified sidecars."""
+    from visurex_fewshot import data, detector
+    seen = set()
+    for source in args.reuse_results:
+        source = source.resolve()
+        old = json.loads(source.read_text(encoding='utf-8'))
+        if old.get('resize') != args.resize or old.get('imagesize') != args.imagesize:
+            raise ValueError('Reuse transform mismatch: ' + str(source))
+        if old.get('threshold_rule') != payload['threshold_rule']:
+            raise ValueError('Reuse threshold policy mismatch: ' + str(source))
+        for record in old['runs']:
+            category, method, k, seed = (record[x] for x in ('category', 'method', 'k', 'seed'))
+            if category not in categories or method not in args.methods or str(k) not in args.shots or seed not in args.seeds:
+                continue
+            key = (category, method, str(k), seed)
+            if key in seen:
+                raise ValueError('Duplicate reuse configuration: ' + str(key))
+            settings = METHODS[method][1]
+            expected = detector.DetectorConfig(
+                coreset_fraction=args.coreset_full if method == 'patchcore_wrn50' and str(k) == 'full' else None,
+                **settings).to_dict()
+            if record['detector'] != expected:
+                raise ValueError('Reuse detector mismatch: ' + str(key))
+            split = data.load_splits(str(args.data_root), category, args.resize, args.imagesize)
+            pool = split['train'].data_to_iterate
+            names = [Path(pool[i][2]).name for i in data.select_shots(len(pool), k, seed)]
+            if record['references'] != names or record['test_count'] != len(split['test']):
+                raise ValueError('Reuse dataset membership mismatch: ' + str(key))
+            for kind in ('predictions', 'calibration'):
+                relative = Path(record[kind + '_path'])
+                if relative.is_absolute() or '..' in relative.parts:
+                    raise ValueError('Unsafe evidence path')
+                original = source.parent / relative
+                if hashlib.sha256(original.read_bytes()).hexdigest() != record[kind + '_sha256']:
+                    raise ValueError('Reuse sidecar hash mismatch: ' + str(original))
+                target = args.output / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(original, target)
+            imported = dict(record)
+            imported['reused_from'] = str(source.relative_to(ROOT)) if source.is_relative_to(ROOT) else source.name
+            payload['runs'].append(imported)
+            seen.add(key)
+    return len(seen)
 
 
 def main(argv=None) -> int:
@@ -238,6 +297,9 @@ def main(argv=None) -> int:
                "resize": args.resize, "imagesize": args.imagesize,
                "threshold_rule": "99th percentile of normal validation scores (last 20% of sorted train/good)",
                "dataset_checks": [], "timings": [], "runs": []}
+    if args.full_shot_all_seeds:
+        payload['protocol'] = 'docs/FEWSHOT_PROTOCOL_v2.md'
+    payload['imported_records'] = import_verified_records(args, categories, payload)
 
     def save():
         results_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
