@@ -13,6 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SprintRecoveryTests(unittest.TestCase):
+    def test_router_uses_only_normal_score_vectors(self):
+        from sprint_router import choose,dispersion
+        method,_=choose(dict(patchcore_wrn50=[1,1,10],dinov2_vits14=[1,1,1]))
+        self.assertEqual(method,'dinov2_vits14')
+        method,_=choose(dict(patchcore_wrn50=[1,1,1],dinov2_vits14=[1,1,1]))
+        self.assertEqual(method,'patchcore_wrn50')
+        with self.assertRaises(ValueError):dispersion([1,float('nan')])
+
     def test_category_bootstrap_and_incomplete_coverage(self):
         self.assertEqual(category_bootstrap([.5,.5])['ci95'],[.5,.5])
         self.assertEqual(category_bootstrap([.2,.8]),category_bootstrap([.2,.8]))
