@@ -1,6 +1,7 @@
 """Generate the frozen S2 summary without tuning any experiment setting."""
 from collections import defaultdict
 import csv
+import hashlib
 import json
 from pathlib import Path
 import numpy as np
@@ -48,6 +49,15 @@ def summarize(records):
             for k in SHOTS:
                 values=[next(p['image_auroc']['mean'] for p in points if (p['category'],p['method'],p['k'])==(c,m,k)) for c in subset]
                 macro.append(dict(group=group,method=m,k=k,categories=subset,**category_bootstrap(values)))
+    paired=[]
+    for group in ['all','texture','object']:
+        subset=[c for c in categories if group=='all' or (c in TEXTURES)==(group=='texture')]
+        for k in SHOTS:
+            deltas=[]
+            for c in subset:
+                values=[next(p['image_auroc']['mean'] for p in points if (p['category'],p['method'],p['k'])==(c,m,k)) for m in METHODS]
+                deltas.append(values[0]-values[1])
+            paired.append(dict(group=group,k=k,contrast='DINOv2 minus inherited PatchCore',**category_bootstrap(deltas)))
     h2=[]
     for c in categories:
         a,b=[next(p['image_auroc'] for p in points if (p['category'],p['method'],p['k'])==(c,m,'full')) for m in METHODS]
@@ -57,7 +67,7 @@ def summarize(records):
                        met=bool(abs(delta)<=tolerance)))
     practical={m:[k for k in SHOTS[:4] if all(p['image_auroc']['mean']>=.95 and p['false_alarm_rate']['mean']<=.10
                                                for p in points if p['method']==m and p['k']==k)] for m in METHODS}
-    return dict(category_results=points,macro=macro,h2=dict(verdict='met' if all(x['met'] for x in h2) else 'not met',categories=h2),
+    return dict(category_results=points,macro=macro,paired_differences=paired,h2=dict(verdict='met' if all(x['met'] for x in h2) else 'not met',categories=h2),
                 practical_qualifying_budgets=practical,
                 warning='Category-bootstrap uncertainty on this fixed benchmark; no factory/onboarding claim. V1 primary results were previously inspected.')
 
@@ -75,6 +85,7 @@ def main():
         sources.append(str(path.relative_to(ROOT)))
     result=summarize(records)
     result.update(protocol='docs/FEWSHOT_PROTOCOL_v2.md',sources=sources,
+                  analysis_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                   configurations=len(records),reused=sum('reused_from' in r for r in records))
     target=ROOT/'docs/sprint/S2_RESULTS'
     target.mkdir(parents=True,exist_ok=True)
@@ -82,17 +93,28 @@ def main():
     with (target/'per_seed.csv').open('w',newline='',encoding='utf-8') as stream:
         fields=['category','method','k','seed','image_auroc','defect_recall','false_alarm_rate','pixel_auroc','pixel_aupro','result_source']
         writer=csv.DictWriter(stream,fieldnames=fields,extrasaction='ignore');writer.writeheader();writer.writerows(records)
-    lines=['# S2: all-category few-shot results','',result['warning'],'',
+    lines=['# S2: all-category few-shot results','',
+           'This study extends WCTE\'s inherited PatchCore implementation; the sprint contribution is the comparison harness, audit, expanded evaluation and analysis. DINOv2 scoring follows an established AnomalyDINO-style baseline, not a newly invented model.','',result['warning'],'',
            'Source: `S2_RESULTS/summary.json`; every configuration: `S2_RESULTS/per_seed.csv`.','',
            '| Group | Method | k | Macro AUROC | Category-bootstrap 95% interval |',
            '|---|---|---|---:|---|']
     for r in result['macro']:
         lines.append(f"| {r['group']} | {r['method']} | {r['k']} | {r['mean']} | {r['ci95']} |")
+    lines += ['', '## Paired category-bootstrap differences','',
+              '| Group | k | DINOv2 minus PatchCore AUROC | Paired 95% interval |',
+              '|---|---|---:|---|']
+    for r in result['paired_differences']:
+        lines.append(f"| {r['group']} | {r['k']} | {r['mean']} | {r['ci95']} |")
     lines += ['', '## Per-category results','',
               '| Category | Method | k | AUROC mean | Population seed SD |',
               '|---|---|---|---:|---:|']
     for p in result['category_results']:
         lines.append(f"| {p['category']} | {p['method']} | {p['k']} | {p['image_auroc']['mean']} | {p['image_auroc']['std']} |")
+    lines += ['', '## H2 full-shot criterion','',
+              '| Category | DINOv2 minus PatchCore | Registered tolerance | Criterion met |',
+              '|---|---:|---:|---|']
+    for r in result['h2']['categories']:
+        lines.append(f"| {r['category']} | {r['dinov2_minus_patchcore']} | {r['tolerance']} | {r['met']} |")
     lines += ['', 'H2 verdict: '+result['h2']['verdict'],
               'Practical qualifying budgets: '+json.dumps(result['practical_qualifying_budgets']),
               'Original H1 finding remains in docs/results/FEWSHOT_2026-10-30/criteria.md.']

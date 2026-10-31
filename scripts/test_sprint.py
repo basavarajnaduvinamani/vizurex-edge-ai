@@ -19,6 +19,20 @@ class SprintRecoveryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'Incomplete breadth'):
             summarize([])
 
+    def test_paired_summary_and_duplicate_seed_rejection(self):
+        from sprint_breadth import CATEGORIES,METHODS,SHOTS
+        records=[dict(category=c,method=m,k=k,seed=s,
+                      **{name: .8 if m=='patchcore_wrn50' else .9 for name in
+                         ['image_auroc','defect_recall','false_alarm_rate','pixel_auroc','pixel_aupro']})
+                 for c in CATEGORIES for m in METHODS for k in SHOTS for s in [0,1,2]]
+        result=summarize(records)
+        delta=result['paired_differences'][0]
+        self.assertAlmostEqual(delta['mean'],.1)
+        self.assertAlmostEqual(delta['ci95'][0],.1)
+        self.assertEqual(result['h2']['verdict'],'not met')
+        with self.assertRaisesRegex(ValueError,'duplicate seeds'):
+            summarize(records+[records[0]])
+
     def test_full_seeds_reuse_and_reject_corrupted_evidence(self):
         with tempfile.TemporaryDirectory() as temporary:
             base = Path(temporary)
