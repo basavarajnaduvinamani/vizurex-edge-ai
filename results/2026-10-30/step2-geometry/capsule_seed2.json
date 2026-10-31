@@ -1,0 +1,28 @@
+{
+  "category": "capsule",
+  "seed": 2,
+  "metrics": {
+    "image_auroc": 0.9569206222576786,
+    "f1": 0.8297872340425532,
+    "missed_defects": 31,
+    "false_alarms": 1,
+    "tp": 78,
+    "tn": 22,
+    "threshold": 1.0,
+    "test_images": 132
+  },
+  "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed2_current\\summary.json",
+  "calibration_file": "capsule_calibration.json",
+  "execution_commit": "e87b7fb5f27beace67966d092d51bfeb6e3ae806",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_geometry_breadth.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ],
+  "scope": "full inherited radial branch incl industrial preprocessing; validation-only threshold; no test tuning"
+}

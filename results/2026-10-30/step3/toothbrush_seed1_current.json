@@ -1,0 +1,32 @@
+{
+  "run": "toothbrush_seed1_current",
+  "category": "toothbrush",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9848473979615352,
+    "aupro_fpr_0_3": 0.8506078104822622,
+    "connected_regions": 71,
+    "foreground_pixels": 40874,
+    "background_pixels": 2066518,
+    "mask_shape": [
+      42,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "35a7d276c323d24b15446947542ca253d4b73c34b9ad1de5e826699b53511f3e",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed1_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

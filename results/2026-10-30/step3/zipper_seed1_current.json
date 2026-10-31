@@ -1,0 +1,32 @@
+{
+  "run": "zipper_seed1_current",
+  "category": "zipper",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9878201977218095,
+    "aupro_fpr_0_3": 0.9511549937419221,
+    "connected_regions": 177,
+    "foreground_pixels": 195850,
+    "background_pixels": 7380726,
+    "mask_shape": [
+      151,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "ca348c3230a864ae1e8b0c0f6ff1492c6749aba270b976c2b13e7efd29ea454c",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-b\\zipper_seed1_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

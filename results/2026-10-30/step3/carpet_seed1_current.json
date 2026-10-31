@@ -1,0 +1,32 @@
+{
+  "run": "carpet_seed1_current",
+  "category": "carpet",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9895073387162742,
+    "aupro_fpr_0_3": 0.9465749475905529,
+    "connected_regions": 97,
+    "foreground_pixels": 120011,
+    "background_pixels": 5750581,
+    "mask_shape": [
+      117,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "748b8d0c94fc1a1a6082a8fd1baede658c0e7ea7895643ac964f362b1f79d112",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-a\\carpet_seed1_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

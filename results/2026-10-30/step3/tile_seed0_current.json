@@ -1,0 +1,32 @@
+{
+  "run": "tile_seed0_current",
+  "category": "tile",
+  "seed": 0,
+  "engine": "current",
+  "metrics": {
+    "pixel_auroc": 0.9568712832864923,
+    "aupro_fpr_0_3": 0.8080541385775337,
+    "connected_regions": 96,
+    "foreground_pixels": 486130,
+    "background_pixels": 5384462,
+    "mask_shape": [
+      117,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "9b7a3db48fdf4450f7a7cc6292e783abc1fb37f49a4e888af210fa55d91a1c28",
+  "run_provenance": "results\\2026-10-30\\step2-breadth-b\\tile_seed0_current\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

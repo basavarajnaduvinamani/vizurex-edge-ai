@@ -1,0 +1,80 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "scripts\\upgrade_intake.py"
+  ],
+  "fetched_at": "2026-10-30T15:18:02.167343+05:30",
+  "branch": "upgrade/2026-10-30",
+  "execution_commit": "d4d839838cb19616602a5ed6c6de247483dc41a7",
+  "files": [
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\phase1-20261021\\runs\\summary.json",
+      "bytes": 2133,
+      "sha256": "44b174449437f094dcafa9b1192fe384ece04a084fa2fa3fb5975ee2d0f1a503",
+      "modified": "2026-10-21T13:55:37.560213+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\smoke\\mvtec-bottle-smoke\\results.csv",
+      "bytes": 181,
+      "sha256": "cf5709ca66b38d09222d05269283d671a791eba3094915b7452f6b8f8e335906",
+      "modified": "2026-10-16T16:12:23.295984+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\phase2\\api_real_model_tests.json",
+      "bytes": 2076,
+      "sha256": "4d332e0660a4a25fc8227fa3578313957760f6880719f16ff53fc73eef5d991c",
+      "modified": "2026-10-22T23:01:49.555279+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\phase3\\capture-stress\\summary.json",
+      "bytes": 5933,
+      "sha256": "6090d0a8761bda90edb26c3d29a7056314fdea0efa47daada4f517e9f20602be",
+      "modified": "2026-10-22T21:17:03.070933+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\model-bundles\\catalog.json",
+      "bytes": 141,
+      "sha256": "e36b2222963458d2e31649a8ddb4235c0e3daff0f6aa36c8035b8fe1e9cb05b0",
+      "modified": "2026-10-22T20:59:44.169495+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\portable-candidate\\v2\\bottle\\verification.json",
+      "bytes": 1005,
+      "sha256": "7e81ce06be51238e7fef58877ae5e0db5fefbefe414c2ec74be3f3c0c493867f",
+      "modified": "2026-10-22T22:48:52.444648+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\software-checks\\python.xml",
+      "bytes": 3253,
+      "sha256": "d959e6ace33e0c8d730a2e049912b2b8a28f90221453465e38fa7e0ab49e2f09",
+      "modified": "2026-10-22T23:01:50.598679+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    },
+    {
+      "path": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\06_upgrade_walmart.md",
+      "bytes": 22067,
+      "sha256": "8e939e1b2c0bf98598992fa808fc9c48c2e9b83a7148ca4a89dd92a5736d392d",
+      "modified": "2026-10-30T04:43:18.589885+05:30",
+      "note": "Read locally; source body not redistributed. Historical inputs are not new session results."
+    }
+  ],
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.7.0+cpu",
+    "torchvision": "0.22.0+cpu",
+    "numpy": "2.2.5",
+    "scipy": "1.15.2",
+    "scikit-learn": "1.7.1",
+    "faiss-cpu": "1.15.1",
+    "Pillow": "11.1.0",
+    "psutil": "7.0.0",
+    "httpx": "0.28.1",
+    "uvicorn": "0.52.4"
+  }
+}

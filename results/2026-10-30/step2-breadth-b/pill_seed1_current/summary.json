@@ -1,0 +1,25 @@
+{
+  "category": "pill",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9680851063829786,
+    "f1": 0.8853754940711462,
+    "missed_defects": 29,
+    "false_alarms": 0,
+    "tp": 112,
+    "tn": 26,
+    "threshold": 0.9999999999999999,
+    "test_images": 167
+  },
+  "train_images": 213,
+  "validation_images": 54,
+  "fit_seconds": 93.01888820000022,
+  "worker_pid": 20168,
+  "worker_peak_working_set_bytes": 1681588224,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\pill_seed1_current\\maps.npz",
+  "maps_sha256": "835df4a6a2c18dd945ed4f6d935e458c9339b52b601d7c59df049fdad1e108cb",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\pill_seed1_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

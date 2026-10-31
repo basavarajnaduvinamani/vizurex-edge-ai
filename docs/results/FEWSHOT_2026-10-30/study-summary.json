@@ -1,0 +1,11 @@
+{
+  "primary_configurations": 96,
+  "masked_configurations": 32,
+  "distinct_test_images": 261,
+  "distinct_test_images_by_category": {
+    "bottle": 83,
+    "grid": 78,
+    "transistor": 100
+  },
+  "policy": "The same official held-out images are evaluated repeatedly across configurations; configurations are not independent test-image samples."
+}

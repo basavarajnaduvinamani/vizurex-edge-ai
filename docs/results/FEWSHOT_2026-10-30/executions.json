@@ -1,0 +1,403 @@
+{
+  "dependencies": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "-m",
+      "pip",
+      "install",
+      "-r",
+      "requirements-fewshot.txt",
+      "-r",
+      "artifacts/finish-fewshot/requirements-test-cuda.txt"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "af5a3e02fa6e14196ec14161ea0a511081c85689",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:10:43.240552+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T16:14:01.575044+00:00",
+    "wall_seconds": 198.33285500000056,
+    "console": "artifacts\\finish-fewshot\\runs\\dependencies\\console.log"
+  },
+  "model-intake": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "scripts/prepare_fewshot_weights.py"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:16:04.393453+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T16:17:02.883259+00:00",
+    "wall_seconds": 58.47476789999928,
+    "console": "artifacts\\finish-fewshot\\runs\\model-intake\\console.log"
+  },
+  "clean-pip-check": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:17:47.043640+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T16:17:49.471060+00:00",
+    "wall_seconds": 2.425345700001344,
+    "console": "artifacts\\finish-fewshot\\runs\\clean-pip-check\\console.log"
+  },
+  "clean-tests": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "backend/test_api.py",
+      "backend/test_network.py",
+      "backend/test_quality.py",
+      "backend/test_bundles.py",
+      "backend/test_model_restore.py",
+      "backend/test_portable.py",
+      "scripts/test_capture_manifest.py",
+      "scripts/test_dataset_validator.py",
+      "scripts/test_fewshot.py",
+      "scripts/test_upgrade_metrics.py",
+      "-q",
+      "--junitxml=artifacts/finish-fewshot/clean-tests.xml"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:17:52.338192+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T16:18:40.994608+00:00",
+    "wall_seconds": 48.654742700004135,
+    "console": "artifacts\\finish-fewshot\\runs\\clean-tests\\console.log"
+  },
+  "clean-frontend": {
+    "command": [
+      "node",
+      "scripts/test_frontend.mjs"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:18:44.416073+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T16:18:44.891685+00:00",
+    "wall_seconds": 0.475882200000342,
+    "console": "artifacts\\finish-fewshot\\runs\\clean-frontend\\console.log"
+  },
+  "sanity": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "scripts/run_fewshot.py",
+      "--data-root",
+      "data/raw/mvtec_ad",
+      "--categories",
+      "bottle",
+      "--shots",
+      "1",
+      "full",
+      "--seeds",
+      "0",
+      "--output",
+      "artifacts/fewshot-smoke"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:19:18.796949+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T16:22:42.450074+00:00",
+    "wall_seconds": 203.65118310000253,
+    "console": "artifacts\\finish-fewshot\\runs\\sanity\\console.log"
+  },
+  "main": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "scripts/run_fewshot.py",
+      "--data-root",
+      "data/raw/mvtec_ad",
+      "--categories",
+      "bottle",
+      "grid",
+      "transistor",
+      "--output",
+      "artifacts/fewshot-run1"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T16:25:38.826448+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T17:20:39.664525+00:00",
+    "wall_seconds": 3300.8357435,
+    "console": "artifacts\\finish-fewshot\\runs\\main\\console.log"
+  },
+  "masked": {
+    "command": [
+      ".venv-fewshot/Scripts/python.exe",
+      "scripts/run_fewshot.py",
+      "--data-root",
+      "data/raw/mvtec_ad",
+      "--categories",
+      "bottle",
+      "transistor",
+      "--methods",
+      "dinov2_vits14_masked",
+      "--output",
+      "artifacts/fewshot-masked-run1"
+    ],
+    "cwd": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development",
+    "execution_commit": "e22d00c39132eda0fb001493ad1cd23e77b10088",
+    "hardware": {
+      "cpu": {
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-Command",
+          "(Get-CimInstance Win32_Processor).Name"
+        ],
+        "exit_status": 0,
+        "stdout": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "stderr": ""
+      },
+      "gpu": {
+        "command": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader"
+        ],
+        "exit_status": 0,
+        "stdout": "NVIDIA GeForce GTX 1650, 4096 MiB, 592.82",
+        "stderr": ""
+      }
+    },
+    "project_cache_paths": {
+      "HF_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\huggingface",
+      "TORCH_HOME": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\torch",
+      "PIP_CACHE_DIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\pip",
+      "MPLCONFIGDIR": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\matplotlib",
+      "TEMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp",
+      "TMP": "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\artifacts\\finish-fewshot\\cache\\tmp"
+    },
+    "start_utc": "2026-10-30T17:22:32.814813+00:00",
+    "exit_status": 0,
+    "end_utc": "2026-10-30T17:28:04.696350+00:00",
+    "wall_seconds": 331.8797140999959,
+    "console": "artifacts\\finish-fewshot\\runs\\masked\\console.log"
+  }
+}

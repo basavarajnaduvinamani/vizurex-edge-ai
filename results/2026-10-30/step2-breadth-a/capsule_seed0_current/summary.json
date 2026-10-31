@@ -1,0 +1,25 @@
+{
+  "category": "capsule",
+  "seed": 0,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9633027522935781,
+    "f1": 0.8601036269430051,
+    "missed_defects": 26,
+    "false_alarms": 1,
+    "tp": 83,
+    "tn": 22,
+    "threshold": 0.9999999999999999,
+    "test_images": 132
+  },
+  "train_images": 175,
+  "validation_images": 44,
+  "fit_seconds": 69.65951389999827,
+  "worker_pid": 21604,
+  "worker_peak_working_set_bytes": 1522257920,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\capsule_seed0_current\\maps.npz",
+  "maps_sha256": "ee8d1ee0f4004f032c16f252888940d031a53863a018e3073edea57627dc62e6",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-a\\capsule_seed0_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

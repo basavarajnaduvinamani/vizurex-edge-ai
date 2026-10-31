@@ -1,0 +1,60 @@
+{
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+    "scripts/upgrade_acceptance.py"
+  ],
+  "seed": 0,
+  "execution_commit": "4fb68695e1a4f5a7f9c28f1edd0712478bd8e8cd",
+  "server": "http://127.0.0.1:8000",
+  "checks": [
+    {
+      "category": "bottle",
+      "image": "good/000.png",
+      "image_sha256": "9e7bfe658efe9b6db2607a96405b4ac6880936eaf93b89c85bcd311122ceb57b",
+      "expected": "GOOD",
+      "actual": "GOOD",
+      "passed": true,
+      "score": 0.40324947237968445,
+      "threshold": 1.0000000047683713,
+      "actual_png_overlay": true,
+      "decoded_overlay_png": true,
+      "overlay_sha256": "c07fae9774a1e3d52692ecfd63ab4a62580b067c3272705e0163a27985131e84",
+      "overlay_size": [
+        224,
+        224
+      ],
+      "inspection_id": "48d4644f-a6d9-4a65-83fa-ef7786f8dd50",
+      "http_roundtrip_seconds": 1.883898299995053,
+      "visible_in_recent_log_api": true,
+      "metadata_log_present": true
+    },
+    {
+      "category": "bottle",
+      "image": "broken_large/000.png",
+      "image_sha256": "11a691a06a33dd78c5fcab6a822caa48c0d72f27f660e19f5abd9b5aa392b0eb",
+      "expected": "ANOMALY",
+      "actual": "ANOMALY",
+      "passed": true,
+      "score": 5.770784854888916,
+      "threshold": 1.0000000047683713,
+      "actual_png_overlay": true,
+      "decoded_overlay_png": true,
+      "overlay_sha256": "2281c135add93e4a97dfd683f869efefd5a2d32becd6d23e2a7b3bf4802cf00f",
+      "overlay_size": [
+        224,
+        224
+      ],
+      "inspection_id": "fa7c1471-aab9-4184-9b5e-5947ce505302",
+      "http_roundtrip_seconds": 0.32738079999398906,
+      "visible_in_recent_log_api": true,
+      "metadata_log_present": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "mode": "local-research-prototype",
+    "api_version": "0.1.0"
+  },
+  "log_location": "artifacts\\inspections\\inspections.jsonl",
+  "log_sha256": "922266b0871d72dc6b73390761dfa18ca5feea03974b01aaac5b68c863b9e45f"
+}

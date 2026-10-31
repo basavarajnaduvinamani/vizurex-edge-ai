@@ -107,6 +107,13 @@ The PatchCore model resizes the short edge to 256px and evaluates a 224×224 cen
 The dashboard includes a prominent, unmistakable mode switcher in the header:
 - **Live Backend**: Connects directly to `POST /api/inspect`. Checks `GET /api/health` on startup. If the backend is offline, an explicit notification banner informs the operator and displays the command to launch uvicorn. If a real request fails, the exact backend error is shown (never falling back silently to mock data).
 - **Demo Mode**: Explicitly displays **"Demo mode — simulated results"** with UI-only fixture values and synthetic heatmaps for visual design review without a running backend.
+  Demo Mode opens on a complete simulated ANOMALY example without any upload, and the
+  *Simulated walkthrough* buttons switch between ANOMALY, GOOD and RETAKE examples.
+  Every simulated result carries a "SIMULATED EXAMPLE" notice, a "(SIMULATED)" verdict
+  label and a fixture model version. Example scores (1.4200 / 0.4200 against threshold
+  1.0000) are fixed UI values, not measurements. Open `/?mode=demo` to start in Demo Mode.
+- **RETAKE**: a rejected capture is shown as its own result state with the capture-check
+  reasons and no score, threshold comparison or heatmap.
 
 ---
 

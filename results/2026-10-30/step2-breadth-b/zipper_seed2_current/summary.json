@@ -1,0 +1,25 @@
+{
+  "category": "zipper",
+  "seed": 2,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9960609243697479,
+    "f1": 0.9833333333333333,
+    "missed_defects": 1,
+    "false_alarms": 3,
+    "tp": 118,
+    "tn": 29,
+    "threshold": 1.0,
+    "test_images": 151
+  },
+  "train_images": 192,
+  "validation_images": 48,
+  "fit_seconds": 87.94883560000017,
+  "worker_pid": 3152,
+  "worker_peak_working_set_bytes": 1553334272,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\zipper_seed2_current\\maps.npz",
+  "maps_sha256": "9da1c750d81aa7c023443b7e5d6518f13fb92242f64b16ea8275ea1ed0fef148",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\zipper_seed2_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

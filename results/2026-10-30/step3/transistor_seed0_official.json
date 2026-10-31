@@ -1,0 +1,32 @@
+{
+  "run": "transistor_seed0_official",
+  "category": "transistor",
+  "seed": 0,
+  "engine": "official",
+  "metrics": {
+    "pixel_auroc": 0.9498504868109606,
+    "aupro_fpr_0_3": 0.8962649134871326,
+    "connected_regions": 44,
+    "foreground_pixels": 311588,
+    "background_pixels": 4706012,
+    "mask_shape": [
+      100,
+      224,
+      224
+    ],
+    "connectivity": 8,
+    "method": "exact distinct thresholds; tie groups; linear FPR endpoint; crop-aligned nearest masks"
+  },
+  "map_sha256": "735ef6ad87c30a0af294faf18b92cd67c57055fda7019df6e5a1deeb751c24a8",
+  "run_provenance": "results\\2026-10-30\\step1\\transistor_seed0_official\\summary.json",
+  "execution_commit": "33830e0eab43c03f476728cf6cb7726d1c5a2a1a",
+  "command": [
+    "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_localisation.py",
+    "--stages",
+    "step1",
+    "step2-existing",
+    "step2-breadth-a",
+    "step2-breadth-b",
+    "step2-resource-retry-hazelnut"
+  ]
+}

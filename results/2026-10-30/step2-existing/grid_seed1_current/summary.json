@@ -1,0 +1,30 @@
+{
+  "category": "grid",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9791144527986633,
+    "f1": 0.9454545454545454,
+    "missed_defects": 5,
+    "false_alarms": 1,
+    "tp": 52,
+    "tn": 20,
+    "threshold": 1.0,
+    "test_images": 78
+  },
+  "train_images": 211,
+  "validation_images": 53,
+  "fit_seconds": 114.07357530000081,
+  "worker_pid": 32008,
+  "worker_peak_working_set_bytes": 1667194880,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-existing\\grid_seed1_current\\maps.npz",
+  "maps_sha256": "a3eb9e012efceb7582ef7fa8c4155900349abdbd69f0362aefae3d7e6e093ffb",
+  "zero_mask_defect_images": 1,
+  "provenance_file": "results\\2026-10-30\\step2-existing\\grid_seed1_current\\run.json",
+  "historical_phase1_comparison": {
+    "matching_decisions": 77,
+    "max_score_delta": 1.3005700409108503,
+    "note": "historical CSV rounded; old values are not new session results"
+  },
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

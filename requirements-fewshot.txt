@@ -1,0 +1,12 @@
+# Few-shot harness (scripts/run_fewshot.py). Install torch/torchvision first for
+# your platform (Colab already provides them). Versions follow
+# requirements-software-windows-lock.txt; this is not a hash lock.
+timm==1.0.30
+faiss-cpu==1.15.1
+numpy==2.2.5
+scipy==1.15.2
+scikit-learn==1.7.1
+pillow==11.1.0
+matplotlib==3.10.1
+tqdm==4.67.1
+pytest==8.4.2

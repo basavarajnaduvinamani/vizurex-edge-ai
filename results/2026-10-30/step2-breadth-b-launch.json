@@ -1,0 +1,21 @@
+[
+  "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\.venv-clean\\Scripts\\python.exe",
+  "C:\\Users\\Viraj\\OneDrive\\Desktop\\vizurex-edge-ai\\development\\scripts\\upgrade_execute.py",
+  "--stage",
+  "step2-breadth-b",
+  "--categories",
+  "leather",
+  "metal_nut",
+  "pill",
+  "screw",
+  "tile",
+  "toothbrush",
+  "wood",
+  "zipper",
+  "--seeds",
+  "0",
+  "1",
+  "2",
+  "--engines",
+  "current"
+]

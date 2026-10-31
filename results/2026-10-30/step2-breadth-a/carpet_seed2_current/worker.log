@@ -1,0 +1,232 @@
+C:\Users\Viraj\OneDrive\Desktop\vizurex-edge-ai\development\.venv-clean\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\Viraj\OneDrive\Desktop\vizurex-edge-ai\development\.venv-clean\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=Wide_ResNet50_2_Weights.IMAGENET1K_V1`. You can also use `weights=Wide_ResNet50_2_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+Computing support features...:   0%|          | 0/224 [00:00<?, ?it/s][A
+Computing support features...:   0%|          | 1/224 [00:00<01:13,  3.05it/s][A
+Computing support features...:   1%|          | 2/224 [00:00<01:07,  3.30it/s][A
+Computing support features...:   1%|1         | 3/224 [00:00<01:06,  3.32it/s][A
+Computing support features...:   2%|1         | 4/224 [00:01<01:06,  3.29it/s][A
+Computing support features...:   2%|2         | 5/224 [00:01<01:06,  3.32it/s][A
+Computing support features...:   3%|2         | 6/224 [00:01<01:04,  3.36it/s][A
+Computing support features...:   3%|3         | 7/224 [00:02<01:03,  3.40it/s][A
+Computing support features...:   4%|3         | 8/224 [00:02<01:03,  3.42it/s][A
+Computing support features...:   4%|4         | 9/224 [00:02<01:01,  3.49it/s][A
+Computing support features...:   4%|4         | 10/224 [00:02<01:02,  3.40it/s][A
+Computing support features...:   5%|4         | 11/224 [00:03<01:02,  3.39it/s][A
+Computing support features...:   5%|5         | 12/224 [00:03<01:03,  3.36it/s][A
+Computing support features...:   6%|5         | 13/224 [00:03<01:04,  3.29it/s][A
+Computing support features...:   6%|6         | 14/224 [00:04<01:03,  3.28it/s][A
+Computing support features...:   7%|6         | 15/224 [00:04<01:04,  3.26it/s][A
+Computing support features...:   7%|7         | 16/224 [00:04<01:03,  3.26it/s][A
+Computing support features...:   8%|7         | 17/224 [00:05<01:03,  3.28it/s][A
+Computing support features...:   8%|8         | 18/224 [00:05<01:03,  3.24it/s][A
+Computing support features...:   8%|8         | 19/224 [00:05<01:02,  3.29it/s][A
+Computing support features...:   9%|8         | 20/224 [00:06<01:01,  3.32it/s][A
+Computing support features...:   9%|9         | 21/224 [00:06<00:59,  3.41it/s][A
+Computing support features...:  10%|9         | 22/224 [00:06<01:01,  3.30it/s][A
+Computing support features...:  10%|#         | 23/224 [00:06<01:01,  3.29it/s][A
+Computing support features...:  11%|#         | 24/224 [00:07<01:00,  3.28it/s][A
+Computing support features...:  11%|#1        | 25/224 [00:07<01:00,  3.30it/s][A
+Computing support features...:  12%|#1        | 26/224 [00:07<00:58,  3.37it/s][A
+Computing support features...:  12%|#2        | 27/224 [00:08<00:58,  3.39it/s][A
+Computing support features...:  12%|#2        | 28/224 [00:08<00:55,  3.54it/s][A
+Computing support features...:  13%|#2        | 29/224 [00:08<00:55,  3.53it/s][A
+Computing support features...:  13%|#3        | 30/224 [00:08<00:52,  3.68it/s][A
+Computing support features...:  14%|#3        | 31/224 [00:09<00:52,  3.70it/s][A
+Computing support features...:  14%|#4        | 32/224 [00:09<00:51,  3.71it/s][A
+Computing support features...:  15%|#4        | 33/224 [00:09<00:50,  3.81it/s][A
+Computing support features...:  15%|#5        | 34/224 [00:09<00:50,  3.79it/s][A
+Computing support features...:  16%|#5        | 35/224 [00:10<00:49,  3.81it/s][A
+Computing support features...:  16%|#6        | 36/224 [00:10<00:48,  3.86it/s][A
+Computing support features...:  17%|#6        | 37/224 [00:10<00:48,  3.85it/s][A
+Computing support features...:  17%|#6        | 38/224 [00:10<00:48,  3.82it/s][A
+Computing support features...:  17%|#7        | 39/224 [00:11<00:49,  3.75it/s][A
+Computing support features...:  18%|#7        | 40/224 [00:11<00:49,  3.68it/s][A
+Computing support features...:  18%|#8        | 41/224 [00:11<00:57,  3.16it/s][A
+Computing support features...:  19%|#8        | 42/224 [00:12<00:54,  3.32it/s][A
+Computing support features...:  19%|#9        | 43/224 [00:12<00:54,  3.35it/s][A
+Computing support features...:  20%|#9        | 44/224 [00:12<00:53,  3.34it/s][A
+Computing support features...:  20%|##        | 45/224 [00:13<00:53,  3.32it/s][A
+Computing support features...:  21%|##        | 46/224 [00:13<00:53,  3.35it/s][A
+Computing support features...:  21%|##        | 47/224 [00:13<00:52,  3.35it/s][A
+Computing support features...:  21%|##1       | 48/224 [00:14<00:52,  3.34it/s][A
+Computing support features...:  22%|##1       | 49/224 [00:14<00:52,  3.35it/s][A
+Computing support features...:  22%|##2       | 50/224 [00:14<00:51,  3.37it/s][A
+Computing support features...:  23%|##2       | 51/224 [00:14<00:51,  3.36it/s][A
+Computing support features...:  23%|##3       | 52/224 [00:15<00:50,  3.41it/s][A
+Computing support features...:  24%|##3       | 53/224 [00:15<00:49,  3.44it/s][A
+Computing support features...:  24%|##4       | 54/224 [00:15<00:49,  3.46it/s][A
+Computing support features...:  25%|##4       | 55/224 [00:16<00:49,  3.44it/s][A
+Computing support features...:  25%|##5       | 56/224 [00:16<00:49,  3.41it/s][A
+Computing support features...:  25%|##5       | 57/224 [00:16<00:49,  3.35it/s][A
+Computing support features...:  26%|##5       | 58/224 [00:16<00:50,  3.31it/s][A
+Computing support features...:  26%|##6       | 59/224 [00:17<00:49,  3.31it/s][A
+Computing support features...:  27%|##6       | 60/224 [00:17<00:49,  3.34it/s][A
+Computing support features...:  27%|##7       | 61/224 [00:17<00:48,  3.34it/s][A
+Computing support features...:  28%|##7       | 62/224 [00:18<00:48,  3.36it/s][A
+Computing support features...:  28%|##8       | 63/224 [00:18<00:47,  3.38it/s][A
+Computing support features...:  29%|##8       | 64/224 [00:18<00:47,  3.38it/s][A
+Computing support features...:  29%|##9       | 65/224 [00:19<00:47,  3.37it/s][A
+Computing support features...:  29%|##9       | 66/224 [00:19<00:46,  3.38it/s][A
+Computing support features...:  30%|##9       | 67/224 [00:19<00:46,  3.40it/s][A
+Computing support features...:  30%|###       | 68/224 [00:19<00:48,  3.23it/s][A
+Computing support features...:  31%|###       | 69/224 [00:20<00:47,  3.26it/s][A
+Computing support features...:  31%|###1      | 70/224 [00:20<00:46,  3.31it/s][A
+Computing support features...:  32%|###1      | 71/224 [00:20<00:45,  3.33it/s][A
+Computing support features...:  32%|###2      | 72/224 [00:21<00:45,  3.35it/s][A
+Computing support features...:  33%|###2      | 73/224 [00:21<00:45,  3.35it/s][A
+Computing support features...:  33%|###3      | 74/224 [00:21<00:44,  3.40it/s][A
+Computing support features...:  33%|###3      | 75/224 [00:22<00:43,  3.43it/s][A
+Computing support features...:  34%|###3      | 76/224 [00:22<00:43,  3.43it/s][A
+Computing support features...:  34%|###4      | 77/224 [00:22<00:42,  3.46it/s][A
+Computing support features...:  35%|###4      | 78/224 [00:22<00:42,  3.46it/s][A
+Computing support features...:  35%|###5      | 79/224 [00:23<00:41,  3.48it/s][A
+Computing support features...:  36%|###5      | 80/224 [00:23<00:42,  3.36it/s][A
+Computing support features...:  36%|###6      | 81/224 [00:23<00:43,  3.26it/s][A
+Computing support features...:  37%|###6      | 82/224 [00:24<00:43,  3.25it/s][A
+Computing support features...:  37%|###7      | 83/224 [00:24<00:43,  3.23it/s][A
+Computing support features...:  38%|###7      | 84/224 [00:24<00:43,  3.19it/s][A
+Computing support features...:  38%|###7      | 85/224 [00:25<00:43,  3.19it/s][A
+Computing support features...:  38%|###8      | 86/224 [00:25<00:43,  3.15it/s][A
+Computing support features...:  39%|###8      | 87/224 [00:25<00:43,  3.16it/s][A
+Computing support features...:  39%|###9      | 88/224 [00:26<00:42,  3.18it/s][A
+Computing support features...:  40%|###9      | 89/224 [00:26<00:42,  3.20it/s][A
+Computing support features...:  40%|####      | 90/224 [00:26<00:40,  3.29it/s][A
+Computing support features...:  41%|####      | 91/224 [00:26<00:41,  3.19it/s][A
+Computing support features...:  41%|####1     | 92/224 [00:27<00:41,  3.18it/s][A
+Computing support features...:  42%|####1     | 93/224 [00:27<00:40,  3.21it/s][A
+Computing support features...:  42%|####1     | 94/224 [00:27<00:40,  3.23it/s][A
+Computing support features...:  42%|####2     | 95/224 [00:28<00:40,  3.15it/s][A
+Computing support features...:  43%|####2     | 96/224 [00:28<00:40,  3.13it/s][A
+Computing support features...:  43%|####3     | 97/224 [00:28<00:40,  3.12it/s][A
+Computing support features...:  44%|####3     | 98/224 [00:29<00:40,  3.15it/s][A
+Computing support features...:  44%|####4     | 99/224 [00:29<00:39,  3.14it/s][A
+Computing support features...:  45%|####4     | 100/224 [00:29<00:38,  3.20it/s][A
+Computing support features...:  45%|####5     | 101/224 [00:30<00:38,  3.21it/s][A
+Computing support features...:  46%|####5     | 102/224 [00:30<00:37,  3.25it/s][A
+Computing support features...:  46%|####5     | 103/224 [00:30<00:37,  3.25it/s][A
+Computing support features...:  46%|####6     | 104/224 [00:31<00:37,  3.19it/s][A
+Computing support features...:  47%|####6     | 105/224 [00:31<00:37,  3.17it/s][A
+Computing support features...:  47%|####7     | 106/224 [00:31<00:37,  3.19it/s][A
+Computing support features...:  48%|####7     | 107/224 [00:31<00:36,  3.18it/s][A
+Computing support features...:  48%|####8     | 108/224 [00:32<00:36,  3.17it/s][A
+Computing support features...:  49%|####8     | 109/224 [00:32<00:36,  3.18it/s][A
+Computing support features...:  49%|####9     | 110/224 [00:32<00:35,  3.18it/s][A
+Computing support features...:  50%|####9     | 111/224 [00:33<00:35,  3.20it/s][A
+Computing support features...:  50%|#####     | 112/224 [00:33<00:35,  3.18it/s][A
+Computing support features...:  50%|#####     | 113/224 [00:33<00:34,  3.17it/s][A
+Computing support features...:  51%|#####     | 114/224 [00:34<00:34,  3.19it/s][A
+Computing support features...:  51%|#####1    | 115/224 [00:34<00:34,  3.17it/s][A
+Computing support features...:  52%|#####1    | 116/224 [00:34<00:34,  3.13it/s][A
+Computing support features...:  52%|#####2    | 117/224 [00:35<00:34,  3.15it/s][A
+Computing support features...:  53%|#####2    | 118/224 [00:35<00:33,  3.16it/s][A
+Computing support features...:  53%|#####3    | 119/224 [00:35<00:33,  3.18it/s][A
+Computing support features...:  54%|#####3    | 120/224 [00:36<00:32,  3.16it/s][A
+Computing support features...:  54%|#####4    | 121/224 [00:36<00:33,  3.08it/s][A
+Computing support features...:  54%|#####4    | 122/224 [00:36<00:32,  3.12it/s][A
+Computing support features...:  55%|#####4    | 123/224 [00:37<00:32,  3.13it/s][A
+Computing support features...:  55%|#####5    | 124/224 [00:37<00:32,  3.10it/s][A
+Computing support features...:  56%|#####5    | 125/224 [00:37<00:33,  2.95it/s][A
+Computing support features...:  56%|#####6    | 126/224 [00:38<00:32,  3.01it/s][A
+Computing support features...:  57%|#####6    | 127/224 [00:38<00:31,  3.03it/s][A
+Computing support features...:  57%|#####7    | 128/224 [00:38<00:31,  3.00it/s][A
+Computing support features...:  58%|#####7    | 129/224 [00:39<00:31,  3.05it/s][A
+Computing support features...:  58%|#####8    | 130/224 [00:39<00:31,  3.02it/s][A
+Computing support features...:  58%|#####8    | 131/224 [00:39<00:30,  3.05it/s][A
+Computing support features...:  59%|#####8    | 132/224 [00:40<00:29,  3.09it/s][A
+Computing support features...:  59%|#####9    | 133/224 [00:40<00:29,  3.10it/s][A
+Computing support features...:  60%|#####9    | 134/224 [00:40<00:28,  3.11it/s][A
+Computing support features...:  60%|######    | 135/224 [00:41<00:28,  3.10it/s][A
+Computing support features...:  61%|######    | 136/224 [00:41<00:28,  3.06it/s][A
+Computing support features...:  61%|######1   | 137/224 [00:41<00:28,  3.07it/s][A
+Computing support features...:  62%|######1   | 138/224 [00:41<00:28,  3.07it/s][A
+Computing support features...:  62%|######2   | 139/224 [00:42<00:27,  3.13it/s][A
+Computing support features...:  62%|######2   | 140/224 [00:42<00:29,  2.89it/s][A
+Computing support features...:  63%|######2   | 141/224 [00:43<00:28,  2.94it/s][A
+Computing support features...:  63%|######3   | 142/224 [00:43<00:27,  3.02it/s][A
+Computing support features...:  64%|######3   | 143/224 [00:43<00:26,  3.00it/s][A
+Computing support features...:  64%|######4   | 144/224 [00:43<00:26,  3.04it/s][A
+Computing support features...:  65%|######4   | 145/224 [00:44<00:25,  3.04it/s][A
+Computing support features...:  65%|######5   | 146/224 [00:44<00:25,  3.04it/s][A
+Computing support features...:  66%|######5   | 147/224 [00:44<00:24,  3.09it/s][A
+Computing support features...:  66%|######6   | 148/224 [00:45<00:24,  3.09it/s][A
+Computing support features...:  67%|######6   | 149/224 [00:45<00:24,  3.04it/s][A
+Computing support features...:  67%|######6   | 150/224 [00:45<00:24,  3.00it/s][A
+Computing support features...:  67%|######7   | 151/224 [00:46<00:24,  3.01it/s][A
+Computing support features...:  68%|######7   | 152/224 [00:46<00:23,  3.00it/s][A
+Computing support features...:  68%|######8   | 153/224 [00:46<00:23,  2.98it/s][A
+Computing support features...:  69%|######8   | 154/224 [00:47<00:23,  2.96it/s][A
+Computing support features...:  69%|######9   | 155/224 [00:47<00:23,  2.98it/s][A
+Computing support features...:  70%|######9   | 156/224 [00:48<00:27,  2.45it/s][A
+Computing support features...:  70%|#######   | 157/224 [00:48<00:26,  2.52it/s][A
+Computing support features...:  71%|#######   | 158/224 [00:48<00:25,  2.64it/s][A
+Computing support features...:  71%|#######   | 159/224 [00:49<00:24,  2.68it/s][A
+Computing support features...:  71%|#######1  | 160/224 [00:49<00:23,  2.71it/s][A
+Computing support features...:  72%|#######1  | 161/224 [00:49<00:22,  2.84it/s][A
+Computing support features...:  72%|#######2  | 162/224 [00:50<00:21,  2.92it/s][A
+Computing support features...:  73%|#######2  | 163/224 [00:50<00:20,  2.97it/s][A
+Computing support features...:  73%|#######3  | 164/224 [00:50<00:19,  3.01it/s][A
+Computing support features...:  74%|#######3  | 165/224 [00:51<00:19,  3.06it/s][A
+Computing support features...:  74%|#######4  | 166/224 [00:51<00:18,  3.08it/s][A
+Computing support features...:  75%|#######4  | 167/224 [00:51<00:18,  3.12it/s][A
+Computing support features...:  75%|#######5  | 168/224 [00:52<00:17,  3.13it/s][A
+Computing support features...:  75%|#######5  | 169/224 [00:52<00:17,  3.17it/s][A
+Computing support features...:  76%|#######5  | 170/224 [00:52<00:17,  3.11it/s][A
+Computing support features...:  76%|#######6  | 171/224 [00:53<00:17,  3.05it/s][A
+Computing support features...:  77%|#######6  | 172/224 [00:53<00:16,  3.06it/s][A
+Computing support features...:  77%|#######7  | 173/224 [00:53<00:16,  3.06it/s][A
+Computing support features...:  78%|#######7  | 174/224 [00:54<00:16,  3.02it/s][A
+Computing support features...:  78%|#######8  | 175/224 [00:54<00:16,  3.06it/s][A
+Computing support features...:  79%|#######8  | 176/224 [00:54<00:15,  3.09it/s][A
+Computing support features...:  79%|#######9  | 177/224 [00:55<00:15,  3.01it/s][A
+Computing support features...:  79%|#######9  | 178/224 [00:55<00:15,  2.92it/s][A
+Computing support features...:  80%|#######9  | 179/224 [00:55<00:15,  2.94it/s][A
+Computing support features...:  80%|########  | 180/224 [00:56<00:14,  3.00it/s][A
+Computing support features...:  81%|########  | 181/224 [00:56<00:14,  3.06it/s][A
+Computing support features...:  81%|########1 | 182/224 [00:56<00:14,  2.98it/s][A
+Computing support features...:  82%|########1 | 183/224 [00:57<00:13,  2.93it/s][A
+Computing support features...:  82%|########2 | 184/224 [00:57<00:13,  2.99it/s][A
+Computing support features...:  83%|########2 | 185/224 [00:57<00:13,  2.97it/s][A
+Computing support features...:  83%|########3 | 186/224 [00:58<00:12,  2.94it/s][A
+Computing support features...:  83%|########3 | 187/224 [00:58<00:12,  2.98it/s][A
+Computing support features...:  84%|########3 | 188/224 [00:58<00:12,  2.98it/s][A
+Computing support features...:  84%|########4 | 189/224 [00:59<00:11,  3.03it/s][A
+Computing support features...:  85%|########4 | 190/224 [00:59<00:11,  3.06it/s][A
+Computing support features...:  85%|########5 | 191/224 [00:59<00:10,  3.03it/s][A
+Computing support features...:  86%|########5 | 192/224 [01:00<00:10,  2.92it/s][A
+Computing support features...:  86%|########6 | 193/224 [01:00<00:10,  2.88it/s][A
+Computing support features...:  87%|########6 | 194/224 [01:00<00:10,  2.80it/s][A
+Computing support features...:  87%|########7 | 195/224 [01:01<00:10,  2.81it/s][A
+Computing support features...:  88%|########7 | 196/224 [01:01<00:09,  2.92it/s][A
+Computing support features...:  88%|########7 | 197/224 [01:01<00:09,  2.83it/s][A
+Computing support features...:  88%|########8 | 198/224 [01:02<00:09,  2.80it/s][A
+Computing support features...:  89%|########8 | 199/224 [01:02<00:09,  2.75it/s][A
+Computing support features...:  89%|########9 | 200/224 [01:03<00:08,  2.84it/s][A
+Computing support features...:  90%|########9 | 201/224 [01:03<00:08,  2.86it/s][A
+Computing support features...:  90%|######### | 202/224 [01:03<00:07,  2.82it/s][A
+Computing support features...:  91%|######### | 203/224 [01:04<00:07,  2.90it/s][A
+Computing support features...:  91%|#########1| 204/224 [01:04<00:06,  2.93it/s][A
+Computing support features...:  92%|#########1| 205/224 [01:04<00:06,  2.97it/s][A
+Computing support features...:  92%|#########1| 206/224 [01:05<00:06,  2.99it/s][A
+Computing support features...:  92%|#########2| 207/224 [01:05<00:05,  2.99it/s][A
+Computing support features...:  93%|#########2| 208/224 [01:05<00:05,  2.97it/s][A
+Computing support features...:  93%|#########3| 209/224 [01:06<00:05,  2.98it/s][A
+Computing support features...:  94%|#########3| 210/224 [01:06<00:04,  2.99it/s][A
+Computing support features...:  94%|#########4| 211/224 [01:06<00:04,  2.95it/s][A
+Computing support features...:  95%|#########4| 212/224 [01:07<00:04,  2.98it/s][A
+Computing support features...:  95%|#########5| 213/224 [01:07<00:03,  2.98it/s][A
+Computing support features...:  96%|#########5| 214/224 [01:07<00:03,  3.01it/s][A
+Computing support features...:  96%|#########5| 215/224 [01:08<00:02,  3.01it/s][A
+Computing support features...:  96%|#########6| 216/224 [01:08<00:02,  2.82it/s][A
+Computing support features...:  97%|#########6| 217/224 [01:08<00:02,  2.88it/s][A
+Computing support features...:  97%|#########7| 218/224 [01:09<00:02,  2.94it/s][A
+Computing support features...:  98%|#########7| 219/224 [01:09<00:01,  3.01it/s][A
+Computing support features...:  98%|#########8| 220/224 [01:09<00:01,  3.09it/s][A
+Computing support features...:  99%|#########8| 221/224 [01:10<00:00,  3.17it/s][A
+Computing support features...:  99%|#########9| 222/224 [01:10<00:00,  3.18it/s][A
+Computing support features...: 100%|#########9| 223/224 [01:10<00:00,  3.20it/s][A
+Computing support features...: 100%|##########| 224/224 [01:11<00:00,  3.15it/s][A
+                                                                                [ASubsampling...:   0%|          | 0/1756 [00:00<?, ?it/s]Subsampling...:   0%|          | 6/1756 [00:00<00:32, 53.25it/s]Subsampling...:   1%|          | 13/1756 [00:00<00:29, 59.68it/s]Subsampling...:   1%|1         | 20/1756 [00:00<00:27, 62.29it/s]Subsampling...:   2%|1         | 27/1756 [00:00<00:29, 57.97it/s]Subsampling...:   2%|1         | 33/1756 [00:00<00:31, 55.34it/s]Subsampling...:   2%|2         | 39/1756 [00:00<00:31, 53.89it/s]Subsampling...:   3%|2         | 46/1756 [00:00<00:30, 56.70it/s]Subsampling...:   3%|3         | 53/1756 [00:00<00:28, 60.05it/s]Subsampling...:   3%|3         | 60/1756 [00:01<00:27, 62.37it/s]Subsampling...:   4%|3         | 67/1756 [00:01<00:26, 64.07it/s]Subsampling...:   4%|4         | 74/1756 [00:01<00:26, 64.64it/s]Subsampling...:   5%|4         | 81/1756 [00:01<00:25, 65.54it/s]Subsampling...:   5%|5         | 88/1756 [00:01<00:25, 64.81it/s]Subsampling...:   5%|5         | 95/1756 [00:01<00:25, 64.50it/s]Subsampling...:   6%|5         | 102/1756 [00:01<00:25, 64.27it/s]Subsampling...:   6%|6         | 109/1756 [00:01<00:26, 62.89it/s]Subsampling...:   7%|6         | 116/1756 [00:01<00:25, 63.27it/s]Subsampling...:   7%|7         | 124/1756 [00:01<00:24, 65.79it/s]Subsampling...:   7%|7         | 131/1756 [00:02<00:24, 66.59it/s]Subsampling...:   8%|7         | 138/1756 [00:02<00:24, 66.36it/s]Subsampling...:   8%|8         | 145/1756 [00:02<00:24, 66.74it/s]Subsampling...:   9%|8         | 152/1756 [00:02<00:24, 66.81it/s]Subsampling...:   9%|9         | 159/1756 [00:02<00:23, 67.37it/s]Subsampling...:  10%|9         | 167/1756 [00:02<00:23, 69.02it/s]Subsampling...:  10%|9         | 175/1756 [00:02<00:22, 70.10it/s]Subsampling...:  10%|#         | 183/1756 [00:02<00:22, 70.42it/s]Subsampling...:  11%|#         | 191/1756 [00:02<00:22, 69.82it/s]Subsampling...:  11%|#1        | 199/1756 [00:03<00:21, 71.93it/s]Subsampling...:  12%|#1        | 207/1756 [00:03<00:22, 70.24it/s]Subsampling...:  12%|#2        | 215/1756 [00:03<00:21, 70.06it/s]Subsampling...:  13%|#2        | 223/1756 [00:03<00:22, 69.59it/s]Subsampling...:  13%|#3        | 230/1756 [00:03<00:23, 66.10it/s]Subsampling...:  13%|#3        | 237/1756 [00:03<00:22, 66.98it/s]Subsampling...:  14%|#3        | 245/1756 [00:03<00:22, 68.27it/s]Subsampling...:  14%|#4        | 252/1756 [00:03<00:21, 68.50it/s]Subsampling...:  15%|#4        | 260/1756 [00:03<00:21, 69.27it/s]Subsampling...:  15%|#5        | 268/1756 [00:04<00:21, 70.36it/s]Subsampling...:  16%|#5        | 276/1756 [00:04<00:21, 70.16it/s]Subsampling...:  16%|#6        | 284/1756 [00:04<00:21, 69.58it/s]Subsampling...:  17%|#6        | 292/1756 [00:04<00:21, 69.48it/s]Subsampling...:  17%|#7        | 299/1756 [00:04<00:20, 69.40it/s]Subsampling...:  17%|#7        | 307/1756 [00:04<00:20, 69.72it/s]Subsampling...:  18%|#7        | 314/1756 [00:04<00:20, 68.98it/s]Subsampling...:  18%|#8        | 321/1756 [00:04<00:20, 68.81it/s]Subsampling...:  19%|#8        | 328/1756 [00:04<00:20, 68.09it/s]Subsampling...:  19%|#9        | 335/1756 [00:05<00:20, 67.78it/s]Subsampling...:  19%|#9        | 342/1756 [00:05<00:22, 62.97it/s]Subsampling...:  20%|#9        | 349/1756 [00:05<00:22, 63.20it/s]Subsampling...:  20%|##        | 357/1756 [00:05<00:21, 65.77it/s]Subsampling...:  21%|##        | 365/1756 [00:05<00:20, 66.34it/s]Subsampling...:  21%|##1       | 373/1756 [00:05<00:20, 67.90it/s]Subsampling...:  22%|##1       | 381/1756 [00:05<00:19, 69.04it/s]Subsampling...:  22%|##2       | 388/1756 [00:05<00:19, 69.22it/s]Subsampling...:  22%|##2       | 395/1756 [00:05<00:19, 68.50it/s]Subsampling...:  23%|##2       | 402/1756 [00:06<00:19, 68.69it/s]Subsampling...:  23%|##3       | 410/1756 [00:06<00:19, 69.26it/s]Subsampling...:  24%|##3       | 417/1756 [00:06<00:19, 69.35it/s]Subsampling...:  24%|##4       | 425/1756 [00:06<00:19, 70.02it/s]Subsampling...:  25%|##4       | 433/1756 [00:06<00:19, 69.52it/s]Subsampling...:  25%|##5       | 441/1756 [00:06<00:18, 70.04it/s]Subsampling...:  26%|##5       | 449/1756 [00:06<00:18, 69.89it/s]Subsampling...:  26%|##5       | 456/1756 [00:06<00:18, 69.86it/s]Subsampling...:  26%|##6       | 463/1756 [00:06<00:18, 69.23it/s]Subsampling...:  27%|##6       | 471/1756 [00:07<00:18, 70.37it/s]Subsampling...:  27%|##7       | 479/1756 [00:07<00:18, 70.45it/s]Subsampling...:  28%|##7       | 487/1756 [00:07<00:18, 70.02it/s]Subsampling...:  28%|##8       | 495/1756 [00:07<00:18, 69.68it/s]Subsampling...:  29%|##8       | 502/1756 [00:07<00:18, 69.63it/s]Subsampling...:  29%|##8       | 509/1756 [00:07<00:18, 68.22it/s]Subsampling...:  29%|##9       | 516/1756 [00:07<00:18, 67.55it/s]Subsampling...:  30%|##9       | 523/1756 [00:07<00:18, 66.92it/s]Subsampling...:  30%|###       | 530/1756 [00:07<00:18, 67.23it/s]Subsampling...:  31%|###       | 537/1756 [00:08<00:18, 66.28it/s]Subsampling...:  31%|###       | 544/1756 [00:08<00:18, 66.84it/s]Subsampling...:  31%|###1      | 551/1756 [00:08<00:18, 66.32it/s]Subsampling...:  32%|###1      | 558/1756 [00:08<00:18, 65.89it/s]Subsampling...:  32%|###2      | 565/1756 [00:08<00:18, 65.59it/s]Subsampling...:  33%|###2      | 572/1756 [00:08<00:18, 65.26it/s]Subsampling...:  33%|###2      | 579/1756 [00:08<00:18, 65.03it/s]Subsampling...:  33%|###3      | 586/1756 [00:08<00:18, 64.88it/s]Subsampling...:  34%|###3      | 593/1756 [00:08<00:17, 65.09it/s]Subsampling...:  34%|###4      | 600/1756 [00:08<00:17, 65.69it/s]Subsampling...:  35%|###4      | 607/1756 [00:09<00:17, 65.38it/s]Subsampling...:  35%|###4      | 614/1756 [00:09<00:17, 64.69it/s]Subsampling...:  35%|###5      | 622/1756 [00:09<00:17, 66.38it/s]Subsampling...:  36%|###5      | 630/1756 [00:09<00:16, 66.86it/s]Subsampling...:  36%|###6      | 637/1756 [00:09<00:16, 66.86it/s]Subsampling...:  37%|###6      | 644/1756 [00:09<00:16, 67.47it/s]Subsampling...:  37%|###7      | 652/1756 [00:09<00:16, 67.87it/s]Subsampling...:  38%|###7      | 659/1756 [00:09<00:16, 68.46it/s]Subsampling...:  38%|###7      | 666/1756 [00:09<00:15, 68.62it/s]Subsampling...:  38%|###8      | 673/1756 [00:10<00:15, 68.62it/s]Subsampling...:  39%|###8      | 681/1756 [00:10<00:15, 69.20it/s]Subsampling...:  39%|###9      | 688/1756 [00:10<00:15, 69.41it/s]Subsampling...:  40%|###9      | 695/1756 [00:10<00:15, 69.11it/s]Subsampling...:  40%|###9      | 702/1756 [00:10<00:15, 68.84it/s]Subsampling...:  40%|####      | 709/1756 [00:10<00:16, 64.00it/s]Subsampling...:  41%|####      | 717/1756 [00:10<00:15, 65.80it/s]Subsampling...:  41%|####1     | 725/1756 [00:10<00:15, 67.53it/s]Subsampling...:  42%|####1     | 732/1756 [00:10<00:15, 68.07it/s]Subsampling...:  42%|####2     | 739/1756 [00:11<00:15, 66.79it/s]Subsampling...:  42%|####2     | 746/1756 [00:11<00:15, 66.08it/s]Subsampling...:  43%|####2     | 753/1756 [00:11<00:15, 66.29it/s]Subsampling...:  43%|####3     | 760/1756 [00:11<00:14, 66.67it/s]Subsampling...:  44%|####3     | 767/1756 [00:11<00:14, 66.84it/s]Subsampling...:  44%|####4     | 774/1756 [00:11<00:14, 66.49it/s]Subsampling...:  44%|####4     | 781/1756 [00:11<00:14, 66.21it/s]Subsampling...:  45%|####4     | 788/1756 [00:11<00:14, 66.05it/s]Subsampling...:  45%|####5     | 795/1756 [00:11<00:14, 65.74it/s]Subsampling...:  46%|####5     | 802/1756 [00:11<00:14, 65.25it/s]Subsampling...:  46%|####6     | 809/1756 [00:12<00:14, 65.56it/s]Subsampling...:  46%|####6     | 816/1756 [00:12<00:14, 66.09it/s]Subsampling...:  47%|####6     | 823/1756 [00:12<00:13, 67.12it/s]Subsampling...:  47%|####7     | 830/1756 [00:12<00:13, 67.70it/s]Subsampling...:  48%|####7     | 838/1756 [00:12<00:13, 69.11it/s]Subsampling...:  48%|####8     | 846/1756 [00:12<00:13, 69.10it/s]Subsampling...:  49%|####8     | 854/1756 [00:12<00:12, 69.88it/s]Subsampling...:  49%|####9     | 862/1756 [00:12<00:12, 71.80it/s]Subsampling...:  50%|####9     | 870/1756 [00:12<00:12, 71.09it/s]Subsampling...:  50%|#####     | 878/1756 [00:13<00:12, 71.12it/s]Subsampling...:  50%|#####     | 886/1756 [00:13<00:12, 70.06it/s]Subsampling...:  51%|#####     | 894/1756 [00:13<00:12, 70.25it/s]Subsampling...:  51%|#####1    | 902/1756 [00:13<00:12, 70.02it/s]Subsampling...:  52%|#####1    | 910/1756 [00:13<00:12, 70.17it/s]Subsampling...:  52%|#####2    | 918/1756 [00:13<00:12, 69.80it/s]Subsampling...:  53%|#####2    | 925/1756 [00:13<00:11, 69.76it/s]Subsampling...:  53%|#####3    | 932/1756 [00:13<00:11, 69.82it/s]Subsampling...:  53%|#####3    | 939/1756 [00:13<00:11, 69.58it/s]Subsampling...:  54%|#####3    | 946/1756 [00:14<00:12, 63.09it/s]Subsampling...:  54%|#####4    | 954/1756 [00:14<00:12, 65.14it/s]Subsampling...:  55%|#####4    | 962/1756 [00:14<00:11, 66.77it/s]Subsampling...:  55%|#####5    | 969/1756 [00:14<00:11, 67.23it/s]Subsampling...:  56%|#####5    | 976/1756 [00:14<00:11, 67.61it/s]Subsampling...:  56%|#####5    | 983/1756 [00:14<00:11, 67.83it/s]Subsampling...:  56%|#####6    | 991/1756 [00:14<00:11, 69.41it/s]Subsampling...:  57%|#####6    | 998/1756 [00:14<00:10, 69.29it/s]Subsampling...:  57%|#####7    | 1006/1756 [00:14<00:10, 69.48it/s]Subsampling...:  58%|#####7    | 1013/1756 [00:15<00:10, 69.18it/s]Subsampling...:  58%|#####8    | 1020/1756 [00:15<00:11, 66.59it/s]Subsampling...:  59%|#####8    | 1028/1756 [00:15<00:10, 67.61it/s]Subsampling...:  59%|#####8    | 1035/1756 [00:15<00:10, 67.84it/s]Subsampling...:  59%|#####9    | 1042/1756 [00:15<00:10, 68.31it/s]Subsampling...:  60%|#####9    | 1050/1756 [00:15<00:10, 69.48it/s]Subsampling...:  60%|######    | 1058/1756 [00:15<00:09, 70.18it/s]Subsampling...:  61%|######    | 1066/1756 [00:15<00:09, 69.64it/s]Subsampling...:  61%|######1   | 1074/1756 [00:15<00:09, 70.20it/s]Subsampling...:  62%|######1   | 1082/1756 [00:16<00:09, 70.47it/s]Subsampling...:  62%|######2   | 1090/1756 [00:16<00:09, 69.47it/s]Subsampling...:  63%|######2   | 1098/1756 [00:16<00:09, 69.93it/s]Subsampling...:  63%|######2   | 1105/1756 [00:16<00:09, 69.93it/s]Subsampling...:  63%|######3   | 1113/1756 [00:16<00:09, 70.35it/s]Subsampling...:  64%|######3   | 1121/1756 [00:16<00:09, 70.10it/s]Subsampling...:  64%|######4   | 1129/1756 [00:16<00:08, 71.22it/s]Subsampling...:  65%|######4   | 1137/1756 [00:16<00:08, 69.43it/s]Subsampling...:  65%|######5   | 1145/1756 [00:16<00:08, 70.08it/s]Subsampling...:  66%|######5   | 1153/1756 [00:17<00:08, 70.31it/s]Subsampling...:  66%|######6   | 1161/1756 [00:17<00:08, 69.93it/s]Subsampling...:  67%|######6   | 1168/1756 [00:17<00:08, 69.25it/s]Subsampling...:  67%|######6   | 1175/1756 [00:17<00:08, 68.61it/s]Subsampling...:  67%|######7   | 1182/1756 [00:17<00:08, 68.93it/s]Subsampling...:  68%|######7   | 1190/1756 [00:17<00:08, 70.11it/s]Subsampling...:  68%|######8   | 1198/1756 [00:17<00:07, 69.92it/s]Subsampling...:  69%|######8   | 1205/1756 [00:17<00:07, 69.89it/s]Subsampling...:  69%|######9   | 1212/1756 [00:17<00:07, 69.09it/s]Subsampling...:  69%|######9   | 1220/1756 [00:18<00:07, 70.26it/s]Subsampling...:  70%|######9   | 1228/1756 [00:18<00:07, 70.12it/s]Subsampling...:  70%|#######   | 1236/1756 [00:18<00:07, 70.12it/s]Subsampling...:  71%|#######   | 1244/1756 [00:18<00:07, 70.23it/s]Subsampling...:  71%|#######1  | 1252/1756 [00:18<00:07, 70.97it/s]Subsampling...:  72%|#######1  | 1260/1756 [00:18<00:07, 70.00it/s]Subsampling...:  72%|#######2  | 1268/1756 [00:18<00:07, 69.30it/s]Subsampling...:  73%|#######2  | 1276/1756 [00:18<00:06, 69.50it/s]Subsampling...:  73%|#######3  | 1284/1756 [00:18<00:06, 69.33it/s]Subsampling...:  74%|#######3  | 1292/1756 [00:19<00:06, 70.34it/s]Subsampling...:  74%|#######4  | 1300/1756 [00:19<00:06, 71.38it/s]Subsampling...:  74%|#######4  | 1308/1756 [00:19<00:06, 70.27it/s]Subsampling...:  75%|#######4  | 1316/1756 [00:19<00:06, 71.72it/s]Subsampling...:  75%|#######5  | 1324/1756 [00:19<00:06, 70.69it/s]Subsampling...:  76%|#######5  | 1332/1756 [00:19<00:05, 70.79it/s]Subsampling...:  76%|#######6  | 1340/1756 [00:19<00:05, 69.93it/s]Subsampling...:  77%|#######6  | 1348/1756 [00:19<00:05, 70.46it/s]Subsampling...:  77%|#######7  | 1356/1756 [00:19<00:05, 69.85it/s]Subsampling...:  78%|#######7  | 1364/1756 [00:20<00:05, 70.62it/s]Subsampling...:  78%|#######8  | 1372/1756 [00:20<00:05, 69.77it/s]Subsampling...:  79%|#######8  | 1380/1756 [00:20<00:05, 69.93it/s]Subsampling...:  79%|#######9  | 1388/1756 [00:20<00:05, 69.65it/s]Subsampling...:  79%|#######9  | 1396/1756 [00:20<00:05, 70.28it/s]Subsampling...:  80%|#######9  | 1404/1756 [00:20<00:04, 70.97it/s]Subsampling...:  80%|########  | 1412/1756 [00:20<00:04, 71.25it/s]Subsampling...:  81%|########  | 1420/1756 [00:20<00:04, 70.33it/s]Subsampling...:  81%|########1 | 1428/1756 [00:20<00:04, 70.63it/s]Subsampling...:  82%|########1 | 1436/1756 [00:21<00:04, 72.95it/s]Subsampling...:  82%|########2 | 1444/1756 [00:21<00:04, 70.04it/s]Subsampling...:  83%|########2 | 1452/1756 [00:21<00:04, 69.62it/s]Subsampling...:  83%|########3 | 1460/1756 [00:21<00:04, 69.90it/s]Subsampling...:  84%|########3 | 1468/1756 [00:21<00:04, 70.71it/s]Subsampling...:  84%|########4 | 1476/1756 [00:21<00:03, 70.58it/s]Subsampling...:  85%|########4 | 1484/1756 [00:21<00:03, 70.78it/s]Subsampling...:  85%|########4 | 1492/1756 [00:21<00:03, 70.81it/s]Subsampling...:  85%|########5 | 1500/1756 [00:22<00:03, 70.84it/s]Subsampling...:  86%|########5 | 1508/1756 [00:22<00:03, 70.71it/s]Subsampling...:  86%|########6 | 1516/1756 [00:22<00:03, 70.71it/s]Subsampling...:  87%|########6 | 1524/1756 [00:22<00:03, 70.24it/s]Subsampling...:  87%|########7 | 1532/1756 [00:22<00:03, 71.11it/s]Subsampling...:  88%|########7 | 1540/1756 [00:22<00:03, 70.56it/s]Subsampling...:  88%|########8 | 1548/1756 [00:22<00:02, 69.87it/s]Subsampling...:  89%|########8 | 1555/1756 [00:22<00:02, 69.83it/s]Subsampling...:  89%|########9 | 1563/1756 [00:22<00:02, 70.86it/s]Subsampling...:  89%|########9 | 1571/1756 [00:23<00:02, 70.25it/s]Subsampling...:  90%|########9 | 1579/1756 [00:23<00:02, 70.10it/s]Subsampling...:  90%|######### | 1587/1756 [00:23<00:02, 69.40it/s]Subsampling...:  91%|######### | 1594/1756 [00:23<00:02, 69.22it/s]Subsampling...:  91%|#########1| 1602/1756 [00:23<00:02, 70.42it/s]Subsampling...:  92%|#########1| 1610/1756 [00:23<00:02, 69.60it/s]Subsampling...:  92%|#########2| 1617/1756 [00:23<00:02, 68.93it/s]Subsampling...:  93%|#########2| 1625/1756 [00:23<00:01, 69.72it/s]Subsampling...:  93%|#########2| 1633/1756 [00:23<00:01, 69.69it/s]Subsampling...:  93%|#########3| 1641/1756 [00:24<00:01, 70.35it/s]Subsampling...:  94%|#########3| 1649/1756 [00:24<00:01, 69.81it/s]Subsampling...:  94%|#########4| 1657/1756 [00:24<00:01, 71.58it/s]Subsampling...:  95%|#########4| 1665/1756 [00:24<00:01, 69.16it/s]Subsampling...:  95%|#########5| 1673/1756 [00:24<00:01, 69.35it/s]Subsampling...:  96%|#########5| 1681/1756 [00:24<00:01, 70.19it/s]Subsampling...:  96%|#########6| 1689/1756 [00:24<00:00, 70.08it/s]Subsampling...:  97%|#########6| 1697/1756 [00:24<00:00, 70.39it/s]Subsampling...:  97%|#########7| 1705/1756 [00:24<00:00, 70.72it/s]Subsampling...:  98%|#########7| 1713/1756 [00:25<00:00, 70.98it/s]Subsampling...:  98%|#########8| 1721/1756 [00:25<00:00, 70.49it/s]Subsampling...:  98%|#########8| 1729/1756 [00:25<00:00, 70.76it/s]Subsampling...:  99%|#########8| 1737/1756 [00:25<00:00, 69.33it/s]Subsampling...:  99%|#########9| 1745/1756 [00:25<00:00, 70.21it/s]Subsampling...: 100%|#########9| 1753/1756 [00:25<00:00, 69.32it/s]Subsampling...: 100%|##########| 1756/1756 [00:25<00:00, 68.43it/s]
+{"category": "carpet", "seed": 2, "engine": "current", "metrics": {"image_auroc": 0.9871589085072231, "f1": 0.9354838709677419, "missed_defects": 2, "false_alarms": 10, "tp": 87, "tn": 18, "threshold": 0.9999999999999999, "test_images": 117}, "train_images": 224, "validation_images": 56, "fit_seconds": 98.48245569999926, "worker_pid": 29356, "worker_peak_working_set_bytes": 1722654720, "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-a\\carpet_seed2_current\\maps.npz", "maps_sha256": "b11b4dccd7b28a9153ba33e5101989f85d375ad40408854c8999933562afc9dd", "zero_mask_defect_images": 0, "provenance_file": "results\\2026-10-30\\step2-breadth-a\\carpet_seed2_current\\run.json", "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."}

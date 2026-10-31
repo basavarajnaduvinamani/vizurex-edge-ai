@@ -1,0 +1,25 @@
+{
+  "category": "tile",
+  "seed": 1,
+  "engine": "current",
+  "metrics": {
+    "image_auroc": 0.9852092352092353,
+    "f1": 0.9433962264150944,
+    "missed_defects": 9,
+    "false_alarms": 0,
+    "tp": 75,
+    "tn": 33,
+    "threshold": 0.9999999999999998,
+    "test_images": 117
+  },
+  "train_images": 184,
+  "validation_images": 46,
+  "fit_seconds": 69.81220449999819,
+  "worker_pid": 29940,
+  "worker_peak_working_set_bytes": 1553489920,
+  "maps_path": "artifacts\\upgrade-2026-10-30\\step2-breadth-b\\tile_seed1_current\\maps.npz",
+  "maps_sha256": "7c69f3ddb10b1a7f0bc2ed05eb749f5f7bdb549bfc9589ff910a52ef5f433bdd",
+  "zero_mask_defect_images": 0,
+  "provenance_file": "results\\2026-10-30\\step2-breadth-b\\tile_seed1_current\\run.json",
+  "defect_bank_status": "BLOCKED: MVTec train/good provides no separate labelled known-defect bank. Official test anomalies were not used for fitting."
+}

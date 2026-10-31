@@ -1,0 +1,41 @@
+{
+  "captured_at": "2026-10-31T02:31:43.328381+05:30",
+  "url": "http://127.0.0.1:8000/",
+  "mode": "Live Backend",
+  "inspection_id": "790d8530-fb54-45b9-a5dc-2c97faf46877",
+  "verified_steps": [
+    "File chooser upload",
+    "Actual ANOMALY decision",
+    "Heatmap-only view",
+    "Matching inspection ID in refreshed metadata log"
+  ],
+  "screenshots": [
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\demo-screenshots\\live-anomaly.png",
+      "sha256": "f3003ea0b49ee92e9cef8b004ec7519435a9cf653c193a6e04ef549f335b2e37",
+      "dimensions": [
+        1264,
+        1717
+      ]
+    },
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\demo-screenshots\\live-heatmap.png",
+      "sha256": "eed1fecb5bc4a93c936ddb96dfb8771f03a8abe9190f7ad176b220263988b98c",
+      "dimensions": [
+        1264,
+        1690
+      ]
+    },
+    {
+      "path": "artifacts\\upgrade-2026-10-30\\demo-screenshots\\live-inspection-log.png",
+      "sha256": "1ef85d3c1c91a0b00a46710911371fe2e6ea0fee143abeae43e23bd8364751fa",
+      "dimensions": [
+        1264,
+        5218
+      ]
+    }
+  ],
+  "ui_state_sha256": "b109bc29a2df77fa712563808eb23f1b3ace1b9b6f73225f4856a7aab5d43127",
+  "video": "Skipped at explicit user request on 2026-10-31; earlier attempts preserved, no completed video claimed",
+  "privacy": "Screenshots contain public MVTec research images and remain ignored local artifacts, not Git assets"
+}
