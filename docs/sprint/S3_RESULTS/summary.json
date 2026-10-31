@@ -1,0 +1,1615 @@
+{
+  "protocol": "docs/ROUTER_PROTOCOL_SPRINT.md",
+  "test_source": "docs\\sprint\\S2_RESULTS\\per_seed.csv",
+  "choices_source": "artifacts\\sprint-2026-11-01\\router\\choices.json",
+  "macro": [
+    {
+      "k": "1",
+      "method": "router",
+      "mean": 0.8634975595963541,
+      "ci95": [
+        0.7965423311313077,
+        0.9261540416081757
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "1",
+      "method": "oracle",
+      "mean": 0.9230411789005244,
+      "ci95": [
+        0.869051714588861,
+        0.9687049501830394
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "1",
+      "method": "dinov2_vits14",
+      "mean": 0.9177885434497465,
+      "ci95": [
+        0.8636242496370344,
+        0.9629271641865423
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "1",
+      "method": "patchcore_wrn50",
+      "mean": 0.8382925650896621,
+      "ci95": [
+        0.7541528703236534,
+        0.9153420536086113
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "2",
+      "method": "router",
+      "mean": 0.8813109519254303,
+      "ci95": [
+        0.8166075331611427,
+        0.9396857410171034
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "2",
+      "method": "oracle",
+      "mean": 0.9377757880077261,
+      "ci95": [
+        0.8896067257656747,
+        0.9773987709129999
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "2",
+      "method": "dinov2_vits14",
+      "mean": 0.9245427420298713,
+      "ci95": [
+        0.8727971888415699,
+        0.9687397557159014
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "2",
+      "method": "patchcore_wrn50",
+      "mean": 0.8714615182070131,
+      "ci95": [
+        0.789704673621948,
+        0.9401340206523109
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "4",
+      "method": "router",
+      "mean": 0.9100431925076962,
+      "ci95": [
+        0.8508192319930336,
+        0.958942242910409
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "4",
+      "method": "oracle",
+      "mean": 0.9547750377160782,
+      "ci95": [
+        0.9184407018776702,
+        0.9831838962094597
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "4",
+      "method": "dinov2_vits14",
+      "mean": 0.9464157970711005,
+      "ci95": [
+        0.9080704762277347,
+        0.9786494557657244
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "4",
+      "method": "patchcore_wrn50",
+      "mean": 0.8927974704371631,
+      "ci95": [
+        0.8201215829086173,
+        0.952031905819998
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "method": "router",
+      "mean": 0.9454243595009459,
+      "ci95": [
+        0.9098949346505976,
+        0.9753376795752801
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "method": "oracle",
+      "mean": 0.9635509437948442,
+      "ci95": [
+        0.9372063249393212,
+        0.985434721954194
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "method": "dinov2_vits14",
+      "mean": 0.9559548864755482,
+      "ci95": [
+        0.9267271214489124,
+        0.9814284315802512
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "method": "patchcore_wrn50",
+      "mean": 0.9241817986386065,
+      "ci95": [
+        0.8683754398956554,
+        0.9682405328716578
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "16",
+      "method": "router",
+      "mean": 0.9585872237388987,
+      "ci95": [
+        0.9193481586114062,
+        0.9871634735243107
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "16",
+      "method": "oracle",
+      "mean": 0.9726327830087899,
+      "ci95": [
+        0.9511046497941928,
+        0.9901775820574283
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "16",
+      "method": "dinov2_vits14",
+      "mean": 0.9632520627520822,
+      "ci95": [
+        0.9397890710245642,
+        0.9840394018752451
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "16",
+      "method": "patchcore_wrn50",
+      "mean": 0.9493966274639796,
+      "ci95": [
+        0.909060950002279,
+        0.9817495053500807
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "full",
+      "method": "router",
+      "mean": 0.9861572455870553,
+      "ci95": [
+        0.9775197450407291,
+        0.9934724069541884
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "full",
+      "method": "oracle",
+      "mean": 0.9892625765925248,
+      "ci95": [
+        0.980968300672048,
+        0.9960040912542063
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "full",
+      "method": "dinov2_vits14",
+      "mean": 0.979589117948715,
+      "ci95": [
+        0.9658920781589411,
+        0.9911318649849041
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "full",
+      "method": "patchcore_wrn50",
+      "mean": 0.9861788198733356,
+      "ci95": [
+        0.9775819446606449,
+        0.9934728227079871
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    }
+  ],
+  "paired_differences": [
+    {
+      "k": "1",
+      "contrast": "router minus dinov2_vits14",
+      "mean": -0.054290983853392386,
+      "ci95": [
+        -0.10716874460240301,
+        -0.01186449602467483
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "1",
+      "contrast": "router minus patchcore_wrn50",
+      "mean": 0.025204994506691985,
+      "ci95": [
+        0.006396718010323872,
+        0.047301153512778346
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "2",
+      "contrast": "router minus dinov2_vits14",
+      "mean": -0.04323179010444103,
+      "ci95": [
+        -0.0966179826553762,
+        -0.0018261291051496137
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "2",
+      "contrast": "router minus patchcore_wrn50",
+      "mean": 0.009849433718417252,
+      "ci95": [
+        -0.007607745967122089,
+        0.033404926647296135
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "4",
+      "contrast": "router minus dinov2_vits14",
+      "mean": -0.03637260456340429,
+      "ci95": [
+        -0.07572332686225057,
+        -0.0020700750272300986
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "4",
+      "contrast": "router minus patchcore_wrn50",
+      "mean": 0.017245722070533077,
+      "ci95": [
+        0.003762498656511563,
+        0.0327543301429363
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "contrast": "router minus dinov2_vits14",
+      "mean": -0.010530526974602165,
+      "ci95": [
+        -0.02136313276217766,
+        -0.0013259996314813017
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "contrast": "router minus patchcore_wrn50",
+      "mean": 0.021242560862339686,
+      "ci95": [
+        -0.005647804761224599,
+        0.056758262420392586
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "16",
+      "contrast": "router minus dinov2_vits14",
+      "mean": -0.0046648390131837,
+      "ci95": [
+        -0.028516756897453668,
+        0.016496817385383535
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "16",
+      "contrast": "router minus patchcore_wrn50",
+      "mean": 0.009190596274919093,
+      "ci95": [
+        -0.0010459602003279815,
+        0.028367450116676126
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "full",
+      "contrast": "router minus dinov2_vits14",
+      "mean": 0.006568127638340278,
+      "ci95": [
+        -0.0013403637934256717,
+        0.015365642333832821
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "full",
+      "contrast": "router minus patchcore_wrn50",
+      "mean": -2.157428628017932e-05,
+      "ci95": [
+        -0.0014355742296918938,
+        0.0013708513708513559
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    }
+  ],
+  "per_category": [
+    {
+      "category": "bottle",
+      "k": "1",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.9920634920634921,
+      "oracle": 0.9955026455026456,
+      "dinov2_vits14": 0.9915343915343916,
+      "patchcore_wrn50": 0.9955026455026456
+    },
+    {
+      "category": "cable",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.8701899050474763,
+      "oracle": 0.8797476261869065,
+      "dinov2_vits14": 0.8797476261869065,
+      "patchcore_wrn50": 0.8581959020489754
+    },
+    {
+      "category": "capsule",
+      "k": "1",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.7633293445020609,
+      "oracle": 0.7967025661481187,
+      "dinov2_vits14": 0.7967025661481187,
+      "patchcore_wrn50": 0.69671586225236
+    },
+    {
+      "category": "carpet",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9875601926163723,
+      "oracle": 0.9997324772605672,
+      "dinov2_vits14": 0.9997324772605672,
+      "patchcore_wrn50": 0.9875601926163723
+    },
+    {
+      "category": "grid",
+      "k": "1",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.7034252297410193,
+      "oracle": 0.9855193539404065,
+      "dinov2_vits14": 0.9855193539404065,
+      "patchcore_wrn50": 0.6154274575327207
+    },
+    {
+      "category": "hazelnut",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8948809523809524,
+      "oracle": 0.9403571428571428,
+      "dinov2_vits14": 0.9403571428571428,
+      "patchcore_wrn50": 0.8948809523809524
+    },
+    {
+      "category": "leather",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9995471014492754,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 0.9995471014492754
+    },
+    {
+      "category": "metal_nut",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.6896383186705767,
+      "oracle": 0.9729553600521342,
+      "dinov2_vits14": 0.9729553600521342,
+      "patchcore_wrn50": 0.6896383186705767
+    },
+    {
+      "category": "pill",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.845244589925441,
+      "oracle": 0.8794326241134751,
+      "dinov2_vits14": 0.8794326241134751,
+      "patchcore_wrn50": 0.7585924713584289
+    },
+    {
+      "category": "screw",
+      "k": "1",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.5831112932978069,
+      "oracle": 0.6484935437589671,
+      "dinov2_vits14": 0.6484935437589671,
+      "patchcore_wrn50": 0.46361959417913506
+    },
+    {
+      "category": "tile",
+      "k": "1",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.990860990860991,
+      "oracle": 0.9921837421837423,
+      "dinov2_vits14": 0.984968734968735,
+      "patchcore_wrn50": 0.9914622414622415
+    },
+    {
+      "category": "toothbrush",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8888888888888888,
+      "oracle": 0.9944444444444445,
+      "dinov2_vits14": 0.9944444444444445,
+      "patchcore_wrn50": 0.8888888888888888
+    },
+    {
+      "category": "transistor",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.7947222222222222,
+      "oracle": 0.8094444444444444,
+      "dinov2_vits14": 0.7898611111111111,
+      "patchcore_wrn50": 0.7947222222222222
+    },
+    {
+      "category": "wood",
+      "k": "1",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9883040935672515,
+      "oracle": 0.9883040935672515,
+      "dinov2_vits14": 0.9766081871345028,
+      "patchcore_wrn50": 0.9883040935672515
+    },
+    {
+      "category": "zipper",
+      "k": "1",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.9606967787114846,
+      "oracle": 0.9627976190476191,
+      "dinov2_vits14": 0.926470588235294,
+      "patchcore_wrn50": 0.9513305322128852
+    },
+    {
+      "category": "bottle",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9986772486772487,
+      "oracle": 0.9986772486772487,
+      "dinov2_vits14": 0.9978835978835979,
+      "patchcore_wrn50": 0.9973544973544973
+    },
+    {
+      "category": "cable",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.861944027986007,
+      "oracle": 0.8799975012493754,
+      "dinov2_vits14": 0.8775612193903047,
+      "patchcore_wrn50": 0.861944027986007
+    },
+    {
+      "category": "capsule",
+      "k": "2",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.803749501396091,
+      "oracle": 0.8052120728626512,
+      "dinov2_vits14": 0.803749501396091,
+      "patchcore_wrn50": 0.7533572663209681
+    },
+    {
+      "category": "carpet",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9890315676832531,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 0.9890315676832531
+    },
+    {
+      "category": "grid",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.6449456975772766,
+      "oracle": 0.9871901977165134,
+      "dinov2_vits14": 0.9871901977165134,
+      "patchcore_wrn50": 0.6449456975772766
+    },
+    {
+      "category": "hazelnut",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9515476190476191,
+      "oracle": 0.9820238095238096,
+      "dinov2_vits14": 0.9820238095238096,
+      "patchcore_wrn50": 0.9515476190476191
+    },
+    {
+      "category": "leather",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "metal_nut",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8901922450309548,
+      "oracle": 0.990713587487781,
+      "dinov2_vits14": 0.990713587487781,
+      "patchcore_wrn50": 0.8901922450309548
+    },
+    {
+      "category": "pill",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8229678123295144,
+      "oracle": 0.8994362611383888,
+      "dinov2_vits14": 0.8994362611383888,
+      "patchcore_wrn50": 0.8229678123295144
+    },
+    {
+      "category": "screw",
+      "k": "2",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.5984832957573274,
+      "oracle": 0.6916034706565553,
+      "dinov2_vits14": 0.6916034706565553,
+      "patchcore_wrn50": 0.4507754321240691
+    },
+    {
+      "category": "tile",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9927849927849928,
+      "oracle": 0.9927849927849928,
+      "dinov2_vits14": 0.985930735930736,
+      "patchcore_wrn50": 0.9911014911014911
+    },
+    {
+      "category": "toothbrush",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8842592592592592,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 0.8842592592592592
+    },
+    {
+      "category": "transistor",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.8297222222222222,
+      "oracle": 0.887638888888889,
+      "dinov2_vits14": 0.7627777777777777,
+      "patchcore_wrn50": 0.887638888888889
+    },
+    {
+      "category": "wood",
+      "k": "2",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9856725146198829,
+      "oracle": 0.9856725146198829,
+      "dinov2_vits14": 0.9596491228070175,
+      "patchcore_wrn50": 0.9856725146198829
+    },
+    {
+      "category": "zipper",
+      "k": "2",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.9656862745098039,
+      "oracle": 0.9656862745098039,
+      "dinov2_vits14": 0.9296218487394957,
+      "patchcore_wrn50": 0.9611344537815126
+    },
+    {
+      "category": "bottle",
+      "k": "4",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 0.9978835978835979,
+      "patchcore_wrn50": 0.9981481481481481
+    },
+    {
+      "category": "cable",
+      "k": "4",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8879935032483758,
+      "oracle": 0.902736131934033,
+      "dinov2_vits14": 0.89523988005997,
+      "patchcore_wrn50": 0.8848700649675162
+    },
+    {
+      "category": "capsule",
+      "k": "4",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.8948278154500732,
+      "oracle": 0.9086557638611886,
+      "dinov2_vits14": 0.8948278154500732,
+      "patchcore_wrn50": 0.8489562558170457
+    },
+    {
+      "category": "carpet",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9886302835741038,
+      "oracle": 0.9998662386302836,
+      "dinov2_vits14": 0.9998662386302836,
+      "patchcore_wrn50": 0.9886302835741038
+    },
+    {
+      "category": "grid",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.7685881370091896,
+      "oracle": 0.9866332497911445,
+      "dinov2_vits14": 0.9866332497911445,
+      "patchcore_wrn50": 0.693121693121693
+    },
+    {
+      "category": "hazelnut",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.981904761904762,
+      "oracle": 0.9898809523809525,
+      "dinov2_vits14": 0.9895238095238096,
+      "patchcore_wrn50": 0.981904761904762
+    },
+    {
+      "category": "leather",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "metal_nut",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.9517758227435648,
+      "oracle": 0.9916911045943304,
+      "dinov2_vits14": 0.9916911045943304,
+      "patchcore_wrn50": 0.896871945259042
+    },
+    {
+      "category": "pill",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.820785597381342,
+      "oracle": 0.9162575013638842,
+      "dinov2_vits14": 0.9162575013638842,
+      "patchcore_wrn50": 0.820785597381342
+    },
+    {
+      "category": "screw",
+      "k": "4",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.5945890551342488,
+      "oracle": 0.7536380405820866,
+      "dinov2_vits14": 0.7536380405820866,
+      "patchcore_wrn50": 0.5135615221698435
+    },
+    {
+      "category": "tile",
+      "k": "4",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9936267436267436,
+      "oracle": 0.9936267436267436,
+      "dinov2_vits14": 0.9936267436267436,
+      "patchcore_wrn50": 0.9906204906204906
+    },
+    {
+      "category": "toothbrush",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8962962962962963,
+      "oracle": 0.9935185185185186,
+      "dinov2_vits14": 0.9935185185185186,
+      "patchcore_wrn50": 0.8962962962962963
+    },
+    {
+      "category": "transistor",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9211111111111111,
+      "oracle": 0.9211111111111111,
+      "dinov2_vits14": 0.8394444444444445,
+      "patchcore_wrn50": 0.9211111111111111
+    },
+    {
+      "category": "wood",
+      "k": "4",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9885964912280701,
+      "oracle": 0.993859649122807,
+      "dinov2_vits14": 0.9821637426900586,
+      "patchcore_wrn50": 0.9885964912280701
+    },
+    {
+      "category": "zipper",
+      "k": "4",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9619222689075629,
+      "oracle": 0.9701505602240896,
+      "dinov2_vits14": 0.9619222689075629,
+      "patchcore_wrn50": 0.9684873949579833
+    },
+    {
+      "category": "bottle",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.9997354497354497,
+      "oracle": 0.9997354497354497,
+      "dinov2_vits14": 0.9984126984126984,
+      "patchcore_wrn50": 0.9989417989417989
+    },
+    {
+      "category": "cable",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.9364067966016991,
+      "oracle": 0.9415292353823088,
+      "dinov2_vits14": 0.9226636681659169,
+      "patchcore_wrn50": 0.9415292353823088
+    },
+    {
+      "category": "capsule",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9085228028187741,
+      "oracle": 0.9102512963701636,
+      "dinov2_vits14": 0.9085228028187741,
+      "patchcore_wrn50": 0.8772769578513495
+    },
+    {
+      "category": "carpet",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9884965222043873,
+      "oracle": 0.9998662386302836,
+      "dinov2_vits14": 0.9998662386302836,
+      "patchcore_wrn50": 0.9884965222043873
+    },
+    {
+      "category": "grid",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9880256196045668,
+      "oracle": 0.9880256196045668,
+      "dinov2_vits14": 0.9880256196045668,
+      "patchcore_wrn50": 0.7786131996658313
+    },
+    {
+      "category": "hazelnut",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9940476190476191,
+      "oracle": 0.9955952380952381,
+      "dinov2_vits14": 0.9941666666666666,
+      "patchcore_wrn50": 0.9940476190476191
+    },
+    {
+      "category": "leather",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "metal_nut",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9666014988595634,
+      "oracle": 0.996415770609319,
+      "dinov2_vits14": 0.996415770609319,
+      "patchcore_wrn50": 0.9666014988595634
+    },
+    {
+      "category": "pill",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8807055828332423,
+      "oracle": 0.9188034188034186,
+      "dinov2_vits14": 0.904073467903255,
+      "patchcore_wrn50": 0.8807055828332423
+    },
+    {
+      "category": "screw",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.7679169228667077,
+      "oracle": 0.8296782127485139,
+      "dinov2_vits14": 0.8296782127485139,
+      "patchcore_wrn50": 0.6271093803375009
+    },
+    {
+      "category": "tile",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9942279942279941,
+      "oracle": 0.9951899951899952,
+      "dinov2_vits14": 0.9908609908609908,
+      "patchcore_wrn50": 0.9926647426647427
+    },
+    {
+      "category": "toothbrush",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9555555555555556,
+      "oracle": 0.9972222222222222,
+      "dinov2_vits14": 0.9962962962962963,
+      "patchcore_wrn50": 0.9555555555555556
+    },
+    {
+      "category": "transistor",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.8488888888888888,
+      "oracle": 0.920138888888889,
+      "dinov2_vits14": 0.8654166666666666,
+      "patchcore_wrn50": 0.9036111111111111
+    },
+    {
+      "category": "wood",
+      "k": "8",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9856725146198829,
+      "oracle": 0.9856725146198829,
+      "dinov2_vits14": 0.9783625730994152,
+      "patchcore_wrn50": 0.9856725146198829
+    },
+    {
+      "category": "zipper",
+      "k": "8",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.96656162464986,
+      "oracle": 0.9751400560224089,
+      "dinov2_vits14": 0.96656162464986,
+      "patchcore_wrn50": 0.9719012605042017
+    },
+    {
+      "category": "bottle",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 0.9997354497354497,
+      "patchcore_wrn50": 0.9989417989417989
+    },
+    {
+      "category": "cable",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9386556721639181,
+      "oracle": 0.9386556721639181,
+      "dinov2_vits14": 0.9305347326336831,
+      "patchcore_wrn50": 0.9386556721639181
+    },
+    {
+      "category": "capsule",
+      "k": "16",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "patchcore_wrn50"
+      ],
+      "router": 0.8930993218986837,
+      "oracle": 0.9126445951336258,
+      "dinov2_vits14": 0.9047998936311661,
+      "patchcore_wrn50": 0.9009440234011435
+    },
+    {
+      "category": "carpet",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.987426431246656,
+      "oracle": 0.9991974317817015,
+      "dinov2_vits14": 0.9991974317817015,
+      "patchcore_wrn50": 0.987426431246656
+    },
+    {
+      "category": "grid",
+      "k": "16",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.988582567529936,
+      "oracle": 0.988582567529936,
+      "dinov2_vits14": 0.988582567529936,
+      "patchcore_wrn50": 0.848510164299638
+    },
+    {
+      "category": "hazelnut",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9978571428571428,
+      "oracle": 0.9978571428571428,
+      "dinov2_vits14": 0.9958333333333332,
+      "patchcore_wrn50": 0.9978571428571428
+    },
+    {
+      "category": "leather",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "metal_nut",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9884327142391659,
+      "oracle": 0.9969045291625936,
+      "dinov2_vits14": 0.9969045291625936,
+      "patchcore_wrn50": 0.9884327142391659
+    },
+    {
+      "category": "pill",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9059829059829059,
+      "oracle": 0.9422622294962721,
+      "dinov2_vits14": 0.9422622294962721,
+      "patchcore_wrn50": 0.9059829059829059
+    },
+    {
+      "category": "screw",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.7323221971715516,
+      "oracle": 0.8656145384983261,
+      "dinov2_vits14": 0.8656145384983261,
+      "patchcore_wrn50": 0.7323221971715516
+    },
+    {
+      "category": "tile",
+      "k": "16",
+      "choices": [
+        "dinov2_vits14",
+        "patchcore_wrn50",
+        "dinov2_vits14"
+      ],
+      "router": 0.994107744107744,
+      "oracle": 0.9944684944684945,
+      "dinov2_vits14": 0.9937469937469938,
+      "patchcore_wrn50": 0.9933862433862434
+    },
+    {
+      "category": "toothbrush",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9953703703703703,
+      "oracle": 0.9953703703703703,
+      "dinov2_vits14": 0.9861111111111112,
+      "patchcore_wrn50": 0.9953703703703703
+    },
+    {
+      "category": "transistor",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9877777777777776,
+      "oracle": 0.9877777777777776,
+      "dinov2_vits14": 0.8870833333333333,
+      "patchcore_wrn50": 0.9877777777777776
+    },
+    {
+      "category": "wood",
+      "k": "16",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9888888888888889,
+      "oracle": 0.9888888888888889,
+      "dinov2_vits14": 0.9780701754385964,
+      "patchcore_wrn50": 0.9888888888888889
+    },
+    {
+      "category": "zipper",
+      "k": "16",
+      "choices": [
+        "dinov2_vits14",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9803046218487395,
+      "oracle": 0.9812675070028011,
+      "dinov2_vits14": 0.9803046218487395,
+      "patchcore_wrn50": 0.976453081232493
+    },
+    {
+      "category": "bottle",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "cable",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9866941529235381,
+      "oracle": 0.9866941529235381,
+      "dinov2_vits14": 0.9619565217391304,
+      "patchcore_wrn50": 0.9866941529235381
+    },
+    {
+      "category": "capsule",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9634357133359925,
+      "oracle": 0.9634357133359925,
+      "dinov2_vits14": 0.9405664140406861,
+      "patchcore_wrn50": 0.9634357133359925
+    },
+    {
+      "category": "carpet",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.987426431246656,
+      "oracle": 0.9987961476725523,
+      "dinov2_vits14": 0.9987961476725523,
+      "patchcore_wrn50": 0.987426431246656
+    },
+    {
+      "category": "grid",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9832915622389308,
+      "oracle": 0.9924812030075186,
+      "dinov2_vits14": 0.9924812030075186,
+      "patchcore_wrn50": 0.9832915622389308
+    },
+    {
+      "category": "hazelnut",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 0.9957142857142857,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "leather",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 1.0,
+      "oracle": 1.0,
+      "dinov2_vits14": 1.0,
+      "patchcore_wrn50": 1.0
+    },
+    {
+      "category": "metal_nut",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9972303681981102,
+      "oracle": 0.9991854024112089,
+      "dinov2_vits14": 0.9990224828934506,
+      "patchcore_wrn50": 0.9972303681981102
+    },
+    {
+      "category": "pill",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9580832878705219,
+      "oracle": 0.9727223131478451,
+      "dinov2_vits14": 0.9727223131478451,
+      "patchcore_wrn50": 0.9580832878705219
+    },
+    {
+      "category": "screw",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9491015918562548,
+      "oracle": 0.9491015918562548,
+      "dinov2_vits14": 0.913301906128305,
+      "patchcore_wrn50": 0.9491015918562548
+    },
+    {
+      "category": "tile",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9965127465127465,
+      "oracle": 0.9978354978354979,
+      "dinov2_vits14": 0.9978354978354979,
+      "patchcore_wrn50": 0.9896584896584897
+    },
+    {
+      "category": "toothbrush",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9916666666666667,
+      "oracle": 0.9925925925925926,
+      "dinov2_vits14": 0.9916666666666667,
+      "patchcore_wrn50": 0.9916666666666667
+    },
+    {
+      "category": "transistor",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9988888888888888,
+      "oracle": 0.9988888888888888,
+      "dinov2_vits14": 0.9550000000000001,
+      "patchcore_wrn50": 0.9988888888888888
+    },
+    {
+      "category": "wood",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "patchcore_wrn50",
+        "patchcore_wrn50"
+      ],
+      "router": 0.9929824561403509,
+      "oracle": 0.9929824561403509,
+      "dinov2_vits14": 0.9921052631578947,
+      "patchcore_wrn50": 0.9929824561403509
+    },
+    {
+      "category": "zipper",
+      "k": "full",
+      "choices": [
+        "patchcore_wrn50",
+        "dinov2_vits14",
+        "dinov2_vits14"
+      ],
+      "router": 0.9870448179271709,
+      "oracle": 0.9942226890756304,
+      "dinov2_vits14": 0.9826680672268907,
+      "patchcore_wrn50": 0.9942226890756304
+    }
+  ],
+  "verdict": "not met",
+  "limitation": "Previously inspected benchmark; fixed rule with no cross-category fitting. Oracle uses test labels and is not deployable."
+}
