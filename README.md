@@ -20,6 +20,14 @@ capture and spoken feedback on smart glasses, each step behind a measured go/no-
 
 ## Demo
 
+The new [eight-reference browser onboarding demo](deploy/onboarding/README.md)
+benchmarks and adapts established [AnomalyDINO](https://arxiv.org/abs/2405.14529)
+([official code](https://github.com/dammsi/AnomalyDINO)) and
+[PatchCore](https://arxiv.org/abs/2106.08265). It is not a new detection method.
+It uses generated samples until owner photos arrive, and requires eight bank
+photos **plus separate normal calibration**. See [Step 1 evidence](docs/step1/)
+for measured browser parity/timing and deployment status.
+
 ![Demo Mode: simulated ANOMALY example with heatmap, decision and score vs threshold](docs/images/demo-anomaly-desktop.png)
 
 Screenshots from the browser dashboard in **Demo Mode**, captured with Playwright at
