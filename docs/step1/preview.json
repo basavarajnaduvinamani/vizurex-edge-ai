@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-04",
+  "status": "BLOCKED_FIRST_DEPLOYMENT_REQUIRES_PRODUCTION",
+  "environment": "preview",
+  "url": null,
+  "deployed": false,
+  "public": false,
+  "protected_verified": false,
+  "project_protection_verified": true,
+  "project": "visurex-onboarding",
+  "deployments_count": 0,
+  "source_commit": "46d4e515d3657a053dcb98ca5f0b6b9c4935776d",
+  "owner_authorization": "Protected preview only; no production/public release",
+  "cli_observation": "Can't create a Preview deployment. This project has no deployments yet, and a project's first deployment is assigned to Production.",
+  "attempted_command": "vercel deploy --prebuilt --environment preview --yes --json --meta sourceCommit=<source_commit> --cwd artifacts/onboarding/preview",
+  "exit_code": 1,
+  "official_source": "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting",
+  "response_sources": [
+    "artifacts/onboarding/deployment-list.json",
+    "artifacts/onboarding/vercel-project-verified.json"
+  ],
+  "action": "Stopped; no --prod, production bootstrap or REST workaround attempted"
+}

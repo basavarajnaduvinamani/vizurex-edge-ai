@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import re
+import sys
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,6 +11,7 @@ DOC = ROOT / 'docs/step1'
 
 
 def main():
+    sys.stdout.reconfigure(encoding='utf-8')
     parity = json.loads((DOC / 'browser_parity.json').read_text())
     light = json.loads((DOC / 'lighthouse.json').read_text())
     execution = json.loads((ART / 'final-gates/execution.json').read_text())
@@ -34,7 +36,8 @@ def main():
     (DOC / 'tests.json').write_text(json.dumps(suite, indent=2))
     preview = json.loads((DOC / 'preview.json').read_text())
     assert preview['environment'] == 'preview' and preview['public'] is False
-    assert preview['protected_verified']
+    blocked = preview.get('status', '').startswith('BLOCKED')
+    assert preview.get('protected_verified') or (blocked and not preview.get('deployed'))
     s2 = json.loads((ROOT / 'docs/sprint/S2_RESULTS/summary.json').read_text())
     rows = {r['method']: r for r in s2['macro'] if r['group'] == 'all' and r['k'] == '8'}
     dino, pc = rows['dinov2_vits14'], rows['patchcore_wrn50']
@@ -43,7 +46,7 @@ def main():
     t = lambda k: f"{timing[k]['ms']:.1f} ms [95% CI {timing[k]['ci95'][0]:.1f}, {timing[k]['ci95'][1]:.1f}]"
     ci = json.loads((DOC / 'github.json').read_text()) if (DOC / 'github.json').exists() else {'status': 'UNKNOWN'}
     lines = {
-        'SDE': f"Built an access-protected in-browser few-shot inspection demo (DINOv2 ONNX in WebAssembly): {timing['p50']['ms']:.1f} ms median per warm generated-image check on laptop CPU; browser/Python decision parity {parity['agreeing']}/{parity['n']}; {configured_ci} checks configured in CI.",
+        'SDE': f"Built and locally verified an in-browser few-shot inspection demo (DINOv2 ONNX in WebAssembly): {timing['p50']['ms']:.1f} ms median per warm generated-image check on laptop CPU; browser/Python decision parity {parity['agreeing']}/{parity['n']}; {configured_ci} checks configured in CI. Hosting is blocked.",
         'APM': "Turned a 15-category benchmark into an eight-reference onboarding flow with separate normal calibration and a RETAKE capture check for a proposed line-inspector workflow; user validation pending.",
         'PRE': f"Benchmarked DINOv2 k-NN (AnomalyDINO-style) versus PatchCore across 15 MVTec AD categories: {fmt(dino)} versus {fmt(pc)} macro AUROC at k=8 (category-bootstrap 95% CIs); pre-registered router rejected."
     }
@@ -55,9 +58,10 @@ Date: 4 November 2026. Step 1 only; no robustness study started.
 
 Built a separate, browser-only eight-reference onboarding demo with generated
 S5 washer samples and local-photo uploads. Nothing was merged to main.
-Protected preview: {preview['url']}
+Protected preview URL: {preview['url'] or 'NONE — BLOCKED; no deployment created'}
 Draft PR: https://github.com/basavarajnaduvinamani/vizurex-edge-ai/pull/4
-Source commit: `{preview['source_commit']}`. Environment: preview, authentication required.
+Source commit: `{preview['source_commit']}`. Requested environment: preview, authentication required.
+G4 status: {preview['status']}. The new project has zero deployments.
 Public release and production remain gated on explicit owner “deploy”.
 Source: `docs/step1/preview.json`.
 
@@ -141,7 +145,7 @@ Sources: `docs/sprint/S2_RESULTS.md`, `S3_RESULTS.md`, `S4_RESULTS.md`.
 | Dependency consistency | passed | `artifacts/onboarding/final-gates/dependency.log` |
 | Browser acceptance | {parity['checks']} checks, desktop + 390px, light + dark | `artifacts/onboarding/verification/browser.json` |
 | Mobile Lighthouse performance / accessibility / best practices / SEO | {' / '.join(str(light['scores'][k]) for k in ['performance','accessibility','best-practices','seo'])} | `docs/step1/lighthouse.json` |
-| Protected preview | READY; unauthenticated access blocked | `docs/step1/preview.json` |
+| Protected preview (G4) | BLOCKED: first deployment requires Production; none created | `docs/step1/preview.json` |
 
 Lighthouse {light['version']} measures initial lazy-loading page, not inference.
 Screenshots: `artifacts/onboarding/verification/screenshots/` (16 full-page PNGs).
@@ -162,6 +166,10 @@ tests use ignored assets and do not run in the lightweight hosted workflow.
   blob thumbnails from external traffic; no privacy checks were disabled.
 - Cloud creation was initially auto-review blocked; owner then explicitly
   authorized a protected preview. No billing changes or production promotion.
+- Vercel CLI refused the first Preview deployment because this new project
+  requires its first deployment to be Production. No --prod or API workaround
+  was used. Only an empty protected project exists; no public/preview URL.
+  Official source: https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting
 - Referenced `_COMMON_RULES.txt`/R9 and design brief were unavailable. This report
   states actual evidence in explicit sections rather than claiming that template was read.
 
@@ -175,7 +183,7 @@ tests use ignored assets and do not run in the lightweight hosted workflow.
 
 Sources: `docs/step1/tests.json`, `browser_parity.json`, `preview.json`,
 `docs/sprint/S2_RESULTS/summary.json`, `docs/sprint/S3_RESULTS.md`.
-“Public demo”, real-part reliability, user adoption and factory impact are not supported.
+“Shipped”, “public demo”, real-part reliability, user adoption and factory impact are not supported.
 
 ## 9. Stop
 
@@ -201,7 +209,7 @@ Updated 2026-11-04. Step 1 facts; generated examples are not a factory benchmark
 | Browser acceptance | {parity['checks']} checks | docs/step1/browser_parity.json |
 | Configured hosted CI | {configured_ci} checks; actual status separately recorded | docs/step1/tests.json; docs/step1/github.json |
 | Lighthouse mobile | {light['scores']} | docs/step1/lighthouse.json |
-| Hosting | protected preview only | docs/step1/preview.json |
+| Hosting | protected preview BLOCKED; zero deployments | docs/step1/preview.json |
 
 APM: {lines['APM']}
 
@@ -212,7 +220,7 @@ SDE: {lines['SDE']}
 ## Do not say
 - New anomaly-detection method, invented PatchCore/AnomalyDINO, or exact paper reproduction.
 - Eight photos total, validated upload threshold, factory-ready, 100% accuracy.
-- Public reviewer link, measured glasses/mobile latency, or on-device Android parity.
+- Shipped/public reviewer link, measured glasses/mobile latency, or on-device Android parity.
 - Used by 50+ MSMEs, completed pilot, time savings, publication or adoption.
 - Held-out real captures or robustness improvement from generated samples.
 
