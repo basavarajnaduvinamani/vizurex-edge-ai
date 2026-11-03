@@ -1,6 +1,49 @@
 # VisureX Edge AI
 
-Trustworthy industrial visual inspection using anomaly detection, mobile edge inference, and smart-glasses-assisted image capture.
+Prototype · work in progress (Oct–Dec 2026)
+
+Built at WCTE (Walmart Centre for Tech Excellence) · Wadhwani School of Data Science & AI · IIT Madras
+
+A research prototype for visual inspection: build a normal-part reference bank,
+check a new photo, and show the score, threshold and heatmap. The browser demo
+uses DINOv2 features and eight references **plus separate normal calibration
+photos**. Generated examples are available; owned-part photos and factory
+qualification are pending.
+
+**Live demo:** not deployed. A preview-only deployment was blocked by Vercel's
+first-deployment Production requirement. No public site or pilot is claimed.
+See [hosting status](docs/step1/preview.json),
+[browser demo instructions](deploy/onboarding/README.md) and
+[sample capture plan](CAPTURE_SAMPLES.md).
+
+## Evidence and ownership
+
+| Completed work | Evidence |
+|---|---|
+| Few-shot comparison: 15 categories, three seeds | [All results, intervals and limits](docs/sprint/S2_RESULTS.md) |
+| DINOv2 k=8 macro AUROC 0.9560 [0.9267, 0.9814], versus PatchCore 0.9242 [0.8684, 0.9682] | [Source measurements](docs/sprint/S2_RESULTS/summary.json); category-bootstrap 95% CIs |
+| Browser/Python decision parity on 20 generated checks; warm browser timing and CIs | [Export and parity record](docs/step1/browser_parity.json) |
+| Capture check, including its earlier blur failure | [Stress study](docs/results/SOFTWARE_AND_STRESS_2026-10-22.md) |
+| Locally verified onboarding demo | [Milestone report](MILESTONE_REPORT_STEP1.md) |
+| Rejected normal-only router | [Negative result](docs/sprint/S3_RESULTS.md) |
+
+**Inherited:** WCTE's PatchCore-based VisureX pipeline, built on the established
+[PatchCore method](https://arxiv.org/abs/2106.08265) (Roth et al., CVPR 2022).
+**My work:** audit and benchmark harness, few-shot comparison/analysis,
+export/parity workflow, capture checks, and web/Android prototype engineering.
+Physical-device and glasses qualification remain pending.
+
+The DINOv2 patch-neighbour baseline follows
+[AnomalyDINO](https://arxiv.org/abs/2405.14529) (Damm et al., WACV 2025;
+[official code](https://github.com/dammsi/AnomalyDINO)). It is benchmarked/adapted
+and studied here, not a new detection method or exact paper-result reproduction.
+The existing [Apache-2.0 licence](LICENSE) matches upstream's `LICENSE`;
+upstream attribution is retained in [NOTICE](NOTICE).
+
+Next: blur/lighting robustness, real phone/glasses captures, inspector interviews
+and a pilot. These are planned, with no user adoption or factory impact claimed.
+
+## Local benchmark application
 
 **What:** a research prototype that flags visually anomalous parts from a photo and
 shows *where* with a heatmap, while refusing to judge unusable captures (RETAKE).
@@ -19,6 +62,14 @@ capture and spoken feedback on smart glasses, each step behind a measured go/no-
 > New research results: [few-shot benchmark report](docs/results/FEWSHOT_2026-10-30.md). Outcomes are mixed; the registered broad-success criteria were not met. Additional baseline evidence is in [the build report](07_build_walmart.md).
 
 ## Demo
+
+The new [eight-reference browser onboarding demo](deploy/onboarding/README.md)
+benchmarks and adapts established [AnomalyDINO](https://arxiv.org/abs/2405.14529)
+([official code](https://github.com/dammsi/AnomalyDINO)) and
+[PatchCore](https://arxiv.org/abs/2106.08265). It is not a new detection method.
+It uses generated samples until owner photos arrive, and requires eight bank
+photos **plus separate normal calibration**. See [Step 1 evidence](docs/step1/)
+for measured browser parity/timing and deployment status.
 
 ![Demo Mode: simulated ANOMALY example with heatmap, decision and score vs threshold](docs/images/demo-anomaly-desktop.png)
 

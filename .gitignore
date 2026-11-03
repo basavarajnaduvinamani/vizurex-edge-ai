@@ -57,4 +57,7 @@ data/interim/
 *.tar.gz
 .cache/
 .hf_cache/
+node_modules/
+/deploy/onboarding/playwright-report/
+/deploy/onboarding/test-results/
 
