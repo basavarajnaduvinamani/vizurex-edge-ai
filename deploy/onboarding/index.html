@@ -3,8 +3,10 @@
 <meta name="description" content="A browser-only demonstration of eight-reference visual anomaly inspection, with calibration and honest benchmark evidence.">
 <title>VisureX | Teach a part with eight references</title><link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css"><script defer src="ort/ort.min.js"></script><script type="module" src="app.mjs"></script></head>
-<body><main><header><a href="#demo">VisureX / research demo</a><button id="theme" aria-label="Switch colour theme">Dark mode</button></header>
+<body><main><header><a href="#demo">VisureX / research demo</a><nav aria-label="Project links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a><button id="theme" aria-label="Switch colour theme">Dark mode</button></nav></header>
 <p class="eyebrow">FEW-SHOT VISUAL INSPECTION</p><h1>Teach a new part.<br>Start with eight references.</h1>
+<p class="fine">Prototype · work in progress (Oct–Dec 2026)</p>
+<p class="fine affiliation">Built at WCTE (Walmart Centre for Tech Excellence) · Wadhwani School of Data Science &amp; AI · IIT Madras</p>
 <p class="intro">Build a normal-image memory bank, then check a new image. Inference runs on this device. Your photos stay in this browser.</p>
 <p class="notice">Eight references <strong>plus separate normal calibration photos</strong>. This is a prototype, not a validated factory inspection system.</p>
 <section id="demo" aria-labelledby="teach-title"><h2 id="teach-title">01 <span>Teach</span></h2>
@@ -30,5 +32,8 @@
 <p id="split"></p><p id="negative"></p><p id="onnx"></p>
 <p>These are benchmarked and studied baselines, not a new anomaly-detection method. <a href="https://arxiv.org/abs/2405.14529">AnomalyDINO — Damm et al., WACV 2025</a> · <a href="https://github.com/dammsi/AnomalyDINO">Official code</a> · <a href="https://arxiv.org/abs/2106.08265">PatchCore — Roth et al., CVPR 2022</a>.</p>
 <p class="fine">*AUROC: area under the receiver operating characteristic curve. *k-shot: k normal reference images. *ONNX: Open Neural Network Exchange. Intervals describe category variation on this benchmark, not factory generalisation.</p></section>
+<section class="status-box" aria-labelledby="status-title"><h2 id="status-title">Status</h2>
+<h3>Done</h3><ul><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/sprint/S2_RESULTS.md">Few-shot benchmark (15 categories)</a></li><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/demo-onboarding-2026-11/docs/step1/browser_parity.json">ONNX export</a></li><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/results/SOFTWARE_AND_STRESS_2026-10-22.md">Capture check</a> (heuristic; limitations remain)</li><li><a href="README.md">This demo</a> (verified locally)</li></ul>
+<h3>Next</h3><ul><li>Blur/lighting robustness study</li><li>Real phone and glasses capture</li><li>Inspector interviews and pilot</li></ul></section>
 <footer><p>Demo prototype on generated samples; my own sample photos are pending. The inspection pipeline was inherited from WCTE’s PatchCore-based VisureX; I built the few-shot benchmark, export workflow, capture check and this demo. Not deployed in a factory; no pilot yet.</p>
-<p>No account, analytics, image uploads to a server or automatic model learning. Refreshing clears your bank. <a href="README.md">Methods and limits</a></p></footer></main></body></html>
+<p>No account, analytics, image uploads to a server or automatic model learning. Refreshing clears your bank. <a href="README.md">Methods and limits</a> · <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer></main></body></html>

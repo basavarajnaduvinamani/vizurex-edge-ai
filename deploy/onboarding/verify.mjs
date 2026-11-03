@@ -5,7 +5,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {isLocalResource} from './core.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'../..');
-const dist=path.join(root,'artifacts/onboarding/dist'),out=path.join(root,'artifacts/onboarding/verification');
+const dist=path.join(root,'artifacts/onboarding/dist'),out=path.join(root,process.argv.includes('--visual-update')?'artifacts/onboarding/verification-header':'artifacts/onboarding/verification');
 await mkdir(path.join(out,'screenshots'),{recursive:true});
 const types={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.wasm':'application/wasm','.png':'image/png','.css':'text/css'};
 const config=JSON.parse(await readFile(path.join(dist,'vercel.json'),'utf8'));
