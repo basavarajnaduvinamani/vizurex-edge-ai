@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-04",
+  "browser_checks": 25,
+  "page_errors": [],
+  "external_requests": [],
+  "screenshots": "artifacts/onboarding/verification-header/screenshots",
+  "scope": "Header/status update verified across desktop and 390px, light/dark, same generated/upload flows. Prior published parity/timing record retained as historical measurement.",
+  "lighthouse": {
+    "date": "2026-11-04",
+    "version": "12.5.1",
+    "scope": "Mobile simulated-throttling initial page load; lazy model loading excluded. Not inference performance.",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "runWarnings": []
+  }
+}

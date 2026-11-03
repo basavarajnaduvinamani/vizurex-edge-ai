@@ -1,0 +1,92 @@
+{
+  "protocol": "docs/ONNX_PROTOCOL_SPRINT.md",
+  "device": "CPU",
+  "threads": 4,
+  "packages": {
+    "torch": "2.7.0",
+    "onnx": "1.17.0",
+    "onnxruntime": "1.21.0",
+    "numpy": "2.2.5"
+  },
+  "models": [
+    {
+      "category": "bottle",
+      "images": 83,
+      "source_model_sha256": "879319acd4153d12d16d3ca082de0257b59bb93a0691460b455934cefa612cb7",
+      "onnx_sha256": "bada9da08d8076d8baab304cd6dbb72b77709da5171633565bd6db91cb19552c",
+      "threshold": 1.0000000047683713,
+      "max_score_delta": 2.8133392333984375e-05,
+      "max_graph_delta": 3.240257501602173e-05,
+      "agreeing_decisions": 83,
+      "timing_ms": {
+        "portable_torch": {
+          "p50": 289.93820000323467,
+          "p95": 320.8238000050187
+        },
+        "onnx": {
+          "p50": 167.85349999554455,
+          "p95": 179.12230999500025
+        },
+        "shipped_torch_smoothed_map": {
+          "p50": 261.6678000049433,
+          "p95": 287.3957700023311
+        }
+      },
+      "private_source": "artifacts\\sprint-2026-11-01\\onnx\\bottle\\per_image.json",
+      "passed": true
+    },
+    {
+      "category": "grid",
+      "images": 78,
+      "source_model_sha256": "3d45b7bc76153aa9a02cc56dcf6112309b5c74e1c3bd757ae559ab53341a0969",
+      "onnx_sha256": "7919fd5b46d929859ae927bca0cd0d55c2e428aa051eac0b21376af79657a977",
+      "threshold": 0.9999999475479113,
+      "max_score_delta": 4.6253204345703125e-05,
+      "max_graph_delta": 4.1991472244262695e-05,
+      "agreeing_decisions": 78,
+      "timing_ms": {
+        "portable_torch": {
+          "p50": 294.00644999259384,
+          "p95": 309.3592149911273
+        },
+        "onnx": {
+          "p50": 166.9164000049932,
+          "p95": 176.40402999604703
+        },
+        "shipped_torch_smoothed_map": {
+          "p50": 264.3440499959979,
+          "p95": 279.6354650039575
+        }
+      },
+      "private_source": "artifacts\\sprint-2026-11-01\\onnx\\grid\\per_image.json",
+      "passed": true
+    },
+    {
+      "category": "transistor",
+      "images": 100,
+      "source_model_sha256": "489aa2a545abb4a9324629250730ae4139d8f0cbb7432a7d4d5b94eb667ca6b6",
+      "onnx_sha256": "6ff07e24db92aebfad3175810821933c50066527cac898a58fd0479de2e1ecd7",
+      "threshold": 0.9999999845027921,
+      "max_score_delta": 4.696846008300781e-05,
+      "max_graph_delta": 3.528594970703125e-05,
+      "agreeing_decisions": 100,
+      "timing_ms": {
+        "portable_torch": {
+          "p50": 293.79665000305977,
+          "p95": 404.47088500295644
+        },
+        "onnx": {
+          "p50": 163.3739999961108,
+          "p95": 200.3312449916848
+        },
+        "shipped_torch_smoothed_map": {
+          "p50": 266.88280000234954,
+          "p95": 301.661059998878
+        }
+      },
+      "private_source": "artifacts\\sprint-2026-11-01\\onnx\\transistor\\per_image.json",
+      "passed": true
+    }
+  ],
+  "scope": "Warm preprocessed model calls only; portable Torch and ONNX return raw maps; shipped Torch returns smoothed maps. Not device or end-to-end timing."
+}
