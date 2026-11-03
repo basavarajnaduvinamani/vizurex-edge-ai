@@ -139,3 +139,30 @@ Strongest result: a measured browser-only flow with matching generated-sample de
 Weakest gap: no owned-part/real capture qualification.
 One next upgrade: collect the pre-split owned-part capture pack, only after the next instruction.
 STOP. No robustness study, main merge, production release or public-access change.
+
+## Add-on: source publication and header, 4 November 2026
+
+The later owner instruction explicitly authorized publishing the source after
+a full-history audit. Final audited candidate: `8ac3574`; 67 commits and 889
+unique blobs; no secret, weight, raw restricted-data/image or notebook-output
+findings. Six tracked image versions were inspected: synthetic UI screenshots
+and numeric result plots. Existing Apache-2.0 LICENSE matches upstream exactly.
+Source: `docs/PUBLICATION_AUDIT_2026-11-04.md`.
+
+Repository PUBLIC status verified:
+https://github.com/basavarajnaduvinamani/vizurex-edge-ai . Publication receipt:
+`docs/step1/publication.json`. No history was rewritten.
+
+Added the exact prototype date line and textual affiliation, header/footer
+GitHub links, and an evidence-linked Done/Next status box. Updated the README
+with scope, evidence, method attribution and inherited-versus-own contributions.
+The update passed 25 browser checks at desktop/390px in light/dark and the seven
+existing JavaScript/build checks. Mobile Lighthouse remained 100/100/100/100.
+Sources: `docs/step1/header_update.json`, `docs/step1/lighthouse.json`.
+Screenshots: `artifacts/onboarding/verification-header/screenshots/`.
+The earlier parity/timing result remains the original recorded measurement,
+not a new speed claim from this copy/layout update.
+
+Changes are on draft PR #4; main remains the default branch and has not been
+merged. The owner controls that merge. Source visibility is now public under
+the add-on approval; G4 site hosting remains blocked and there is no live demo URL.
