@@ -19,6 +19,7 @@ test('contracts reject missing source, unknown fields and invalid role',()=>{
 test('rule suggestions retain provenance and due defaults; ASR is unconfirmed',()=>{
   const fields=structureNote('Urgent unsafe guard at Assembly A','plant-a',new Date('2026-11-04T00:00:00Z'));
   assert.equal(fields.severity.value,'high');assert.equal(fields.dueDate.value,'2026-11-05');assert.equal(fields.station.source,'rule');
+  assert.equal(structureNote('urgent','plant-a',new Date('2026-11-03T22:00:00Z')).dueDate.value,'2026-11-05');
   const finding=createFinding({walkId:'w',plantId:'plant-a',note:'scratch',noteSource:'asr'});assert.ok(pendingSuggestions(finding).includes('note'));
 });
 test('inspector can submit but cannot disposition; original and audit remain immutable',()=>{
