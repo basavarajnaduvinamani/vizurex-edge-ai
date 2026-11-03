@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-04",
+  "python_passed": 62,
+  "frontend_checks_passed": 31,
+  "new_node_tests_passed": 7,
+  "configured_ci_checks": 98,
+  "local_software_total": 100,
+  "browser_acceptance_checks": 25,
+  "dependency_check": "passed",
+  "warning": "One existing Starlette/httpx deprecation warning",
+  "ci_scope": "Configured checks; hosted run status is recorded separately."
+}

@@ -1,0 +1,702 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "NcrRecord.v1",
+  "title": "VisureX NcrRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "revision",
+    "fields"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "NcrRecord.v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "createdAt",
+        "demo",
+        "plantId",
+        "station",
+        "findingId",
+        "part",
+        "photo",
+        "heatmap",
+        "modelDecision",
+        "modelScore",
+        "modelThreshold",
+        "bankVersion",
+        "note",
+        "qtyInspected",
+        "qtyRejected",
+        "defectCode",
+        "suspectedSource",
+        "status",
+        "disposition",
+        "rootCause",
+        "capaAction",
+        "capaDueDate",
+        "capaStatus",
+        "afterPhoto"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "demo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "boolean"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "plantId": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "station": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "findingId": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "part": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "photo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "heatmap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "modelDecision": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "ANOMALY",
+                null
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "modelScore": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "modelThreshold": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "bankVersion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "note": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "qtyInspected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "qtyRejected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "defectCode": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "suspectedSource": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "draft",
+                "submitted",
+                "dispositioned",
+                "capa_open",
+                "closed"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "disposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "rootCause": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "capaAction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "capaDueDate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "capaStatus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "not_open",
+                "open",
+                "closed"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "afterPhoto": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}
