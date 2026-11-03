@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A browser-only demonstration of eight-reference visual anomaly inspection, with calibration and honest benchmark evidence.">
+<title>VisureX | Teach a part with eight references</title><link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css"><script defer src="ort/ort.min.js"></script><script type="module" src="app.mjs"></script></head>
+<body><main><header><a href="#demo">VisureX / research demo</a><nav aria-label="Project links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a><button id="theme" aria-label="Switch colour theme">Dark mode</button></nav></header>
+<p class="eyebrow">FEW-SHOT VISUAL INSPECTION</p><h1>Teach a new part.<br>Start with eight references.</h1>
+<p class="fine">Prototype · work in progress (Oct–Dec 2026)</p>
+<p class="fine affiliation">Built at WCTE (Walmart Centre for Tech Excellence) · Wadhwani School of Data Science &amp; AI · IIT Madras</p>
+<p class="intro">Build a normal-image memory bank, then check a new image. Inference runs on this device. Your photos stay in this browser.</p>
+<p class="notice">Eight references <strong>plus separate normal calibration photos</strong>. This is a prototype, not a validated factory inspection system.</p>
+<section id="demo" aria-labelledby="teach-title"><h2 id="teach-title">01 <span>Teach</span></h2>
+<label for="part">Sample part</label><select id="part"><option>Washer — generated sample</option><option value="own">My own photos — unvalidated</option></select>
+<div id="uploads" hidden><label>Eight normal reference photos<input id="references" type="file" accept="image/png,image/jpeg,image/webp" multiple></label>
+<label>Separate normal calibration photos (at least two)<input id="calibration" type="file" accept="image/png,image/jpeg,image/webp" multiple></label></div>
+<div id="thumbs" class="thumbs" aria-label="Eight normal reference photos"></div>
+<button id="teach">Build memory bank <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+<p id="status" role="status" aria-live="polite">Ready. The pretrained model loads only when you build the bank.</p>
+<p class="fine">DINOv2 ViT-S/14, WASM CPU. Initial download is about 88 MB; loading and onboarding take longer than a warm check. Upload thresholds are estimated from your normal photos and are not validated.</p></section>
+<section aria-labelledby="check-title"><h2 id="check-title">02 <span>Check</span></h2><label for="sample">Test image</label>
+<select id="sample"><option value="normal">Normal — generated sample</option><option value="scratch">Scratch — generated sample</option><option value="dark">Dark — generated capture</option><option value="blur">Blur — generated capture</option><option value="own">My own test photo</option></select>
+<label id="test-upload" hidden>Test photo<input id="test-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
+<button id="check" disabled>Inspect image <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+<div id="result" role="status" aria-live="polite"><p>Build a memory bank before inspecting.</p></div>
+<canvas id="overlay" width="224" height="224" aria-label="Inspection image and patch-distance heatmap overlay" hidden></canvas>
+<p class="fine">Heatmap: cosine patch distance on a fixed 0–1 scale. Warm request latency includes image preprocessing and scoring; model loading is excluded. These are generated examples; misses and false alarms remain visible.</p></section>
+<section><h2>03 <span>Retake when needed</span></h2><p>Darkness, overexposure or too little detail can request a RETAKE before scoring. Passing this check does not establish image quality. The earlier blur stress study passed blurred captures and produced false alarms.</p>
+<a data-source="stress" href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/results/SOFTWARE_AND_STRESS_2026-10-22.md">Read the capture-check limitations</a></section>
+<section id="research"><h2>What the benchmark measured</h2><p>15 MVTec AD categories, three reference-selection seeds. Extra normal calibration images are required beyond k. AUROC* is ranking quality, not the probability that a particular verdict is correct.</p>
+<div class="strong-result" id="strong-result"></div><figure><svg id="chart" viewBox="0 0 640 300" role="img" aria-label="Macro AUROC by number of references, with 95 percent category bootstrap intervals"></svg><figcaption>DINOv2 (solid) and PatchCore (dashed). Whiskers: category-bootstrap 95% intervals.</figcaption></figure>
+<div class="table-wrap"><table id="research-table"><caption>Macro AUROC* by k-shot*</caption><thead><tr><th>References</th><th>DINOv2 [95% CI]</th><th>PatchCore [95% CI]</th></tr></thead><tbody></tbody></table></div>
+<p id="split"></p><p id="negative"></p><p id="onnx"></p>
+<p>These are benchmarked and studied baselines, not a new anomaly-detection method. <a href="https://arxiv.org/abs/2405.14529">AnomalyDINO — Damm et al., WACV 2025</a> · <a href="https://github.com/dammsi/AnomalyDINO">Official code</a> · <a href="https://arxiv.org/abs/2106.08265">PatchCore — Roth et al., CVPR 2022</a>.</p>
+<p class="fine">*AUROC: area under the receiver operating characteristic curve. *k-shot: k normal reference images. *ONNX: Open Neural Network Exchange. Intervals describe category variation on this benchmark, not factory generalisation.</p></section>
+<section class="status-box" aria-labelledby="status-title"><h2 id="status-title">Status</h2>
+<h3>Done</h3><ul><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/sprint/S2_RESULTS.md">Few-shot benchmark (15 categories)</a></li><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/demo-onboarding-2026-11/docs/step1/browser_parity.json">ONNX export</a></li><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/results/SOFTWARE_AND_STRESS_2026-10-22.md">Capture check</a> (heuristic; limitations remain)</li><li><a href="README.md">This demo</a> (verified locally)</li></ul>
+<h3>Next</h3><ul><li>Blur/lighting robustness study</li><li>Real phone and glasses capture</li><li>Inspector interviews and pilot</li></ul></section>
+<footer><p>Demo prototype on generated samples; my own sample photos are pending. The inspection pipeline was inherited from WCTE’s PatchCore-based VisureX; I built the few-shot benchmark, export workflow, capture check and this demo. Not deployed in a factory; no pilot yet.</p>
+<p>No account, analytics, image uploads to a server or automatic model learning. Refreshing clears your bank. <a href="README.md">Methods and limits</a> · <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer></main></body></html>

@@ -1,0 +1,13 @@
+{
+  "name": "visurex-browser-onboarding",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify": "node verify.mjs"
+  },
+  "dependencies": {"onnxruntime-web": "1.21.0"},
+  "devDependencies": {"@playwright/test": "1.51.1", "lighthouse": "12.5.1"}
+}
