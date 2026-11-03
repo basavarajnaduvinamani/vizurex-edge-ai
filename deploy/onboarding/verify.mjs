@@ -5,7 +5,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {isLocalResource} from './core.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'../..');
-const dist=path.join(root,'artifacts/onboarding/dist'),out=path.join(root,process.argv.includes('--visual-update')?'artifacts/onboarding/verification-header':'artifacts/onboarding/verification');
+const dist=path.join(root,'artifacts/onboarding/dist'),out=path.join(root,process.argv.includes('--platform')?'artifacts/platform/final/inspect':process.argv.includes('--visual-update')?'artifacts/onboarding/verification-header':'artifacts/onboarding/verification');
 await mkdir(path.join(out,'screenshots'),{recursive:true});
 const types={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.wasm':'application/wasm','.png':'image/png','.css':'text/css'};
 const config=JSON.parse(await readFile(path.join(dist,'vercel.json'),'utf8'));
@@ -25,7 +25,7 @@ try{
   // deployment CSP deliberately blocks. Keep the page's CSP enabled.
   async function waitFor(fn,timeout=60000){const start=Date.now();while(!(await page.evaluate(fn))){if(Date.now()-start>timeout)throw Error('Acceptance condition timed out');await new Promise(r=>setTimeout(r,200));}}
   page.on('pageerror',e=>{errors.push(e.message);console.log('PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error')console.log('BROWSER',m.text());});page.on('request',r=>{if(!isLocalResource(r.url(),origin))external.push(r.url());});
-  await page.goto(origin);await waitFor(()=>!!window.visurex);
+  await page.goto(origin+'/#inspect');await waitFor(()=>!!window.visurex);
   await page.locator('#teach').click();
   const progress=setInterval(()=>{page.locator('#status').innerText().then(x=>console.log(x)).catch(()=>{});},15000);
   await waitFor(()=>window.visurex.snapshot().frozen!==null||document.querySelector('#status').textContent.includes('Unable to onboard'),240000);

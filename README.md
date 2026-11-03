@@ -10,11 +10,38 @@ uses DINOv2 features and eight references **plus separate normal calibration
 photos**. Generated examples are available; owned-part photos and factory
 qualification are pending.
 
-**Live demo:** not deployed. A preview-only deployment was blocked by Vercel's
-first-deployment Production requirement. No public site or pilot is claimed.
-See [hosting status](docs/step1/preview.json),
+**Live demo:** [visurex-demo.vercel.app](https://visurex-demo.vercel.app).
+The browser prototype is public; no factory pilot or adoption is claimed.
+The earlier preview-only blocker in [historical hosting status](docs/step1/preview.json)
+was superseded by the owner's later production approval.
+See
 [browser demo instructions](deploy/onboarding/README.md) and
 [sample capture plan](CAPTURE_SAMPLES.md).
+
+## Browser-local workflow platform
+
+[Home](https://visurex-demo.vercel.app/#home) ·
+[Inspect](https://visurex-demo.vercel.app/#inspect) ·
+[Walk](https://visurex-demo.vercel.app/#walk) ·
+[NCR](https://visurex-demo.vercel.app/#ncr) ·
+[Actions](https://visurex-demo.vercel.app/#actions) ·
+[Dashboard](https://visurex-demo.vercel.app/#dashboard).
+
+The platform sprint adds audit-walk checklists, photo/optional voice-to-finding
+capture, reviewable rule suggestions, NCR/CAPA lifecycle controls, owner actions
+and local counts. Two fictional plants provide clearly labelled demo data.
+Records persist in IndexedDB on one browser/device; there is no backend or
+cross-device sync. Native browser speech recognition may use the browser
+provider; typing stays local. Photo redaction uses on-device MediaPipe;
+if it cannot run, the complete image is obscured before persistence.
+
+Local role checks are a workflow demonstration, not authentication. JSON/CSV
+exports are prototype contracts for WCTE's NCR application; import compatibility
+has not been tested against that application. Glasses capture remains in
+progress and incoming inspection/shift/SOP/PO/MANGO hooks are planned.
+There are no confirmed pilots or measured users. The reported 50+ MSME network
+is intended reach reported by the project owner, not organisations served.
+See [workflow contracts and limits](docs/PLATFORM_CONTRACTS.md).
 
 ## Evidence and ownership
 

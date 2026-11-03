@@ -6,7 +6,7 @@ import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'artifacts/onboarding/final-gates'
+OUT = ROOT / ('artifacts/platform/final/software' if '--platform' in sys.argv else 'artifacts/onboarding/final-gates')
 
 
 def main():
@@ -25,7 +25,8 @@ def main():
                    f'--basetemp={temp}'],
         'frontend': ['node', 'scripts/test_frontend.mjs'],
         'onboarding': ['node', '--test', 'deploy/onboarding/test/core.test.mjs',
-                       'deploy/onboarding/test/build.test.mjs'],
+                       'deploy/onboarding/test/build.test.mjs',
+                       'deploy/onboarding/test/platform-domain.test.mjs'],
         'dependency': [python, '-m', 'pip', 'check'],
     }
     results = {}

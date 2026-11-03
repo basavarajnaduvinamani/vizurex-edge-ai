@@ -1,0 +1,313 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "CaptureEvent.v1",
+  "title": "VisureX CaptureEvent v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "revision",
+    "fields"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "CaptureEvent.v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "createdAt",
+        "demo",
+        "plantId",
+        "station",
+        "origin",
+        "photo",
+        "note",
+        "decision",
+        "modelScore",
+        "bankVersion"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "demo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "boolean"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "plantId": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "station": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "origin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "phone",
+                "glasses",
+                "generated"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "photo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "note": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "decision": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "GOOD",
+                "ANOMALY",
+                "RETAKE",
+                null
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "modelScore": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "bankVersion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

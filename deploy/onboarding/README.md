@@ -1,5 +1,13 @@
 # Eight-reference browser onboarding
 
+Now part of the browser-local VisureX workflow prototype at
+https://visurex-demo.vercel.app . Inspect retains its existing scoring flow;
+Walk/NCR/Actions/Dashboard add local IndexedDB workflows and fictional demo data.
+JSON Schema contracts live under `platform/schemas/`. Local actor-role checks
+are a prototype, not authentication; WCTE NCR import is unverified. No pilot,
+users or factory impact is claimed. Optional browser ASR may use its provider.
+Photos are redacted on-device before persistence, or wholly obscured on failure.
+
 AnomalyDINO-style baseline, benchmarked and studied, not a new method.
 Paper: https://arxiv.org/abs/2405.14529 . Official implementation:
 https://github.com/dammsi/AnomalyDINO . PatchCore:
