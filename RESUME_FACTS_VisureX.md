@@ -29,6 +29,17 @@ SDE: Built and locally verified an in-browser few-shot inspection demo (DINOv2 O
 - Used by 50+ MSMEs, completed pilot, time savings, publication or adoption.
 - Held-out real captures or robustness improvement from generated samples.
 
+## Publication add-on, 4 November 2026
+
+Pre-publication audit: 66 reachable commits, 881 unique blobs, six inspected
+images (synthetic screenshots/plots); no secret or restricted-image findings.
+Sources: `docs/PUBLICATION_AUDIT_2026-11-04.md` and its linked raw scan records.
+Existing Apache-2.0 licence matches upstream byte-for-byte. This is a repository
+publication check, not new model performance, novelty or factory validation.
+Header, affiliation, GitHub links and evidence-backed Done/Next lists are UI
+copy changes. Site hosting remains blocked. Repository visibility is verified
+separately after publication; a clean scan alone is not a publication receipt.
+
 ## Interview questions
 1. Why extra normal images? The bank's own examples self-match; disjoint normal
    calibration avoids that trivial threshold. Small calibration sets remain unvalidated.
