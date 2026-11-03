@@ -20,7 +20,9 @@ from timm.models.vision_transformer import checkpoint_filter_fn
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
+sys.path.insert(0, str(ROOT))
 from visurex_fewshot.detector import KShotPatchNN, DetectorConfig
+from backend.quality import assess_capture
 
 
 def main():
@@ -86,11 +88,21 @@ def main():
         timing[name] = dict(ms=float(np.quantile(times, q)),
                             ci95=np.quantile(np.quantile(bootstrap, q, axis=1), [.025, .975]).tolist())
     max_delta = max(r['delta'] for r in rows)
+    capture = {}
+    for item in browser['snapshot']['records']:
+        key = item['source']
+        if key in capture:
+            continue
+        original = Image.open(ROOT / 'artifacts/onboarding/assets' / key).convert('RGB')
+        native = assess_capture(original)
+        capture[key] = dict(browser_passed=item['quality']['passed'], python_passed=native['passed'],
+                            same=item['quality']['passed'] == native['passed'],
+                            browser_metrics=item['quality']['metrics'], python_metrics=native['metrics'])
     result = dict(date='2026-11-04', n=n, agreeing=agree,
                   agreement_ci95= [lo, hi], interval='Clopper-Pearson; generated pairs are not independent factory trials',
                   max_score_delta=max_delta, python_threshold=threshold,
                   browser_threshold=frozen['threshold'], threshold_delta=abs(threshold-frozen['threshold']),
-                  passed=agree == n and max_delta <= .001,
+                  passed=agree == n and max_delta <= .001 and all(r['same'] for r in capture.values()),
                   preprocessing_scope='Python receives identical browser-decoded/cropped RGB pixels. Numerical normalization differs only by float evaluation. Not decoder parity.',
                   browser_vs_pil_max_pixel_delta=max(decode_deltas),
                   timing=timing, timing_scope='20 warm generated checks; decode, preprocessing, capture check, encoder and score; not model download/onboarding or device population',
@@ -99,11 +111,12 @@ def main():
                   checks=browser['checks'], page_errors=browser['errors'], external_requests=browser['external'],
                   generated_false_alarms=sum(r['browser_decision']=='ANOMALY' and r['label']=='normal' for r in rows),
                   generated_missed_changes=sum(r['browser_decision']=='GOOD' and r['label']=='scratch' for r in rows),
+                  capture_gate_comparison=capture,
                   rows=rows)
     target = ROOT / 'docs/step1'
     target.mkdir(exist_ok=True)
     (target / 'browser_parity.json').write_text(json.dumps(result, indent=2))
-    print(json.dumps({k:v for k,v in result.items() if k!='rows'}))
+    print(json.dumps({k:v for k,v in result.items() if k not in {'rows','capture_gate_comparison'}}))
     if not result['passed']:
         raise SystemExit('Browser parity gate failed; no release')
 

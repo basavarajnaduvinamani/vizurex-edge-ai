@@ -3,6 +3,7 @@ import {createServer} from 'node:http';
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {isLocalResource} from './core.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(here,'../..');
 const dist=path.join(root,'artifacts/onboarding/dist'),out=path.join(root,'artifacts/onboarding/verification');
 await mkdir(path.join(out,'screenshots'),{recursive:true});
@@ -20,11 +21,14 @@ const browser=await chromium.launch({channel:'chrome',headless:true});
 let checks=0;const errors=[],external=[];
 try{
   const page=await browser.newPage({viewport:{width:1280,height:1000},colorScheme:'light'});
-  page.on('pageerror',e=>{errors.push(e.message);console.log('PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error')console.log('BROWSER',m.text());});page.on('request',r=>{if(!r.url().startsWith(origin)&&!r.url().startsWith('data:'))external.push(r.url());});
-  await page.goto(origin);await page.waitForFunction(()=>!!window.visurex);
+  // DevTools evaluation avoids waitForFunction's string eval, which the actual
+  // deployment CSP deliberately blocks. Keep the page's CSP enabled.
+  async function waitFor(fn,timeout=60000){const start=Date.now();while(!(await page.evaluate(fn))){if(Date.now()-start>timeout)throw Error('Acceptance condition timed out');await new Promise(r=>setTimeout(r,200));}}
+  page.on('pageerror',e=>{errors.push(e.message);console.log('PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error')console.log('BROWSER',m.text());});page.on('request',r=>{if(!isLocalResource(r.url(),origin))external.push(r.url());});
+  await page.goto(origin);await waitFor(()=>!!window.visurex);
   await page.locator('#teach').click();
   const progress=setInterval(()=>{page.locator('#status').innerText().then(x=>console.log(x)).catch(()=>{});},15000);
-  await page.waitForFunction(()=>window.visurex.snapshot().frozen!==null||document.querySelector('#status').textContent.includes('Unable to onboard'),{},{timeout:240000});
+  await waitFor(()=>window.visurex.snapshot().frozen!==null||document.querySelector('#status').textContent.includes('Unable to onboard'),240000);
   clearInterval(progress);
   if(!(await page.evaluate(()=>window.visurex.snapshot().frozen)))throw Error(await page.locator('#status').innerText());checks++;
   const before=await page.evaluate(()=>window.visurex.snapshot().frozen.threshold);
@@ -39,7 +43,7 @@ try{
     await page.setViewportSize({width,height:1000});await page.emulateMedia({colorScheme:theme});
     for(const kind of ['normal','scratch','dark','blur']){
       await page.selectOption('#sample',kind);await page.locator('#check').click();
-      await page.waitForFunction(()=>!document.querySelector('#check').disabled,{},{timeout:60000});
+      await waitFor(()=>!document.querySelector('#check').disabled);
       const text=await page.locator('#result').innerText();
       if(kind==='dark'&&!text.includes('RETAKE'))throw Error('Dark RETAKE missing');
       if(!/GOOD|ANOMALY|RETAKE/.test(text))throw Error(text);
@@ -54,12 +58,12 @@ try{
   const refs=Array.from({length:8},(_,i)=>path.join(dist,`samples/references-${String(i).padStart(3,'0')}.png`));
   await page.locator('#references').setInputFiles(refs);
   await page.locator('#calibration').setInputFiles([refs[0],refs[1]]);
-  await page.locator('#teach').click();await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Duplicate photos'));checks++;
+  await page.locator('#teach').click();await waitFor(()=>document.querySelector('#status').textContent.includes('Duplicate photos'));checks++;
   const calibration=Array.from({length:8},(_,i)=>path.join(dist,`samples/calibration-${100+i}.png`));
   await page.locator('#calibration').setInputFiles(calibration);await page.locator('#teach').click();
-  await page.waitForFunction(()=>window.visurex.snapshot().frozen!==null,{},{timeout:240000});
+  await waitFor(()=>window.visurex.snapshot().frozen!==null,240000);
   await page.selectOption('#sample','own');await page.locator('#test-file').setInputFiles(path.join(dist,'samples/test-scratch-200.png'));
-  await page.locator('#check').click();await page.waitForFunction(()=>!document.querySelector('#check').disabled,{},{timeout:60000});
+  await page.locator('#check').click();await waitFor(()=>!document.querySelector('#check').disabled);
   if(!/GOOD|ANOMALY/.test(await page.locator('#result').innerText()))throw Error('Upload inference missing');checks++;
   if(errors.length||external.length)throw Error(JSON.stringify({errors,external}));checks++;
   await writeFile(path.join(out,'browser.json'),JSON.stringify({date:'2026-11-04',browser:browser.version(),provider:'wasm',threads:1,checks,errors,external,measured,snapshot,scope:'20 generated functional examples; same browser-preprocessed tensors compared separately in Python'},null,2));
