@@ -1,0 +1,32 @@
+{
+  "status": "PENDING",
+  "source": "gh pr view 4 --json headRefOid,isDraft,state,url,statusCheckRollup",
+  "snapshot": {
+    "headRefOid": "46d4e515d3657a053dcb98ca5f0b6b9c4935776d",
+    "isDraft": true,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/basavarajnaduvinamani/vizurex-edge-ai/actions/runs/41719177201/job/126207091854",
+        "name": "boundaries",
+        "startedAt": "2026-11-03T21:09:22Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Software checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/basavarajnaduvinamani/vizurex-edge-ai/actions/runs/41719169902/job/126207066265",
+        "name": "boundaries",
+        "startedAt": "2026-11-03T21:09:19Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Software checks"
+      }
+    ],
+    "url": "https://github.com/basavarajnaduvinamani/vizurex-edge-ai/pull/4"
+  }
+}

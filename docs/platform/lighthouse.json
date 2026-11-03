@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-04",
+  "version": "12.5.1",
+  "scope": "Mobile simulated-throttling initial page load; lazy model loading excluded. Not inference performance.",
+  "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "runWarnings": []
+}

@@ -1,0 +1,4088 @@
+{
+  "created_utc": "2026-10-31T10:31:45.650051+00:00",
+  "records": [
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-run1\\results.json",
+      "reusable_for_s2": true
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14_masked",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "1",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "1",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "2",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "2",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "2",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "4",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "4",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "4",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "8",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "8",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "8",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "16",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "16",
+      "seed": 1,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "16",
+      "seed": 2,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14_masked",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-masked-run1\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-smoke\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-smoke\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0,
+      "source": "artifacts\\fewshot-smoke\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0,
+      "source": "artifacts\\fewshot-smoke\\results.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step1\\bottle_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "grid",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step1\\grid_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step1\\transistor_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "cable",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "cable",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "cable",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-a\\cable_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "capsule",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "capsule",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "capsule",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-a\\capsule_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "carpet",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-a\\carpet_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "carpet",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-a\\carpet_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "carpet",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-a\\carpet_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "hazelnut",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "hazelnut",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-a\\hazelnut_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "leather",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\leather_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "leather",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\leather_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "leather",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\leather_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "metal_nut",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "metal_nut",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "metal_nut",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\metal_nut_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "pill",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\pill_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "pill",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\pill_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "pill",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\pill_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "screw",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "screw",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "screw",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\screw_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "tile",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\tile_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "tile",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\tile_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "tile",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\tile_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "toothbrush",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "toothbrush",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "toothbrush",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\toothbrush_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "wood",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\wood_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "wood",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\wood_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "wood",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\wood_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "zipper",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-breadth-b\\zipper_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "zipper",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-breadth-b\\zipper_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "zipper",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-breadth-b\\zipper_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-existing\\bottle_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "bottle",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-existing\\bottle_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "grid",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-existing\\grid_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "grid",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-existing\\grid_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 1,
+      "source": "results\\2026-10-30\\step2-existing\\transistor_seed1_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "transistor",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 2,
+      "source": "results\\2026-10-30\\step2-existing\\transistor_seed2_current\\summary.json",
+      "reusable_for_s2": false
+    },
+    {
+      "category": "hazelnut",
+      "method": "separate_baseline_harness",
+      "k": "full",
+      "seed": 0,
+      "source": "results\\2026-10-30\\step2-resource-retry-hazelnut\\hazelnut_seed0_current\\summary.json",
+      "reusable_for_s2": false
+    }
+  ],
+  "reuse_source": "artifacts\\fewshot-run1\\results.json",
+  "missing": [
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "bottle",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "bottle",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "cable",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "capsule",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "carpet",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "grid",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "grid",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "hazelnut",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "leather",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "metal_nut",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "pill",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "screw",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "tile",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "toothbrush",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "transistor",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "transistor",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "wood",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "1",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "2",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "4",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "16",
+      "seed": 2
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 0
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 1
+    },
+    {
+      "category": "zipper",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "seed": 2
+    }
+  ]
+}

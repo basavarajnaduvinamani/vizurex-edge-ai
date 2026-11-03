@@ -1,0 +1,390 @@
+{
+  "date": "2026-11-04",
+  "results": [
+    {
+      "case": "1280-light",
+      "checks": [
+        {
+          "name": "home has WIP, affiliation, honest pilot status",
+          "passed": true
+        },
+        {
+          "name": "home exposes five prototype module routes",
+          "passed": true
+        },
+        {
+          "name": "rule fields visibly unconfirmed",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "cannot save unconfirmed rule fields",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "walk report contains two captured findings",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "WhatsApp summary copied without sending",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "walk CSV exported",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "human quantity fields start empty",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "inspector cannot disposition",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "NCR cannot close with open CAPA",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "closure requires after photo",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "walk-to-NCR disposition and closure complete",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "NcrRecord v1 JSON exported",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "audit includes lifecycle and rejects overwriting an event",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "next walk lists previous open station item",
+          "passed": true,
+          "retainedFrom": "artifacts/platform/attempt-1/browser.json"
+        },
+        {
+          "name": "real generated anomaly offers NCR creation",
+          "passed": true
+        },
+        {
+          "name": "Inspect transfers score/bank/evidence and leaves quantities blank",
+          "passed": true
+        },
+        {
+          "name": "network view is aggregate-only with n labels",
+          "passed": true
+        },
+        {
+          "name": "IndexedDB records survive reload",
+          "passed": true
+        },
+        {
+          "name": "no horizontal overflow",
+          "passed": true
+        },
+        {
+          "name": "synthetic face blur changes pixels and fallback obscures whole image",
+          "passed": true
+        },
+        {
+          "name": "real on-device face detector loads and executes",
+          "passed": true
+        },
+        {
+          "name": "no uncaught page error",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "1280-dark",
+      "checks": [
+        {
+          "name": "home has WIP, affiliation, honest pilot status",
+          "passed": true
+        },
+        {
+          "name": "home exposes five prototype module routes",
+          "passed": true
+        },
+        {
+          "name": "rule fields visibly unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "cannot save unconfirmed rule fields",
+          "passed": true
+        },
+        {
+          "name": "walk report contains two captured findings",
+          "passed": true
+        },
+        {
+          "name": "WhatsApp summary copied without sending",
+          "passed": true
+        },
+        {
+          "name": "walk CSV exported",
+          "passed": true
+        },
+        {
+          "name": "human quantity fields start empty",
+          "passed": true
+        },
+        {
+          "name": "inspector cannot disposition",
+          "passed": true
+        },
+        {
+          "name": "NCR cannot close with open CAPA",
+          "passed": true
+        },
+        {
+          "name": "closure requires after photo",
+          "passed": true
+        },
+        {
+          "name": "walk-to-NCR disposition and closure complete",
+          "passed": true
+        },
+        {
+          "name": "NcrRecord v1 JSON exported",
+          "passed": true
+        },
+        {
+          "name": "audit includes lifecycle and rejects overwriting an event",
+          "passed": true
+        },
+        {
+          "name": "next walk lists previous open station item",
+          "passed": true
+        },
+        {
+          "name": "real generated anomaly offers NCR creation",
+          "passed": true
+        },
+        {
+          "name": "Inspect transfers score/bank/evidence and leaves quantities blank",
+          "passed": true
+        },
+        {
+          "name": "network view is aggregate-only with n labels",
+          "passed": true
+        },
+        {
+          "name": "IndexedDB records survive reload",
+          "passed": true
+        },
+        {
+          "name": "no horizontal overflow",
+          "passed": true
+        },
+        {
+          "name": "no uncaught page error",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "390-light",
+      "checks": [
+        {
+          "name": "home has WIP, affiliation, honest pilot status",
+          "passed": true
+        },
+        {
+          "name": "home exposes five prototype module routes",
+          "passed": true
+        },
+        {
+          "name": "rule fields visibly unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "cannot save unconfirmed rule fields",
+          "passed": true
+        },
+        {
+          "name": "walk report contains two captured findings",
+          "passed": true
+        },
+        {
+          "name": "WhatsApp summary copied without sending",
+          "passed": true
+        },
+        {
+          "name": "walk CSV exported",
+          "passed": true
+        },
+        {
+          "name": "human quantity fields start empty",
+          "passed": true
+        },
+        {
+          "name": "inspector cannot disposition",
+          "passed": true
+        },
+        {
+          "name": "NCR cannot close with open CAPA",
+          "passed": true
+        },
+        {
+          "name": "closure requires after photo",
+          "passed": true
+        },
+        {
+          "name": "walk-to-NCR disposition and closure complete",
+          "passed": true
+        },
+        {
+          "name": "NcrRecord v1 JSON exported",
+          "passed": true
+        },
+        {
+          "name": "audit includes lifecycle and rejects overwriting an event",
+          "passed": true
+        },
+        {
+          "name": "next walk lists previous open station item",
+          "passed": true
+        },
+        {
+          "name": "real generated anomaly offers NCR creation",
+          "passed": true
+        },
+        {
+          "name": "Inspect transfers score/bank/evidence and leaves quantities blank",
+          "passed": true
+        },
+        {
+          "name": "network view is aggregate-only with n labels",
+          "passed": true
+        },
+        {
+          "name": "IndexedDB records survive reload",
+          "passed": true
+        },
+        {
+          "name": "no horizontal overflow",
+          "passed": true
+        },
+        {
+          "name": "no uncaught page error",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "390-dark",
+      "checks": [
+        {
+          "name": "home has WIP, affiliation, honest pilot status",
+          "passed": true
+        },
+        {
+          "name": "home exposes five prototype module routes",
+          "passed": true
+        },
+        {
+          "name": "rule fields visibly unconfirmed",
+          "passed": true
+        },
+        {
+          "name": "cannot save unconfirmed rule fields",
+          "passed": true
+        },
+        {
+          "name": "walk report contains two captured findings",
+          "passed": true
+        },
+        {
+          "name": "WhatsApp summary copied without sending",
+          "passed": true
+        },
+        {
+          "name": "walk CSV exported",
+          "passed": true
+        },
+        {
+          "name": "human quantity fields start empty",
+          "passed": true
+        },
+        {
+          "name": "inspector cannot disposition",
+          "passed": true
+        },
+        {
+          "name": "NCR cannot close with open CAPA",
+          "passed": true
+        },
+        {
+          "name": "closure requires after photo",
+          "passed": true
+        },
+        {
+          "name": "walk-to-NCR disposition and closure complete",
+          "passed": true
+        },
+        {
+          "name": "NcrRecord v1 JSON exported",
+          "passed": true
+        },
+        {
+          "name": "audit includes lifecycle and rejects overwriting an event",
+          "passed": true
+        },
+        {
+          "name": "next walk lists previous open station item",
+          "passed": true
+        },
+        {
+          "name": "real generated anomaly offers NCR creation",
+          "passed": true
+        },
+        {
+          "name": "Inspect transfers score/bank/evidence and leaves quantities blank",
+          "passed": true
+        },
+        {
+          "name": "network view is aggregate-only with n labels",
+          "passed": true
+        },
+        {
+          "name": "IndexedDB records survive reload",
+          "passed": true
+        },
+        {
+          "name": "no horizontal overflow",
+          "passed": true
+        },
+        {
+          "name": "no uncaught page error",
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "recovery": "Only failed Inspect handoff rerun for first variant; prior passed Walk/NCR checks retained with source. Other variants run first time.",
+  "screenshots": "artifacts\\platform\\final\\screenshots",
+  "browser": "156.0.8078.74"
+}

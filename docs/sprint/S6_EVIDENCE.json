@@ -1,0 +1,165 @@
+{
+  "sources": [
+    "docs/sprint/S1_SCOPE_EVIDENCE.md",
+    "docs/sprint/S2_RESULTS/summary.json",
+    "docs/sprint/S3_RESULTS/summary.json",
+    "docs/results/SOFTWARE_AND_STRESS_2026-10-22.md"
+  ],
+  "points": [
+    {
+      "group": "all",
+      "method": "dinov2_vits14",
+      "k": "8",
+      "categories": [
+        "bottle",
+        "cable",
+        "capsule",
+        "carpet",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper"
+      ],
+      "mean": 0.9559548864755482,
+      "ci95": [
+        0.9267271214489124,
+        0.9814284315802512
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "group": "all",
+      "method": "dinov2_vits14",
+      "k": "full",
+      "categories": [
+        "bottle",
+        "cable",
+        "capsule",
+        "carpet",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper"
+      ],
+      "mean": 0.979589117948715,
+      "ci95": [
+        0.9658920781589411,
+        0.9911318649849041
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "group": "all",
+      "method": "patchcore_wrn50",
+      "k": "8",
+      "categories": [
+        "bottle",
+        "cable",
+        "capsule",
+        "carpet",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper"
+      ],
+      "mean": 0.9241817986386065,
+      "ci95": [
+        0.8683754398956554,
+        0.9682405328716578
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "group": "all",
+      "method": "patchcore_wrn50",
+      "k": "full",
+      "categories": [
+        "bottle",
+        "cable",
+        "capsule",
+        "carpet",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper"
+      ],
+      "mean": 0.9861788198733356,
+      "ci95": [
+        0.9775819446606449,
+        0.9934728227079871
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "method": "router",
+      "mean": 0.9454243595009459,
+      "ci95": [
+        0.9098949346505976,
+        0.9753376795752801
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    },
+    {
+      "k": "8",
+      "method": "oracle",
+      "mean": 0.9635509437948442,
+      "ci95": [
+        0.9372063249393212,
+        0.985434721954194
+      ],
+      "sampling_unit": "category",
+      "replicates": 10000,
+      "seed": 20261101
+    }
+  ],
+  "h2": "not met",
+  "router_criterion": "not met",
+  "practical_qualifying_budgets": {
+    "dinov2_vits14": [],
+    "patchcore_wrn50": []
+  },
+  "decision": "NO-GO for replacing the current supervised prototype with a universal few-shot detector or the tested router",
+  "user_interviews": "planned, not done",
+  "organisation_count": "not independently verified",
+  "actual_factory_impact": "not measured",
+  "operator_feedback": "planned, not implemented as an automatic learning loop"
+}
