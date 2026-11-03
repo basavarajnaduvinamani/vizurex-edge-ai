@@ -105,6 +105,8 @@ async function inspect(source,render=true){
     const limit=document.createElement('p');limit.className='fine';limit.textContent=record.decision==='RETAKE'?'No anomaly score or verdict issued.':`Capture heuristic passed; blur may still be present. ${$('part').value==='own'?'Upload threshold is not validated.':'Generated sample; this outcome is not an accuracy estimate.'}`;result.append(limit);
     const canvas=$('overlay');canvas.hidden=false;const ctx=canvas.getContext('2d');ctx.drawImage(input.canvas,0,0);
     if(record.distances){const map=document.createElement('canvas');map.width=map.height=16;const mc=map.getContext('2d'),pixels=mc.createImageData(16,16);record.distances.forEach((d,i)=>{pixels.data.set([40,100,73,Math.round(Math.min(1,d)*180)],i*4);});mc.putImageData(pixels,0,0);ctx.drawImage(map,0,0,224,224);}
+    const bankVersion=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(state.frozen))).then(b=>Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join(''));
+    window.dispatchEvent(new CustomEvent('visurex:inspection',{detail:{decision:record.decision,score:record.score??null,threshold:state.frozen.threshold,bankVersion,part:$('part').value==='own'?'':'Washer (generated sample)',photo:input.png,heatmap:canvas.toDataURL('image/png')}}));
   }
   return record;
 }

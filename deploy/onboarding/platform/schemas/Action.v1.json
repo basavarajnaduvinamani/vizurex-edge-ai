@@ -1,0 +1,366 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "Action.v1",
+  "title": "VisureX Action v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "revision",
+    "fields"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "Action.v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "createdAt",
+        "demo",
+        "plantId",
+        "station",
+        "findingId",
+        "ncrId",
+        "title",
+        "ownerRole",
+        "dueDate",
+        "status",
+        "afterPhoto",
+        "closedAt"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "demo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "boolean"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "plantId": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "station": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "findingId": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "ncrId": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "title": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "ownerRole": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "inspector",
+                "qa_lead",
+                "plant_manager"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "dueDate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "open",
+                "closed"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "afterPhoto": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        },
+        "closedAt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "source",
+            "confirmed"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source": {
+              "enum": [
+                "detector",
+                "asr",
+                "rule",
+                "human"
+              ]
+            },
+            "confirmed": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

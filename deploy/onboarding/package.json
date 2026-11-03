@@ -8,6 +8,13 @@
     "test": "node --test test/*.test.mjs",
     "verify": "node verify.mjs"
   },
-  "dependencies": {"onnxruntime-web": "1.21.0"},
-  "devDependencies": {"@playwright/test": "1.51.1", "lighthouse": "12.5.1"}
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.2.2",
+    "onnxruntime-web": "1.21.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.51.1",
+    "ajv": "8.20.0",
+    "lighthouse": "12.5.1"
+  }
 }

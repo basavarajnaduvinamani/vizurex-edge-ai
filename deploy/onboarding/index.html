@@ -1,10 +1,28 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="A browser-only demonstration of eight-reference visual anomaly inspection, with calibration and honest benchmark evidence.">
-<title>VisureX | Teach a part with eight references</title><link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css"><script defer src="ort/ort.min.js"></script><script type="module" src="app.mjs"></script></head>
-<body><main><header><a href="#demo">VisureX / research demo</a><nav aria-label="Project links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a><button id="theme" aria-label="Switch colour theme">Dark mode</button></nav></header>
-<p class="eyebrow">FEW-SHOT VISUAL INSPECTION</p><h1>Teach a new part.<br>Start with eight references.</h1>
+<title>VisureX | Shop-floor platform prototype</title><link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css"><script defer src="ort/ort.min.js"></script><script type="module" src="app.mjs"></script><script type="module" src="platform/app.mjs"></script></head>
+<body><main><header><a href="#home">VisureX / platform prototype</a><nav aria-label="Project links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a><button id="theme" aria-label="Switch colour theme">Dark mode</button></nav></header>
+<nav id="platform-tabs" aria-label="Platform modules"><a href="#home" data-route="home">Home</a><a href="#inspect" data-route="inspect">Inspect</a><a href="#walk" data-route="walk">Walk</a><a href="#ncr" data-route="ncr">NCR</a><a href="#actions" data-route="actions">Actions</a><a href="#dashboard" data-route="dashboard">Dashboard</a></nav>
+<p id="platform-message" role="status" aria-live="polite"></p>
+<div class="context-bar"><label for="context-plant">Plant<select id="context-plant"></select></label><label for="context-role">Actor role<select id="context-role"></select></label></div>
+<section id="view-home" data-view="home"><p class="eyebrow">SHOP-FLOOR WORKFLOW PROTOTYPE</p><h1>Capture a finding.<br>Close the loop.</h1>
+<p class="fine">Prototype · work in progress (Oct–Dec 2026)</p><p class="fine affiliation">Built at WCTE (Walmart Centre for Tech Excellence) · Wadhwani School of Data Science &amp; AI · IIT Madras</p>
+<p class="intro">VisureX is a smart-glasses + phone platform prototype for MSME shop floors. It brings visual inspection, audit walks and quality follow-up into one local workflow.</p>
+<p>Intended to help make everyday quality and operations work more reliable across WCTE’s network of 50+ MSMEs.* No factory pilot or user-adoption result is claimed.</p>
+<p class="workflow">CAPTURE → STRUCTURE → ROUTE → CLOSE → LEARN</p><p>Photo or voice note → finding or NCR draft → owner and due date → after-photo and CAPA closure → local plant and demo-network patterns.</p>
+<p class="notice">Demo data: Plant A and Plant B are fictional. Your records and redacted photos stay in IndexedDB on this browser/device. There is no cloud sync.</p>
+<ol class="module-list"><li><a href="#inspect">Inspect</a><span>Live prototype</span><p>Teach a part with eight references plus normal calibration; check a new photo or request a RETAKE.</p></li>
+<li><a href="#walk">Walk</a><span>Live prototype</span><p>Gemba, 5S, safety and layered process audit checklists; voice or typed notes become reviewable findings.</p></li>
+<li><a href="#ncr">NCR</a><span>Live prototype</span><p>Draft, submit, disposition, CAPA and closure, with local role checks and an append-only audit log.</p></li>
+<li><a href="#actions">Actions</a><span>Live prototype</span><p>Owner roles, due dates, overdue escalation flags and after-photo closure.</p></li>
+<li><a href="#dashboard">Plant and network view</a><span>Live prototype · demo data</span><p>Counts of local findings, NCRs and closures; network view shows aggregates only.</p></li>
+<li>Glasses capture<span>In progress</span><p>Ray-Ban Meta Gen 2 bridge; real pairing, frame capture and spoken feedback remain unverified.</p></li>
+<li>Further workflows<span>Planned</span><p>Incoming lots, shift handover, gauge/display reading, SOP step guidance and PO/MANGO integrations.</p></li></ol>
+<h2>Benchmark evidence</h2><div id="home-results" class="strong-result">Loading the recorded benchmark results…</div><p class="fine">Benchmarked AnomalyDINO-style DINOv2 k-NN versus inherited PatchCore. <a href="https://arxiv.org/abs/2405.14529">AnomalyDINO</a> · <a href="https://arxiv.org/abs/2106.08265">PatchCore</a>. Eight references require extra normal calibration. AUROC is not per-decision confidence.</p>
+<p class="fine">*Network size is project-owner-reported potential reach, not organisations served. No pilots are recorded. Photos should show only your own objects; avoid people. On-device face redaction is a precaution, not a guarantee.</p></section>
+<section id="view-inspect" data-view="inspect" hidden><p class="eyebrow">FEW-SHOT VISUAL INSPECTION</p><h1>Teach a new part.<br>Start with eight references.</h1>
 <p class="fine">Prototype · work in progress (Oct–Dec 2026)</p>
 <p class="fine affiliation">Built at WCTE (Walmart Centre for Tech Excellence) · Wadhwani School of Data Science &amp; AI · IIT Madras</p>
 <p class="intro">Build a normal-image memory bank, then check a new image. Inference runs on this device. Your photos stay in this browser.</p>
@@ -35,5 +53,5 @@
 <section class="status-box" aria-labelledby="status-title"><h2 id="status-title">Status</h2>
 <h3>Done</h3><ul><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/sprint/S2_RESULTS.md">Few-shot benchmark (15 categories)</a></li><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/demo-onboarding-2026-11/docs/step1/browser_parity.json">ONNX export</a></li><li><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/claude/sprint-2026-11-01/docs/results/SOFTWARE_AND_STRESS_2026-10-22.md">Capture check</a> (heuristic; limitations remain)</li><li><a href="README.md">This demo</a> (verified locally)</li></ul>
 <h3>Next</h3><ul><li>Blur/lighting robustness study</li><li>Real phone and glasses capture</li><li>Inspector interviews and pilot</li></ul></section>
-<footer><p>Demo prototype on generated samples; my own sample photos are pending. The inspection pipeline was inherited from WCTE’s PatchCore-based VisureX; I built the few-shot benchmark, export workflow, capture check and this demo. Not deployed in a factory; no pilot yet.</p>
-<p>No account, analytics, image uploads to a server or automatic model learning. Refreshing clears your bank. <a href="README.md">Methods and limits</a> · <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer></main></body></html>
+</section><section id="view-walk" data-view="walk" hidden></section><section id="view-ncr" data-view="ncr" hidden></section><section id="view-actions" data-view="actions" hidden></section><section id="view-dashboard" data-view="dashboard" hidden></section><footer><p>Demo prototype on generated samples; my own sample photos are pending. The inspection pipeline was inherited from WCTE’s PatchCore-based VisureX; I built the few-shot benchmark, export workflow, capture check and this demo. Not deployed in a factory; no pilot yet.</p>
+<p>Walk/NCR records are local to this device. No account, analytics, photo upload to a server or automatic model learning. Refreshing clears your bank. <a href="README.md">Methods and limits</a> · <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer></main></body></html>
