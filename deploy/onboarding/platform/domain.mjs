@@ -10,11 +10,12 @@ export const TEMPLATES={Gemba:['Observe the station and flow','Ask about a curre
   LPA:['Check the work instruction','Check a critical process step','Check traceability and previous actions']};
 export const f=(value,source='human',confirmed=source==='human')=>({value,source,confirmed});
 export const v=(record,key)=>record?.fields?.[key]?.value;
+export const todayDate=(at=new Date())=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(at));
 export function record(type,fields,{id=crypto.randomUUID(),at=new Date().toISOString(),demo=false}={}){
   return {schemaVersion:`${type}.v1`,id,revision:1,fields:{createdAt:f(at,'rule',true),demo:f(demo,'rule',true),...fields}};
 }
 export function dueBy(severity,at=new Date()){
-  const date=new Date(at);date.setUTCDate(date.getUTCDate()+({high:1,medium:3,low:7}[severity]??3));return date.toISOString().slice(0,10);
+  const date=new Date(todayDate(at)+'T00:00:00Z');date.setUTCDate(date.getUTCDate()+({high:1,medium:3,low:7}[severity]??3));return date.toISOString().slice(0,10);
 }
 export function structureNote(note,plantId,at=new Date()){
   const plant=PLANTS.find(p=>p.id===plantId);if(!plant)throw Error('Choose a plant');
@@ -94,7 +95,7 @@ export function completeCapa(ncr,actions,afterPhoto,role){
   if(!linked.length||linked.some(a=>v(a,'status')!=='closed'))throw Error('Close linked CAPA actions first');
   const next=structuredClone(ncr);next.revision++;next.fields.afterPhoto=f(afterPhoto);next.fields.capaStatus=f('closed');return next;
 }
-export function overdue(action,today=new Date().toISOString().slice(0,10)){return v(action,'status')!=='closed'&&v(action,'dueDate')<today;}
+export function overdue(action,today=todayDate()){return v(action,'status')!=='closed'&&v(action,'dueDate')<today;}
 export function csv(rows){
   const esc=value=>{let s=String(value??'');if(/^[=+@-]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';};
   return rows.map(row=>row.map(esc).join(',')).join('\r\n');

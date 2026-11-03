@@ -43,6 +43,11 @@ There are no confirmed pilots or measured users. The reported 50+ MSME network
 is intended reach reported by the project owner, not organisations served.
 See [workflow contracts and limits](docs/PLATFORM_CONTRACTS.md).
 
+Real prototype screenshots on generated/demo data:
+[Walk report](docs/images/platform/walk-demo.png) ·
+[NCR closure](docs/images/platform/ncr-demo.png).
+Final local gate evidence: [platform results](docs/platform/results.json).
+
 ## Evidence and ownership
 
 | Completed work | Evidence |

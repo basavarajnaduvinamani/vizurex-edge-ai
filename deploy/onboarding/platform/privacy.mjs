@@ -1,4 +1,10 @@
 let detectorPromise;
+export function decodePhotoDataURL(input){
+  if(typeof input!=='string'||!/^data:image\/(png|jpeg|webp);base64,/.test(input)||input.length>30*1024*1024)throw Error('Use a supported encoded object photo');
+  const comma=input.indexOf(','),bytes=Uint8Array.from(atob(input.slice(comma+1)),char=>char.charCodeAt(0));
+  if(bytes.length>20*1024*1024)throw Error('Photo exceeds the 20 MB limit');
+  return new Blob([bytes],{type:input.slice(5,input.indexOf(';'))});
+}
 export async function faceDetector(){
   if(!detectorPromise)detectorPromise=(async()=>{
     const {FaceDetector,FilesetResolver}=await import('../face/vision_bundle.mjs');
@@ -23,7 +29,7 @@ export function blurBoxes(canvas,boxes){
 export async function sanitizePhoto(input,{detect=null}={}){
   let blob;
   if(input instanceof Blob){if(input.size>20*1024*1024||!['image/jpeg','image/png','image/webp'].includes(input.type))throw Error('Use JPEG, PNG or WebP up to 20 MB');blob=input;}
-  else if(typeof input==='string'&&/^data:image\/(png|jpeg|webp);base64,/.test(input))blob=await fetch(input).then(r=>r.blob());
+  else if(typeof input==='string')blob=decodePhotoDataURL(input);
   else throw Error('Choose a photo of your own object');
   const bitmap=await createImageBitmap(blob);if(bitmap.width*bitmap.height>24000000){bitmap.close();throw Error('Use an image up to 24 megapixels');}
   const scale=Math.min(1,960/Math.max(bitmap.width,bitmap.height)),canvas=document.createElement('canvas');canvas.width=Math.round(bitmap.width*scale);canvas.height=Math.round(bitmap.height*scale);canvas.getContext('2d').drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close();

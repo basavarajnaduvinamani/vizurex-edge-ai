@@ -18,6 +18,6 @@ jobs:
       - run: node scripts/test_frontend.mjs
       - run: node --test deploy/onboarding/test/core.test.mjs
       - run: npm ci --prefix deploy/onboarding --ignore-scripts --no-audit --no-fund
-      - run: node --test deploy/onboarding/test/platform-domain.test.mjs
+      - run: node --test deploy/onboarding/test/platform-domain.test.mjs deploy/onboarding/test/platform-privacy.test.mjs
       - run: python -m pytest scripts/test_onboarding.py -q
       # Real models/datasets remain private local artifacts; CI does not fabricate results.

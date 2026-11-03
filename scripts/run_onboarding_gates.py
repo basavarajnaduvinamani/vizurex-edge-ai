@@ -26,7 +26,8 @@ def main():
         'frontend': ['node', 'scripts/test_frontend.mjs'],
         'onboarding': ['node', '--test', 'deploy/onboarding/test/core.test.mjs',
                        'deploy/onboarding/test/build.test.mjs',
-                       'deploy/onboarding/test/platform-domain.test.mjs'],
+                       'deploy/onboarding/test/platform-domain.test.mjs',
+                       'deploy/onboarding/test/platform-privacy.test.mjs'],
         'dependency': [python, '-m', 'pip', 'check'],
     }
     results = {}

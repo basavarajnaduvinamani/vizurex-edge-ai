@@ -31,7 +31,7 @@ their local storage. No signed-regulatory-compliance claim is made.
 Data: Plant A (demo) and Plant B (demo), fictional stations/defect lists and
 seeded examples. Seeds are idempotent. New entries are labelled local and remain
 on that browser/device. Network Dashboard exposes counts only, not photos or
-notes. Overdue means due date before today's UTC date and status not closed.
+notes. Overdue means due date before today's Asia/Kolkata calendar date and status not closed.
 Escalation is a visible rule flag; no email, WhatsApp or notification is sent.
 Repeat means matching plant/station/category key, not an inferred root cause.
 
@@ -54,3 +54,4 @@ Single sprint PR incorporates the previous draft inspection/sprint branches
 without rewriting history. Only one main merge and final production release
 are intended. S9 is a stretch only after the platform is live; real glasses
 status stays “In progress”. No robustness study is started.
+

@@ -1,0 +1,9 @@
+{
+  "changedPixels": 40400,
+  "fixtureFaces": 1,
+  "fixtureObscured": false,
+  "fallbackObscured": true,
+  "modelReady": true,
+  "modelError": null,
+  "scope": "Synthetic face redaction with injected box; real model startup check is separate, not face-detection accuracy"
+}

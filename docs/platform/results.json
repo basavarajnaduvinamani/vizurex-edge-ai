@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-04",
+  "modules": [
+    "Inspect",
+    "Walk",
+    "NCR",
+    "Actions",
+    "Dashboard"
+  ],
+  "prototype_module_count": 5,
+  "python_tests_passed": 62,
+  "node_tests_passed_unique": 18,
+  "frontend_checks_passed": 31,
+  "local_test_count": 80,
+  "ci_test_count_configured": 78,
+  "ci_additional_frontend_checks": 31,
+  "platform_browser_checks_passed": 86,
+  "inspect_browser_checks_passed": 25,
+  "browser_variants": [
+    "1280-light",
+    "1280-dark",
+    "390-light",
+    "390-dark"
+  ],
+  "lighthouse": {
+    "date": "2026-11-04",
+    "version": "12.5.1",
+    "scope": "Mobile simulated-throttling initial page load; lazy model loading excluded. Not inference performance.",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "runWarnings": []
+  },
+  "schemas": [
+    "Action.v1.json",
+    "AuditEvent.v1.json",
+    "CaptureEvent.v1.json",
+    "Finding.v1.json",
+    "NcrRecord.v1.json",
+    "Walk.v1.json"
+  ],
+  "unit_test_names": [
+    "HTML/SVG and remote URLs cannot enter the photo persistence path",
+    "build excludes all benchmark/industrial paths and non-allowlisted images",
+    "cannot close action without after photo or wrong owner role",
+    "contracts reject missing source, unknown fields and invalid role",
+    "dark capture gives RETAKE and no invented score",
+    "encoded inspection photos are decoded without a data-URL fetch blocked by CSP",
+    "every seeded record conforms to its versioned contract and field provenance",
+    "full NCR lifecycle requires completed CAPA and linked closed after-photo action",
+    "inspector can submit but cannot disposition; original and audit remain immutable",
+    "local upload thumbnails are local blobs; remote traffic stays rejected",
+    "only ANOMALY can create a detector NCR and its score is preserved",
+    "p99 calibration is frozen before test and cannot learn from test",
+    "page and README credit established methods and generated examples",
+    "rule suggestions retain provenance and due defaults; ASR is unconfirmed",
+    "seeded dashboard aggregates actual local rows and CSV neutralises formula cells",
+    "separate calibration images are mandatory",
+    "submit rejects unconfirmed inference, missing human quantities and invalid defect code",
+    "threshold equality is anomaly; missing bank is error"
+  ],
+  "face_check_scope": "Synthetic face redaction with injected box; real model startup check is separate, not face-detection accuracy",
+  "recovery": "Only failed Inspect handoff rerun for first variant; prior passed Walk/NCR checks retained with source. Other variants run first time.",
+  "prototype_limits": [
+    "No real phone camera, voice or glasses run",
+    "Fictional plants and seeded demo data; no pilots or users",
+    "Local role checks are not authentication",
+    "NCR import compatibility unverified",
+    "50+ network size is owner-reported potential reach"
+  ],
+  "sources": {
+    "python": "artifacts/platform/final/software/python.xml",
+    "node_initial": "artifacts/platform/final/software/onboarding.log",
+    "node_repair": "artifacts/platform/final/repair-units.log",
+    "browser": "docs/platform/browser.json",
+    "inspect": "artifacts/platform/final/inspect/browser.json",
+    "face": "docs/platform/face-redaction.json"
+  }
+}
