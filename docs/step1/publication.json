@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-04",
+  "repository": "https://github.com/basavarajnaduvinamani/vizurex-edge-ai",
+  "visibility": "PUBLIC",
+  "default_branch": "main",
+  "audited_source_commit": "8ac3574",
+  "commits_audited": 67,
+  "unique_blobs_audited": 889,
+  "candidate_findings": [],
+  "history_secret_findings": [],
+  "blob_secret_findings": [],
+  "scanner": "Gitleaks 8.30.1",
+  "images_inspected": 6,
+  "image_scope": "Three synthetic UI screenshots and three numeric plots",
+  "upstream_license_match_sha256": "88046bf22d5b4f4b8cc85079ae6aae5424a3a1999db952ed152828ff325b2c6d",
+  "history_rewritten": false,
+  "main_merged": false,
+  "draft_pr": "https://github.com/basavarajnaduvinamani/vizurex-edge-ai/pull/4",
+  "live_site_deployed": false,
+  "visibility_source": "gh repo view --json nameWithOwner,isPrivate,url,defaultBranchRef"
+}

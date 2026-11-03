@@ -40,6 +40,13 @@ Header, affiliation, GitHub links and evidence-backed Done/Next lists are UI
 copy changes. Site hosting remains blocked. Repository visibility is verified
 separately after publication; a clean scan alone is not a publication receipt.
 
+Final source-publication check: 67 commits and 889 unique blobs, no findings.
+GitHub confirmed PUBLIC visibility. Source: `docs/step1/publication.json`.
+The updated header passed 25 browser checks, with mobile Lighthouse
+100/100/100/100; sources: `docs/step1/header_update.json` and `lighthouse.json`.
+The new README/page are in draft PR #4; main is unchanged. A public source
+repository does not establish a publicly deployed application or user adoption.
+
 ## Interview questions
 1. Why extra normal images? The bank's own examples self-match; disjoint normal
    calibration avoids that trivial threshold. Small calibration sets remain unvalidated.

@@ -62,3 +62,18 @@ controls merging them onto the default branch.
 Site deployment is separate: the protected-preview attempt remains blocked by
 Vercel's first-deployment Production rule. Publishing source does not authorize
 a Production bootstrap or public site deployment.
+
+## Final publication receipt
+
+The final candidate `8ac3574` was re-inventoried: **67 reachable commits,
+889 unique blobs, 830 unique paths**, with no candidate findings. Full-history
+and independent all-blob Gitleaks scans returned no findings. Inline raster
+payloads were also checked; none were found. The same six image versions were
+the inspected synthetic screenshots and numeric plots.
+
+GitHub then confirmed `isPrivate: false` for
+https://github.com/basavarajnaduvinamani/vizurex-edge-ai . Source:
+`docs/step1/publication.json`; raw response:
+`artifacts/publication-audit/publication-receipt.json`.
+Main remains the default branch and was not changed or merged. The new README
+and header/status are on draft PR #4 pending the owner's merge. No live site URL.
