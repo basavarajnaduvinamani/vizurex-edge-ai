@@ -42,6 +42,11 @@ metadata and checked by MediaPipe Tasks Vision 1.2.2 with official BlazeFace
 short-range float16 version 1. Face boxes are expanded, pixelated and blurred
 before local storage. Failure obscures the whole image and is disclosed.
 Face redaction is precautionary, not a guarantee of detecting all faces.
+The final free-hosting package keeps the same tested browser paths but proxies
+the pinned MediaPipe WASM runtime from its public npm CDN through same-origin
+Vercel asset rewrites. Only library files are fetched; photos never go to that
+CDN. This avoids duplicating the runtime in the CLI upload (Hobby source-file
+limit). The detector model and application code remain in the static package.
 The synthetic-face unit checks the blur pipeline using an injected box; a
 separate functional check loads the actual detector. No face dataset or
 face-detection accuracy study is introduced.
