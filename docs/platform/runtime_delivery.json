@@ -1,0 +1,5 @@
+{
+  "source": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.2.2/wasm/vision_wasm_internal.wasm",
+  "matches_tested_runtime": true,
+  "sha256": "f5bd25147ac89d506074293ce2675969b10e827180db95a0d9689c2ed80764ab"
+}
