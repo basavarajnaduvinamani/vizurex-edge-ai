@@ -7,6 +7,9 @@ import {createHash} from 'node:crypto';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../..');
 async function files(folder){return (await Promise.all((await readdir(folder,{withFileTypes:true})).map(async e=>e.isDirectory()?files(path.join(folder,e.name)):[path.join(folder,e.name)]))).flat();}
 test('build excludes all benchmark/industrial paths and non-allowlisted images',async()=>{
+  const forbidden=/(?<![A-Za-z])[A-Z]:[\\/]|data[\\/]raw|SelfDS|test_data[\\/]|train[\\/]good/i;
+  assert.match('C:/private/part.png',forbidden);assert.match('data/raw/mvtec',forbidden);
+  assert.doesNotMatch('https://github.com/example',forbidden);
   const out=path.join(root,'artifacts/onboarding/dist');
   const manifest=JSON.parse(await readFile(path.join(out,'samples.json'),'utf8'));
   const names=await files(out);
@@ -18,7 +21,7 @@ test('build excludes all benchmark/industrial paths and non-allowlisted images',
       assert.equal(createHash('sha256').update(await readFile(name)).digest('hex'),manifest.image_sha256[path.basename(name)]);
     }
     if(/\.(html|mjs|css|json|md)$/.test(relative)){
-      const text=await readFile(name,'utf8');assert.doesNotMatch(text,/[A-Z]:[\\/]|data[\\/]raw|SelfDS|test_data[\\/]|train[\\/]good/i);
+      const text=await readFile(name,'utf8');assert.doesNotMatch(text,forbidden);
     }
   }
   assert.ok(names.some(x=>x.endsWith('dinov2-vits14.onnx')));

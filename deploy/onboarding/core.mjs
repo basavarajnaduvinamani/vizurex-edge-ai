@@ -1,5 +1,6 @@
 // Benchmarked AnomalyDINO-style scoring, not a new method.
 // https://arxiv.org/abs/2405.14529 ; https://arxiv.org/abs/2106.08265
+export function isLocalResource(url,origin){return url.startsWith(origin+'/')||url.startsWith('data:')||url.startsWith('blob:'+origin+'/');}
 export function quantile(values, p) {
   if (!values.length || values.some(v => !Number.isFinite(v))) throw Error('Invalid calibration');
   const a = [...values].sort((a,b)=>a-b), x=(a.length-1)*p, i=Math.floor(x);

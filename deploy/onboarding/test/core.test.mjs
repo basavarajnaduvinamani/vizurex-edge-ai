@@ -1,7 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {freezeCalibration,quantile,qualityFromGray,verdict} from '../core.mjs';
+import {freezeCalibration,quantile,qualityFromGray,verdict,isLocalResource} from '../core.mjs';
 const ids=Array.from({length:8},(_,i)=>`reference-${i}`);
+test('local upload thumbnails are local blobs; remote traffic stays rejected',()=>{
+  const origin='http://127.0.0.1:8000';
+  assert.equal(isLocalResource(`blob:${origin}/upload`,origin),true);
+  assert.equal(isLocalResource('https://external.example/upload',origin),false);
+  assert.equal(isLocalResource('blob:https://external.example/upload',origin),false);
+  assert.equal(isLocalResource(origin+'.attacker.example/upload',origin),false);
+});
 test('p99 calibration is frozen before test and cannot learn from test',()=>{
   const frozen=freezeCalibration([.1,.2,.3],ids,['a','b','c']);
   const original=frozen.threshold;
