@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="in.wcte.visurex.InspectionContractTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-11-03T23:43:33.018Z" hostname="VERIZON21" time="0.017">
+  <properties/>
+  <testcase name="rejectsNumericString" classname="in.wcte.visurex.InspectionContractTest" time="0.005"/>
+  <testcase name="localDebugEndpoint" classname="in.wcte.visurex.InspectionContractTest" time="0.003"/>
+  <testcase name="rejectsUnknownDecision" classname="in.wcte.visurex.InspectionContractTest" time="0.001"/>
+  <testcase name="rejectsMissingVersion" classname="in.wcte.visurex.InspectionContractTest" time="0.0"/>
+  <testcase name="rejectsInvalidPng" classname="in.wcte.visurex.InspectionContractTest" time="0.002"/>
+  <testcase name="rejectsApiPath" classname="in.wcte.visurex.InspectionContractTest" time="0.0"/>
+  <testcase name="parsesRetakeWithoutModelOutputs" classname="in.wcte.visurex.InspectionContractTest" time="0.002"/>
+  <testcase name="rejectsInvalidTimestamp" classname="in.wcte.visurex.InspectionContractTest" time="0.0"/>
+  <testcase name="releaseRequiresTls" classname="in.wcte.visurex.InspectionContractTest" time="0.001"/>
+  <testcase name="rejectsEmbeddedCredentials" classname="in.wcte.visurex.InspectionContractTest" time="0.0"/>
+  <testcase name="rejectsCategoryMismatch" classname="in.wcte.visurex.InspectionContractTest" time="0.0"/>
+  <testcase name="rejectsRetakeWithoutReasons" classname="in.wcte.visurex.InspectionContractTest" time="0.0"/>
+  <testcase name="parsesSuccess" classname="in.wcte.visurex.InspectionContractTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

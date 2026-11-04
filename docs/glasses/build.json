@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-04",
+  "sdk": "Meta Wearables DAT 1.0.1",
+  "sourceParent": "5388c26ce57f230aa58b54d8890de226980476c5",
+  "gradle": "8.13",
+  "agp": "8.11.1",
+  "kotlin": "2.2.21",
+  "compileSdk": 36,
+  "minSdk": 31,
+  "unitSuites": [
+    {
+      "suite": "in.wcte.visurex.GlassesRecordsTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "in.wcte.visurex.InspectionContractTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "in.wcte.visurex.PortableManifestTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "unitTests": 23,
+  "mockInstrumentation": {
+    "source": "docs/glasses/mock-result.txt",
+    "scope": "Emulator registration, pairing, denied camera permission only. No stream/photo/inference coverage.",
+    "passed": 1,
+    "failed": 0
+  },
+  "schemaChecks": 2,
+  "apk": {
+    "bytes": 157027956,
+    "sha256": "b62fb19436d3c52dff16b16d3752bb969447af105503c70f0b936b1f510d1d73",
+    "path": "android-companion/.tools/app-s9/outputs/apk/debug/app-debug.apk"
+  },
+  "realGlasses": "NOT RUN",
+  "realPhone": "NOT RUN",
+  "limits": [
+    "No real device latency or speaker route measurement",
+    "No streaming/photo Mock Device Kit test",
+    "No browser sync or WCTE NCR import validation",
+    "Face detection can miss faces; no detection-accuracy estimate"
+  ],
+  "logs": [
+    "artifacts/platform/final/glasses-final.log",
+    "artifacts/platform/final/glasses-compile.log"
+  ],
+  "emulator": {
+    "activityLaunch": "Started in.wcte.visurex/.GlassesActivity; no AndroidRuntime error observed",
+    "mode": "Existing AVD launched headlessly read-only, no saved snapshot",
+    "android": "14",
+    "model": "sdk_gphone64_x86_64"
+  }
+}

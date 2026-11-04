@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-03T23:44:11.008Z",
+  "rows": [
+    {
+      "file": "capture.json",
+      "schemaVersion": "CaptureEvent.v1",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "file": "finding.json",
+      "schemaVersion": "Finding.v1",
+      "passed": true,
+      "errors": []
+    }
+  ]
+}
