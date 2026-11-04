@@ -71,7 +71,8 @@ class MainActivity : ComponentActivity() {
         scroll.addView(layout); setContentView(scroll)
         fun label(text: String) { layout.addView(TextView(this).apply { this.text = text; textSize = 18f; setPadding(0, 12, 0, 8) }) }
         label("VisureX Companion · Research prototype")
-        label("Phone camera only. No glasses connection. Use the model matching the product; scores are not confidence probabilities.")
+        label("Phone inspection. The separate glasses bridge is in progress and has not run on real glasses. Scores are not confidence probabilities.")
+        layout.addView(Button(this).apply { text = "Glasses bridge · In progress"; setOnClickListener { startActivity(android.content.Intent(this@MainActivity, GlassesActivity::class.java)) } })
         label("Processing location")
         executionMode = Spinner(this).apply { adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_dropdown_item, listOf("Laptop backend", "Experimental on-device CPU")) }
         layout.addView(executionMode)

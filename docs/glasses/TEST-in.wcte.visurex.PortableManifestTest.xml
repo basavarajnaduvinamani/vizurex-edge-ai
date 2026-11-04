@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="in.wcte.visurex.PortableManifestTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-03T23:43:33.037Z" hostname="VERIZON21" time="0.013">
+  <properties/>
+  <testcase name="rejectsUnknownCategory" classname="in.wcte.visurex.PortableManifestTest" time="0.006"/>
+  <testcase name="rejectsLargeModel" classname="in.wcte.visurex.PortableManifestTest" time="0.0"/>
+  <testcase name="validManifest" classname="in.wcte.visurex.PortableManifestTest" time="0.004"/>
+  <testcase name="rejectsUnverified" classname="in.wcte.visurex.PortableManifestTest" time="0.001"/>
+  <testcase name="rejectsWrongRecipe" classname="in.wcte.visurex.PortableManifestTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

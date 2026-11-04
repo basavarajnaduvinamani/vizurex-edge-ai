@@ -2,7 +2,7 @@ param([string[]]$Tasks = @('testDebugUnitTest', 'assembleDebug'))
 $ErrorActionPreference = 'Stop'
 $projectDir = $PSScriptRoot
 $toolsDir = Join-Path $projectDir '.tools'
-$gradleVersion = '8.9'
+$gradleVersion = '8.13'
 $gradleDir = Join-Path $toolsDir "gradle-$gradleVersion"
 $env:GRADLE_USER_HOME = Join-Path $projectDir '.gradle/user-home'
 if (-not (Test-Path "$gradleDir/bin/gradle.bat")) {
