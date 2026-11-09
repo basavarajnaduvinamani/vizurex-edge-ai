@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Check a generated washer in your browser, review the decision, and follow a finding through corrective action.">
-  <title>VisureX | Shop-floor inspection</title>
-  <link rel="icon" href="data:,">
+  <meta name="description" content="AI quality inspection for MSME manufacturing: check a generated washer in your browser, review the decision, and follow a finding through corrective action.">
+  <meta name="theme-color" content="#F4F6F6">
+  <meta name="color-scheme" content="light">
+  <title>VisureX: AI quality inspection for MSME manufacturing</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="app.mjs"></script>
   <script type="module" src="platform/app.mjs"></script>
@@ -17,15 +20,16 @@
     <nav id="platform-tabs" aria-label="Platform modules">
       <a href="#home" data-route="home" aria-current="page">Home</a><a href="#inspect" data-route="inspect">Inspect</a><a href="#walk" data-route="walk">Walk</a><a href="#ncr" data-route="ncr">NCR</a><a href="#actions" data-route="actions">Actions</a><a href="#dashboard" data-route="dashboard">Dashboard</a>
     </nav>
-    <div class="project-links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a><button id="theme" type="button" aria-label="Switch colour theme">Dark mode</button></div>
+    <div class="project-links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></div>
   </header>
+  <aside class="prototype-note" aria-label="Prototype notice"><p>VisureX is under active development. This site is a prototype with demo data.</p></aside>
   <p id="platform-message" role="status" aria-live="polite"></p>
-  <div class="context-bar" hidden><label for="context-plant">Plant<select id="context-plant"></select></label><label for="context-role">Actor role<select id="context-role"></select></label></div>
+  <div class="context-bar" hidden><label for="context-plant">Plant<select id="context-plant"></select></label><label for="context-role">Role<select id="context-role"></select></label></div>
 
   <section id="view-home" data-view="home">
     <div class="page-heading">
-      <h1>Shop-floor inspection</h1>
-      <p>Choose a washer photo and run a check in your browser.</p>
+      <h1>AI quality inspection for MSME manufacturing</h1>
+      <p class="tagline">Built at WCTE, IIT Madras, to improve quality-inspection workflows across its network of 50+ MSMEs.</p>
     </div>
     <div id="home-inspection">
       <section id="inspection-bench" class="bench" aria-label="Live visual inspection">
@@ -38,6 +42,7 @@
           <figcaption id="specimen-caption">Generated washer photo</figcaption>
         </figure>
         <div class="bench-controls">
+          <p class="bench-lead">Choose a washer photo and run a check in your browser.</p>
           <label for="part">Reference part</label>
           <select id="part"><option value="washer">Generated washer</option><option value="own">My own photos (unvalidated)</option></select>
           <label for="sample">Test image</label>
@@ -60,7 +65,7 @@
     <section class="chapter" aria-labelledby="workflow-title">
       <h2 id="workflow-title">How it works</h2>
       <ol class="workflow">
-        <li><strong>Capture</strong><span>Take a photo on a phone. Glasses capture is in progress.</span></li>
+        <li><strong>Capture</strong><span>Take a photo on a phone.</span></li>
         <li><strong>Check</strong><span>Run the DINOv2 check in the browser.</span></li>
         <li><strong>Record</strong><span>Open an NCR for a defect.</span></li>
         <li><strong>Assign</strong><span>Give the corrective action an owner.</span></li>
@@ -75,14 +80,15 @@
         <div class="plot-row"><span><strong>DINOv2 k-NN</strong><small>0.956 [0.927, 0.981]</small></span><svg viewBox="0 0 300 28" role="img" aria-label="DINOv2 k-NN, 0.956, confidence interval 0.927 to 0.981"><path class="plot-grid" d="M0 0v28M100 0v28M200 0v28M300 0v28"/><path class="interval" d="M154 14H262M154 8v12M262 8v12"/><circle class="plot-point" cx="212" cy="14" r="5"/></svg></div>
         <div class="plot-row"><span><strong>PatchCore</strong><small>0.924 [0.868, 0.968]</small></span><svg viewBox="0 0 300 28" role="img" aria-label="PatchCore, 0.924, confidence interval 0.868 to 0.968"><path class="plot-grid" d="M0 0v28M100 0v28M200 0v28M300 0v28"/><path class="interval secondary" d="M36 14H236M36 8v12M236 8v12"/><rect class="plot-point secondary" x="143" y="9" width="10" height="10"/></svg></div>
         <div class="plot-axis"><span>Macro AUROC</span><div><span>0.85</span><span>0.90</span><span>0.95</span><span>1.00</span></div></div>
-        <figcaption>DINOv2 k-NN follows AnomalyDINO (Damm et al., WACV 2025).</figcaption>
+        <figcaption><p class="chart-note">k=8 means 8 reference images per category. With full training data PatchCore edges ahead (0.986 vs 0.980).</p><p>DINOv2 k-NN follows AnomalyDINO (Damm et al., WACV 2025).</p></figcaption>
       </figure>
     </section>
 
     <section class="chapter evidence-notes" aria-labelledby="evidence-title">
       <h2 id="evidence-title">What has been checked</h2>
       <p>In-browser model: DINOv2 ONNX in WebAssembly. 20/20 browser-Python decision parity. 361 ms median check on laptop CPU. <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/main/docs/step1/browser_parity.json">Browser test results</a></p>
-      <p>Android/glasses path: PatchCore ONNX export kept 261/261 decisions at 163-168 ms CPU; Kotlin bridge for Ray-Ban Meta (Meta Wearables toolkit 1.0.1), 23 unit tests + emulator Mock Device test.</p>
+      <p>Android path: PatchCore ONNX export kept 261/261 decisions at 163-168 ms CPU.</p>
+      <p>Ray-Ban Meta bridge built and tested on an emulator; not yet run on glasses. The Kotlin bridge uses Meta Wearables toolkit 1.0.1 and has 23 unit tests plus an emulator Mock Device test.</p>
       <p>Blur makes the detector flag every image as defective, so the app asks for a retake.</p>
     </section>
   </section>
@@ -97,7 +103,7 @@
   <section id="view-ncr" data-view="ncr" hidden></section>
   <section id="view-actions" data-view="actions" hidden></section>
   <section id="view-dashboard" data-view="dashboard" hidden></section>
-  <footer><p>WCTE (Walmart Centre for Tech Excellence), Wadhwani School of Data Science &amp; AI, IIT Madras. Oct 2026 - present.</p><p><a href="README.md">Methods and limits</a> <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer>
+  <footer><p>WCTE (Walmart Centre for Tech Excellence), Wadhwani School of Data Science &amp; AI, IIT Madras. Oct 2026 - present.</p><p>Student research prototype, not a Walmart product.</p><p><a href="README.md">Methods and limits</a> <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer>
 </main>
 </body>
 </html>
