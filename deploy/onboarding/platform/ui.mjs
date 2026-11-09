@@ -12,9 +12,9 @@ export function option(value,text=value){return el('option',{value},text);}
 export function field(label,id,data,{type='text',options=null,readonly=false}={}){
   const input=options?el('select',{id,name:id},...options.map(item=>typeof item==='string'?option(item):option(item.value,item.label))):el(type==='textarea'?'textarea':'input',{id,name:id,...(type==='textarea'?{rows:3}:{type}),...(readonly?{readonly:true}:{})});
   input.value=data.value??'';
-  const hint=el('span',{class:'provenance'},`${data.source}${data.confirmed?' · confirmed':' · suggestion, confirm or edit'}`);
+  const hint=el('span',{class:'provenance'},`${data.source}${data.confirmed?' / confirmed':' / suggestion, confirm or edit'}`);
   const wrapper=el('label',{class:!data.confirmed?'suggested':'',for:id},label,input,hint);
-  if(!readonly)input.addEventListener('input',()=>{data.source='human';data.confirmed=true;wrapper.classList.remove('suggested');hint.textContent='human · confirmed';});
+  if(!readonly)input.addEventListener('input',()=>{data.source='human';data.confirmed=true;wrapper.classList.remove('suggested');hint.textContent='human / confirmed';});
   return wrapper;
 }
 export function download(name,text,type='text/plain'){
