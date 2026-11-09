@@ -61,7 +61,9 @@ function renderThumbs(){
     img.alt=`${own?'Uploaded':'Generated'} normal reference ${i+1}`;img.width=80;img.height=80;$('thumbs').append(img);
   }
 }
-renderThumbs();
+$('bank-details').addEventListener('toggle',event=>{
+  if(event.currentTarget.open&&!$('thumbs').hasChildNodes())renderThumbs();
+});
 async function imageData(source){
   if(source instanceof File && (source.size>20*1024*1024 || !['image/jpeg','image/png','image/webp'].includes(source.type))) throw Error('Use JPEG, PNG or WebP up to 20 MB.');
   const blob=source instanceof File?source:await fetch(source).then(r=>{if(!r.ok)throw Error('Image unavailable');return r.blob();});
@@ -84,7 +86,18 @@ async function imageData(source){
 }
 async function runtime(){
   if(state.session)return;
-  const ort=window.ort;if(!ort)throw Error('ONNX Runtime could not load.');
+  if(!window.ort)await new Promise((resolve,reject)=>{
+    const script=document.createElement('script');
+    script.src='ort/ort.min.js';
+    script.onload=resolve;
+    script.onerror=()=>{
+      script.remove();
+      reject(Error('ONNX Runtime could not load.'));
+    };
+    document.head.append(script);
+  });
+  const ort=window.ort;
+  if(!ort)throw Error('ONNX Runtime could not load.');
   ort.env.wasm.wasmPaths=new URL('ort/',location.href).href;ort.env.wasm.numThreads=1;
   state.session=await ort.InferenceSession.create('dinov2-vits14.onnx',{executionProviders:['wasm'],graphOptimizationLevel:'all'});
   state.scorer=await ort.InferenceSession.create('score.onnx',{executionProviders:['wasm'],graphOptimizationLevel:'all'});
