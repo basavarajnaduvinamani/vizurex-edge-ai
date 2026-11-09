@@ -12,11 +12,16 @@ function lock(busy){
   $('part').disabled=busy;
   $('sample').disabled=busy;
 }
+function slip(title,text=''){
+  const result=$('result'),heading=document.createElement('strong');
+  heading.textContent=title;result.replaceChildren(heading);
+  if(text){const p=document.createElement('p');p.textContent=text;result.append(p);}
+}
 function resetDecision(){
   const result=$('result');
   delete result.dataset.decision;
-  result.textContent=$('part').value==='own'&&!state.ready
-    ?'Build a reference bank before inspecting your photos.':'Awaiting inspection';
+  if($('part').value==='own'&&!state.ready)slip('Awaiting a reference bank','Build a reference bank before inspecting your photos.');
+  else slip('Awaiting inspection',state.ready?'The reference bank is ready.':'The first check loads the model and prepares the reference bank.');
   const ncr=$('inspect-create-ncr');
   if(ncr)ncr.hidden=true;
   $('overlay').hidden=true;
@@ -45,12 +50,6 @@ $('references').onchange=()=>{clearBank();renderThumbs();};
 $('calibration').onchange=clearBank;
 $('sample').onchange=updateSample;
 $('test-file').onchange=resetDecision;
-function setTheme(dark){
-  document.body.dataset.theme=dark?'dark':'light';
-  $('theme').textContent=dark?'Light mode':'Dark mode';
-}
-setTheme(matchMedia('(prefers-color-scheme: dark)').matches);
-$('theme').onclick=()=>setTheme(document.body.dataset.theme!=='dark');
 lock(false);
 function renderThumbs(){
   $('thumbs').replaceChildren();
@@ -114,7 +113,7 @@ async function score(features,bank=state.bank){
 async function fileId(file){const digest=await crypto.subtle.digest('SHA-256',await file.arrayBuffer());return Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,'0')).join('');}
 async function onboard(){
   if(state.busy)throw Error('Wait for the current operation');
-  lock(true);clearBank();$('result').textContent='Preparing the reference bank…';const start=performance.now();
+  lock(true);clearBank();slip('Preparing the reference bank…');const start=performance.now();
   try{
     let refs=manifest.references.map(x=>x.path),cal=manifest.calibration.map(x=>x.path);
     if($('part').value==='own'){
@@ -138,9 +137,23 @@ async function onboard(){
     }
     state.frozen=freezeCalibration(calibration,ids.slice(0,8),ids.slice(8));state.bank=bank;state.ready=true;
     state.calibrationScores=calibration;state.onboardingMs=performance.now()-start;
-    message(`Bank ready: 8 references + ${cal.length} separate normal calibration photos. Frozen threshold ${state.frozen.threshold.toFixed(6)}. Onboarding ${(state.onboardingMs/1000).toFixed(1)} s.`);resetDecision();
+    message(`Bank ready: 8 references + ${cal.length} separate normal calibration photos. Frozen threshold ${state.frozen.threshold.toFixed(3)}. Onboarding ${(state.onboardingMs/1000).toFixed(1)} s.`);resetDecision();
   }catch(error){clearBank();message(`Unable to onboard: ${error.message}`);throw error;}
   finally{lock(false);}
+}
+function showDecision(record,frozen){
+  const result=$('result');result.replaceChildren();result.dataset.decision=record.decision;
+  const title=document.createElement('strong');title.textContent=verdictLabels[record.decision];result.append(title);
+  if(record.decision==='RETAKE'){
+    const reasons=document.createElement('p');reasons.textContent=record.reasons.join(' ');result.append(reasons);
+  }else{
+    const readings=document.createElement('dl');readings.className='readings numbers';
+    for(const [label,value]of [['Score',record.score.toFixed(3)],['Frozen threshold',frozen.threshold.toFixed(3)],['Time',`${record.latencyMs.toFixed(0)} ms`]]){
+      const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;row.append(dt,dd);readings.append(row);
+    }
+    result.append(readings);
+  }
+  const limit=document.createElement('p');limit.className='fine';limit.textContent=record.decision==='RETAKE'?'No anomaly score or verdict issued.':`Capture heuristic passed; blur may still be present. ${$('part').value==='own'?'Upload threshold is not validated.':'Generated sample; this outcome is not an accuracy estimate.'}`;result.append(limit);
 }
 function sourceFor(name){return name==='dark'||name==='blur'?`samples/${name}.png`:`samples/test-${name}-200.png`;}
 async function inspect(source,render=true){
@@ -152,11 +165,7 @@ async function inspect(source,render=true){
   const record={...output,quality:input.quality,latencyMs:performance.now()-begin,embedMs,source:source instanceof File?null:source};
   if(!(source instanceof File)) {state.pixels.set(source,input.png);state.records.push(record);}
   if(render){
-    const result=$('result');result.replaceChildren();result.dataset.decision=record.decision;const title=document.createElement('strong');title.textContent=verdictLabels[record.decision];result.append(title);
-    const description=document.createElement('p');description.className='numbers';
-    description.textContent=record.decision==='RETAKE'?record.reasons.join(' '):`Score ${record.score.toFixed(6)} / frozen threshold ${state.frozen.threshold.toFixed(6)} / ${record.latencyMs.toFixed(0)} ms`;
-    result.append(description);
-    const limit=document.createElement('p');limit.className='fine';limit.textContent=record.decision==='RETAKE'?'No anomaly score or verdict issued.':`Capture heuristic passed; blur may still be present. ${$('part').value==='own'?'Upload threshold is not validated.':'Generated sample; this outcome is not an accuracy estimate.'}`;result.append(limit);
+    showDecision(record,state.frozen);
     const canvas=$('overlay');$('sample-preview').hidden=true;$('specimen-empty').hidden=true;canvas.hidden=false;const ctx=canvas.getContext('2d');ctx.drawImage(input.canvas,0,0);
     if(record.distances){const map=document.createElement('canvas');map.width=map.height=16;const mc=map.getContext('2d'),pixels=mc.createImageData(16,16);record.distances.forEach((d,i)=>{pixels.data.set([40,100,73,Math.round(Math.min(1,d)*180)],i*4);});mc.putImageData(pixels,0,0);ctx.drawImage(map,0,0,224,224);}
     const bankVersion=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(state.frozen))).then(b=>Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join(''));
@@ -175,8 +184,8 @@ $('check').onclick=async()=>{
     await inspect(source);
   }catch(error){
     resetDecision();
-    $('result').textContent='Inspection unavailable: '+error.message;
+    slip('Inspection unavailable',error.message);
   }finally{lock(false);}
 };
 // Read-only diagnostic entry points for reproducible local acceptance tests.
-window.visurex={onboard,inspect,sourceFor,snapshot:()=>({frozen:state.frozen,calibrationScores:state.calibrationScores,onboardingMs:state.onboardingMs,records:state.records,pixels:Object.fromEntries(state.pixels)}),manifest};
+window.visurex={onboard,inspect,sourceFor,showDecision,snapshot:()=>({frozen:state.frozen,calibrationScores:state.calibrationScores,onboardingMs:state.onboardingMs,records:state.records,pixels:Object.fromEntries(state.pixels)}),manifest};
