@@ -3,10 +3,9 @@ import {all,saveMany,snapshot,updateNcr} from './store.mjs';
 import {seeds} from './seed.mjs';
 import {sanitizePhoto} from './privacy.mjs';
 import {el,button,option,field,download,notify,safe,$,roleName} from './ui.mjs';
-import * as validators from './validators.mjs';
 const state={plantId:'plant-a',role:'inspector',data:null,walk:null,finding:null,ncr:null,afterPhoto:null,inspection:null,noteSource:'human'};
-function assertRecord(entity){const fn=validators[`validate${entity.schemaVersion.split('.')[0]}`];if(!fn||!fn(entity))throw Error('Record does not match its v1 contract');return entity;}
-async function save(entries){entries.forEach(e=>{if(e.store!=='meta')assertRecord(e.record);});await saveMany(entries);await refresh();}
+async function assertRecord(entity){const validators=await import('./validators.mjs');const fn=validators[`validate${entity.schemaVersion.split('.')[0]}`];if(!fn||!fn(entity))throw Error('Record does not match its v1 contract');return entity;}
+async function save(entries){await Promise.all(entries.filter(e=>e.store!=='meta').map(e=>assertRecord(e.record)));await saveMany(entries);await refresh();}
 async function refresh(){state.data=await snapshot();}
 const plant=()=>PLANTS.find(p=>p.id===state.plantId),actor=()=>state.role;
 const photoPreview=photo=>photo?.dataUrl?el('figure',{class:'evidence'},el('img',{src:photo.dataUrl,alt:'Locally stored, face-redacted object evidence',width:240}),el('figcaption',{},photo.privacy?.method||'Generated demo data')):el('p',{class:'fine'},'No photo attached');
@@ -125,15 +124,15 @@ function renderNcr(){
   if(v(selected,'heatmap'))fields.append(el('img',{class:'heatmap-evidence',src:v(selected,'heatmap'),alt:'Privacy-redacted detector heatmap',width:224}));
   box.append(fields);
   if(!closed)box.append(button('Confirm suggested NCR fields',()=>{ncrFields(draft);confirmAll(draft);Object.assign(selected.fields,draft.fields);renderNcr();notify('Suggestions confirmed; save or transition to persist.');},{id:'confirm-ncr'}),
-    button('Save NCR draft edits',safe(async()=>{if(v(selected,'status')!=='draft')throw Error('Use the lifecycle controls for submitted records');ncrFields(draft);draft.revision++;await updateNcr(assertRecord(draft),assertRecord(auditEvent(draft.id,'draft','draft_edit')));await refresh();renderNcr();notify('Draft edits saved.');}),{id:'save-ncr'}));
+    button('Save NCR draft edits',safe(async()=>{if(v(selected,'status')!=='draft')throw Error('Use the lifecycle controls for submitted records');ncrFields(draft);draft.revision++;await updateNcr(await assertRecord(draft),await assertRecord(auditEvent(draft.id,'draft','draft_edit')));await refresh();renderNcr();notify('Draft edits saved.');}),{id:'save-ncr'}));
   const status=v(selected,'status');
   const transitionButton=(label,target)=>button(label,safe(async()=>{
     ncrFields(draft);const {next,event}=transitionNcr(draft,target,actor(),{actions:state.data.actions});
     const additional=[];
     if(target==='capa_open'){
-      const linked=record('Action',{plantId:structuredClone(next.fields.plantId),station:structuredClone(next.fields.station),findingId:structuredClone(next.fields.findingId),ncrId:f(next.id,'rule',true),title:structuredClone(next.fields.capaAction),ownerRole:f('qa_lead','rule',true),dueDate:structuredClone(next.fields.capaDueDate),status:f('open','rule',true),afterPhoto:f(null),closedAt:f(null)});additional.push({store:'actions',record:assertRecord(linked)});
+      const linked=record('Action',{plantId:structuredClone(next.fields.plantId),station:structuredClone(next.fields.station),findingId:structuredClone(next.fields.findingId),ncrId:f(next.id,'rule',true),title:structuredClone(next.fields.capaAction),ownerRole:f('qa_lead','rule',true),dueDate:structuredClone(next.fields.capaDueDate),status:f('open','rule',true),afterPhoto:f(null),closedAt:f(null)});additional.push({store:'actions',record:await assertRecord(linked)});
     }
-    await updateNcr(assertRecord(next),assertRecord(event),additional);await refresh();
+    await updateNcr(await assertRecord(next),await assertRecord(event),additional);await refresh();
     if(target==='closed'&&v(next,'findingId')){const finding=state.data.findings.find(r=>r.id===v(next,'findingId'));if(finding){const item=structuredClone(finding);item.revision++;item.fields.status=f('closed');await save([{store:'findings',record:item}]);}}
     renderNcr();notify(`NCR moved to ${target}.`);
   }),{id:`ncr-${target}`});
@@ -150,7 +149,7 @@ function renderNcr(){
       }),{id:'close-linked-actions'}),
       button('Complete CAPA',safe(async()=>{
         const photo=state.afterPhoto||await filePhoto('ncr-after-photo');const next=completeCapa(selected,state.data.actions,photo,actor());
-        await updateNcr(assertRecord(next),assertRecord(auditEvent(next.id,'capa_open','capa_complete')));await refresh();renderNcr();notify('CAPA completed. Review and close the NCR.');
+        await updateNcr(await assertRecord(next),await assertRecord(auditEvent(next.id,'capa_open','capa_complete')));await refresh();renderNcr();notify('CAPA completed. Review and close the NCR.');
       }),{id:'complete-capa'}),transitionButton('Close NCR','closed'));
   }
   const log=state.data.audit.filter(r=>v(r,'recordId')===selected.id).sort((a,b)=>v(a,'at').localeCompare(v(b,'at')));
