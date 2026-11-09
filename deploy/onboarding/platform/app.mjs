@@ -19,15 +19,24 @@ function auditEvent(id,from,to){return record('AuditEvent',{recordId:f(id,'rule'
 function route(){const name=location.hash.slice(1)||'home',valid=['home','inspect','walk','ncr','actions','dashboard'];const target=valid.includes(name)?name:'home';
   document.querySelectorAll('[data-view]').forEach(node=>node.hidden=node.dataset.view!==target);
   document.querySelectorAll('[data-route]').forEach(node=>node.setAttribute('aria-current',node.dataset.route===target?'page':'false'));
+  const shared=$('inspection-bench');
+  if(target==='home'||target==='inspect'){
+    const slot=$(target+'-inspection');
+    if(shared.parentElement!==slot){
+      slot.append(shared);
+      if(target==='inspect')$('bank-details').open=true;
+    }
+  }
+  document.querySelector('.context-bar').hidden=target==='home';
   if(state.data)render(target);
 }
 function navigate(name){location.hash=name;route();}
 window.addEventListener('hashchange',route);
-const benchmark=$('strong-result');if(benchmark){const copy=()=>$('home-results').innerHTML=benchmark.innerHTML;new MutationObserver(copy).observe(benchmark,{childList:true,subtree:true});if(benchmark.childNodes.length)copy();}
+route();
 function render(view){if(view==='walk')renderWalk();if(view==='ncr')renderNcr();if(view==='actions')renderActions();if(view==='dashboard')renderDashboard();}
 function currentWalk(){return state.data.walks.find(w=>w.id===state.walk)||state.data.walks.find(w=>v(w,'plantId')===state.plantId&&v(w,'status')==='active');}
 function listOpen(station){const actions=state.data.actions.filter(a=>v(a,'plantId')===state.plantId&&v(a,'station')===station&&v(a,'status')!=='closed');
-  return el('div',{class:'open-items'},el('h3',{},`Open items at this station (n=${actions.length})`),actions.length?el('ul',{},...actions.map(a=>el('li',{},`${v(a,'title')} · ${roleName(v(a,'ownerRole'))} · due ${v(a,'dueDate')}${overdue(a)?' · overdue':''}`))):el('p',{},'No open local items at this station.'));
+  return el('div',{class:'open-items'},el('h3',{},`Open items at this station (n=${actions.length})`),actions.length?el('ul',{},...actions.map(a=>el('li',{},`${v(a,'title')} / ${roleName(v(a,'ownerRole'))} / due ${v(a,'dueDate')}${overdue(a)?' / overdue':''}`))):el('p',{},'No open local items at this station.'));
 }
 function renderWalk(){
   const box=$('view-walk');box.replaceChildren(el('h1',{},'Walk the station. Record a finding.'),el('p',{class:'fine'},'Plant and station names are fictional demo data. New records stay in IndexedDB on this device.'));
@@ -39,10 +48,10 @@ function renderWalk(){
       await save([{store:'walks',record:r}]);state.walk=r.id;renderWalk();notify('Walk started on this device.');
     }),{id:'start-walk'}));
     const ended=state.data.walks.filter(w=>v(w,'plantId')===state.plantId&&v(w,'status')==='ended');
-    if(ended.length)box.append(el('h2',{},'Saved walk reports'),el('ul',{},...ended.map(w=>el('li',{},button(`${v(w,'template')} · ${w.id.slice(0,8)}${v(w,'demo')?' · demo data':''}`,()=>renderWalkReport(w))))));return;
+    if(ended.length)box.append(el('h2',{},'Saved walk reports'),el('ul',{},...ended.map(w=>el('li',{},button(`${v(w,'template')} / ${w.id.slice(0,8)}${v(w,'demo')?' / demo data':''}`,()=>renderWalkReport(w))))));return;
   }
   state.walk=walk.id;
-  box.append(el('p',{},`${v(walk,'template')} · ${plant().name} · ${walk.id.slice(0,8)}`));
+  box.append(el('p',{},`${v(walk,'template')} / ${plant().name} / ${walk.id.slice(0,8)}`));
   const checklist=el('fieldset',{},el('legend',{},'Checklist'));
   TEMPLATES[v(walk,'template')].forEach((item,i)=>{const input=el('input',{type:'checkbox',id:`walk-item-${i}`,value:item,...(v(walk,'checklist').includes(item)?{checked:true}:{})});input.onchange=safe(async()=>{const next=structuredClone(walk);next.revision++;next.fields.checklist=f(Array.from(checklist.querySelectorAll('input:checked'),x=>x.value));await save([{store:'walks',record:next}]);});checklist.append(el('label',{class:'checkbox'},input,item));});box.append(checklist);
   const station=el('select',{id:'walk-station'},...plant().stations.map(s=>option(s)));box.append(el('label',{for:'walk-station'},'Station',station));
@@ -83,7 +92,7 @@ function startVoice(){
   recognition.onerror=()=>notify('Speech recognition did not finish. Type the note instead.',true);
   recognition.start();notify('Listening. Tap stop in your browser to cancel.');
 }
-function findingLine(finding){return el('article',{class:'record-row'},el('h3',{},v(finding,'note')),el('p',{},`${v(finding,'station')} · ${v(finding,'category')} · ${v(finding,'severity')}${v(finding,'demo')?' · demo data':''}`),
+function findingLine(finding){return el('article',{class:'record-row'},el('h3',{},v(finding,'note')),el('p',{},`${v(finding,'station')} / ${v(finding,'category')} / ${v(finding,'severity')}${v(finding,'demo')?' / demo data':''}`),
   v(finding,'category')==='quality'?button('Create NCR',safe(()=>createNcr(finding)),{'data-finding-id':finding.id}):null);}
 async function createNcr(finding){
   const existing=state.data.ncrs.find(n=>v(n,'findingId')===finding.id);if(existing){state.ncr=existing.id;navigate('ncr');return;}
@@ -94,7 +103,7 @@ async function createNcr(finding){
 function renderWalkReport(walk){
   const items=state.data.findings.filter(r=>v(r,'walkId')===walk.id),actions=state.data.actions.filter(a=>items.some(r=>v(a,'findingId')===r.id));
   const text=[`${v(walk,'template')} walk — ${PLANTS.find(p=>p.id===v(walk,'plantId'))?.name}`,`Local prototype report; ${items.length} findings`,...items.map((r,i)=>`${i+1}. ${v(r,'station')}: ${v(r,'note')} [${v(r,'category')}/${v(r,'severity')}] Owner: ${roleName(v(r,'ownerRole'))}; due ${v(r,'dueDate')}.`),`Open actions: ${actions.filter(a=>v(a,'status')!=='closed').length}. Fictional demo plants; not a factory pilot.`].join('\n');
-  const report=el('section',{id:'walk-report',class:'print-report'},el('h1',{},`${v(walk,'template')} walk report`),el('p',{},`${PLANTS.find(p=>p.id===v(walk,'plantId'))?.name} · ${v(walk,'createdAt')}`),el('p',{},`Findings n=${items.length}; linked actions n=${actions.length}. All plant names are demo data.`),...items.map(findingLine));
+  const report=el('section',{id:'walk-report',class:'print-report'},el('h1',{},`${v(walk,'template')} walk report`),el('p',{},`${PLANTS.find(p=>p.id===v(walk,'plantId'))?.name} / ${v(walk,'createdAt')}`),el('p',{},`Findings n=${items.length}; linked actions n=${actions.length}. All plant names are demo data.`),...items.map(findingLine));
   $('view-walk').replaceChildren(report,el('div',{class:'report-tools'},button('Copy for WhatsApp',safe(async()=>{await navigator.clipboard.writeText(text);notify('Summary copied. Nothing was sent.');}),{id:'copy-walk'}),button('Export walk CSV',()=>download(`walk-${walk.id}.csv`,csv([['finding_id','station','note','category','severity','owner','due'],...items.map(r=>[r.id,v(r,'station'),v(r,'note'),v(r,'category'),v(r,'severity'),v(r,'ownerRole'),v(r,'dueDate')])]),'text/csv'),{id:'walk-csv'}),button('Print one-page report',()=>window.print()),button('Back to walks',renderWalk)));
 }
 const ncrEditable=['part','note','qtyInspected','qtyRejected','defectCode','suspectedSource','disposition','rootCause','capaAction','capaDueDate'];
@@ -105,13 +114,13 @@ function renderNcr(){
   const records=state.data.ncrs.filter(n=>v(n,'plantId')===state.plantId);
   if(!records.length){box.append(el('p',{},'Create an NCR from a quality finding or an Inspect ANOMALY result.'));return;}
   const selected=currentNcr();if(!selected||v(selected,'plantId')!==state.plantId){state.ncr=records.at(-1).id;return renderNcr();}state.ncr=selected.id;
-  const select=el('select',{id:'ncr-select'},...records.map(n=>option(n.id,`${n.id.slice(0,8)} · ${v(n,'part')||'Untitled part'} · ${v(n,'status')}${v(n,'demo')?' · demo data':''}`)));select.value=selected.id;select.onchange=()=>{state.ncr=select.value;state.afterPhoto=null;renderNcr();};
-  box.append(el('label',{for:'ncr-select'},'NCR record',select),el('p',{class:'status-line',id:'ncr-state'},`Status: ${v(selected,'status')} · CAPA: ${v(selected,'capaStatus')} · revision ${selected.revision}`));
+  const select=el('select',{id:'ncr-select'},...records.map(n=>option(n.id,`${n.id.slice(0,8)} / ${v(n,'part')||'Untitled part'} / ${v(n,'status')}${v(n,'demo')?' / demo data':''}`)));select.value=selected.id;select.onchange=()=>{state.ncr=select.value;state.afterPhoto=null;renderNcr();};
+  box.append(el('label',{for:'ncr-select'},'NCR record',select),el('p',{class:'status-line',id:'ncr-state'},`Status: ${v(selected,'status')} / CAPA: ${v(selected,'capaStatus')} / revision ${selected.revision}`));
   const draft=structuredClone(selected),fields=el('div',{id:'ncr-fields'}),closed=v(selected,'status')==='closed';
   fields.append(field('Part','ncr-part',draft.fields.part,{readonly:closed}),field('Station','ncr-station',draft.fields.station,{readonly:true}),field('Note','ncr-note',draft.fields.note,{type:'textarea',readonly:closed}),
     field('Quantity inspected','ncr-qtyInspected',draft.fields.qtyInspected,{type:'number',readonly:closed}),field('Quantity rejected','ncr-qtyRejected',draft.fields.qtyRejected,{type:'number',readonly:closed}),
     field('Defect code','ncr-defectCode',draft.fields.defectCode,{options:[{value:'',label:'Choose a defect code'},...plant().defects]}),field('Suspected source','ncr-suspectedSource',draft.fields.suspectedSource,{readonly:closed}));
-  if(v(selected,'modelDecision'))fields.append(el('div',{class:'strong-result'},el('p',{},`Detector: ${v(selected,'modelDecision')} · score ${v(selected,'modelScore')} / threshold ${v(selected,'modelThreshold')}`),el('p',{class:'fine'},`Original bank: ${v(selected,'bankVersion')}. Model score is not confidence. Source: detector.`)));
+  if(v(selected,'modelDecision'))fields.append(el('div',{class:'strong-result'},el('p',{},`Detector: ${v(selected,'modelDecision')} / score ${v(selected,'modelScore')} / threshold ${v(selected,'modelThreshold')}`),el('p',{class:'fine'},`Original bank: ${v(selected,'bankVersion')}. Model score is not confidence. Source: detector.`)));
   fields.append(photoPreview(v(selected,'photo')));
   if(v(selected,'heatmap'))fields.append(el('img',{class:'heatmap-evidence',src:v(selected,'heatmap'),alt:'Privacy-redacted detector heatmap',width:224}));
   box.append(fields);
@@ -133,7 +142,7 @@ function renderNcr(){
   if(status==='dispositioned')box.append(field('Root cause','ncr-rootCause',draft.fields.rootCause,{type:'textarea'}),field('CAPA action','ncr-capaAction',draft.fields.capaAction,{type:'textarea'}),field('CAPA due date','ncr-capaDueDate',draft.fields.capaDueDate,{type:'date'}),transitionButton('Open CAPA','capa_open'));
   if(status==='capa_open'){
     const linked=state.data.actions.filter(a=>v(a,'ncrId')===selected.id);
-    box.append(el('h2',{},`Linked actions (n=${linked.length})`),el('ul',{},...linked.map(a=>el('li',{},`${v(a,'title')} · ${roleName(v(a,'ownerRole'))} · ${v(a,'status')}`))),photoInput('ncr-after-photo','After photo for action/CAPA closure'),state.afterPhoto?photoPreview(state.afterPhoto):null,
+    box.append(el('h2',{},`Linked actions (n=${linked.length})`),el('ul',{},...linked.map(a=>el('li',{},`${v(a,'title')} / ${roleName(v(a,'ownerRole'))} / ${v(a,'status')}`))),photoInput('ncr-after-photo','After photo for action/CAPA closure'),state.afterPhoto?photoPreview(state.afterPhoto):null,
       button('Close linked actions with after photo',safe(async()=>{
         state.afterPhoto=await filePhoto('ncr-after-photo');const entries=[];
         for(const action of linked.filter(a=>v(a,'status')!=='closed'))entries.push({store:'actions',record:closeAction(action,state.afterPhoto,actor())},{store:'audit',record:auditEvent(action.id,'open','action_closed')});
@@ -145,13 +154,13 @@ function renderNcr(){
       }),{id:'complete-capa'}),transitionButton('Close NCR','closed'));
   }
   const log=state.data.audit.filter(r=>v(r,'recordId')===selected.id).sort((a,b)=>v(a,'at').localeCompare(v(b,'at')));
-  box.append(el('h2',{},`Append-only local audit log (n=${log.length})`),el('ol',{id:'ncr-audit'},...log.map(r=>el('li',{},`${v(r,'at')} · ${roleName(v(r,'actorRole'))}: ${v(r,'from')} → ${v(r,'to')}`))),
+  box.append(el('h2',{},`Append-only local audit log (n=${log.length})`),el('ol',{id:'ncr-audit'},...log.map(r=>el('li',{},`${v(r,'at')} / ${roleName(v(r,'actorRole'))}: ${v(r,'from')} → ${v(r,'to')}`))),
     button('Export NcrRecord v1 JSON',()=>download(`NCR-${selected.id}.json`,JSON.stringify(selected,null,2),'application/json'),{id:'ncr-json'}),button('Export NCR CSV',()=>download(`NCR-${selected.id}.csv`,recordCsv(selected),'text/csv'),{id:'ncr-csv'}));
 }
 function renderActions(){
   const box=$('view-actions'),items=state.data.actions.filter(a=>v(a,'plantId')===state.plantId);box.replaceChildren(el('h1',{},'Owners, due dates, evidence.'),el('p',{},`Local actions n=${items.length}. Overdue flags are rule-based; no notifications are sent.`));
   for(const action of items){
-    const row=el('article',{class:'record-row'},el('h2',{},v(action,'title')),el('p',{},`${v(action,'station')} · owner ${roleName(v(action,'ownerRole'))} · due ${v(action,'dueDate')} · ${v(action,'status')}${overdue(action)?' · OVERDUE / escalation to plant manager':''}${v(action,'demo')?' · demo data':''}`));
+    const row=el('article',{class:'record-row'},el('h2',{},v(action,'title')),el('p',{},`${v(action,'station')} / owner ${roleName(v(action,'ownerRole'))} / due ${v(action,'dueDate')} / ${v(action,'status')}${overdue(action)?' / OVERDUE / escalation to plant manager':''}${v(action,'demo')?' / demo data':''}`));
     if(v(action,'status')!=='closed'){
       const id=`action-photo-${action.id}`;row.append(photoInput(id,'After photo'),button('Close action',safe(async()=>{const photo=await filePhoto(id);await save([{store:'actions',record:closeAction(action,photo,actor())},{store:'audit',record:auditEvent(action.id,'open','action_closed')}]);renderActions();notify('Action closed with after-photo evidence.');}),{'data-action':action.id}));
     }else row.append(photoPreview(v(action,'afterPhoto')));box.append(row);
@@ -164,7 +173,7 @@ function renderDashboard(){
     const network=scope.value==='network',result=summary(state.data,network?null:state.plantId),data=network?state.data.findings:state.data.findings.filter(finding=>v(finding,'plantId')===state.plantId),seeded=data.filter(r=>v(r,'demo')).length;
     const target=$('dashboard-results');target.replaceChildren(el('h2',{},network?'Network: aggregate counts only':plant().name),el('p',{},`Finding records n=${result.findings}: seeded demo data n=${seeded}; local entries n=${result.findings-seeded}.`));
     const dl=el('dl',{class:'metrics'});for(const [label,key]of [['Walks','walks'],['Findings','findings'],['NCRs','ncrs'],['Actions','actions'],['Open actions','open'],['Overdue actions','overdue'],['Closed actions','closed'],['Repeated station/category keys','repeatKeys']]){dl.append(el('div',{},el('dt',{},label),el('dd',{},`n=${result[key]}`)));}target.append(dl);
-    for(const [title,counts]of [['Findings by category',result.categories],['NCRs by defect code',result.defects]])target.append(el('h3',{},title),el('ul',{},...Object.entries(counts).map(([key,count])=>el('li',{},`${key||'Not entered'} · n=${count}`))));
+    for(const [title,counts]of [['Findings by category',result.categories],['NCRs by defect code',result.defects]])target.append(el('h3',{},title),el('ul',{},...Object.entries(counts).map(([key,count])=>el('li',{},`${key||'Not entered'} / n=${count}`))));
     target.append(el('p',{class:'fine'},'A repeat is the same plant/station/category key occurring more than once; it is not an inferred root cause. The network view does not expose notes or photos.'));
   };scope.onchange=draw;draw();
 }

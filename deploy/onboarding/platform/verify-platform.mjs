@@ -23,8 +23,8 @@ async function run(width,theme){
   async function route(view){await page.locator(`[data-route="${view}"]`).click();await until(()=>!document.querySelector(`[data-view="${location.hash.slice(1)}"]`).hidden);}
   try{
     activeCase=`${name} home`;await page.goto(origin);await until(()=>Boolean(window.visurexPlatform)&&document.querySelector('#context-plant').options.length===2);
-    check('home has WIP, affiliation, honest pilot status',await page.locator('#view-home').innerText().then(t=>t.includes('work in progress')&&t.includes('IIT Madras')&&t.includes('No factory pilot')));
-    check('home exposes five prototype module routes',await page.locator('#view-home .module-list a').count()===5);await shot('home');
+    check('home opens with inspection and accurate glasses status',await page.locator('#view-home').innerText().then(t=>t.includes('Run inspection')&&t.includes('Glasses capture is in progress'))&&await page.locator('footer').innerText().then(t=>t.includes('IIT Madras')));
+    check('navigation exposes five prototype module routes',await page.locator('#platform-tabs a:not([data-route="home"])').count()===5);await shot('home');
     if(retryInspect&&name==='1280-light'){
       checks.push(...prior.results[0].checks.slice(2,-1).map(check=>({...check,retainedFrom:'artifacts/platform/attempt-1/browser.json'})));
     }else{
@@ -63,7 +63,7 @@ async function run(width,theme){
     }
     activeCase=`${name} inspect`;await route('inspect');await page.locator('#teach').click();await until(()=>window.visurex?.snapshot().frozen!==null,240000);
     await page.selectOption('#sample','scratch');await page.locator('#check').click();await until(()=>!!document.querySelector('#inspect-create-ncr')&&!document.querySelector('#inspect-create-ncr').hidden);
-    check('real generated anomaly offers NCR creation',await page.locator('#result').innerText().then(t=>t.includes('ANOMALY')));await shot('inspect-anomaly');
+    check('real generated anomaly offers NCR creation',(await page.locator('#result').getAttribute('data-decision'))==='ANOMALY');await shot('inspect-anomaly');
     await page.locator('#inspect-create-ncr').click();await until(()=>location.hash==='#ncr'&&!!document.querySelector('#ncr-state'));
     const transferred=await page.evaluate(async()=>{const d=await window.visurexPlatform.snapshot();const n=d.ncrs.find(x=>x.fields.modelDecision.value==='ANOMALY');return {decision:n?.fields.modelDecision.value,score:n?.fields.modelScore.value,bank:n?.fields.bankVersion.value,empty:n?.fields.qtyInspected.value===null,photo:!!n?.fields.photo.value?.dataUrl,heatmap:!!n?.fields.heatmap.value};});
     check('Inspect transfers score/bank/evidence and leaves quantities blank',transferred.decision==='ANOMALY'&&Number.isFinite(transferred.score)&&transferred.bank?.length===64&&transferred.empty&&transferred.photo&&transferred.heatmap);await shot('ncr-from-inspect');
@@ -91,7 +91,7 @@ async function run(width,theme){
     check('no uncaught page error',!pageErrors.some(e=>e.case===name));
     results.push({case:name,checks,passed:true});console.log(`${name}: ${checks.length} acceptance checks passed`);
   }catch(error){await shot('failure');results.push({case:name,checks,passed:false,error:error.message,activeCase});throw error;}
-  finally{await writeFile(path.join(out,'browser.json'),JSON.stringify({date:'2026-11-04',results,pageErrors,recovery:retryInspect?'Only failed Inspect handoff rerun for first variant; prior passed Walk/NCR checks retained with source. Other variants run first time.':null,screenshots:path.relative(root,path.join(out,'screenshots')),browser:browser.version()},null,2));await context.close();}
+  finally{await writeFile(path.join(out,'browser.json'),JSON.stringify({date:new Date().toISOString().slice(0,10),results,pageErrors,recovery:retryInspect?'Only failed Inspect handoff rerun for first variant; prior passed Walk/NCR checks retained with source. Other variants run first time.':null,screenshots:path.relative(root,path.join(out,'screenshots')),browser:browser.version()},null,2));await context.close();}
 }
-try{for(const [width,theme]of [[1280,'light'],[1280,'dark'],[390,'light'],[390,'dark']])await run(width,theme);console.log('Platform final browser gate passed.');}
+try{for(const [width,theme]of [[1280,'light'],[1280,'dark'],[360,'light'],[360,'dark']])await run(width,theme);console.log('Platform final browser gate passed.');}
 finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
