@@ -14,7 +14,7 @@ try{
   const result=await lighthouse(`http://127.0.0.1:${server.address().port}`,{port:chrome.port,output:'json',logLevel:'error',onlyCategories:['performance','accessibility','best-practices','seo'],formFactor:'mobile'});
   const folder=path.join(root,process.argv.includes('--platform')?'artifacts/platform/final':'artifacts/onboarding/verification');await mkdir(folder,{recursive:true});
   await writeFile(path.join(folder,'lighthouse.json'),result.report);
-  const summary={date:'2026-11-04',version:result.lhr.lighthouseVersion,scope:'Mobile simulated-throttling initial page load; lazy model loading excluded. Not inference performance.',scores:Object.fromEntries(Object.entries(result.lhr.categories).map(([k,v])=>[k,v.score*100])),runWarnings:result.lhr.runWarnings};
+  const summary={date:new Date().toISOString().slice(0,10),version:result.lhr.lighthouseVersion,scope:'Mobile simulated-throttling initial page load; lazy model loading excluded. Not inference performance.',scores:Object.fromEntries(Object.entries(result.lhr.categories).map(([k,v])=>[k,v.score*100])),runWarnings:result.lhr.runWarnings};
   const docs=path.join(root,process.argv.includes('--platform')?'docs/platform':'docs/step1');await mkdir(docs,{recursive:true});
   await writeFile(path.join(docs,'lighthouse.json'),JSON.stringify(summary,null,2));console.log(JSON.stringify(summary));
 }finally{await chrome.kill();await new Promise(resolve=>server.close(resolve));}

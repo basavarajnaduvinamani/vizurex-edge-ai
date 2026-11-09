@@ -25,13 +25,23 @@ try{
   // deployment CSP deliberately blocks. Keep the page's CSP enabled.
   async function waitFor(fn,timeout=60000){const start=Date.now();while(!(await page.evaluate(fn))){if(Date.now()-start>timeout)throw Error('Acceptance condition timed out');await new Promise(r=>setTimeout(r,200));}}
   page.on('pageerror',e=>{errors.push(e.message);console.log('PAGE ERROR',e.message);});page.on('console',m=>{if(m.type()==='error')console.log('BROWSER',m.text());});page.on('request',r=>{if(!isLocalResource(r.url(),origin))external.push(r.url());});
-  await page.goto(origin+'/#inspect');await waitFor(()=>!!window.visurex);
-  await page.locator('#teach').click();
+  await page.goto(origin);await waitFor(()=>!!window.visurex);
+  await page.selectOption('#sample','scratch');
+  await page.locator('#check').click();
   const progress=setInterval(()=>{page.locator('#status').innerText().then(x=>console.log(x)).catch(()=>{});},15000);
   await waitFor(()=>window.visurex.snapshot().frozen!==null||document.querySelector('#status').textContent.includes('Unable to onboard'),240000);
   clearInterval(progress);
   if(!(await page.evaluate(()=>window.visurex.snapshot().frozen)))throw Error(await page.locator('#status').innerText());checks++;
+  await waitFor(()=>document.querySelector('#result').dataset.decision==='ANOMALY');
+  if(!(await page.locator('#overlay').isVisible()))throw Error('Home heatmap missing');
+  await page.screenshot({path:path.join(out,'screenshots/home-1280.png'),fullPage:true});
+  await page.setViewportSize({width:360,height:900});
+  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Home overflows at 360px');
+  await page.screenshot({path:path.join(out,'screenshots/home-360.png'),fullPage:true});
   const before=await page.evaluate(()=>window.visurex.snapshot().frozen.threshold);
+  await page.locator('[data-route="inspect"]').click();
+  await waitFor(()=>document.querySelector('#inspect-inspection').contains(document.querySelector('#inspection-bench')));
+  if(await page.evaluate(()=>window.visurex.snapshot().frozen.threshold)!==before)throw Error('Reference bank lost between Home and Inspect');checks++;
   // Actual warm-up, then every fixed generated check. No replayed predictions.
   await page.evaluate(async()=>{await window.visurex.inspect(window.visurex.sourceFor('normal'),false);await window.visurex.inspect(window.visurex.sourceFor('scratch'),false);});
   const measured=[];
@@ -39,14 +49,14 @@ try{
     const result=await page.evaluate(p=>window.visurex.inspect(p,false),item.path);
     measured.push({...result,label:item.label});
   }
-  for(const [width,theme]of [[1280,'light'],[1280,'dark'],[390,'light'],[390,'dark']]){
-    await page.setViewportSize({width,height:1000});await page.emulateMedia({colorScheme:theme});
+  for(const [width,theme]of [[1280,'light'],[1280,'dark'],[360,'light'],[360,'dark']]){
+    await page.setViewportSize({width,height:1000});await page.emulateMedia({colorScheme:theme});await page.evaluate(value=>{document.body.dataset.theme=value;},theme);
     for(const kind of ['normal','scratch','dark','blur']){
       await page.selectOption('#sample',kind);await page.locator('#check').click();
       await waitFor(()=>!document.querySelector('#check').disabled);
-      const text=await page.locator('#result').innerText();
-      if(kind==='dark'&&!text.includes('RETAKE'))throw Error('Dark RETAKE missing');
-      if(!/GOOD|ANOMALY|RETAKE/.test(text))throw Error(text);
+      const decision=await page.locator('#result').getAttribute('data-decision');
+      if(['dark','blur'].includes(kind)&&decision!=='RETAKE')throw Error('Retake request missing for '+kind);
+      if(!['GOOD','ANOMALY','RETAKE'].includes(decision))throw Error('Inspection verdict missing');
       await page.screenshot({path:path.join(out,`screenshots/${width}-${theme}-${kind}.png`),fullPage:true});checks++;
     }
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);if(overflow)throw Error(`Overflow at ${width}`);checks++;
@@ -64,8 +74,8 @@ try{
   await waitFor(()=>window.visurex.snapshot().frozen!==null,240000);
   await page.selectOption('#sample','own');await page.locator('#test-file').setInputFiles(path.join(dist,'samples/test-scratch-200.png'));
   await page.locator('#check').click();await waitFor(()=>!document.querySelector('#check').disabled);
-  if(!/GOOD|ANOMALY/.test(await page.locator('#result').innerText()))throw Error('Upload inference missing');checks++;
+  if(!['GOOD','ANOMALY'].includes(await page.locator('#result').getAttribute('data-decision')))throw Error('Upload inference missing');checks++;
   if(errors.length||external.length)throw Error(JSON.stringify({errors,external}));checks++;
-  await writeFile(path.join(out,'browser.json'),JSON.stringify({date:'2026-11-04',browser:browser.version(),provider:'wasm',threads:1,checks,errors,external,measured,snapshot,scope:'20 generated functional examples; same browser-preprocessed tensors compared separately in Python'},null,2));
+  await writeFile(path.join(out,'browser.json'),JSON.stringify({date:new Date().toISOString().slice(0,10),browser:browser.version(),provider:'wasm',threads:1,checks,errors,external,measured,snapshot,scope:'20 generated functional examples; same browser-preprocessed tensors compared separately in Python'},null,2));
   console.log(JSON.stringify({checks,measured:measured.length,screenshots:path.join(out,'screenshots'),browser:browser.version()}));
 }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
