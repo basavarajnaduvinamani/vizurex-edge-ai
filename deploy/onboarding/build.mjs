@@ -6,10 +6,11 @@ const root = path.resolve(here, '../..');
 await import('./platform/compile-schemas.mjs');
 export const output = path.join(root, 'artifacts/onboarding/dist');
 await mkdir(output, { recursive: true });
-for (const file of ['index.html', 'app.mjs', 'core.mjs', 'style.css', 'README.md', 'vercel.json','THIRD_PARTY_NOTICES.md']) {
+for (const file of ['index.html', 'app.mjs', 'core.mjs', 'style.css', 'icon.svg', 'README.md', 'vercel.json','THIRD_PARTY_NOTICES.md']) {
   await cp(path.join(here, file), path.join(output, file));
 }
 await cp(path.join(here,'licenses'),path.join(output,'licenses'),{recursive:true});
+await cp(path.join(here,'fonts'),path.join(output,'fonts'),{recursive:true});
 await cp(path.join(here,'platform'),path.join(output,'platform'),{recursive:true});
 await mkdir(path.join(output,'face'),{recursive:true});
 await cp(path.join(here,'node_modules/@mediapipe/tasks-vision/vision_bundle.mjs'),path.join(output,'face/vision_bundle.mjs'));

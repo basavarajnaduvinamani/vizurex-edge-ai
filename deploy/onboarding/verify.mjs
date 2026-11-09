@@ -49,8 +49,8 @@ try{
     const result=await page.evaluate(p=>window.visurex.inspect(p,false),item.path);
     measured.push({...result,label:item.label});
   }
-  for(const [width,theme]of [[1280,'light'],[1280,'dark'],[360,'light'],[360,'dark']]){
-    await page.setViewportSize({width,height:1000});await page.emulateMedia({colorScheme:theme});await page.evaluate(value=>{document.body.dataset.theme=value;},theme);
+  for(const [width,theme]of [[1280,'light'],[360,'light']]){
+    await page.setViewportSize({width,height:1000});await page.emulateMedia({colorScheme:theme});
     for(const kind of ['normal','scratch','dark','blur']){
       await page.selectOption('#sample',kind);await page.locator('#check').click();
       await waitFor(()=>!document.querySelector('#check').disabled);

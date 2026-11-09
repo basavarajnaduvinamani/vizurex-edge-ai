@@ -23,3 +23,8 @@ This precaution is not a guarantee that every face will be detected.
 Method attribution: AnomalyDINO (Damm et al., WACV 2025):
 https://arxiv.org/abs/2405.14529 and https://github.com/dammsi/AnomalyDINO .
 PatchCore (Roth et al., CVPR 2022): https://arxiv.org/abs/2106.08265 .
+
+IBM Plex Sans and IBM Plex Sans Condensed (latin subset, woff2 files from
+Fontsource 5.1.1) are Copyright 2018 IBM Corp., SIL Open Font License 1.1.
+Source: https://github.com/IBM/plex
+License text: `licenses/IBM-Plex-OFL-1.1.txt`.
