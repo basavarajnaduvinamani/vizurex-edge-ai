@@ -22,7 +22,7 @@
     </nav>
     <div class="project-links"><a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></div>
   </header>
-  <aside class="prototype-note" aria-label="Prototype notice"><p>VisureX is under active development. This site is a prototype with demo data.</p></aside>
+  <aside class="prototype-note" aria-label="Prototype notice"><p>VisureX is a prototype in active development. Plants, parts and records on this site are demo data.</p></aside>
   <p id="platform-message" role="status" aria-live="polite"></p>
   <div class="context-bar" hidden><label for="context-plant">Plant<select id="context-plant"></select></label><label for="context-role">Role<select id="context-role"></select></label></div>
 
@@ -45,7 +45,7 @@
           <p class="bench-lead">Choose a washer photo and run a check in your browser.</p>
           <label for="part">Reference part</label>
           <select id="part"><option value="washer">Generated washer</option><option value="own">My own photos (unvalidated)</option></select>
-          <label for="sample">Test image</label>
+          <label for="sample">Test photo</label>
           <select id="sample"><option value="normal">Normal washer</option><option value="scratch">Scratched washer</option><option value="dark">Dark photo</option><option value="blur">Blurred photo</option><option value="own">My own test photo</option></select>
           <label id="test-upload" hidden>Test photo<input id="test-file" type="file" accept="image/png,image/jpeg,image/webp"></label>
           <div id="result" class="decision-slip" role="status" aria-live="polite"><strong>Awaiting inspection</strong><p>The first check loads the model and prepares the reference bank.</p></div>
@@ -55,7 +55,7 @@
           <summary>Reference bank and calibration</summary>
           <div id="uploads" hidden><label>Eight normal reference photos<input id="references" type="file" accept="image/png,image/jpeg,image/webp" multiple></label><label>Separate normal calibration photos (at least two)<input id="calibration" type="file" accept="image/png,image/jpeg,image/webp" multiple></label></div>
           <div id="thumbs" class="thumbs" aria-label="Eight normal reference photos"></div>
-          <button id="teach" disabled>Build memory bank</button>
+          <button id="teach" disabled>Build reference bank</button>
           <p id="status" role="status" aria-live="polite">The model loads when you run a check or build the bank.</p>
           <p class="fine">Use separate normal photos for calibration. Your uploaded photos stay in this browser. Refreshing clears the bank.</p>
         </details>
@@ -86,24 +86,25 @@
 
     <section class="chapter evidence-notes" aria-labelledby="evidence-title">
       <h2 id="evidence-title">What has been checked</h2>
-      <p>In-browser model: DINOv2 ONNX in WebAssembly. 20/20 browser-Python decision parity. 361 ms median check on laptop CPU. <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/main/docs/step1/browser_parity.json">Browser test results</a></p>
-      <p>Android path: PatchCore ONNX export kept 261/261 decisions at 163-168 ms CPU.</p>
-      <p>Ray-Ban Meta bridge built and tested on an emulator; not yet run on glasses. The Kotlin bridge uses Meta Wearables toolkit 1.0.1 and has 23 unit tests plus an emulator Mock Device test.</p>
-      <p>Blur makes the detector flag every image as defective, so the app asks for a retake.</p>
+      <p>In the browser: the DINOv2 model runs as ONNX in WebAssembly. It matched the Python reference on 20 of 20 decisions, with a median check time of 361 ms on a laptop CPU. <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai/blob/main/docs/step1/browser_parity.json">Browser test results</a></p>
+      <p>On Android: the PatchCore ONNX export matched 261 of 261 decisions at 163-168 ms on CPU.</p>
+      <p>On glasses: a Kotlin bridge for Ray-Ban Meta (Meta Wearables toolkit 1.0.1) has 23 unit tests and an emulator test. It has not been run on glasses yet.</p>
+      <p>Blurry photos: blur makes the detector flag every image as defective, so the app asks for a retake before scoring.</p>
+      <p>What did not work: a pre-registered router meant to choose between DINOv2 and PatchCore failed. It is reported as a negative result.</p>
     </section>
   </section>
 
   <section id="view-inspect" data-view="inspect" hidden>
-    <div class="page-heading"><h1>Inspect a part</h1><p>Use the generated washer or build a reference bank from your own normal photos.</p></div>
+    <div class="page-heading"><h1>Inspect a part</h1><p>Use the generated washer, or build a reference bank from your own photos of good parts.</p></div>
     <div id="inspect-inspection"></div>
-    <p class="fine">A scored image shows a patch-distance heatmap. Retake requests appear before scoring.</p>
+    <p class="fine">Each scored photo gets a heatmap of where it differs from the reference photos. Unusable photos are sent back for a retake before scoring.</p>
     <p><a href="#home">See benchmark results</a></p>
   </section>
   <section id="view-walk" data-view="walk" hidden></section>
   <section id="view-ncr" data-view="ncr" hidden></section>
   <section id="view-actions" data-view="actions" hidden></section>
   <section id="view-dashboard" data-view="dashboard" hidden></section>
-  <footer><p>WCTE (Walmart Centre for Tech Excellence), Wadhwani School of Data Science &amp; AI, IIT Madras. Oct 2026 - present.</p><p>Student research prototype, not a Walmart product.</p><p><a href="README.md">Methods and limits</a> <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer>
+  <footer><p>WCTE (Walmart Centre for Tech Excellence), Wadhwani School of Data Science &amp; AI, IIT Madras. Jul 2026 to present.</p><p>Student research prototype, not a Walmart product.</p><p><a href="README.md">Methods and limits</a> <a href="https://github.com/basavarajnaduvinamani/vizurex-edge-ai">GitHub</a></p></footer>
 </main>
 </body>
 </html>
