@@ -1,0 +1,683 @@
+{
+  "date": "2026-11-04",
+  "n": 20,
+  "agreeing": 20,
+  "agreement_ci95": [
+    0.8315665290169146,
+    1
+  ],
+  "interval": "Clopper-Pearson; generated pairs are not independent factory trials",
+  "max_score_delta": 5.304813385009766e-06,
+  "python_threshold": 0.10009814463555813,
+  "browser_threshold": 0.10010073594748974,
+  "threshold_delta": 2.5913119316017807e-06,
+  "passed": true,
+  "preprocessing_scope": "Python receives identical browser-decoded/cropped RGB pixels. Numerical normalization differs only by float evaluation. Not decoder parity.",
+  "browser_vs_pil_max_pixel_delta": 1.0,
+  "timing": {
+    "p50": {
+      "ms": 361.44999999552965,
+      "ci95": [
+        350.54999999701977,
+        444.8500000089407
+      ]
+    },
+    "p95": {
+      "ms": 602.7650000087917,
+      "ci95": [
+        460.930000011623,
+        634.4000000059605
+      ]
+    }
+  },
+  "timing_scope": "20 warm generated checks; decode, preprocessing, capture check, encoder and score; not model download/onboarding or device population",
+  "model": {
+    "model": "DINOv2 ViT-S/14",
+    "size_bytes": 86619987,
+    "sha256": "110589286462b8c6858de9e65a5b6feccd3c4dbc0b23214f3c212f5edee6c171",
+    "checkpoint_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+    "input": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "output": [
+      1,
+      256,
+      384
+    ],
+    "opset": 17,
+    "torch": "2.7.0+cpu",
+    "timm": "1.0.30",
+    "license": "Apache-2.0",
+    "source": "https://github.com/facebookresearch/dinov2",
+    "scope": "Independently pretrained weights; no WCTE checkpoint/bank"
+  },
+  "browser": "156.0.8078.74",
+  "provider": "wasm",
+  "threads": 1,
+  "checks": 25,
+  "page_errors": [],
+  "external_requests": [],
+  "generated_false_alarms": 0,
+  "generated_missed_changes": 0,
+  "capture_gate_comparison": {
+    "samples/test-normal-200.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 352.74589404479906,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 353.2747326060068,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-200.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 382.9027817999011,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 383.51249567998644,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-201.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 332.9739910059797,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 333.2291134949875,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-201.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 363.8071781871022,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 364.059988813865,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-202.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 352.70106519971574,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 353.4031534187002,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-202.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 383.04385856706267,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 383.75037121206753,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-203.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 351.9423016151355,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 352.29161071777344,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-203.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 382.18564504625795,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 382.6191776820591,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-204.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 353.20758927935907,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 353.75261079048624,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-204.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 383.4691087308897,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 383.99599408130257,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-205.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 350.76476780646345,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 350.95633353019247,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-205.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 381.7659237375859,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 381.96522224192717,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-206.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 342.91489885291276,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 343.4774390065337,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-206.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 376.7985085467903,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 377.3613277182684,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-207.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 347.09937002459253,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 347.6660155852801,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-207.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 378.345623213368,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 378.92303089140256,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-208.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 346.50099649075815,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 347.15323998897287,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-208.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 376.6574059295337,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 377.35429228489124,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-normal-209.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 332.44736460654354,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 332.36276250042454,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/test-scratch-209.png": {
+      "browser_passed": true,
+      "python_passed": true,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 366.2123518514415,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 366.1961489800164,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/dark.png": {
+      "browser_passed": false,
+      "python_passed": false,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 3.171476174274716,
+        "dark_fraction": 0.6159917091836735,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 3.3652731606683255,
+        "dark_fraction": 0.6160315688775511,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    },
+    "samples/blur.png": {
+      "browser_passed": false,
+      "python_passed": false,
+      "same": true,
+      "browser_metrics": {
+        "laplacian_variance": 1.0899629716027135,
+        "dark_fraction": 0,
+        "bright_fraction": 0
+      },
+      "python_metrics": {
+        "laplacian_variance": 1.0484491238639733,
+        "dark_fraction": 0.0,
+        "bright_fraction": 0.0,
+        "width": 224,
+        "height": 224
+      }
+    }
+  },
+  "rows": [
+    {
+      "source": "samples/test-normal-200.png",
+      "label": "normal",
+      "python_score": 0.09378369897603989,
+      "browser_score": 0.09377839416265488,
+      "delta": 5.304813385009766e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 634.4000000059605,
+      "embed_ms": 603.7999999970198
+    },
+    {
+      "source": "samples/test-scratch-200.png",
+      "label": "scratch",
+      "python_score": 0.5798059105873108,
+      "browser_score": 0.5798063278198242,
+      "delta": 4.172325134277344e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 509,
+      "embed_ms": 481.19999998807907
+    },
+    {
+      "source": "samples/test-normal-201.png",
+      "label": "normal",
+      "python_score": 0.05565694347023964,
+      "browser_score": 0.05565512180328369,
+      "delta": 1.821666955947876e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 601.1000000089407,
+      "embed_ms": 568.7999999970198
+    },
+    {
+      "source": "samples/test-scratch-201.png",
+      "label": "scratch",
+      "python_score": 0.5750221014022827,
+      "browser_score": 0.575022280216217,
+      "delta": 1.7881393432617188e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 557.0999999940395,
+      "embed_ms": 520.6999999880791
+    },
+    {
+      "source": "samples/test-normal-202.png",
+      "label": "normal",
+      "python_score": 0.0642356276512146,
+      "browser_score": 0.06423729658126831,
+      "delta": 1.6689300537109375e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 373.5,
+      "embed_ms": 347.59999999403954
+    },
+    {
+      "source": "samples/test-scratch-202.png",
+      "label": "scratch",
+      "python_score": 0.56020587682724,
+      "browser_score": 0.5602064728736877,
+      "delta": 5.960464477539062e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 352.09999999403954,
+      "embed_ms": 329.8999999910593
+    },
+    {
+      "source": "samples/test-normal-203.png",
+      "label": "normal",
+      "python_score": 0.0735417976975441,
+      "browser_score": 0.07354193925857544,
+      "delta": 1.4156103134155273e-07,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 343.09999999403954,
+      "embed_ms": 321.6000000089407
+    },
+    {
+      "source": "samples/test-scratch-203.png",
+      "label": "scratch",
+      "python_score": 0.5773926377296448,
+      "browser_score": 0.5773929953575134,
+      "delta": 3.5762786865234375e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 344.5,
+      "embed_ms": 321.6000000089407
+    },
+    {
+      "source": "samples/test-normal-204.png",
+      "label": "normal",
+      "python_score": 0.0730520710349083,
+      "browser_score": 0.07305514812469482,
+      "delta": 3.077089786529541e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 343.40000000596046,
+      "embed_ms": 320.19999998807907
+    },
+    {
+      "source": "samples/test-scratch-204.png",
+      "label": "scratch",
+      "python_score": 0.5699569582939148,
+      "browser_score": 0.5699570775032043,
+      "delta": 1.1920928955078125e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 359.80000001192093,
+      "embed_ms": 337.70000000298023
+    },
+    {
+      "source": "samples/test-normal-205.png",
+      "label": "normal",
+      "python_score": 0.06455787271261215,
+      "browser_score": 0.06455644220113754,
+      "delta": 1.430511474609375e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 358.09999999403954,
+      "embed_ms": 335.6000000089407
+    },
+    {
+      "source": "samples/test-scratch-205.png",
+      "label": "scratch",
+      "python_score": 0.5854784846305847,
+      "browser_score": 0.5854786038398743,
+      "delta": 1.1920928955078125e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 437.90000000596046,
+      "embed_ms": 408.20000000298023
+    },
+    {
+      "source": "samples/test-normal-206.png",
+      "label": "normal",
+      "python_score": 0.09768112748861313,
+      "browser_score": 0.0976819396018982,
+      "delta": 8.121132850646973e-07,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 400.20000000298023,
+      "embed_ms": 359.79999999701977
+    },
+    {
+      "source": "samples/test-scratch-206.png",
+      "label": "scratch",
+      "python_score": 0.5759176015853882,
+      "browser_score": 0.5759181380271912,
+      "delta": 5.364418029785156e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 485.79999999701977,
+      "embed_ms": 453.30000001192093
+    },
+    {
+      "source": "samples/test-normal-207.png",
+      "label": "normal",
+      "python_score": 0.08923155814409256,
+      "browser_score": 0.08922914415597916,
+      "delta": 2.4139881134033203e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 451.80000001192093,
+      "embed_ms": 427.29999999701977
+    },
+    {
+      "source": "samples/test-scratch-207.png",
+      "label": "scratch",
+      "python_score": 0.5886732935905457,
+      "browser_score": 0.5886730551719666,
+      "delta": 2.384185791015625e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 363,
+      "embed_ms": 338.69999998807907
+    },
+    {
+      "source": "samples/test-normal-208.png",
+      "label": "normal",
+      "python_score": 0.057236988097429276,
+      "browser_score": 0.05723850056529045,
+      "delta": 1.5124678611755371e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 359.8999999910593,
+      "embed_ms": 336.3999999910593
+    },
+    {
+      "source": "samples/test-scratch-208.png",
+      "label": "scratch",
+      "python_score": 0.5812852382659912,
+      "browser_score": 0.5812850594520569,
+      "delta": 1.7881393432617188e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 346.5,
+      "embed_ms": 324.59999999403954
+    },
+    {
+      "source": "samples/test-normal-209.png",
+      "label": "normal",
+      "python_score": 0.07129533588886261,
+      "browser_score": 0.07129319757223129,
+      "delta": 2.1383166313171387e-06,
+      "python_decision": "GOOD",
+      "browser_decision": "GOOD",
+      "same": true,
+      "latency_ms": 345.29999999701977,
+      "embed_ms": 324.40000000596046
+    },
+    {
+      "source": "samples/test-scratch-209.png",
+      "label": "scratch",
+      "python_score": 0.5878069996833801,
+      "browser_score": 0.5878068804740906,
+      "delta": 1.1920928955078125e-07,
+      "python_decision": "ANOMALY",
+      "browser_decision": "ANOMALY",
+      "same": true,
+      "latency_ms": 349,
+      "embed_ms": 327.8999999910593
+    }
+  ]
+}
